@@ -1,0 +1,57 @@
+.vp-doc div[class*="language-"].code-block-collapsible {
+  position: relative;
+}
+
+.vp-doc div[class*="language-"].code-block-collapsible pre {
+  transition: max-height 0.2s ease;
+}
+
+.vp-doc div[class*="language-"].code-block-collapsible.code-block-collapsed pre {
+  max-height: 30rem;
+  overflow: hidden;
+}
+
+.vp-doc div[class*="language-"].code-block-collapsible.code-block-expanded pre {
+  max-height: none;
+  overflow: auto;
+}
+
+.vp-doc div[class*="language-"].code-block-collapsible.code-block-collapsed::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5rem;
+  pointer-events: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0%),
+    var(--vp-code-block-bg, var(--vp-c-bg-alt)) 70%
+  );
+}
+
+.vp-doc .code-fold-toggle {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  border: none;
+  border-top: 1px solid var(--vp-c-divider);
+  border-radius: 0 0 8px 8px;
+  padding: 0.5rem 0;
+  background: var(--vp-code-block-bg, var(--vp-c-bg-alt));
+  color: var(--vp-c-text-2);
+  font-size: 0.85rem;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vp-doc .code-fold-toggle:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
