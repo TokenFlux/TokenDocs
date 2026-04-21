@@ -1,11 +1,13 @@
 import { defineConfig } from 'vitepress'
 import { navItems, sidebar, siteDescription, siteTitle } from './site.js'
 
+const base = process.env.VITEPRESS_BASE ?? '/TokenDocs/'
+
 export default defineConfig({
   lang: 'zh-CN',
   title: siteTitle,
   description: siteDescription,
-  base: '/',
+  base,
   themeConfig: {
     nav: navItems,
     search: {

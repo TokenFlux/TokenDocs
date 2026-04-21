@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest'
 import config from '../docs/.vitepress/config.js'
 
 describe('site config', () => {
-  it('uses root base and local search', () => {
-    expect(config.base).toBe('/')
+  it('uses configured base and local search', () => {
+    expect(config.base).toBe(process.env.VITEPRESS_BASE ?? '/TokenDocs/')
     expect(config.themeConfig.search).toEqual({ provider: 'local' })
   })
 
