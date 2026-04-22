@@ -4,6 +4,10 @@ import config from '../docs/.vitepress/config.js'
 describe('site config', () => {
   it('uses configured base and local search', () => {
     expect(config.base).toBe(process.env.VITEPRESS_BASE ?? '/')
+    expect(config.head).toContainEqual([
+      'link',
+      { rel: 'icon', href: `${config.base.replace(/\/$/, '')}/favicon.jpg` || '/favicon.jpg' },
+    ])
     expect(config.themeConfig.search).toEqual({ provider: 'local' })
   })
 

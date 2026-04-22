@@ -115,6 +115,7 @@ export default defineConfig({
   title: siteTitle,
   description: siteDescription,
   base,
+  head: [['link', { rel: 'icon', href: withBasePath(base, '/favicon.jpg') }]],
   themeConfig: {
     nav: navItems,
     search: {
