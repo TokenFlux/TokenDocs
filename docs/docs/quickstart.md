@@ -1,6 +1,6 @@
 # 快速开始
 
-本页用于完成 TokenFlux 的首次接入，默认推荐通过 `CC-Switch` 接入 `Claude Code` 或 `Codex`。
+本页用于完成 TokenFlux 的首次接入。根据使用习惯，你可以选择 `Agent` 或 `ChatBot` 两种方式开始。
 
 ::: details For AGENTS
 批量读取文档时，可直接使用 [sitemap.xml](/sitemap.xml)。单页读取时，直接在不以 `/` 结尾的文档 URL 后追加 `.md` 即可，例如 `/docs/quickstart.md`。
@@ -11,24 +11,41 @@
 1. 按 [创建 API Key](/docs/tokenflux/create-apikey) 生成一个新的 API Key。
 2. 按 [计费说明](/docs/tokenflux/billing) 了解购买方式，并前往 [充值/订阅页面](https://tokenflux.dev/purchase) 完成充值或订阅。模型广场显示的价格即为最终计费价格。
 
-## 推荐：通过 CC-Switch 接入 Claude Code 或 Codex
+## 选择接入方式
 
-1. 按 [CC-Switch](/docs/agents/cc-switch) 完成安装。
-2. 根据使用的客户端继续完成接入。  
-   Claude Code： [Claude Code 使用指南](/docs/agents/claude-code)  
-   Codex： [Codex 使用指南](/docs/agents/codex)
-3. 完成配置后，重启客户端并开始使用。
+<DocsTabs default-tab="agent">
+  <DocsTab title="Agent" name="agent">
 
-## 不使用 CC-Switch 时
+适合在终端工作、有编程需求或希望使用 AI Agent 辅助开发的用户。
 
-如需手动配置，可直接查看以下页面中的对应说明：
+推荐通过 `CC-Switch` 接入 `Claude Code` 或 `Codex`，统一管理 API Key 和供应商配置，无需手动修改环境变量。
 
-- [Claude Code 使用指南](/docs/agents/claude-code)
-- [Codex 使用指南](/docs/agents/codex)
+**接入步骤：**
 
-## 更多客户端
+1. 按 [CC-Switch](/docs/agents/cc-switch) 完成安装和供应商配置。
+2. 根据使用的客户端继续完成接入：
+   - [Claude Code 使用指南](/docs/agents/claude-code)
+   - [Codex 使用指南](/docs/agents/codex)
+3. 配置完成后，重启客户端即可开始使用。
 
-- [OpenCode 使用指南](/docs/agents/opencode)
+如需使用其他 Agent，可参考 [OpenCode 使用指南](/docs/agents/opencode)。
+
+  </DocsTab>
+
+  <DocsTab title="ChatBot" name="chatbot">
+
+适合偏好图形界面、以日常对话为主要使用场景的用户。
+
+推荐使用 `Cherry Studio`，支持多模型切换，界面简洁，配置方便。
+
+**接入步骤：**
+
+1. 按 [创建 API Key](/docs/tokenflux/create-apikey) 生成一个 API Key。
+2. 按 [Cherry Studio 使用指南](/docs/chatbot/cherry-studio) 完成安装，并在设置中添加 TokenFlux 作为自定义服务商。
+3. 填入 API Key 和地址 `https://tokenflux.dev`，获取模型列表后即可开始对话。
+
+  </DocsTab>
+</DocsTabs>
 
 ## 继续阅读
 
