@@ -31,10 +31,33 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
 5. 保存后，等待模型列表刷新，点击添加模型**左侧**的图标，选择你需要使用的模型。
 6. 返回主页，选择刚才添加的模型即可开始对话。
 
+
 ## 下一步该怎么做？
 
 接入完成后，你可以直接在 `RikkaHub` 中与 TokenFlux 支持的模型对话。
 
-更多相关内容：
+## 使用生图
+
+> 前提：已按上方步骤完成 TokenFlux 接入，并已导入支持图像生成的模型。
+
+1. 进入**设置 → 提供商**，找到你导入的生图模型，将其**类型**改为**图像**。
+
+   <div style="text-align: center;">
+     <img src="/images/rikkahub/step-1-edit-model-type.png" alt="RikkaHub 将生图模型类型设置为图像的界面" />
+   </div>
+
+2. 返回首页，点击左侧**侧边栏**，在底部找到**生图**选项并进入。
+
+   <div style="text-align: center;">
+     <img src="/images/rikkahub/step-2-image-settings.png" alt="RikkaHub 侧边栏底部的图像生成入口" />
+   </div>
+
+3. 在生图页面选择刚才设置好的模型，即可开始生成图像。
+
+   <div style="text-align: center;">
+     <img src="/images/rikkahub/step-3-select-model.png" alt="RikkaHub 生图页面选择模型的界面" />
+   </div>
+
+## 更多相关内容：
 
 - [余额与计费](/docs/tokenflux/billing)
