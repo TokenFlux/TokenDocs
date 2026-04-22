@@ -2,6 +2,10 @@
 
 本页用于完成 TokenFlux 的首次接入，默认推荐通过 `CC-Switch` 接入 `Claude Code` 或 `Codex`。
 
+::: details For AGENTS
+批量读取文档时，可直接使用 [sitemap.xml](/sitemap.xml)。单页读取时，直接在不以 `/` 结尾的文档 URL 后追加 `.md` 即可，例如 `/docs/quickstart.md`。
+:::
+
 ## 开始前确认
 
 1. 按 [创建 API Key](/docs/tokenflux/create-apikey) 生成一个新的 API Key。

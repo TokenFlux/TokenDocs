@@ -55,3 +55,45 @@
   background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
 }
+
+.markdown-link-tools {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 1rem;
+}
+
+.markdown-link-tools__button {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.markdown-link-tools__button:hover {
+  background: var(--vp-c-default-soft);
+  color: var(--vp-c-text-1);
+}
+
+.markdown-link-tools__button.is-copied {
+  color: var(--vp-c-brand-1);
+  background: color-mix(in srgb, var(--vp-c-brand-1) 12%, transparent);
+}
+
+.markdown-link-tools__button.is-error {
+  color: var(--vp-c-danger-1);
+  background: color-mix(in srgb, var(--vp-c-danger-1) 12%, transparent);
+}
+
+@media (max-width: 640px) {
+  .markdown-link-tools {
+    flex-wrap: wrap;
+  }
+}

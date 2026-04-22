@@ -27,6 +27,14 @@ describe('docs cross-links', () => {
 
     expect(content).toContain('/docs/tokenflux/create-apikey')
     expect(content).toContain('/docs/agents/cc-switch')
+    expect(content).toContain('/sitemap.xml')
+  })
+
+  it('theme exposes markdown copy controls', () => {
+    const content = readDoc('docs/.vitepress/theme/components/MarkdownLinkTools.vue')
+
+    expect(content).toContain('复制 Markdown')
+    expect(content).not.toContain('查看 Markdown')
   })
 
   it('cc-switch entry page points to API key creation and manual setup content', () => {
