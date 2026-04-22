@@ -27,12 +27,19 @@ export const sidebar = {
     {
       text: "Agents",
       items: [
-        { text: "概览", link: "/docs/agents/" },
         { text: "CC-Switch", link: "/docs/agents/cc-switch" },
         { text: "Claude Code", link: "/docs/agents/claude-code" },
         { text: "Codex", link: "/docs/agents/codex" },
         { text: "OpenCode", link: "/docs/agents/opencode" },
       ],
+    },
+    {
+      text: "ChatBot",
+      items: [{ text: "Cherry Studio", link: "/docs/chatbot/cherry-studio" }],
+    },
+    {
+      text: "条款与政策",
+      items: [{ text: "使用政策", link: "/docs/tos/usage-policy" }],
     },
   ],
 };

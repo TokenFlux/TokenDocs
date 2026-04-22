@@ -22,6 +22,34 @@ describe('docs cross-links', () => {
     expect(content).toContain('# 计费说明')
   })
 
+  it('faq points image generation users to Cherry Studio', () => {
+    const content = readDoc('docs/docs/faq.md')
+
+    expect(content).toContain('# FAQ')
+    expect(content).toContain('生图')
+    expect(content).toContain('/docs/chatbot/cherry-studio')
+  })
+
+  it('usage policy page exists and covers core restrictions', () => {
+    const content = readDoc('docs/docs/tos/usage-policy.md')
+
+    expect(content).toContain('# 使用政策')
+    expect(content).toContain('不得将 TokenFlux 作为唯一依据')
+    expect(content).not.toContain('## 相关链接')
+  })
+
+  it('cherry studio page covers install and TokenFlux setup', () => {
+    const content = readDoc('docs/docs/chatbot/cherry-studio.md')
+
+    expect(content).toContain('# Cherry Studio 使用指南')
+    expect(content).toContain('<DocsTabs default-tab="windows">')
+    expect(content).toContain('/docs/tokenflux/create-apikey')
+    expect(content).toContain('API 地址 `https://tokenflux.dev`')
+    expect(content).toContain('gpt-5.4-mini')
+    expect(content).toContain('/images/cherry-studio/provider-type-selection.png')
+    expect(content).toContain('/images/cherry-studio/provider-config-fields.png')
+  })
+
   it('quickstart points readers to the CC-Switch docs', () => {
     const content = readDoc('docs/docs/quickstart.md')
 

@@ -40,12 +40,21 @@ describe('site config', () => {
     expect(config.themeConfig.sidebar['/docs/'][2]).toEqual({
       text: 'Agents',
       items: [
-        { text: '概览', link: '/docs/agents/' },
         { text: 'CC-Switch', link: '/docs/agents/cc-switch' },
         { text: 'Claude Code', link: '/docs/agents/claude-code' },
         { text: 'Codex', link: '/docs/agents/codex' },
         { text: 'OpenCode', link: '/docs/agents/opencode' },
       ],
+    })
+
+    expect(config.themeConfig.sidebar['/docs/'][3]).toEqual({
+      text: 'ChatBot',
+      items: [{ text: 'Cherry Studio', link: '/docs/chatbot/cherry-studio' }],
+    })
+
+    expect(config.themeConfig.sidebar['/docs/'][4]).toEqual({
+      text: '条款与政策',
+      items: [{ text: '使用政策', link: '/docs/tos/usage-policy' }],
     })
   })
 
