@@ -9,5 +9,5 @@ Cherry Studio 是一款支持多模型的桌面客户端，支持文生图模型
 **快速开始：**
 
 1. 按 [Cherry Studio 使用指南](/docs/chatbot/cherry-studio) 完成安装并接入 TokenFlux。
-2. 在模型列表中选择支持生图的模型（如 `dall-e-3` 等）。
+2. 在模型列表中选择支持生图的模型（如 `gpt-image-2` 等）。
 3. 在对话界面发送提示词，即可生成图片。
