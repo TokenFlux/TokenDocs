@@ -49,7 +49,10 @@ describe('site config', () => {
 
     expect(config.themeConfig.sidebar['/docs/'][3]).toEqual({
       text: 'ChatBot',
-      items: [{ text: 'Cherry Studio', link: '/docs/chatbot/cherry-studio' }],
+      items: [
+        { text: 'Cherry Studio', link: '/docs/chatbot/cherry-studio' },
+        { text: 'RikkaHub', link: '/docs/chatbot/rikkahub' },
+      ],
     })
 
     expect(config.themeConfig.sidebar['/docs/'][4]).toEqual({

@@ -50,11 +50,24 @@ describe('docs cross-links', () => {
     expect(content).toContain('/images/cherry-studio/provider-config-fields.png')
   })
 
+  it('rikkahub page covers Android install and TokenFlux setup', () => {
+    const content = readDoc('docs/docs/chatbot/rikkahub.md')
+
+    expect(content).toContain('# RikkaHub 使用指南')
+    expect(content).toContain('仅支持 Android')
+    expect(content).toContain('不支持 iOS')
+    expect(content).toContain('/docs/tokenflux/create-apikey')
+    expect(content).toContain('Base URL: https://tokenflux.dev/v1')
+    expect(content).toContain('/docs/tokenflux/billing')
+  })
+
   it('quickstart points readers to the CC-Switch docs', () => {
     const content = readDoc('docs/docs/quickstart.md')
 
     expect(content).toContain('/docs/tokenflux/create-apikey')
     expect(content).toContain('/docs/agents/cc-switch')
+    expect(content).toContain('/docs/agents/opencode')
+    expect(content).toContain('支持 `Claude Code`、`Codex` 和 `OpenCode`')
     expect(content).toContain('/sitemap.xml')
   })
 
@@ -71,6 +84,8 @@ describe('docs cross-links', () => {
     expect(content).toContain('/docs/tokenflux/create-apikey')
     expect(content).toContain('API 地址: https://tokenflux.dev')
     expect(content).toContain('API Key: 你的 TokenFlux API Key')
+    expect(content).toContain('`OpenCode`')
+    expect(content).toContain('/docs/agents/opencode')
   })
 
   it('agents codex page points to API key and CC-Switch setup paths', () => {

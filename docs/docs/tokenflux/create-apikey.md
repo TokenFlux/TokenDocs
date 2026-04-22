@@ -1,19 +1,23 @@
-# 快速创建 API Key
+# 创建 API Key
 
-在使用 TokenFlux 前，您需要创建 API Key。以下为具体操作步骤：
+使用 TokenFlux 前，需要先创建一个 API Key。
 
-## 创建流程
+**直接前往创建页面：[https://tokenflux.dev/keys](https://tokenflux.dev/keys)**
 
-1. 登陆 TokenFlux，进入 `API 密钥` 页面。
+## 创建步骤
+
+1. 登录后进入 [API 密钥页面](https://tokenflux.dev/keys)。
 2. 点击右上角的 `创建密钥` 按钮。
-3. 输入便于识别的名称（例如：cc-switch）。
-4. 选择合适的分组
-5. 点击创建并复制生成的密钥。
+3. 输入一个便于识别的名称（例如：`cherry-studio`、`cc-switch`）。
+4. 点击创建，复制生成的密钥并妥善保存。
 
-## 配置选项
+> **注意：** 密钥仅在创建时完整显示一次，请立即复制保存。
 
-大多数情况下，默认配置即可完成创建。如需更多设置，可额外调整：
+## 创建后做什么？
 
-- **自定义密钥**：输入固定密钥值。
-- **IP 限制**：有限性哪些地址能调用。
-- **额度限制**：直接控制资金。
+拿到 API Key 后，可以直接开始接入：
+
+- [快速开始](/docs/quickstart) — 根据使用习惯选择接入方式
+- [Cherry Studio 使用指南](/docs/chatbot/cherry-studio) — 桌面端 AI 对话客户端
+- [RikkaHub 使用指南](/docs/chatbot/rikkahub) — Android 端 AI 对话客户端
+- [CC-Switch 使用指南](/docs/agents/cc-switch) — 管理 Claude Code / Codex 的配置工具

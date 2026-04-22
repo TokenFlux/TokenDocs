@@ -1,6 +1,6 @@
 export const siteTitle = "TokenDocs";
 export const siteDescription =
-  "TokenRouter 文档站，包含 Quickstart、FAQ 与使用教程。";
+  "TokenFlux 文档站，包含 Quickstart、FAQ 与使用教程。";
 
 export const navItems = [
   { text: "Home", link: "/" },
@@ -35,7 +35,10 @@ export const sidebar = {
     },
     {
       text: "ChatBot",
-      items: [{ text: "Cherry Studio", link: "/docs/chatbot/cherry-studio" }],
+      items: [
+        { text: "Cherry Studio", link: "/docs/chatbot/cherry-studio" },
+        { text: "RikkaHub", link: "/docs/chatbot/rikkahub" },
+      ],
     },
     {
       text: "条款与政策",

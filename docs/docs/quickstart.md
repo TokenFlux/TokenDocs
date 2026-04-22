@@ -18,7 +18,7 @@
 
 适合在终端工作、有编程需求或希望使用 AI Agent 辅助开发的用户。
 
-推荐通过 `CC-Switch` 接入 `Claude Code` 或 `Codex`，统一管理 API Key 和供应商配置，无需手动修改环境变量。
+推荐通过 `CC-Switch` 统一管理 API Key 和供应商配置，支持 `Claude Code`、`Codex` 和 `OpenCode` 等多个 Agent 客户端，无需手动修改环境变量。
 
 **接入步骤：**
 
@@ -26,23 +26,27 @@
 2. 根据使用的客户端继续完成接入：
    - [Claude Code 使用指南](/docs/agents/claude-code)
    - [Codex 使用指南](/docs/agents/codex)
+   - [OpenCode 使用指南](/docs/agents/opencode)
 3. 配置完成后，重启客户端即可开始使用。
-
-如需使用其他 Agent，可参考 [OpenCode 使用指南](/docs/agents/opencode)。
 
   </DocsTab>
 
   <DocsTab title="ChatBot" name="chatbot">
 
-适合偏好图形界面、以日常对话为主要使用场景的用户。
+适合偏好图形界面、移动端或以日常对话为主要使用场景的用户。
 
-推荐使用 `Cherry Studio`，支持多模型切换，界面简洁，配置方便。
+推荐客户端：
+
+- **Cherry Studio**：桌面端（Windows / macOS / Linux），支持多模型切换，界面简洁，配置方便。
+- **RikkaHub**：Android 手机端，支持 OpenAI 兼容接口，适合移动端日常使用。
 
 **接入步骤：**
 
 1. 按 [创建 API Key](/docs/tokenflux/create-apikey) 生成一个 API Key。
-2. 按 [Cherry Studio 使用指南](/docs/chatbot/cherry-studio) 完成安装，并在设置中添加 TokenFlux 作为自定义服务商。
-3. 填入 API Key 和地址 `https://tokenflux.dev`，获取模型列表后即可开始对话。
+2. 根据设备选择客户端并完成安装：
+   - 桌面端：[Cherry Studio 使用指南](/docs/chatbot/cherry-studio)
+   - Android：[RikkaHub 使用指南](/docs/chatbot/rikkahub)
+3. 在客户端设置中添加 TokenFlux 作为自定义服务商，填入 API Key，获取模型列表后即可开始对话。
 
   </DocsTab>
 </DocsTabs>
