@@ -30,6 +30,7 @@ export const sidebar = {
         { text: "CC-Switch", link: "/docs/agents/cc-switch" },
         { text: "Claude Code", link: "/docs/agents/claude-code" },
         { text: "Codex", link: "/docs/agents/codex" },
+        { text: "Hermes", link: "/docs/agents/hermes" },
         { text: "OpenCode", link: "/docs/agents/opencode" },
       ],
     },

@@ -64,9 +64,21 @@ describe('docs cross-links', () => {
 
     expect(content).toContain('/docs/tokenflux/create-apikey')
     expect(content).toContain('/docs/agents/cc-switch')
+    expect(content).toContain('/docs/agents/hermes')
     expect(content).toContain('/docs/agents/opencode')
-    expect(content).toContain('支持 `Claude Code`、`Codex` 和 `OpenCode`')
+    expect(content).toContain('支持 `Claude Code`、`Codex`、`Hermes` 和 `OpenCode`')
     expect(content).toContain('/sitemap.xml')
+  })
+
+  it('agents hermes page points to API key creation and local config files', () => {
+    const content = readDoc('docs/docs/agents/hermes.md')
+
+    expect(content).toContain('# Hermes 使用指南')
+    expect(content).toContain('/docs/tokenflux/create-apikey')
+    expect(content).toContain('~/.hermes/config.yaml')
+    expect(content).toContain('~/.hermes/.env')
+    expect(content).toContain('https://tokenflux.dev/v1')
+    expect(content).toContain('hermes config check')
   })
 
   it('theme exposes markdown copy controls', () => {

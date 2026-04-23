@@ -18,7 +18,7 @@
 
 适合在终端工作、有编程需求或希望使用 AI Agent 辅助开发的用户。
 
-推荐通过 `CC-Switch` 统一管理 API Key 和供应商配置，支持 `Claude Code`、`Codex` 和 `OpenCode` 等多个 Agent 客户端，无需手动修改环境变量。
+推荐通过 `CC-Switch` 统一管理 API Key 和供应商配置，支持 `Claude Code`、`Codex`、`Hermes` 和 `OpenCode` 等多个 Agent 客户端，无需手动修改环境变量。
 
 **接入步骤：**
 
@@ -26,6 +26,7 @@
 2. 根据使用的客户端继续完成接入：
    - [Claude Code 使用指南](/docs/agents/claude-code)
    - [Codex 使用指南](/docs/agents/codex)
+   - [Hermes 使用指南](/docs/agents/hermes)
    - [OpenCode 使用指南](/docs/agents/opencode)
 3. 配置完成后，重启客户端即可开始使用。
 
