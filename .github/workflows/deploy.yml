@@ -18,7 +18,8 @@ jobs:
     build:
         runs-on: ubuntu-latest
         env:
-            VITEPRESS_BASE: /TokenDocs/
+            VITEPRESS_BASE: /
+            VITEPRESS_SITE_URL: https://docs.tokenflux.dev
         steps:
             - name: Checkout
               uses: actions/checkout@v4

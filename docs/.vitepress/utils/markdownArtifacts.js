@@ -1,4 +1,4 @@
-export const DEFAULT_SITE_URL = 'https://tokenflux.github.io/TokenDocs'
+export const DEFAULT_SITE_URL = 'https://docs.tokenflux.dev'
 export const UTF8_BOM = '\uFEFF'
 
 function toPosixPath(value) {
