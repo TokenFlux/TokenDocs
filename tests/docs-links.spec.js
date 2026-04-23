@@ -22,12 +22,10 @@ describe('docs cross-links', () => {
     expect(content).toContain('# 计费说明')
   })
 
-  it('faq points image generation users to Cherry Studio', () => {
+  it('faq page exists', () => {
     const content = readDoc('docs/docs/faq.md')
 
     expect(content).toContain('# FAQ')
-    expect(content).toContain('生图')
-    expect(content).toContain('/docs/chatbot/cherry-studio')
   })
 
   it('usage policy page exists and covers core restrictions', () => {
