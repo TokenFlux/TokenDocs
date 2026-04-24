@@ -100,6 +100,8 @@ npx @anthropic-ai/claude-code
 
 根据操作系统选择对应方式设置环境变量：
 
+如果你在 VSCode 或 Zed 中使用 `Claude Code`，通常同样走 `Claude Code` 的全局配置；按本节方式配置后，重启编辑器即可生效。
+
 **macOS / Linux**
 
 在终端中运行：
@@ -130,7 +132,7 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 **第二步：配置 VSCode Claude Code（可选）**
 
-如果使用 VSCode 中的 Claude Code 扩展，还需配置 `settings.json`：
+如果 VSCode 中的 Claude Code 扩展未读取到 shell 环境变量，还可以通过 `settings.json` 显式配置：
 
 **macOS / Linux 路径**
 

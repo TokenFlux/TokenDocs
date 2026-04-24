@@ -86,6 +86,8 @@
   - Windows：`%userprofile%\.codex`
   - macOS / Linux：`~/.codex`
 
+  如果你在 VSCode 或 Zed 中使用 `Codex`，通常同样走 `Codex` 的全局配置；按本节方式写入配置后，重启编辑器即可生效。
+
   建议先启动一次 `Codex` 或 `Codex App`，让程序自动初始化配置目录。
 
   **第二步：写入 `config.toml`**

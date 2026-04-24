@@ -106,7 +106,17 @@ describe('docs cross-links', () => {
     expect(content).toContain('npx @openai/codex')
     expect(content).toContain('base_url = "https://tokenflux.dev/v1"')
     expect(content).toContain('"OPENAI_API_KEY": "YOUR_TOKENFLUX_API_KEY"')
+    expect(content).toContain('VSCode 或 Zed 中使用 `Codex`')
     expect(content).toContain('config.toml')
     expect(content).toContain('auth.json')
+  })
+
+  it('agents claude code page explains editor global config behavior', () => {
+    const content = readDoc('docs/docs/agents/claude-code.md')
+
+    expect(content).toContain('# Claude Code 使用指南')
+    expect(content).toContain('VSCode 或 Zed 中使用 `Claude Code`')
+    expect(content).toContain('ANTHROPIC_BASE_URL="https://tokenflux.dev"')
+    expect(content).toContain('settings.json')
   })
 })
