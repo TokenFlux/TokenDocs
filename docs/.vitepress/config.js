@@ -12,6 +12,7 @@ import {
   getMarkdownAliasPath,
   getMarkdownOutputPaths,
   getMarkdownUrl,
+  getPageUrl,
   rewriteAbsoluteMarkdownLinks,
   shouldServeMarkdownArtifact,
   stripBasePath,
@@ -79,6 +80,18 @@ function registerMarkdownArtifactMiddleware(server) {
     const requestSiteUrl = getRequestSiteUrl(req)
 
     if (pathname === '/sitemap.xml') {
+      const sitemap = buildMarkdownSitemap(
+        relativePaths.map(relativePath => getPageUrl(relativePath, requestSiteUrl))
+      )
+
+      res.statusCode = 200
+      res.setHeader('Content-Type', 'application/xml; charset=utf-8')
+      res.setHeader('Cache-Control', 'no-cache')
+      res.end(sitemap, 'utf8')
+      return
+    }
+
+    if (pathname === '/markdown-sitemap.xml') {
       const sitemap = buildMarkdownSitemap(
         relativePaths.map(relativePath => getMarkdownUrl(relativePath, requestSiteUrl))
       )
@@ -160,6 +173,7 @@ export default defineConfig({
     const outDir = resolve(docsRoot, siteConfig.outDir)
     const { markdownFiles, relativePaths } = await getMarkdownCatalog()
     const markdownLinkMap = buildMarkdownLinkMap(relativePaths, siteUrl)
+    const pageUrls = []
     const markdownUrls = []
 
     for (const [index, filePath] of markdownFiles.entries()) {
@@ -176,9 +190,11 @@ export default defineConfig({
         await writeFile(destinationPath, markdownContent)
       }
 
+      pageUrls.push(getPageUrl(relativePath, siteUrl))
       markdownUrls.push(getMarkdownUrl(relativePath, siteUrl))
     }
 
-    await writeFile(resolve(outDir, 'sitemap.xml'), buildMarkdownSitemap(markdownUrls))
+    await writeFile(resolve(outDir, 'sitemap.xml'), buildMarkdownSitemap(pageUrls))
+    await writeFile(resolve(outDir, 'markdown-sitemap.xml'), buildMarkdownSitemap(markdownUrls))
   },
 })

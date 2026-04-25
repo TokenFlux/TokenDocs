@@ -8,6 +8,8 @@ import {
   getMarkdownAliasPath,
   getMarkdownOutputPaths,
   getMarkdownUrl,
+  getPagePath,
+  getPageUrl,
   getRoutePath,
   rewriteAbsoluteMarkdownLinks,
   shouldServeMarkdownArtifact,
@@ -20,6 +22,9 @@ describe('markdown artifacts', () => {
     expect(getRoutePath('index.md')).toBe('/')
     expect(getRoutePath('docs/quickstart.md')).toBe('/docs/quickstart')
     expect(getRoutePath('docs/agents/index.md')).toBe('/docs/agents/')
+    expect(getPagePath('index.md')).toBe('/')
+    expect(getPagePath('docs/quickstart.md')).toBe('/docs/quickstart.html')
+    expect(getPagePath('docs/agents/index.md')).toBe('/docs/agents/')
     expect(getMarkdownAliasPath('docs/quickstart.md')).toBe('/docs/quickstart.md')
     expect(getMarkdownAliasPath('docs/agents/index.md')).toBe('/docs/agents.md')
   })
@@ -46,13 +51,15 @@ describe('markdown artifacts', () => {
     expect(shouldServeMarkdownArtifact('/docs/quickstart.md?import')).toBe(false)
     expect(shouldServeMarkdownArtifact('/index.md', { 'sec-fetch-dest': 'script' })).toBe(false)
     expect(shouldServeMarkdownArtifact('/sitemap.xml')).toBe(true)
+    expect(shouldServeMarkdownArtifact('/markdown-sitemap.xml')).toBe(true)
   })
 
-  it('builds base-aware markdown links and sitemap entries', () => {
+  it('builds base-aware page and markdown sitemap entries', () => {
     expect(withBasePath('/TokenDocs/', '/docs/quickstart.md')).toBe('/TokenDocs/docs/quickstart.md')
+    expect(getPageUrl('docs/quickstart.md')).toBe('https://docs.tokenflux.dev/docs/quickstart.html')
     expect(getMarkdownUrl('docs/quickstart.md')).toBe('https://docs.tokenflux.dev/docs/quickstart.md')
-    expect(buildMarkdownSitemap(['https://docs.tokenflux.dev/docs/quickstart.md'])).toContain(
-      '<loc>https://docs.tokenflux.dev/docs/quickstart.md</loc>'
+    expect(buildMarkdownSitemap(['https://docs.tokenflux.dev/docs/quickstart.html'])).toContain(
+      '<loc>https://docs.tokenflux.dev/docs/quickstart.html</loc>'
     )
   })
 

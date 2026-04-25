@@ -27,6 +27,16 @@ export function getRoutePath(relativePath) {
   return `/${normalizedPath.slice(0, -'.md'.length)}`
 }
 
+export function getPagePath(relativePath) {
+  const routePath = getRoutePath(relativePath)
+
+  if (routePath === '/' || routePath.endsWith('/')) {
+    return routePath
+  }
+
+  return `${routePath}.html`
+}
+
 export function getMarkdownAliasPath(relativePath) {
   const routePath = getRoutePath(relativePath)
 
@@ -81,7 +91,7 @@ export function shouldServeMarkdownArtifact(url, headers = {}) {
     return false
   }
 
-  return parsedUrl.pathname === '/sitemap.xml' || parsedUrl.pathname.endsWith('.md')
+  return ['/sitemap.xml', '/markdown-sitemap.xml'].includes(parsedUrl.pathname) || parsedUrl.pathname.endsWith('.md')
 }
 
 export function withBasePath(base, path) {
@@ -94,6 +104,10 @@ export function withBasePath(base, path) {
 
 export function getMarkdownUrl(relativePath, siteUrl = DEFAULT_SITE_URL) {
   return `${normalizeSiteUrl(siteUrl)}${getMarkdownAliasPath(relativePath)}`
+}
+
+export function getPageUrl(relativePath, siteUrl = DEFAULT_SITE_URL) {
+  return `${normalizeSiteUrl(siteUrl)}${getPagePath(relativePath)}`
 }
 
 export function buildMarkdownLinkMap(relativePaths, siteUrl = DEFAULT_SITE_URL) {

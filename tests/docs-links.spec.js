@@ -67,7 +67,7 @@ describe('docs cross-links', () => {
     expect(content).toContain('/docs/agents/hermes')
     expect(content).toContain('/docs/agents/opencode')
     expect(content).toContain('支持 `Claude Code`、`Codex`、`Hermes` 和 `OpenCode`')
-    expect(content).toContain('/sitemap.xml')
+    expect(content).toContain('/markdown-sitemap.xml')
   })
 
   it('agents hermes page points to API key creation and local config files', () => {

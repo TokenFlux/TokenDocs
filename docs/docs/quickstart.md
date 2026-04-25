@@ -3,7 +3,7 @@
 本页用于完成 TokenFlux 的首次接入。根据使用习惯，你可以选择 `Agent` 或 `ChatBot` 两种方式开始。
 
 ::: details For AGENTS
-批量读取文档时，可直接使用 [sitemap.xml](/sitemap.xml)。单页读取时，直接在不以 `/` 结尾的文档 URL 后追加 `.md` 即可，例如 `/docs/quickstart.md`。
+批量读取 Markdown 文档时，可直接使用 [markdown-sitemap.xml](/markdown-sitemap.xml)。单页读取时，直接在不以 `/` 结尾的文档 URL 后追加 `.md` 即可，例如 `/docs/quickstart.md`。
 :::
 
 ## 开始前确认
