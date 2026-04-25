@@ -36,7 +36,6 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
 
 接入完成后，你可以直接在 `RikkaHub` 中与 TokenFlux 支持的模型对话。
 
-<!--
 ## 使用生图
 
 > 前提：已按上方步骤完成 TokenFlux 接入，并已导入支持图像生成的模型。
@@ -58,7 +57,6 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
    <div style="text-align: center;">
      <img src="/images/rikkahub/step-3-select-model.png" alt="RikkaHub 生图页面选择模型的界面" />
    </div>
--->
 
 ## 更多相关内容：
 
