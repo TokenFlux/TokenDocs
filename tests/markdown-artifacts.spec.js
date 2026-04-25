@@ -59,7 +59,7 @@ describe('markdown artifacts', () => {
     expect(getPageUrl('docs/quickstart.md')).toBe('https://docs.tokenflux.dev/docs/quickstart.html')
     expect(getMarkdownUrl('docs/quickstart.md')).toBe('https://docs.tokenflux.dev/docs/quickstart.md')
     expect(buildMarkdownSitemap(['https://docs.tokenflux.dev/docs/quickstart.html'])).toContain(
-      '<loc>https://docs.tokenflux.dev/docs/quickstart.html</loc>'
+      '    <loc>https://docs.tokenflux.dev/docs/quickstart.html</loc>'
     )
   })
 

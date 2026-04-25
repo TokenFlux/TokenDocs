@@ -175,7 +175,11 @@ function escapeXml(value) {
 export function buildMarkdownSitemap(urls) {
   const entries = [...new Set(urls)]
     .sort()
-    .map(url => `  <url><loc>${escapeXml(url)}</loc></url>`)
+    .map(url => [
+      '  <url>',
+      `    <loc>${escapeXml(url)}</loc>`,
+      '  </url>',
+    ].join('\n'))
     .join('\n')
 
   return [
