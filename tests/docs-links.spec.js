@@ -26,6 +26,8 @@ describe('docs cross-links', () => {
     const content = readDoc('docs/docs/faq.md')
 
     expect(content).toContain('# FAQ')
+    expect(content).toContain('## 一直断开连接怎么办？')
+    expect(content).toContain('建议先挂梯子后再试')
   })
 
   it('usage policy page exists and covers core restrictions', () => {
@@ -68,6 +70,7 @@ describe('docs cross-links', () => {
     expect(content).toContain('/docs/agents/opencode')
     expect(content).toContain('支持 `Claude Code`、`Codex`、`Hermes` 和 `OpenCode`')
     expect(content).toContain('/markdown-sitemap.xml')
+    expect(content).toContain('本站部分内容或相关服务可能需要挂梯子后访问')
   })
 
   it('agents hermes page points to API key creation and local config files', () => {

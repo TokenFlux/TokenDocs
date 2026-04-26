@@ -1,5 +1,9 @@
 # 快速开始
 
+::: tip 访问提示
+本站部分内容或相关服务可能需要挂梯子后访问。
+:::
+
 本页用于完成 TokenFlux 的首次接入。根据使用习惯，你可以选择 `Agent` 或 `ChatBot` 两种方式开始。
 
 ::: details For AGENTS
