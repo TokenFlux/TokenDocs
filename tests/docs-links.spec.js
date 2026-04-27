@@ -121,5 +121,7 @@ describe('docs cross-links', () => {
     expect(content).toContain('VSCode 或 Zed 中使用 `Claude Code`')
     expect(content).toContain('ANTHROPIC_BASE_URL="https://tokenflux.dev"')
     expect(content).toContain('settings.json')
+    expect(content).toContain('ENABLE_PROMPT_CACHING_1H')
+    expect(content).toContain('DOYO 的 Claude 渠道')
   })
 })
