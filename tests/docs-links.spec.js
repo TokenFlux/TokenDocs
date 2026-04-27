@@ -28,6 +28,8 @@ describe('docs cross-links', () => {
     expect(content).toContain('# FAQ')
     expect(content).toContain('## 一直断开连接怎么办？')
     expect(content).toContain('建议先挂梯子后再试')
+    expect(content).toContain('模型检测网站')
+    expect(content).toContain('OpenRouter')
   })
 
   it('usage policy page exists and covers core restrictions', () => {
