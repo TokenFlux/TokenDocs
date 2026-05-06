@@ -130,28 +130,6 @@ set ANTHROPIC_AUTH_TOKEN=YOUR_TOKENFLUX_API_KEY
 set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 ```
 
-**可选：开启 DOYO Claude 1h 缓存**
-
-如果你使用的是 DOYO 的 Claude 渠道，可以设置 `ENABLE_PROMPT_CACHING_1H=1` 来开启 1 小时 prompt cache，减少重复上下文开销。这个选项只对 DOYO Claude 渠道有效，其他渠道无需设置。
-
-**macOS / Linux**
-
-```bash
-export ENABLE_PROMPT_CACHING_1H=1
-```
-
-**Windows PowerShell**
-
-```powershell
-$env:ENABLE_PROMPT_CACHING_1H=1
-```
-
-**Windows CMD**
-
-```cmd
-set ENABLE_PROMPT_CACHING_1H=1
-```
-
 **第二步：配置 VSCode Claude Code（可选）**
 
 如果 VSCode 中的 Claude Code 扩展未读取到 shell 环境变量，还可以通过 `settings.json` 显式配置：
@@ -176,13 +154,56 @@ set ENABLE_PROMPT_CACHING_1H=1
     "ANTHROPIC_BASE_URL": "https://tokenflux.dev",
     "ANTHROPIC_AUTH_TOKEN": "YOUR_TOKENFLUX_API_KEY",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
-    "ENABLE_PROMPT_CACHING_1H": "1",
     "CLAUDE_CODE_ATTRIBUTION_HEADER": "0"
   }
 }
 ```
 
-将 `YOUR_TOKENFLUX_API_KEY` 替换为你的真实 API Key。`ENABLE_PROMPT_CACHING_1H` 仅对 DOYO 的 Claude 渠道有效，其他渠道可移除该项。
+将 `YOUR_TOKENFLUX_API_KEY` 替换为你的真实 API Key。
 
   </DocsTab>
 </DocsTabs>
+
+## DOYO Claude 渠道
+
+如果你使用的是 DOYO 的 Claude 渠道，可以在完成上方基础配置后，额外开启 `ENABLE_PROMPT_CACHING_1H=1`。该选项会启用 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。
+
+该配置只对 DOYO Claude 渠道有效；其他 Claude 渠道无需设置。
+
+如果你通过 `CC-Switch` 管理 Claude Code，请参考 [CC-Switch 的 DOYO Claude 渠道环境变量说明](/docs/agents/cc-switch#doyo-claude-渠道环境变量)。
+
+### 终端启动
+
+按系统设置一次环境变量后，再启动 `Claude Code`。
+
+**macOS / Linux**
+
+```bash
+export ENABLE_PROMPT_CACHING_1H=1
+```
+
+**Windows PowerShell**
+
+```powershell
+$env:ENABLE_PROMPT_CACHING_1H=1
+```
+
+**Windows CMD**
+
+```cmd
+set ENABLE_PROMPT_CACHING_1H=1
+```
+
+### VSCode / Zed
+
+如果你通过 VSCode 或 Zed 启动 `Claude Code`，可以在 `~/.claude/settings.json` 或 `%userprofile%\.claude\settings.json` 的 `env` 中补充：
+
+```json
+{
+  "env": {
+    "ENABLE_PROMPT_CACHING_1H": "1"
+  }
+}
+```
+
+如果文件里已经有 `env`，只需要把 `ENABLE_PROMPT_CACHING_1H` 这一行合并进去，不要重复创建第二个 `env`。
