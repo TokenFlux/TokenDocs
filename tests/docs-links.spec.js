@@ -37,6 +37,8 @@ describe('docs cross-links', () => {
 
     expect(content).toContain('# 使用政策')
     expect(content).toContain('不得将 TokenFlux 作为唯一依据')
+    expect(content).toContain('禁止二次分发')
+    expect(content).toContain('有权立即封禁相关账号')
     expect(content).not.toContain('## 相关链接')
   })
 
