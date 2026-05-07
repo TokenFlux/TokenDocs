@@ -21,6 +21,7 @@ export const sidebar = {
       items: [
         { text: "创建 API Key", link: "/docs/tokenflux/create-apikey" },
         { text: "计费说明", link: "/docs/tokenflux/billing" },
+        { text: "发票说明", link: "/docs/tokenflux/invoice" },
         { text: "邀请返利", link: "/docs/tokenflux/referral" },
       ],
     },

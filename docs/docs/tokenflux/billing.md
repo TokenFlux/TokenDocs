@@ -54,4 +54,5 @@
 
 - [模型广场](https://tokenflux.dev/models) — 查看所有模型的价格
 - [充值/订阅](https://tokenflux.dev/purchase) — 购买推理积分
+- [发票说明](/docs/tokenflux/invoice) — 了解发票和 invoice 处理方式
 - [邀请返利](/docs/tokenflux/referral) — 邀请好友获得返利

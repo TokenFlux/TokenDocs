@@ -20,6 +20,18 @@ describe('docs cross-links', () => {
     const content = readDoc('docs/docs/tokenflux/billing.md')
 
     expect(content).toContain('# 计费说明')
+    expect(content).toContain('/docs/tokenflux/invoice')
+  })
+
+  it('invoice page explains manual mainland invoice handling', () => {
+    const content = readDoc('docs/docs/tokenflux/invoice.md')
+
+    expect(content).toContain('# 发票说明')
+    expect(content).toContain('Stripe 支付会自动生成')
+    expect(content).toContain('大陆普通发票')
+    expect(content).toContain('6%')
+    expect(content).toContain('深圳市萌凛科技有限责任公司')
+    expect(content).not.toContain('大陆专用发票')
   })
 
   it('faq page exists', () => {
