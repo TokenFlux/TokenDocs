@@ -1,0 +1,9 @@
+[    1254ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://docs.tokenflux.dev/TokenDocs/assets/chunks/theme.DmyiapTs.js:0
+[    1256ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://docs.tokenflux.dev/TokenDocs/assets/index.md.D5inEa7k.lean.js:0
+[    1257ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://docs.tokenflux.dev/TokenDocs/assets/app.Dlxc_hyY.js:0
+[    1261ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://docs.tokenflux.dev/TokenDocs/assets/inter-roman-latin.Di8DUHzh.woff2:0
+[    1262ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://docs.tokenflux.dev/TokenDocs/assets/chunks/framework.BSBjKbSj.js:0
+[    1263ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://docs.tokenflux.dev/TokenDocs/vp-icons.css:0
+[    1265ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://docs.tokenflux.dev/TokenDocs/assets/style.nD1oFvhb.css:0
+[    1462ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://docs.tokenflux.dev/TokenDocs/favicon.jpg:0
+[    4463ms] [WARNING] The resource https://docs.tokenflux.dev/TokenDocs/assets/inter-roman-latin.Di8DUHzh.woff2 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://docs.tokenflux.dev/:0

@@ -1,0 +1,43 @@
+- generic [ref=e3]:
+  - link "Skip to content" [ref=e4] [cursor=pointer]:
+    - /url: "#VPContent"
+  - banner [ref=e5]:
+    - generic [ref=e8]:
+      - link "TokenDocs" [ref=e11] [cursor=pointer]:
+        - /url: /TokenDocs/
+      - generic [ref=e13]:
+        - button "Search" [ref=e16]:
+          - generic [ref=e17]: Search
+          - generic [ref=e18]: K
+        - navigation "Main Navigation" [ref=e19]:
+          - text: Main Navigation
+          - link "Home" [ref=e20] [cursor=pointer]:
+            - /url: /TokenDocs/
+          - link "Docs" [ref=e21] [cursor=pointer]:
+            - /url: /TokenDocs/docs/quickstart.html
+        - switch [ref=e23]
+        - generic [ref=e24]:
+          - button "extra navigation" [ref=e25]
+          - generic [ref=e29]:
+            - paragraph [ref=e30]: Appearance
+            - switch [ref=e32]
+        - button "mobile navigation" [ref=e33]
+  - generic [ref=e35]:
+    - generic [ref=e38]:
+      - heading "TokenDocsTokenFlux 文档站" [level=1] [ref=e39]
+      - paragraph [ref=e40]: 包含 Quickstart、FAQ 与使用教程
+      - generic [ref=e41]:
+        - link "Quickstart" [ref=e43] [cursor=pointer]:
+          - /url: /TokenDocs/docs/quickstart.html
+        - link "FAQ" [ref=e45] [cursor=pointer]:
+          - /url: /TokenDocs/docs/faq.html
+    - generic [ref=e48]:
+      - article [ref=e51]:
+        - heading "多端接入" [level=2] [ref=e52]
+        - paragraph [ref=e53]: 支持通过 Claude Code、Codex、OpenCode、Cherry Studio、RikkaHub 等客户端接入 TokenFlux。
+      - article [ref=e56]:
+        - heading "统一模型入口" [level=2] [ref=e57]
+        - paragraph [ref=e58]: 使用同一套 API Key 接入多种模型与兼容客户端，减少重复配置成本。
+      - article [ref=e61]:
+        - heading "按需开始" [level=2] [ref=e62]
+        - paragraph [ref=e63]: 可按 Agent 或 ChatBot 两种方式开始使用，适合终端工作流、桌面客户端和移动端场景。

@@ -60,10 +60,6 @@
   </DocsTab>
 </DocsTabs>
 
-## 高级：开启 Fast Mode / 插件页面
-
-如果你使用 `Codex` 的 API Key 模式，可能默认看不到 `Fast Mode` 和插件页面。需要开启这些入口时，可参考 [Codex Fast Mode / 插件页面](/docs/agents/codex-fast-plugins)。
-
 ## 导入
 
 安装完成后，选择以下两种方式之一将 `Codex` 接入 `TokenFlux`。

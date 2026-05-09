@@ -1,0 +1,69 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "Cherry Studio Cherry Studio" [ref=e7] [cursor=pointer]:
+            - /url: /
+          - link "GitHub 44.0k" [ref=e187] [cursor=pointer]:
+            - /url: https://github.com/CherryHQ/cherry-studio
+        - generic [ref=e14]:
+          - navigation [ref=e15]
+          - link "下载" [ref=e30] [cursor=pointer]:
+            - /url: /download
+    - generic [ref=e34]:
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "Cherry Studio v1.9.2" [level=1] [ref=e191]
+          - paragraph [ref=e192]: 发布时间：2026/4/21
+        - generic [ref=e39]:
+          - paragraph [ref=e40]
+          - generic [ref=e45]
+        - generic [ref=e193]:
+          - generic [ref=e194]
+          - button "其他版本" [ref=e206] [cursor=pointer]
+        - generic [ref=e64]:
+          - text: 下载慢？试试
+          - link "夸克网盘" [ref=e65] [cursor=pointer]:
+            - /url: https://pan.quark.cn/s/4044324d0ecd
+        - generic [ref=e210]:
+          - generic [ref=e211]
+          - generic [ref=e214]
+      - contentinfo [ref=e66]:
+        - generic [ref=e68]:
+          - generic [ref=e69]
+          - generic [ref=e92]
+          - generic [ref=e122]
+        - generic [ref=e135]:
+          - paragraph [ref=e136]
+          - generic [ref=e139]
+  - generic [ref=e152]:
+    - generic [ref=e153]:
+      - button "Select Language" [ref=e155] [cursor=pointer]:
+        - img [ref=e156]
+        - generic [ref=e159]: ZH
+        - img [ref=e160]
+      - button [ref=e162]:
+        - img [ref=e163]
+    - navigation [ref=e166]:
+      - list [ref=e167]:
+        - listitem [ref=e168]:
+          - link "主页" [ref=e169] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e170]:
+          - link "下载" [ref=e171] [cursor=pointer]:
+            - /url: /download
+        - listitem [ref=e173]:
+          - link "主题" [ref=e174] [cursor=pointer]:
+            - /url: /theme
+        - listitem [ref=e175]:
+          - link "招聘" [ref=e176] [cursor=pointer]:
+            - /url: /careers
+        - listitem [ref=e177]:
+          - link "企业版" [ref=e178] [cursor=pointer]:
+            - /url: https://enterprise.cherry-ai.com
+        - listitem [ref=e179]:
+          - link "文档" [ref=e180] [cursor=pointer]:
+            - /url: https://docs.cherry-ai.com/
+    - paragraph [ref=e182]: Cherry Studio
+  - img [ref=e185] [cursor=pointer]

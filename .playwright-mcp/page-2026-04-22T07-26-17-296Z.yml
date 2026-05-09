@@ -1,0 +1,341 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - link "Cherry Studio Cherry Studio" [ref=e7] [cursor=pointer]:
+            - /url: /
+            - img "Cherry Studio" [ref=e9]
+            - generic [ref=e11]: Cherry Studio
+          - link "GitHub 44.0k" [ref=e187] [cursor=pointer]:
+            - /url: https://github.com/CherryHQ/cherry-studio
+            - img "GitHub" [ref=e13]
+            - generic [ref=e188]:
+              - img [ref=e189]
+              - text: 44.0k
+        - generic [ref=e14]:
+          - navigation [ref=e15]:
+            - link "主页" [ref=e16] [cursor=pointer]:
+              - /url: /
+            - link "主题" [ref=e17] [cursor=pointer]:
+              - /url: /theme
+            - link "招聘" [ref=e18] [cursor=pointer]:
+              - /url: /careers
+              - text: 招聘
+            - link "企业版" [ref=e22] [cursor=pointer]:
+              - /url: https://enterprise.cherry-ai.com
+              - text: 企业版
+              - img [ref=e23]
+            - link "文档" [ref=e26] [cursor=pointer]:
+              - /url: https://docs.cherry-ai.com/
+              - text: 文档
+              - img [ref=e27]
+          - link "下载" [ref=e30] [cursor=pointer]:
+            - /url: /download
+            - img [ref=e31]
+            - text: 下载
+    - generic [ref=e34]:
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - heading "Cherry Studio v1.9.2" [level=1] [ref=e191]
+          - paragraph [ref=e192]: 发布时间：2026/4/21
+        - generic [ref=e39]:
+          - paragraph [ref=e40]:
+            - img [ref=e41]
+            - generic [ref=e43]: 检测到的系统：Linux 芯片架构：x64
+          - generic [ref=e45]:
+            - button "Windows" [active] [ref=e46] [cursor=pointer]: Windows
+            - button "macOS" [ref=e47] [cursor=pointer]: macOS
+            - button "Linux" [ref=e48] [cursor=pointer]: Linux
+        - generic [ref=e193]:
+          - generic [ref=e199]:
+            - generic [ref=e200]:
+              - heading "Windows 标准版" [level=3] [ref=e323]
+              - paragraph [ref=e202]: 适合大多数电脑
+              - paragraph [ref=e203]: Cherry-Studio-1.9.2-x64-setup.exe
+            - button "立即下载" [ref=e204] [cursor=pointer]:
+              - img
+              - text: 立即下载
+          - generic [ref=e205]:
+            - button "其他版本" [ref=e206] [cursor=pointer]:
+              - generic [ref=e207]: 其他版本
+              - img [ref=e208]
+            - generic [ref=e279]:
+              - button "Windows 便携版 无需安装，解压即用" [ref=e324] [cursor=pointer]:
+                - generic [ref=e325]:
+                  - generic [ref=e326]: Windows 便携版
+                  - generic [ref=e327]: 无需安装，解压即用
+                - img [ref=e328]
+              - button "Windows 标准版 (ARM 版) 适用于 ARM 设备" [ref=e331] [cursor=pointer]:
+                - generic [ref=e332]:
+                  - generic [ref=e333]: Windows 标准版 (ARM 版)
+                  - generic [ref=e334]: 适用于 ARM 设备
+                - img [ref=e335]
+              - button "Windows 便携版 (ARM 版) 适用于 ARM 设备" [ref=e338] [cursor=pointer]:
+                - generic [ref=e339]:
+                  - generic [ref=e340]: Windows 便携版 (ARM 版)
+                  - generic [ref=e341]: 适用于 ARM 设备
+                - img [ref=e342]
+        - generic [ref=e64]:
+          - text: 下载慢？试试
+          - link "夸克网盘" [ref=e65] [cursor=pointer]:
+            - /url: https://pan.quark.cn/s/4044324d0ecd
+        - generic [ref=e210]:
+          - generic [ref=e211]:
+            - heading "更新日志" [level=2] [ref=e212]
+            - paragraph [ref=e213]: 版本 v1.9.2
+          - generic [ref=e214]:
+            - heading "What's Changed" [level=2] [ref=e215]
+            - list [ref=e216]:
+              - listitem [ref=e217]:
+                - text: "fix(openclaw): persist language selection in overview page by @404-Page-Found in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/13992" [ref=e218] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/13992
+              - listitem [ref=e219]:
+                - text: "fix(agents): set NODE_PATH so spawned Claude Code process can resolve @img/sharp by @beyondkmp in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14183" [ref=e220] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14183
+              - listitem [ref=e221]:
+                - text: "fix(agents): sync agent settings changes to active session by @DeJeune in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14205" [ref=e222] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14205
+              - listitem [ref=e223]:
+                - text: "fix(skills): support agent-authored skills via skills tool init/register by @DeJeune in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14184" [ref=e224] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14184
+              - listitem [ref=e225]:
+                - text: "fix: update dify knowledge retrieval payload by @kovsu in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14246" [ref=e226] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14246
+              - listitem [ref=e227]:
+                - text: "feat(agents): add \"Add More Skills\" button to agent skills settings by @kennyzheng-builds in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14258" [ref=e228] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14258
+              - listitem [ref=e229]:
+                - text: "fix: limit topic naming retries and timeout by @kovsu in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14265" [ref=e230] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14265
+              - listitem [ref=e231]:
+                - text: "feat(skills): per-agent skill enablement with workspace symlinks by @DeJeune in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14247" [ref=e232] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14247
+              - listitem [ref=e233]:
+                - text: "chore(deps-dev): bump axios from 1.13.2 to 1.15.0 by @dependabot[bot] in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14293" [ref=e234] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14293
+              - listitem [ref=e235]:
+                - text: "chore(deps-dev): bump lodash from 4.17.21 to 4.18.1 by @dependabot[bot] in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14294" [ref=e236] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14294
+              - listitem [ref=e237]:
+                - text: "chore(deps): bump form-data from 2.3.3 to 4.0.4 by @dependabot[bot] in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14295" [ref=e238] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14295
+              - listitem [ref=e239]:
+                - text: "feat(i18n): add Vietnamese (vi-VN) language support by @kennyzheng-builds in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14279" [ref=e240] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14279
+              - listitem [ref=e241]:
+                - text: "fix: sync builtin agent prompt updates to sessions by @kovsu in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14304" [ref=e242] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14304
+              - listitem [ref=e243]:
+                - text: "fix(knowledge): support Ollama knowledge embeddings by @404-Page-Found in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14172" [ref=e244] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14172
+              - listitem [ref=e245]:
+                - text: "🤖 Daily Auto I18N Sync: Apr 17, 2026 by @github-actions[bot] in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14321" [ref=e246] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14321
+              - listitem [ref=e247]:
+                - text: "fix(agents): set Cherry Assistant default avatar to 🍒 by @DeJeune in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14333" [ref=e248] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14333
+              - listitem [ref=e249]:
+                - text: "hotfix: Custom params not passed to"
+                - code [ref=e250]: Gemini
+                - text: API when using
+                - code [ref=e251]: NewAPI
+                - text: /
+                - code [ref=e252]: AiHubMix
+                - text: by @ELDment in
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14352" [ref=e253] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14352
+              - listitem [ref=e254]:
+                - text: "fix(search): support phrase search and fix CJK matching in history search by @Raymond8196 in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14225" [ref=e255] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14225
+              - listitem [ref=e256]:
+                - text: "fix(export): add obsidian:// to allowed protocol whitelist by @rfslzy in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14366" [ref=e257] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14366
+              - listitem [ref=e258]:
+                - text: "fix: Fix Ollama model list loading when metadata contains null families values by @lancediarmuid in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14364" [ref=e259] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14364
+              - listitem [ref=e260]:
+                - text: "fix(analytics): respect data collection setting for all tracking events by @Yuerchu in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14390" [ref=e261] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14390
+              - listitem [ref=e262]:
+                - text: "fix: update node-abi for Electron 41 packaging by @kangfenmao in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14403" [ref=e263] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14403
+              - listitem [ref=e264]:
+                - text: "chore: release v1.9.2 by @kangfenmao in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14406" [ref=e265] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14406
+            - heading "New Contributors" [level=2] [ref=e266]
+            - list [ref=e267]:
+              - listitem [ref=e268]:
+                - text: "@ELDment made their first contribution in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14352" [ref=e269] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14352
+              - listitem [ref=e270]:
+                - text: "@rfslzy made their first contribution in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14366" [ref=e271] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14366
+              - listitem [ref=e272]:
+                - text: "@lancediarmuid made their first contribution in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14364" [ref=e273] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14364
+              - listitem [ref=e274]:
+                - text: "@Yuerchu made their first contribution in"
+                - link "https://github.com/CherryHQ/cherry-studio/pull/14390" [ref=e275] [cursor=pointer]:
+                  - /url: https://github.com/CherryHQ/cherry-studio/pull/14390
+            - paragraph [ref=e276]:
+              - strong [ref=e277]: Full Changelog
+              - text: ":"
+              - link "https://github.com/CherryHQ/cherry-studio/compare/v1.9.1...v1.9.2" [ref=e278] [cursor=pointer]:
+                - /url: https://github.com/CherryHQ/cherry-studio/compare/v1.9.1...v1.9.2
+      - contentinfo [ref=e66]:
+        - generic [ref=e68]:
+          - generic [ref=e69]:
+            - img "Cherry Studio" [ref=e70]
+            - paragraph [ref=e71]: Cherry Studio 是一个支持多平台的 AI 客户端，我们致力于让更多人能够享受到 AI 带来的便利。
+            - generic [ref=e72]:
+              - link "X X" [ref=e73] [cursor=pointer]:
+                - /url: https://x.com/CherryStudioHQ
+                - img "X" [ref=e74]
+                - img "X" [ref=e75]
+              - link "Telegram Telegram" [ref=e76] [cursor=pointer]:
+                - /url: https://t.me/CherryStudioAI
+                - img "Telegram" [ref=e77]
+                - img "Telegram" [ref=e78]
+              - link "GitHub GitHub" [ref=e79] [cursor=pointer]:
+                - /url: https://github.com/CherryHQ/cherry-studio
+                - img "GitHub" [ref=e80]
+                - img "GitHub" [ref=e81]
+              - link "GitCode GitCode" [ref=e82] [cursor=pointer]:
+                - /url: https://gitcode.com/CherryHQ/cherry-studio
+                - img "GitCode" [ref=e83]
+                - img "GitCode" [ref=e84]
+              - link "Product Hunt Product Hunt" [ref=e85] [cursor=pointer]:
+                - /url: https://www.producthunt.com/products/cherry-studio
+                - img "Product Hunt" [ref=e86]
+                - img "Product Hunt" [ref=e87]
+              - generic [ref=e88] [cursor=pointer]:
+                - button "RSS RSS" [ref=e89]:
+                  - img "RSS" [ref=e90]
+                  - img "RSS" [ref=e91]
+                - generic: 已复制RSS
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - heading "Cherry Studio" [level=4] [ref=e94]
+              - list [ref=e95]:
+                - listitem [ref=e96]:
+                  - link "GitHub" [ref=e97] [cursor=pointer]:
+                    - /url: https://github.com/CherryHQ/cherry-studio
+                - listitem [ref=e98]:
+                  - link "GitCode" [ref=e99] [cursor=pointer]:
+                    - /url: https://gitcode.com/CherryHQ/cherry-studio
+                - listitem [ref=e100]:
+                  - link "使用文档" [ref=e101] [cursor=pointer]:
+                    - /url: https://docs.cherry-ai.com
+                - listitem [ref=e102]:
+                  - link "问题反馈" [ref=e103] [cursor=pointer]:
+                    - /url: https://github.com/CherryHQ/cherry-studio/issues
+            - generic [ref=e104]:
+              - heading "友情链接" [level=4] [ref=e105]
+              - list [ref=e106]:
+                - listitem [ref=e107]:
+                  - link "ocoolAI" [ref=e108] [cursor=pointer]:
+                    - /url: https://one.ocoolai.com
+                - listitem [ref=e109]:
+                  - link "Poe" [ref=e110] [cursor=pointer]:
+                    - /url: https://poe.com/
+                - listitem [ref=e111]:
+                  - link "算了么" [ref=e112] [cursor=pointer]:
+                    - /url: https://suanleme.cn
+                - listitem [ref=e113]:
+                  - link "攻壳智能体" [ref=e114] [cursor=pointer]:
+                    - /url: https://gongke.net/
+                - listitem [ref=e115]:
+                  - link "AI 工具集" [ref=e116] [cursor=pointer]:
+                    - /url: https://ai-bot.cn
+            - generic [ref=e117]:
+              - heading "联系我们" [level=4] [ref=e118]
+              - img "微信公众号二维码" [ref=e120]
+              - paragraph [ref=e121]: 官方微信公众号
+          - generic [ref=e122]:
+            - heading "联系我们" [level=4] [ref=e123]
+            - list [ref=e124]:
+              - listitem [ref=e125]:
+                - generic [ref=e126]: "技术支持:"
+                - link "support@cherry-ai.com" [ref=e127] [cursor=pointer]:
+                  - /url: mailto:support@cherry-ai.com
+              - listitem [ref=e128]:
+                - generic [ref=e129]: "商务合作:"
+                - link "bd@cherry-ai.com" [ref=e130] [cursor=pointer]:
+                  - /url: mailto:bd@cherry-ai.com
+              - listitem [ref=e131]:
+                - link "反馈建议" [ref=e132] [cursor=pointer]:
+                  - /url: https://docs.cherry-ai.com/question-contact/suggestions
+        - generic [ref=e135]:
+          - paragraph [ref=e136]:
+            - text: Copyright © 2026 上海千彗科技有限公司
+            - link "沪ICP备2021031071号-3" [ref=e137] [cursor=pointer]:
+              - /url: https://beian.miit.gov.cn/
+            - text: "|"
+            - link "沪公网安备31011402021679号" [ref=e138] [cursor=pointer]:
+              - /url: https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402021679
+          - generic [ref=e139]:
+            - button "Select Language" [ref=e141] [cursor=pointer]:
+              - img [ref=e142]
+              - generic [ref=e145]: ZH
+              - img [ref=e146]
+            - generic [ref=e148] [cursor=pointer]:
+              - button "深色" [ref=e149]
+              - button "浅色" [ref=e150]
+              - button "跟随浏览器" [ref=e151]
+  - generic [ref=e152]:
+    - generic [ref=e153]:
+      - button "Select Language" [ref=e155] [cursor=pointer]:
+        - img [ref=e156]
+        - generic [ref=e159]: ZH
+        - img [ref=e160]
+      - button [ref=e162]:
+        - img [ref=e163]
+    - navigation [ref=e166]:
+      - list [ref=e167]:
+        - listitem [ref=e168]:
+          - link "主页" [ref=e169] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e170]:
+          - link "下载" [ref=e171] [cursor=pointer]:
+            - /url: /download
+            - text: 下载
+        - listitem [ref=e173]:
+          - link "主题" [ref=e174] [cursor=pointer]:
+            - /url: /theme
+        - listitem [ref=e175]:
+          - link "招聘" [ref=e176] [cursor=pointer]:
+            - /url: /careers
+        - listitem [ref=e177]:
+          - link "企业版" [ref=e178] [cursor=pointer]:
+            - /url: https://enterprise.cherry-ai.com
+        - listitem [ref=e179]:
+          - link "文档" [ref=e180] [cursor=pointer]:
+            - /url: https://docs.cherry-ai.com/
+    - paragraph [ref=e182]: Cherry Studio
+  - img [ref=e185] [cursor=pointer]

@@ -131,19 +131,6 @@ describe('docs cross-links', () => {
     expect(content).toContain('VSCode 或 Zed 中使用 `Codex`')
     expect(content).toContain('config.toml')
     expect(content).toContain('auth.json')
-    expect(content).toContain('/docs/agents/codex-fast-plugins')
-  })
-
-  it('agents codex fast plugins page explains patch workflow', () => {
-    const content = readDoc('docs/docs/agents/codex-fast-plugins.md')
-
-    expect(content).toContain('# Patch Codex App - Enable Fast Mode & Plugins for API Mode')
-    expect(content).toContain('name: patch-codex-fast')
-    expect(content).toContain('Fast/Speed mode')
-    expect(content).toContain('Plugins')
-    expect(content).toContain('app.asar.bak')
-    expect(content).toContain('@electron/fuses')
-    expect(content).toContain('permissions-mode-helpers')
   })
 
   it('agents claude code page explains editor global config behavior', () => {
