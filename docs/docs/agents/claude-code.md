@@ -164,6 +164,7 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
   </DocsTab>
 </DocsTabs>
 
+<!--
 ## DOYO Claude 渠道
 
 如果你使用的是 DOYO 的 Claude 渠道，可以在完成上方基础配置后，额外开启 `ENABLE_PROMPT_CACHING_1H=1`。该选项会启用 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。
@@ -171,6 +172,7 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 该配置只对 DOYO Claude 渠道有效；其他 Claude 渠道无需设置。
 
 如果你通过 `CC-Switch` 管理 Claude Code，请参考 [CC-Switch 的 DOYO Claude 渠道环境变量说明](/docs/agents/cc-switch#doyo-claude-渠道环境变量)。
+-->
 
 ### 终端启动
 
