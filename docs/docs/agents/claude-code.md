@@ -172,7 +172,6 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 该配置只对 DOYO Claude 渠道有效；其他 Claude 渠道无需设置。
 
 如果你通过 `CC-Switch` 管理 Claude Code，请参考 [CC-Switch 的 DOYO Claude 渠道环境变量说明](/docs/agents/cc-switch#doyo-claude-渠道环境变量)。
--->
 
 ### 终端启动
 
@@ -209,3 +208,4 @@ set ENABLE_PROMPT_CACHING_1H=1
 ```
 
 如果文件里已经有 `env`，只需要把 `ENABLE_PROMPT_CACHING_1H` 这一行合并进去，不要重复创建第二个 `env`。
+-->
