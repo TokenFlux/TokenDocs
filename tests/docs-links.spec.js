@@ -101,6 +101,21 @@ describe('docs cross-links', () => {
     expect(content).toContain('hermes config check')
   })
 
+  it('agents opencode page groups models by TokenFlux marketplace group', () => {
+    const content = readDoc('docs/docs/agents/opencode.md')
+
+    expect(content).toContain('"model": "tokenflux-chatgpt-plus/gpt-5.4"')
+    expect(content).toContain('"tokenflux-chatgpt-pro"')
+    expect(content).toContain('"tokenflux-chatgpt-plus"')
+    expect(content).toContain('"tokenflux-deepseek"')
+    expect(content).toContain('"tokenflux-mimo"')
+    expect(content).toContain('"npm": "@ai-sdk/openai-compatible"')
+    expect(content).toContain('"npm": "@ai-sdk/anthropic"')
+    expect(content).toContain('"gpt-5.4-pro"')
+    expect(content).toContain('"deepseek-v4-pro"')
+    expect(content).toContain('"mimo-v2.5-pro"')
+  })
+
   it('theme exposes markdown copy controls', () => {
     const content = readDoc('docs/.vitepress/theme/components/MarkdownLinkTools.vue')
 

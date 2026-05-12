@@ -89,189 +89,108 @@ scoop install opencode
 
 **第二步：填写配置**
 
-将以下内容复制到 `opencode.json`：
+将以下内容复制到 `opencode.json`。[模型广场](https://tokenflux.dev/models) 当前有 4 个公开分组；如果你有多张 TokenFlux API Key，就按分组拆成多个 provider key，同一分组里的模型放在同一个 provider 里即可。
 
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "tokenflux/gpt-5.4",
-  "small_model": "tokenflux/gpt-5.4-mini",
+  "model": "tokenflux-chatgpt-plus/gpt-5.4",
+  "small_model": "tokenflux-chatgpt-plus/gpt-5.4-mini",
   "provider": {
-    "tokenflux": {
+    "tokenflux-chatgpt-pro": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "TokenFlux",
+      "name": "TokenFlux ChatGPT Pro",
       "options": {
         "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_TOKENFLUX_API_KEY"
+        "apiKey": "YOUR_CHATGPT_PRO_API_KEY"
       },
       "models": {
+        "codex-auto-review": {
+          "name": "codex-auto-review"
+        },
         "gpt-5.2": {
-          "name": "GPT-5.2",
-          "limit": {
-            "context": 400000,
-            "output": 128000
-          },
-          "variants": {
-            "none": {
-              "reasoningEffort": "none"
-            },
-            "low": {
-              "reasoningEffort": "low"
-            },
-            "medium": {
-              "reasoningEffort": "medium"
-            },
-            "high": {
-              "reasoningEffort": "high"
-            },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
-            }
-          }
+          "name": "GPT-5.2"
         },
-        "gpt-5.3-codex": {
-          "name": "GPT-5.3 Codex",
-          "limit": {
-            "context": 400000,
-            "output": 128000
-          },
-          "variants": {
-            "none": {
-              "reasoningEffort": "none"
-            },
-            "low": {
-              "reasoningEffort": "low"
-            },
-            "medium": {
-              "reasoningEffort": "medium"
-            },
-            "high": {
-              "reasoningEffort": "high"
-            },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
-            }
-          }
+        "gpt-5.3": {
+          "name": "gpt-5.3"
         },
-        "gpt-5.3-codex-spark": {
-          "name": "GPT-5.3 Codex Spark",
-          "limit": {
-            "context": 128000,
-            "output": 32000
-          },
-          "variants": {
-            "none": {
-              "reasoningEffort": "none"
-            },
-            "low": {
-              "reasoningEffort": "low"
-            },
-            "medium": {
-              "reasoningEffort": "medium"
-            },
-            "high": {
-              "reasoningEffort": "high"
-            },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
-            }
-          }
+        "gpt-5.3-spark": {
+          "name": "gpt-5.3-spark"
         },
         "gpt-5.4": {
-          "name": "GPT-5.4",
-          "limit": {
-            "context": 1050000,
-            "output": 128000
-          },
-          "variants": {
-            "none": {
-              "reasoningEffort": "none"
-            },
-            "low": {
-              "reasoningEffort": "low"
-            },
-            "medium": {
-              "reasoningEffort": "medium"
-            },
-            "high": {
-              "reasoningEffort": "high"
-            },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
-            }
-          }
+          "name": "GPT-5.4"
         },
         "gpt-5.4-mini": {
-          "name": "GPT-5.4 Mini",
-          "limit": {
-            "context": 400000,
-            "output": 128000
-          },
-          "variants": {
-            "none": {
-              "reasoningEffort": "none"
-            },
-            "low": {
-              "reasoningEffort": "low"
-            },
-            "medium": {
-              "reasoningEffort": "medium"
-            },
-            "high": {
-              "reasoningEffort": "high"
-            },
-            "xhigh": {
-              "reasoningEffort": "xhigh"
-            }
-          }
+          "name": "GPT-5.4 Mini"
         },
-        "grok-4.20-0309-reasoning": {
-          "name": "Grok 4.20 0309 Reasoning"
+        "gpt-5.4-pro": {
+          "name": "gpt-5.4-pro"
         },
-        "grok-4.20-auto": {
-          "name": "Grok 4.20 Auto"
+        "gpt-5.5": {
+          "name": "GPT-5.5"
+        }
+      }
+    },
+    "tokenflux-chatgpt-plus": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "TokenFlux ChatGPT Plus",
+      "options": {
+        "baseURL": "https://tokenflux.dev/v1",
+        "apiKey": "YOUR_CHATGPT_PLUS_API_KEY"
+      },
+      "models": {
+        "codex-auto-review": {
+          "name": "codex-auto-review"
         },
-        "grok-4.20-fast": {
-          "name": "Grok 4.20 Fast"
+        "gpt-5.2": {
+          "name": "GPT-5.2"
         },
-        "grok-imagine-image-lite": {
-          "name": "Grok Imagine Image Lite"
+        "gpt-5.3": {
+          "name": "gpt-5.3"
         },
-        "claude-opus-4-6": {
-          "name": "Claude Opus 4.6",
-          "limit": {
-            "context": 1000000,
-            "output": 128000
-          },
-          "variants": {
-            "low": {
-              "reasoningEffort": "low"
-            },
-            "medium": {
-              "reasoningEffort": "medium"
-            },
-            "high": {
-              "reasoningEffort": "high"
-            }
-          }
+        "gpt-5.3-spark": {
+          "name": "gpt-5.3-spark"
         },
-        "claude-sonnet-4-6": {
-          "name": "Claude Sonnet 4.6",
-          "limit": {
-            "context": 1000000,
-            "output": 64000
-          },
-          "variants": {
-            "low": {
-              "reasoningEffort": "low"
-            },
-            "medium": {
-              "reasoningEffort": "medium"
-            },
-            "high": {
-              "reasoningEffort": "high"
-            }
-          }
+        "gpt-5.4": {
+          "name": "GPT-5.4"
+        },
+        "gpt-5.4-mini": {
+          "name": "GPT-5.4 Mini"
+        },
+        "gpt-5.5": {
+          "name": "GPT-5.5"
+        }
+      }
+    },
+    "tokenflux-deepseek": {
+      "npm": "@ai-sdk/anthropic",
+      "name": "TokenFlux DeepSeek",
+      "options": {
+        "baseURL": "https://tokenflux.dev/v1",
+        "apiKey": "YOUR_DEEPSEEK_API_KEY"
+      },
+      "models": {
+        "deepseek-v4-flash": {
+          "name": "deepseek-v4-flash"
+        },
+        "deepseek-v4-pro": {
+          "name": "deepseek-v4-pro"
+        }
+      }
+    },
+    "tokenflux-mimo": {
+      "npm": "@ai-sdk/anthropic",
+      "name": "TokenFlux MIMO",
+      "options": {
+        "baseURL": "https://tokenflux.dev/v1",
+        "apiKey": "YOUR_MIMO_API_KEY"
+      },
+      "models": {
+        "mimo-v2.5": {
+          "name": "mimo-v2.5"
+        },
+        "mimo-v2.5-pro": {
+          "name": "mimo-v2.5-pro"
         }
       }
     }
@@ -279,15 +198,19 @@ scoop install opencode
 }
 ```
 
-将 `YOUR_TOKENFLUX_API_KEY` 替换为你的真实 API Key。
+将每个 `YOUR_..._API_KEY` 换成对应分组的 TokenFlux API Key。
 
-这个示例按 OpenCode 官方 `custom provider` 的写法整理：
+这个示例按 TokenFlux 模型广场当前公开分组整理：
 
-- `tokenflux` 是自定义 provider ID。
-- `npm` 指定 OpenCode 使用 `@ai-sdk/openai-compatible` 接入 `https://tokenflux.dev/v1`。
-- `variants` 不再只写空对象，而是显式传递 `reasoningEffort`，更贴近 OpenCode 官方示例。
-- `gpt-5.4` 的 `none / low / medium / high / xhigh` 已用真实 `opencode run` 验证可用；`minimal` 会直接报不支持。
-- `claude-opus-4-6` 和 `claude-sonnet-4-6` 的 `low / medium / high` 已用真实 `opencode run` 验证可正常调用；这只能说明当前 TokenFlux 接法接受这些 variants，不等同于 Anthropic 原生 `thinking` budget 档位声明。
+- `tokenflux-chatgpt-plus` 对应 ChatGPT Plus。
+- `tokenflux-chatgpt-pro` 对应 ChatGPT Pro，额外包含 `gpt-5.4-pro`。
+- `tokenflux-deepseek` 对应 DeepSeek，属于 Anthropic 平台分组。
+- `tokenflux-mimo` 对应 MIMO，属于 Anthropic 平台分组。
+- `model` 和 `small_model` 需要写成 `provider_id/model_id` 的完整形式。
+- OpenAI 平台分组使用 `@ai-sdk/openai-compatible`；Anthropic 平台分组使用 `@ai-sdk/anthropic`。
+- 如果你只想先接一组，就只保留那个 provider 块。
+
+如果你后面还想给某个模型单独加 `reasoningEffort`、`textVerbosity` 或其他选项，直接在对应模型条目里补 `options` 就行。
 
 **第三步：启动 OpenCode**
 
