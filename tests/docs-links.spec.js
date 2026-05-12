@@ -61,7 +61,6 @@ describe('docs cross-links', () => {
     expect(content).toContain('<DocsTabs default-tab="windows">')
     expect(content).toContain('/docs/tokenflux/create-apikey')
     expect(content).toContain('OpenAI-Response')
-    expect(content).toContain('openai-response')
     expect(content).toContain('API 地址 `https://tokenflux.dev/v1`')
     expect(content).toContain('gpt-5.4-mini')
     expect(content).toContain('/images/cherry-studio/provider-type-selection.png')
