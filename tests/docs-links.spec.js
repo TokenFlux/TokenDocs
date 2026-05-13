@@ -40,6 +40,8 @@ describe('docs cross-links', () => {
     expect(content).toContain('# FAQ')
     expect(content).toContain('## 一直断开连接怎么办？')
     expect(content).toContain('建议先挂梯子后再试')
+    expect(content).toContain('## 咱们这个站是不是不支持 embedding 模型？')
+    expect(content).toContain('对。')
     expect(content).toContain('模型检测网站')
     expect(content).toContain('OpenRouter')
   })
