@@ -56,6 +56,35 @@ describe('docs cross-links', () => {
     expect(content).not.toContain('## 相关链接')
   })
 
+  it('service terms page exists and links related policies', () => {
+    const content = readDoc('docs/docs/tos/service-terms.md')
+
+    expect(content).toContain('# 服务条款')
+    expect(content).toContain('生效日期：2026年5月13日')
+    expect(content).toContain('TokenFlux 不会使用来自服务的客户内容训练模型')
+    expect(content).toContain('/docs/tos/usage-policy')
+    expect(content).toContain('/docs/tos/supported-countries')
+    expect(content).toContain('## 服务地区与用户资格')
+    expect(content).toContain('规避地区限制')
+    expect(content).toContain('退款政策')
+    expect(content).toContain('服务提供主体注册地')
+    expect(content).not.toContain('美国特拉华州法律')
+  })
+
+  it('supported countries page omits China regions', () => {
+    const content = readDoc('docs/docs/tos/supported-countries.md')
+
+    expect(content).toContain('# 支持的国家和地区')
+    expect(content).toContain('生效日期：2025年10月30日')
+    expect(content).toContain('以下名单按区域归类')
+    expect(content).toContain('未列入本页的地区，默认不支持')
+    expect(content).toContain('美利坚合众国')
+    expect(content).toContain('日本')
+    expect(content).toContain('新加坡')
+    expect(content).toContain('地区规避')
+    expect(content).not.toMatch(/中国|香港|澳门|台湾/)
+  })
+
   it('cherry studio page covers install and TokenFlux setup', () => {
     const content = readDoc('docs/docs/chatbot/cherry-studio.md')
 
