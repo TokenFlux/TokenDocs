@@ -59,7 +59,11 @@ describe('site config', () => {
 
     expect(config.themeConfig.sidebar['/docs/'][4]).toEqual({
       text: '条款与政策',
-      items: [{ text: '使用政策', link: '/docs/tos/usage-policy' }],
+      items: [
+        { text: '服务条款', link: '/docs/tos/service-terms' },
+        { text: '使用政策', link: '/docs/tos/usage-policy' },
+        { text: '支持的国家和地区', link: '/docs/tos/supported-countries' },
+      ],
     })
   })
 
