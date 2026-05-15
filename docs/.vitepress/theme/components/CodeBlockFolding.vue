@@ -1,9 +1,10 @@
 <script setup>
-import { useRoute } from 'vitepress'
+import { useData, useRoute } from 'vitepress'
 import { nextTick, onBeforeUnmount, onMounted, watch } from 'vue'
 import { enhanceCodeBlocks } from '../utils/codeBlockFolding.js'
 
 const route = useRoute()
+const { page } = useData()
 
 let frameId = 0
 
@@ -16,7 +17,9 @@ function refreshCodeBlocks() {
 
   nextTick(() => {
     frameId = window.requestAnimationFrame(() => {
-      enhanceCodeBlocks(document)
+      const locale = page.value.relativePath.startsWith('en/') ? 'en' : 'zh'
+
+      enhanceCodeBlocks(document, undefined, locale)
     })
   })
 }

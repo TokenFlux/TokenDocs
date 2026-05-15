@@ -8,10 +8,15 @@ const copied = ref(false)
 const copyFailed = ref(false)
 
 const markdownPath = computed(() => withBase(getMarkdownAliasPath(page.value.relativePath)))
+const isEnglishPage = computed(() => page.value.relativePath.startsWith('en/'))
 const shouldShow = computed(() => frontmatter.value.layout !== 'home')
 const buttonLabel = computed(() => {
   if (copyFailed.value) {
-    return '复制失败'
+    return isEnglishPage.value ? 'Copy failed' : '复制失败'
+  }
+
+  if (isEnglishPage.value) {
+    return copied.value ? 'Markdown copied' : 'Copy Markdown'
   }
 
   return copied.value ? '已复制 Markdown' : '复制 Markdown'

@@ -5,34 +5,42 @@ export function shouldEnableCodeBlockCollapse(scrollHeight, maxHeight = CODE_BLO
   return Number.isFinite(scrollHeight) && scrollHeight > maxHeight + 1
 }
 
-export function getCodeBlockToggleLabel(collapsed) {
+export function getCodeBlockToggleLabel(collapsed, locale = 'zh') {
+  if (locale === 'en') {
+    return collapsed ? 'Expand code' : 'Collapse code'
+  }
+
   return collapsed ? '展开代码' : '收起代码'
 }
 
-function setCodeBlockCollapsed(block, button, collapsed) {
+export function getCodeBlockToggleAriaLabel(locale = 'zh') {
+  return locale === 'en' ? 'Toggle code block expansion' : '切换代码块展开状态'
+}
+
+function setCodeBlockCollapsed(block, button, collapsed, locale) {
   block.classList.toggle('code-block-collapsed', collapsed)
   block.classList.toggle('code-block-expanded', !collapsed)
-  button.textContent = getCodeBlockToggleLabel(collapsed)
+  button.textContent = getCodeBlockToggleLabel(collapsed, locale)
   button.setAttribute('aria-expanded', String(!collapsed))
 }
 
-function createToggleButton(block) {
+function createToggleButton(block, locale) {
   const button = block.ownerDocument.createElement('button')
 
   button.type = 'button'
   button.className = 'code-fold-toggle'
-  button.setAttribute('aria-label', '切换代码块展开状态')
+  button.setAttribute('aria-label', getCodeBlockToggleAriaLabel(locale))
 
   button.addEventListener('click', () => {
     const collapsed = block.classList.contains('code-block-collapsed')
 
-    setCodeBlockCollapsed(block, button, !collapsed)
+    setCodeBlockCollapsed(block, button, !collapsed, locale)
   })
 
   return button
 }
 
-export function enhanceCodeBlocks(root, maxHeight = CODE_BLOCK_COLLAPSE_HEIGHT) {
+export function enhanceCodeBlocks(root, maxHeight = CODE_BLOCK_COLLAPSE_HEIGHT, locale = 'zh') {
   if (!root?.querySelectorAll) {
     return
   }
@@ -50,10 +58,10 @@ export function enhanceCodeBlocks(root, maxHeight = CODE_BLOCK_COLLAPSE_HEIGHT) 
       return
     }
 
-    const button = createToggleButton(block)
+    const button = createToggleButton(block, locale)
 
     block.classList.add('code-block-collapsible')
-    setCodeBlockCollapsed(block, button, true)
+    setCodeBlockCollapsed(block, button, true, locale)
     block.appendChild(button)
   })
 }

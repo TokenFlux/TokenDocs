@@ -2,7 +2,7 @@ import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises'
 import { dirname, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
-import { navItems, sidebar, siteDescription, siteTitle } from './site.js'
+import { locales, rootThemeConfig, siteDescription, siteTitle } from './site.js'
 import {
   DEFAULT_SITE_URL,
   addUtf8Bom,
@@ -129,13 +129,8 @@ export default defineConfig({
   description: siteDescription,
   base,
   head: [['link', { rel: 'icon', href: withBasePath(base, '/favicon.jpg') }]],
-  themeConfig: {
-    nav: navItems,
-    search: {
-      provider: 'local',
-    },
-    sidebar,
-  },
+  locales,
+  themeConfig: rootThemeConfig,
   vite: {
     plugins: [
       {
