@@ -39,6 +39,10 @@ You retain the relevant rights to content you submit to TokenFlux. Unless applic
 
 TokenFlux does not use customer content from the service to train models. To provide the service, troubleshoot issues, handle abuse, meet compliance requirements, or respond to support requests, TokenFlux may process related requests, responses, logs, and account information within the necessary scope.
 
+If you actively choose a group, model, subscription, or purchase option clearly labeled as "Data Sharing", "data sale", or similar wording, related request, response, and call data may be submitted to partners or data buyers after de-identification in exchange for lower prices or other benefits clearly stated on the product page. Any option involving data sale or data sharing will be clearly disclosed in the model marketplace, purchase page, API key group description, or other product descriptions. It will not be enabled through default groups, hidden options, or vague descriptions.
+
+You must not submit data through a Data Sharing group if you do not have the right to share, sell, or authorize processing of that data, including data subject to confidentiality obligations, unlawfully obtained data, unauthorized personal information, trade secrets, or other protected third-party content.
+
 You must ensure that you have the required rights, authorization, or lawful basis to submit inputs to TokenFlux, and you are responsible for your inputs, output usage, and downstream user behavior.
 
 ## Use Restrictions
@@ -70,6 +74,8 @@ If you integrate TokenFlux into your own product, agent, bot, client, plugin, pl
 ## Fees and Refund Policy
 
 TokenFlux bills according to prices shown in the console, model pricing pages, or other product descriptions. Prices, model availability, billing methods, and balance rules may change because of business needs, upstream costs, or third-party policies.
+
+Different groups, subscriptions, or models may have different prices, supported clients, data processing methods, or data sharing arrangements. Any data sharing, data sale, or client-specific limitation will be clearly shown in product descriptions before purchase.
 
 You are responsible for charges incurred under your account. If fees are not paid as required, balance is insufficient, payment is abnormal, or risk-control concerns exist, TokenFlux may limit, suspend, or terminate related services.
 

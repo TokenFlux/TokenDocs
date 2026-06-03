@@ -77,6 +77,18 @@ You must not:
 - Use leaked data, non-public information, or other data without lawful source to identify, track, or harass others
 - Generate or process content that violates another person's privacy, likeness, reputation, or identity rights
 
+### Data Sharing Groups
+
+If you choose a group clearly labeled as "Data Sharing", "data sale", or similar wording, you confirm that you have the right to use the relevant inputs, outputs, and call data for the data sharing or sale arrangement described in the corresponding product description.
+
+You must not submit the following content through Data Sharing groups:
+
+- Unauthorized personal information, sensitive information, or private content
+- Data subject to confidentiality agreements, employment obligations, customer agreements, or other confidentiality duties
+- Trade secrets, source code, internal documents, or other third-party materials you have no right to share
+- Unlawfully obtained, leaked, or unknown-source data
+- Any data you have no right to sell, share, authorize for processing, or submit to third parties
+
 ### Harmful Content
 
 You must not use TokenFlux to create, distribute, or assist in generating:

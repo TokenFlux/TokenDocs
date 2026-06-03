@@ -19,6 +19,16 @@ Model billing has three parts: input, output, and cache. Each part has its own u
 
 Different API key groups may have different multipliers. The group multiplier is based on the original model price, but the model marketplace already shows prices after multiplier adjustments. That displayed price is what you actually pay.
 
+#### Pro Subscription Group
+
+The `Pro` subscription group currently applies only to `Codex App` and `Codex CLI`. If you use any other integration method, do not choose the Pro group.
+
+#### Data Sharing Group
+
+The `Data Sharing` group offers lower prices in exchange for selling de-identified request, response, and related call data. By using this group, you agree that the relevant data may be submitted to partners or data buyers after de-identification for data analysis, model improvement, evaluation, or other purposes clearly stated on the product page.
+
+If a group involves data sharing or data sale, TokenFlux will clearly disclose it in the model marketplace, purchase page, API key group description, or other product descriptions. It will not be enabled through default groups, hidden options, or vague descriptions.
+
 **Example**
 
 Assume a model's original prices are:
