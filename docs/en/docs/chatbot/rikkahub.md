@@ -35,6 +35,7 @@ RikkaHub can connect to TokenFlux through its OpenAI-compatible provider support
 
 After setup, you can chat with TokenFlux-supported models directly in `RikkaHub`.
 
+<!--
 ## Image Generation
 
 > Prerequisite: You have completed TokenFlux setup above and imported a model that supports image generation.
@@ -56,6 +57,7 @@ After setup, you can chat with TokenFlux-supported models directly in `RikkaHub`
    <div style="text-align: center;">
      <img src="/images/rikkahub/step-3-select-model.png" alt="RikkaHub selecting a model on the image generation page" />
    </div>
+-->
 
 ## More Related Content
 

@@ -22,6 +22,7 @@ Models called through aggregation platforms such as OpenRouter are also often mi
 
 Treat these results as references only. Do not use them as the sole basis for deciding whether a model is genuine.
 
+<!--
 ## What account type powers image-generation models?
 
 Image-generation models use `Pro` accounts behind the scenes.
@@ -35,3 +36,4 @@ Image-generation models use `Pro` accounts behind the scenes.
 
 - **Cherry Studio**: Follow [Cherry Studio Guide](/en/docs/chatbot/cherry-studio) to install and connect TokenFlux. Select an image-capable model such as `gpt-image-2` in the model list, then send a prompt in the chat interface.
 - **RikkaHub**: Follow [RikkaHub Guide](/en/docs/chatbot/rikkahub), then use the "Image Generation" section in that guide to finish setup.
+-->

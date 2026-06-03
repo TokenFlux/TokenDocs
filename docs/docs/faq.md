@@ -22,6 +22,7 @@
 
 因此这类检测结果只能作为参考，不建议将其作为判断模型真假的唯一依据。
 
+<!--
 ## 生图模型使用的是哪种账号？
 
 生图模型背后是 `Pro` 号。
@@ -35,3 +36,4 @@
 
 - **Cherry Studio**：按 [Cherry Studio 使用指南](/docs/chatbot/cherry-studio) 完成安装并接入 TokenFlux，在模型列表中选择支持生图的模型（如 `gpt-image-2` 等），在对话界面发送提示词即可生成图片。
 - **RikkaHub**：按 [RikkaHub 使用指南](/docs/chatbot/rikkahub) 完成接入，参考其中的"使用生图"章节完成配置。
+-->
