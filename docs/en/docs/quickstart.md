@@ -59,4 +59,4 @@ Recommended clients:
 ## Continue Reading
 
 - [Billing](/en/docs/tokenflux/billing)
-- [Referral Rewards](/en/docs/tokenflux/referral)
+<!-- - [Referral Rewards](/en/docs/tokenflux/referral) -->
