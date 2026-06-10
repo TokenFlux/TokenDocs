@@ -68,4 +68,4 @@ Go to the [top-up/subscription page](https://tokenflux.dev/purchase) to complete
 - [Model Marketplace](https://tokenflux.dev/models) - view prices for all models
 - [Top-up/Subscription](https://tokenflux.dev/purchase) - purchase inference credits
 - [Invoices](/en/docs/tokenflux/invoice) - learn how invoices are handled
-- [Referral Rewards](/en/docs/tokenflux/referral) - invite friends and earn rewards
+<!-- - [Referral Rewards](/en/docs/tokenflux/referral) - invite friends and earn rewards -->

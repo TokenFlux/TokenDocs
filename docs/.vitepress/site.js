@@ -29,7 +29,7 @@ export const sidebar = {
         { text: "创建 API Key", link: "/docs/tokenflux/create-apikey" },
         { text: "计费说明", link: "/docs/tokenflux/billing" },
         { text: "发票说明", link: "/docs/tokenflux/invoice" },
-        { text: "邀请返利", link: "/docs/tokenflux/referral" },
+        // { text: "邀请返利", link: "/docs/tokenflux/referral" },
       ],
     },
     {
@@ -76,7 +76,7 @@ export const enSidebar = {
         { text: "Create API Key", link: "/en/docs/tokenflux/create-apikey" },
         { text: "Billing", link: "/en/docs/tokenflux/billing" },
         { text: "Invoices", link: "/en/docs/tokenflux/invoice" },
-        { text: "Referral Rewards", link: "/en/docs/tokenflux/referral" },
+        // { text: "Referral Rewards", link: "/en/docs/tokenflux/referral" },
       ],
     },
     {
