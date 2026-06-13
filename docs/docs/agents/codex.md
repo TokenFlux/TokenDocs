@@ -139,3 +139,36 @@
 
   </DocsTab>
 </DocsTabs>
+
+## 开启远程压缩
+
+`Codex` 在长对话接近上下文上限时会触发压缩。只有当上游 provider 的 `name` 严格为 `OpenAI` 时，`Codex` 才会优先走远程压缩接口（`/v1/responses/compact`）；远程压缩质量更高，超长对话也能稳定保持，不容易降智。
+
+如果 `name` 是其他值（例如 `tokenflux`），`Codex` 会强制使用本地压缩，效果较差。
+
+开启方式：把 `config.toml` 中 `[model_providers.tokenflux]` 的 `name` 改为 `OpenAI`。
+
+```toml
+model_provider = "tokenflux"
+model = "gpt-5.4"
+review_model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+disable_response_storage = true
+network_access = "enabled"
+windows_wsl_setup_acknowledged = true
+model_context_window = 1000000
+model_auto_compact_token_limit = 900000
+
+[model_providers.tokenflux]
+name = "OpenAI"
+base_url = "https://tokenflux.dev/v1"
+wire_api = "responses"
+requires_openai_auth = true
+```
+
+说明：
+
+- 只需要改 `name` 这一项；`model_provider`、`base_url` 和 `auth.json` 保持不变。
+- 这里的 provider 标识 `tokenflux`（即 `model_provider` 和 `[model_providers.tokenflux]`）不要改，改的是用于触发远程压缩的显示名 `name`。
+- 修改后不会丢失已有聊天记录。
+- 改完重启 `Codex` 或 `Codex App` 即可生效。

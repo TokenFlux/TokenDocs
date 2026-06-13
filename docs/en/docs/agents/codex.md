@@ -137,3 +137,36 @@ After installation, choose one of the following methods to connect `Codex` to `T
 
   </DocsTab>
 </DocsTabs>
+
+## Enable Remote Compaction
+
+`Codex` triggers compaction when a long conversation approaches the context limit. `Codex` only prefers the remote compaction endpoint (`/v1/responses/compact`) when the upstream provider `name` is exactly `OpenAI`. Remote compaction has higher quality and keeps very long conversations stable, with less quality degradation.
+
+If `name` is any other value (such as `tokenflux`), `Codex` falls back to local compaction, which works much worse.
+
+To enable it, change `name` in `[model_providers.tokenflux]` in `config.toml` to `OpenAI`.
+
+```toml
+model_provider = "tokenflux"
+model = "gpt-5.4"
+review_model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
+disable_response_storage = true
+network_access = "enabled"
+windows_wsl_setup_acknowledged = true
+model_context_window = 1000000
+model_auto_compact_token_limit = 900000
+
+[model_providers.tokenflux]
+name = "OpenAI"
+base_url = "https://tokenflux.dev/v1"
+wire_api = "responses"
+requires_openai_auth = true
+```
+
+Notes:
+
+- Only change the `name` field; keep `model_provider`, `base_url`, and `auth.json` unchanged.
+- Do not change the provider id `tokenflux` (used by `model_provider` and `[model_providers.tokenflux]`). Only the display `name` needs to be `OpenAI` to trigger remote compaction.
+- This change does not lose your existing chat history.
+- Restart `Codex` or `Codex App` after the change for it to take effect.
