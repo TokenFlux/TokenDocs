@@ -66,7 +66,7 @@ AppImage 已内置所有依赖，适用于大多数主流 Linux 发行版，无�
 
 1. 按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 生成一个 API Key。
 2. 打开 `Cherry Studio`，进入**设置 → 模型服务**，点击添加服务商。
-3. 选择提供商类型：`OpenAI-Response`）。
+3. 选择提供商类型：`OpenAI-Response`。
 
    <div style="text-align: center;">
      <img src="/images/cherry-studio/provider-type-selection.png" alt="Cherry Studio 选择 OpenAI-Response 提供商类型的界面" />
