@@ -162,3 +162,51 @@ Replace `YOUR_TOKENFLUX_API_KEY` with your real API key.
 
   </DocsTab>
 </DocsTabs>
+
+## DOYO Claude Channel
+
+::: warning
+The DOYO Claude channel temporarily cannot be used in the Claude app. It only works with the `Claude Code` CLI.
+:::
+
+If you use DOYO's Claude channel, you can additionally enable `ENABLE_PROMPT_CACHING_1H=1` after finishing the basic configuration above. This option enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context.
+
+This setting only applies to the DOYO Claude channel; other Claude channels do not need it.
+
+If you manage Claude Code through `CC-Switch`, see the [CC-Switch DOYO Claude channel environment variable notes](/en/docs/agents/cc-switch#doyo-claude-channel-environment-variables).
+
+### Terminal Launch
+
+Set the environment variable once per system, then start `Claude Code`.
+
+**macOS / Linux**
+
+```bash
+export ENABLE_PROMPT_CACHING_1H=1
+```
+
+**Windows PowerShell**
+
+```powershell
+$env:ENABLE_PROMPT_CACHING_1H=1
+```
+
+**Windows CMD**
+
+```cmd
+set ENABLE_PROMPT_CACHING_1H=1
+```
+
+### VSCode / Zed
+
+If you launch `Claude Code` through VSCode or Zed, add the following to the `env` in `~/.claude/settings.json` or `%userprofile%\.claude\settings.json`:
+
+```json
+{
+  "env": {
+    "ENABLE_PROMPT_CACHING_1H": "1"
+  }
+}
+```
+
+If the file already has an `env`, merge the `ENABLE_PROMPT_CACHING_1H` line into it instead of creating a second `env`.

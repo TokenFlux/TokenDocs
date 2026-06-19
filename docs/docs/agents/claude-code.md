@@ -164,8 +164,11 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
   </DocsTab>
 </DocsTabs>
 
-<!--
 ## DOYO Claude 渠道
+
+::: warning
+DOYO 的 Claude 渠道暂时无法在 Claude 应用（Claude app）中使用，只能通过 `Claude Code` CLI 使用。
+:::
 
 如果你使用的是 DOYO 的 Claude 渠道，可以在完成上方基础配置后，额外开启 `ENABLE_PROMPT_CACHING_1H=1`。该选项会启用 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。
 
@@ -208,4 +211,3 @@ set ENABLE_PROMPT_CACHING_1H=1
 ```
 
 如果文件里已经有 `env`，只需要把 `ENABLE_PROMPT_CACHING_1H` 这一行合并进去，不要重复创建第二个 `env`。
--->

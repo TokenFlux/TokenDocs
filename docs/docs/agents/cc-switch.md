@@ -130,8 +130,11 @@ AppImage 文件集成了所有必要的依赖，适用于大多数 Linux 发行�
   </DocsTab>
 </DocsTabs>-->
 
-<!--
 ## DOYO Claude 渠道环境变量
+
+::: warning
+DOYO 的 Claude 渠道暂时无法在 Claude 应用（Claude app）中使用，只能通过 `Claude Code` CLI 使用。
+:::
 
 如果你通过 `CC-Switch` 管理  Claude Code，可以把 `ENABLE_PROMPT_CACHING_1H` 写进 Claude 供应商的 JSON 配置。`CC-Switch` 在启用供应商时会把该配置写入 Claude Code 的 `settings.json`。
 
@@ -160,7 +163,6 @@ AppImage 文件集成了所有必要的依赖，适用于大多数 Linux 发行�
 2. 回到 `Claude Code` 应用下，编辑同步生成的 Claude 供应商。
 3. 在该供应商的 JSON `env` 中追加 `"ENABLE_PROMPT_CACHING_1H": "1"`。
 4. 保存后启用该 Claude 供应商。
--->
 
 ## 下一步该怎么做？
 

@@ -95,6 +95,40 @@ The AppImage bundles all required dependencies and works on most Linux distribut
 
 4. Save the configuration. `CC-Switch` will enable this provider for all related Agent clients.
 
+## DOYO Claude Channel Environment Variables
+
+::: warning
+The DOYO Claude channel temporarily cannot be used in the Claude app. It only works with the `Claude Code` CLI.
+:::
+
+If you manage Claude Code through `CC-Switch`, you can add `ENABLE_PROMPT_CACHING_1H` to the Claude provider's JSON configuration. When you enable the provider, `CC-Switch` writes this configuration into Claude Code's `settings.json`.
+
+This variable enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context. It only applies to DOYO's Claude channel; other Claude channels do not need it.
+
+### App-Specific Provider
+
+1. Switch to `Claude Code` at the top of `CC-Switch`.
+2. Find the Claude provider card for TokenFlux and click "Edit".
+3. Add the following to `env` in the "Config JSON":
+
+```json
+{
+  "env": {
+    "ENABLE_PROMPT_CACHING_1H": "1"
+  }
+}
+```
+
+
+### Unified Provider
+
+The unified provider's basic form only contains `Name`, `API Key`, `API URL`, and model configuration, without a separate DOYO environment variable field. When using a unified provider:
+
+1. First create and sync the unified provider with the flow above.
+2. Return to the `Claude Code` app and edit the synced Claude provider.
+3. Add `"ENABLE_PROMPT_CACHING_1H": "1"` to the provider's JSON `env`.
+4. Save and enable the Claude provider.
+
 ## Next Steps
 
 After installing and configuring `CC-Switch`, restart your client and start using it.
