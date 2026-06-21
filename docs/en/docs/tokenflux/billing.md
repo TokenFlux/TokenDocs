@@ -63,6 +63,26 @@ Usage-based purchases have no time limit and are billed by actual usage.
 
 Go to the [top-up/subscription page](https://tokenflux.dev/purchase) to complete the purchase.
 
+## Payment and Fees
+
+Top-ups are now processed entirely through Stripe. Previous payment channels such as Alipay have been migrated to Stripe.
+
+### Stripe Fees
+
+Stripe fees originally consisted of two parts:
+
+- **Fixed fee**: 2.7 CNY per transaction.
+- **Variable fee**: 2.2% of the transaction total.
+
+To give back to users, we have waived the 2.2% variable fee. After this adjustment, only the fixed fee of 2.7 CNY per transaction is charged.
+
+### Top-up Recommendation
+
+Because the platform pays Stripe a fixed fee of 2.7 CNY per transaction regardless of the amount, we recommend that you:
+
+- Top up a larger amount at once to reduce the number of transactions.
+- Avoid splitting into multiple small top-ups, to lower your overall top-up cost and improve fund efficiency.
+
 ## Related Links
 
 - [Model Marketplace](https://tokenflux.dev/models) - view prices for all models
