@@ -27,6 +27,7 @@ export const sidebar = {
       text: "TokenFlux",
       items: [
         { text: "创建 API Key", link: "/docs/tokenflux/create-apikey" },
+        { text: "复合 Key", link: "/docs/tokenflux/composite-key" },
         { text: "计费说明", link: "/docs/tokenflux/billing" },
         { text: "发票说明", link: "/docs/tokenflux/invoice" },
         { text: "团队", link: "/docs/tokenflux/team" },
@@ -75,6 +76,7 @@ export const enSidebar = {
       text: "TokenFlux",
       items: [
         { text: "Create API Key", link: "/en/docs/tokenflux/create-apikey" },
+        { text: "Composite Key", link: "/en/docs/tokenflux/composite-key" },
         { text: "Billing", link: "/en/docs/tokenflux/billing" },
         { text: "Invoices", link: "/en/docs/tokenflux/invoice" },
         { text: "Team", link: "/en/docs/tokenflux/team" },
