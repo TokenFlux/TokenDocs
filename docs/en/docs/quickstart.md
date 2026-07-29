@@ -1,55 +1,43 @@
 # Quickstart
 
-::: tip Access Note
-Some content on this site or related services may require a proxy before access works reliably.
-:::
+TokenFlux is a model gateway: one API key lets you call models from many providers inside the client you already use.
 
-This page helps you complete your first TokenFlux setup. Depending on your workflow, you can start with either `Agent` or `ChatBot` clients.
+This page maps out the route. Three steps and you are running.
+
+::: tip Access Note
+Some content on this site or related services may require a proxy before access works reliably. On mainland China networks, try the [optimized endpoints](/en/docs/tokenflux/endpoints).
+:::
 
 ::: details For AGENTS
 For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For a single page, append `.md` to any documentation URL that does not end with `/`, for example `/en/docs/quickstart.md`.
 :::
 
-## Before You Start
+## Three Steps
 
-1. Create a new API key by following [Create API Key](/en/docs/tokenflux/create-apikey).
-2. Read [Billing](/en/docs/tokenflux/billing) to understand purchase options, then go to the [top-up/subscription page](https://tokenflux.dev/purchase) to add balance or subscribe. Prices shown in the model marketplace are the final billing prices.
-
-## API Endpoints
-
-Most clients ask for an API base URL. TokenFlux provides two sets of endpoints:
-
-| Purpose | OpenAI format | Anthropic format |
+| Step | What to do | Where |
 | --- | --- | --- |
-| Default | `https://tokenflux.dev/v1` | `https://tokenflux.dev` |
-| Optimized for mainland China | `https://token.memoh.net/v1` | `https://token.memoh.net` |
+| 1 | Top up or subscribe to get inference credits | [Top-up/Subscription](https://tokenflux.dev/purchase) · [Billing](/en/docs/tokenflux/billing) |
+| 2 | Create an API key and pick a group | [Create API Key](/en/docs/tokenflux/create-apikey) |
+| 3 | Enter the key and endpoint in your client | See the selection below |
 
-The mainland China endpoints use a network path tuned for that region, giving faster and more stable access. Both sets are functionally identical and use the same API key, so pick whichever suits your network.
+Prices shown in the model marketplace are the final billing prices; no extra conversion is needed.
 
-The default endpoints can also be copied straight from the top of the [API keys page](https://tokenflux.dev/keys):
-
-<div style="text-align: center;">
-  <img src="/images/quickstart/api-endpoints.png" alt="Endpoint bar at the top of the API keys page, with one-click copy for the OpenAI-format and Anthropic-format endpoints" />
-</div>
-
-## Choose an Integration Path
+## Pick Your Client
 
 <DocsTabs default-tab="agent">
   <DocsTab title="Agent" name="agent">
 
 Best for terminal workflows, programming tasks, or users who want AI Agent assistance while developing.
 
-We recommend using `CC-Switch` to manage API keys and provider settings in one place. It supports Agent clients such as `Claude Code`, `Codex`, `Hermes`, and `OpenCode`, without requiring manual environment variable changes.
+Start with [CC-Switch](/en/docs/agents/cc-switch). It manages API keys and provider settings in one place, so you do not have to edit environment variables by hand. Then follow the guide for your client:
 
-**Setup steps:**
-
-1. Install and configure providers by following [CC-Switch](/en/docs/agents/cc-switch).
-2. Continue with the guide for your client:
-   - [Claude Code Guide](/en/docs/agents/claude-code)
-   - [Codex Guide](/en/docs/agents/codex)
-   - [Hermes Guide](/en/docs/agents/hermes)
-   - [OpenCode Guide](/en/docs/agents/opencode)
-3. Restart the client after configuration is complete.
+| Client | Best for | Guide |
+| --- | --- | --- |
+| Claude Code | Anthropic's official CLI, terminal coding | [Guide](/en/docs/agents/claude-code) |
+| Codex | OpenAI's official CLI and desktop app | [Guide](/en/docs/agents/codex) |
+| Codex++ | Adds extra capabilities on top of Codex | [Guide](/en/docs/agents/codex-plus-plus) |
+| OpenCode | Open-source terminal agent with model switching | [Guide](/en/docs/agents/opencode) |
+| Hermes | Lightweight terminal agent | [Guide](/en/docs/agents/hermes) |
 
   </DocsTab>
 
@@ -57,23 +45,27 @@ We recommend using `CC-Switch` to manage API keys and provider settings in one p
 
 Best for users who prefer graphical interfaces, mobile usage, or daily conversational workflows.
 
-Recommended clients:
+| Client | Best for | Guide |
+| --- | --- | --- |
+| Cherry Studio | Desktop (Windows / macOS / Linux), multi-model switching | [Guide](/en/docs/chatbot/cherry-studio) |
+| RikkaHub | Android, OpenAI compatible | [Guide](/en/docs/chatbot/rikkahub) |
 
-- **Cherry Studio**: Desktop client for Windows, macOS, and Linux. It supports switching across multiple models with a clean interface and straightforward setup.
-- **RikkaHub**: Android client with OpenAI-compatible provider support, suitable for everyday mobile use.
-
-**Setup steps:**
-
-1. Create an API key by following [Create API Key](/en/docs/tokenflux/create-apikey).
-2. Choose a client for your device and finish installation:
-   - Desktop: [Cherry Studio Guide](/en/docs/chatbot/cherry-studio)
-   - Android: [RikkaHub Guide](/en/docs/chatbot/rikkahub)
-3. Add TokenFlux as a custom provider in the client settings, enter your API key, fetch the model list, and start chatting.
+Add TokenFlux as a custom provider in the client settings, enter your API key and an [API endpoint](/en/docs/tokenflux/endpoints), fetch the model list, and start chatting.
 
   </DocsTab>
 </DocsTabs>
 
-## Continue Reading
+## Going Further
 
-- [Billing](/en/docs/tokenflux/billing)
-- [Referral Rewards](/en/docs/tokenflux/referral)
+Once things work, these may be useful:
+
+- [Composite Key](/en/docs/tokenflux/composite-key) - bind one key to several groups and switch with prefixes
+- [Fast Mode](/en/docs/tokenflux/fast-mode) - force the high-priority tier at the key level
+- [Team](/en/docs/tokenflux/team) - share the owner's balance while everyone keeps their own keys
+- [Referral Rewards](/en/docs/tokenflux/referral) - earn inference credits by inviting friends
+
+## Troubleshooting
+
+- [FAQ](/en/docs/faq) - connection drops, model detection, and other common questions
+- [API Endpoints](/en/docs/tokenflux/endpoints) - choosing an endpoint and the mainland China route
+- [Usage Policy](/en/docs/tos/usage-policy) - what gets accounts banned

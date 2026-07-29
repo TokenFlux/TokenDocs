@@ -1,55 +1,43 @@
 # 快速开始
 
-::: tip 访问提示
-本站部分内容或相关服务可能需要挂梯子后访问。
-:::
+TokenFlux 是一个模型中转服务：用一个 API Key，在你熟悉的客户端里调用各家模型。
 
-本页用于完成 TokenFlux 的首次接入。根据使用习惯，你可以选择 `Agent` 或 `ChatBot` 两种方式开始。
+本页帮你规划路线。三步就能跑起来。
+
+::: tip 访问提示
+本站部分内容或相关服务可能需要挂梯子后访问。中国大陆网络可以改用 [大陆优化端点](/docs/tokenflux/endpoints)。
+:::
 
 ::: details For AGENTS
 批量读取 Markdown 文档时，可直接使用 [markdown-sitemap.xml](/markdown-sitemap.xml)。单页读取时，直接在不以 `/` 结尾的文档 URL 后追加 `.md` 即可，例如 `/docs/quickstart.md`。
 :::
 
-## 开始前确认
+## 三步接入
 
-1. 按 [创建 API Key](/docs/tokenflux/create-apikey) 生成一个新的 API Key。
-2. 按 [计费说明](/docs/tokenflux/billing) 了解购买方式，并前往 [充值/订阅页面](https://tokenflux.dev/purchase) 完成充值或订阅。模型广场显示的价格即为最终计费价格。
-
-## API 端点
-
-大多数客户端需要填写一个 API 地址。TokenFlux 提供两组端点：
-
-| 用途 | OpenAI 格式 | Anthropic 格式 |
+| 步骤 | 做什么 | 去哪 |
 | --- | --- | --- |
-| 默认 | `https://tokenflux.dev/v1` | `https://tokenflux.dev` |
-| 中国大陆优化 | `https://token.memoh.net/v1` | `https://token.memoh.net` |
+| 1 | 充值或订阅，获得推理积分 | [充值/订阅](https://tokenflux.dev/purchase) · [计费说明](/docs/tokenflux/billing) |
+| 2 | 创建一个 API Key，选好分组 | [创建 API Key](/docs/tokenflux/create-apikey) |
+| 3 | 在客户端里填入 Key 和端点 | 见下方选型 |
 
-中国大陆优化端点针对大陆网络做了链路优化，访问更快也更稳定。两组端点功能完全一致，用同一个 API Key，按网络情况选一组填入客户端即可。
+模型广场显示的价格即为最终计费价格，不需要额外换算。
 
-默认端点也可以在 [API 密钥页面](https://tokenflux.dev/keys) 顶部直接复制：
-
-<div style="text-align: center;">
-  <img src="/images/quickstart/api-endpoints.png" alt="API 密钥页面顶部的端点区域，可一键复制 OpenAI 格式和 Anthropic 格式端点" />
-</div>
-
-## 选择接入方式
+## 选择你的客户端
 
 <DocsTabs default-tab="agent">
   <DocsTab title="Agent" name="agent">
 
 适合在终端工作、有编程需求或希望使用 AI Agent 辅助开发的用户。
 
-推荐通过 `CC-Switch` 统一管理 API Key 和供应商配置，支持 `Claude Code`、`Codex`、`Hermes` 和 `OpenCode` 等多个 Agent 客户端，无需手动修改环境变量。
+推荐先装 [CC-Switch](/docs/agents/cc-switch)，它能统一管理 API Key 和供应商配置，省去手动改环境变量。装好后再看你要用的客户端：
 
-**接入步骤：**
-
-1. 按 [CC-Switch](/docs/agents/cc-switch) 完成安装和供应商配置。
-2. 根据使用的客户端继续完成接入：
-   - [Claude Code 使用指南](/docs/agents/claude-code)
-   - [Codex 使用指南](/docs/agents/codex)
-   - [Hermes 使用指南](/docs/agents/hermes)
-   - [OpenCode 使用指南](/docs/agents/opencode)
-3. 配置完成后，重启客户端即可开始使用。
+| 客户端 | 适用场景 | 指南 |
+| --- | --- | --- |
+| Claude Code | Anthropic 官方 CLI，终端编程 | [教程](/docs/agents/claude-code) |
+| Codex | OpenAI 官方 CLI 与桌面端 | [教程](/docs/agents/codex) |
+| Codex++ | 给 Codex 加装增强能力 | [教程](/docs/agents/codex-plus-plus) |
+| OpenCode | 开源终端 Agent，多模型切换 | [教程](/docs/agents/opencode) |
+| Hermes | 轻量终端 Agent | [教程](/docs/agents/hermes) |
 
   </DocsTab>
 
@@ -57,23 +45,27 @@
 
 适合偏好图形界面、移动端或以日常对话为主要使用场景的用户。
 
-推荐客户端：
+| 客户端 | 适用场景 | 指南 |
+| --- | --- | --- |
+| Cherry Studio | 桌面端（Windows / macOS / Linux），多模型切换 | [教程](/docs/chatbot/cherry-studio) |
+| RikkaHub | Android 手机端，OpenAI 兼容 | [教程](/docs/chatbot/rikkahub) |
 
-- **Cherry Studio**：桌面端（Windows / macOS / Linux），支持多模型切换，界面简洁，配置方便。
-- **RikkaHub**：Android 手机端，支持 OpenAI 兼容接口，适合移动端日常使用。
-
-**接入步骤：**
-
-1. 按 [创建 API Key](/docs/tokenflux/create-apikey) 生成一个 API Key。
-2. 根据设备选择客户端并完成安装：
-   - 桌面端：[Cherry Studio 使用指南](/docs/chatbot/cherry-studio)
-   - Android：[RikkaHub 使用指南](/docs/chatbot/rikkahub)
-3. 在客户端设置中添加 TokenFlux 作为自定义服务商，填入 API Key，获取模型列表后即可开始对话。
+在客户端设置里添加 TokenFlux 作为自定义服务商，填入 API Key 和 [API 端点](/docs/tokenflux/endpoints)，获取模型列表后即可开始对话。
 
   </DocsTab>
 </DocsTabs>
 
-## 继续阅读
+## 进阶用法
 
-- [计费说明](/docs/tokenflux/billing)
-- [邀请返利](/docs/tokenflux/referral)
+跑通之后，这些能力可能对你有用：
+
+- [复合 Key](/docs/tokenflux/composite-key) — 一个 Key 绑定多个分组，用前缀切换
+- [Fast 模式](/docs/tokenflux/fast-mode) — 在 Key 上强制开启高优先级通道
+- [团队](/docs/tokenflux/team) — 多人共用所有者的余额，各自建 Key
+- [邀请返利](/docs/tokenflux/referral) — 邀请好友获得推理积分
+
+## 遇到问题
+
+- [FAQ](/docs/faq) — 连接不稳定、模型检测等常见问题
+- [API 端点](/docs/tokenflux/endpoints) — 端点选择与大陆优化线路
+- [使用政策](/docs/tos/usage-policy) — 哪些用法会导致封禁
