@@ -15,6 +15,17 @@ For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For 
 1. Create a new API key by following [Create API Key](/en/docs/tokenflux/create-apikey).
 2. Read [Billing](/en/docs/tokenflux/billing) to understand purchase options, then go to the [top-up/subscription page](https://tokenflux.dev/purchase) to add balance or subscribe. Prices shown in the model marketplace are the final billing prices.
 
+## API Endpoints
+
+Most clients ask for an API base URL. TokenFlux provides two sets of endpoints:
+
+| Purpose | OpenAI format | Anthropic format |
+| --- | --- | --- |
+| Default | `https://tokenflux.dev/v1` | `https://tokenflux.dev` |
+| Optimized for mainland China | `https://token.memoh.net/v1` | `https://token.memoh.net` |
+
+The mainland China endpoints use a network path tuned for that region, giving faster and more stable access. Both sets are functionally identical and use the same API key, so pick whichever suits your network.
+
 ## Choose an Integration Path
 
 <DocsTabs default-tab="agent">

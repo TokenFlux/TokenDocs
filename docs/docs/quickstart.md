@@ -15,6 +15,17 @@
 1. 按 [创建 API Key](/docs/tokenflux/create-apikey) 生成一个新的 API Key。
 2. 按 [计费说明](/docs/tokenflux/billing) 了解购买方式，并前往 [充值/订阅页面](https://tokenflux.dev/purchase) 完成充值或订阅。模型广场显示的价格即为最终计费价格。
 
+## API 端点
+
+大多数客户端需要填写一个 API 地址。TokenFlux 提供两组端点：
+
+| 用途 | OpenAI 格式 | Anthropic 格式 |
+| --- | --- | --- |
+| 默认 | `https://tokenflux.dev/v1` | `https://tokenflux.dev` |
+| 中国大陆优化 | `https://token.memoh.net/v1` | `https://token.memoh.net` |
+
+中国大陆优化端点针对大陆网络做了链路优化，访问更快也更稳定。两组端点功能完全一致，用同一个 API Key，按网络情况选一组填入客户端即可。
+
 ## 选择接入方式
 
 <DocsTabs default-tab="agent">
