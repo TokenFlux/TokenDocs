@@ -19,6 +19,10 @@ Model billing has three parts: input, output, and cache. Each part has its own u
 
 Different API key groups may have different multipliers. The group multiplier is based on the original model price, but the model marketplace already shows prices after multiplier adjustments. That displayed price is what you actually pay.
 
+<div style="text-align: center;">
+  <img src="/images/billing/model-pricing.png" alt="Group multiplier badge in the model marketplace, with per-model input and output prices that already include the multiplier" />
+</div>
+
 #### ChatGPT Pro Group
 
 Groups backed by Pro accounts, such as `ChatGPT Pro`, currently apply only to `Codex App` and `Codex CLI`. If you use any other integration method, do not choose that group.

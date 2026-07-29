@@ -19,6 +19,10 @@
 
 不同的 API Key 分组可能有不同的倍率。分组倍率是基于模型原价计算的，但模型广场显示的价格已经包含了倍率调整——那就是实际支付的价格。
 
+<div style="text-align: center;">
+  <img src="/images/billing/model-pricing.png" alt="模型广场中某分组的倍率标签，以及该分组下各模型已含倍率的输入输出单价" />
+</div>
+
 #### ChatGPT Pro 分组
 
 `ChatGPT Pro` 这类基于 Pro 账号的分组目前仅适用于 `Codex App` 和 `Codex CLI`。如果你使用的是其他接入方式，请不要选择该分组。
