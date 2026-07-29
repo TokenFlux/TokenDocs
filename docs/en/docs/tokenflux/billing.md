@@ -19,9 +19,13 @@ Model billing has three parts: input, output, and cache. Each part has its own u
 
 Different API key groups may have different multipliers. The group multiplier is based on the original model price, but the model marketplace already shows prices after multiplier adjustments. That displayed price is what you actually pay.
 
-#### Pro Subscription Group
+#### ChatGPT Pro Group
 
-The `Pro` subscription group currently applies only to `Codex App` and `Codex CLI`. If you use any other integration method, do not choose the Pro group.
+Groups backed by Pro accounts, such as `ChatGPT Pro`, currently apply only to `Codex App` and `Codex CLI`. If you use any other integration method, do not choose that group.
+
+::: tip Groups are not subscription plans
+This refers to **API key groups**, which are distinct from the subscription plan names below (Lite, Plus, Pro, and so on). Do not confuse the two.
+:::
 
 #### Data Sharing Group
 
@@ -51,11 +55,30 @@ These adjusted prices are the prices shown in the model marketplace and the fina
 
 Subscriptions are usually cheaper, but they are valid for 30 days.
 
+There are eight tiers, from lowest to highest: `Lite`, `Lite+`, `Plus`, `Plus+`, `Pro`, `Pro+`, `Max`, `Max+`. Daily limits, monthly limits, and prices for each tier are listed on the [top-up/subscription page](https://tokenflux.dev/purchase).
+
 When purchasing the same subscription repeatedly:
 
 - It does not create multiple parallel copies of the same subscription.
 - It effectively extends the duration.
 - The later purchase takes effect after the previous subscription expires.
+
+You can hold several different plans at once. Quota from the plan expiring soonest is consumed first; when no plan quota is available, the account balance is used.
+
+#### Plan Renaming
+
+Plan names have been standardized to make the tiers clearer. **Only the names changed** - prices, quotas, entitlements, and active services are unaffected. Existing subscriptions display the new names automatically, with nothing for you to do.
+
+| Old name | New name |
+| --- | --- |
+| Basic | Lite |
+| Standard | Lite+ |
+| Pro | Plus |
+| Max | Plus+ |
+| Ultra | Pro |
+| Elite | Pro+ |
+| Enterprise | Max |
+| Ultimate | Max+ |
 
 ### Usage-Based Purchase
 
