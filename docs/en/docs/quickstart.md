@@ -26,6 +26,12 @@ Most clients ask for an API base URL. TokenFlux provides two sets of endpoints:
 
 The mainland China endpoints use a network path tuned for that region, giving faster and more stable access. Both sets are functionally identical and use the same API key, so pick whichever suits your network.
 
+The default endpoints can also be copied straight from the top of the [API keys page](https://tokenflux.dev/keys):
+
+<div style="text-align: center;">
+  <img src="/images/quickstart/api-endpoints.png" alt="Endpoint bar at the top of the API keys page, with one-click copy for the OpenAI-format and Anthropic-format endpoints" />
+</div>
+
 ## Choose an Integration Path
 
 <DocsTabs default-tab="agent">

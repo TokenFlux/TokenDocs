@@ -26,6 +26,12 @@
 
 中国大陆优化端点针对大陆网络做了链路优化，访问更快也更稳定。两组端点功能完全一致，用同一个 API Key，按网络情况选一组填入客户端即可。
 
+默认端点也可以在 [API 密钥页面](https://tokenflux.dev/keys) 顶部直接复制：
+
+<div style="text-align: center;">
+  <img src="/images/quickstart/api-endpoints.png" alt="API 密钥页面顶部的端点区域，可一键复制 OpenAI 格式和 Anthropic 格式端点" />
+</div>
+
 ## 选择接入方式
 
 <DocsTabs default-tab="agent">
