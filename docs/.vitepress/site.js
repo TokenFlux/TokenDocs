@@ -32,7 +32,7 @@ export const sidebar = {
         { text: "计费说明", link: "/docs/tokenflux/billing" },
         { text: "发票说明", link: "/docs/tokenflux/invoice" },
         { text: "团队", link: "/docs/tokenflux/team" },
-        // { text: "邀请返利", link: "/docs/tokenflux/referral" },
+        { text: "邀请返利", link: "/docs/tokenflux/referral" },
       ],
     },
     {
@@ -82,7 +82,7 @@ export const enSidebar = {
         { text: "Billing", link: "/en/docs/tokenflux/billing" },
         { text: "Invoices", link: "/en/docs/tokenflux/invoice" },
         { text: "Team", link: "/en/docs/tokenflux/team" },
-        // { text: "Referral Rewards", link: "/en/docs/tokenflux/referral" },
+        { text: "Referral Rewards", link: "/en/docs/tokenflux/referral" },
       ],
     },
     {

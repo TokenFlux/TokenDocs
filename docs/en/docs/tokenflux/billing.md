@@ -88,4 +88,4 @@ Because the platform pays Stripe a fixed fee of 2.7 CNY per transaction regardle
 - [Model Marketplace](https://tokenflux.dev/models) - view prices for all models
 - [Top-up/Subscription](https://tokenflux.dev/purchase) - purchase inference credits
 - [Invoices](/en/docs/tokenflux/invoice) - learn how invoices are handled
-<!-- - [Referral Rewards](/en/docs/tokenflux/referral) - invite friends and earn rewards -->
+- [Referral Rewards](/en/docs/tokenflux/referral) - invite friends and earn rewards
