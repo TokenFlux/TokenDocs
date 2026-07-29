@@ -2,6 +2,12 @@
 
 This document describes the rules for using TokenFlux. It applies to the TokenFlux website, API, API keys, and related integration methods.
 
+::: danger Violating upstream usage policies leads to bans
+Do not use this service for anything that violates an upstream provider's usage policy (for example OpenAI's), including but not limited to reverse engineering or bypassing restrictions.
+
+We have received notice from upstream that accounts were banned for violating those policies, and we are deploying and strengthening risk-control detection. **Once a violation is detected and confirmed, the account will be banned immediately and no refund will be issued.**
+:::
+
 ## Overview
 
 You must not use TokenFlux for illegal activity, infringement, fraud, harassment, malicious attacks, restriction bypassing, or any other abuse of platform resources.
@@ -47,6 +53,18 @@ You must not use TokenFlux to conduct or assist with:
 - DDoS, resource exhaustion attacks, or other destructive actions against any system
 - Bypassing authentication, quotas, rate limits, or security protections of TokenFlux or related services
 - Maliciously consuming platform resources through abnormal calls, idle requests, traffic inflation, or other methods
+
+### Violating Upstream Provider Usage Policies
+
+TokenFlux depends on upstream model providers. When using this service you must also comply with those providers' usage policies.
+
+You must not:
+
+- Reverse engineer upstream models, endpoints, or services, probe their internal implementation, or extract system prompts
+- Bypass an upstream provider's safety policies, content filtering, or usage restrictions
+- Perform any other action that violates an upstream provider's usage policy
+
+Upstream providers have already banned accounts for such violations. TokenFlux is deploying and strengthening risk-control detection. Once a violation is detected and confirmed, the account will be banned immediately, **with no refund**.
 
 ### Account and Risk-Control Evasion
 

@@ -1,5 +1,9 @@
 # FAQ
 
+## How do I get in touch about enterprise integration?
+
+An enterprise group is now open. For enterprise integration, API integration, or partnership enquiries, join QQ group `794504445`.
+
 ## What should I do if connections keep dropping?
 
 If this site or related services keep disconnecting, try using a proxy first and then retry.
