@@ -4,8 +4,16 @@ TokenFlux 目前支持 `invoice` 和大陆普通发票。不同类型的处理�
 
 ## 支持类型
 
-- **Invoice**：使用 Stripe 支付会自动生成，无需联系管理员。
+- **Invoice**：使用 Stripe 支付会自动生成，无需联系管理员。在 [我的订单](https://tokenflux.dev/orders) 中点击对应订单的 `账单` 即可查看。
 - **大陆普通发票**：请联系 `daoge` 人工处理，并会收取 `6%` 服务费。
+
+<div style="text-align: center;">
+  <img src="/images/invoice/orders-billing.png" alt="我的订单页面中，Stripe 订单右侧的账单按钮" />
+</div>
+
+::: tip
+只有通过 Stripe 支付的订单才有 `账单` 按钮，早期通过其他渠道支付的订单不会显示。
+:::
 
 ## 开票主体
 

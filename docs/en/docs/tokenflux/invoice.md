@@ -4,8 +4,16 @@ TokenFlux currently supports `invoice` documents and mainland China general invo
 
 ## Supported Types
 
-- **Invoice**: Automatically generated when you pay through Stripe. No admin contact is required.
+- **Invoice**: Automatically generated when you pay through Stripe. No admin contact is required. Open [My Orders](https://tokenflux.dev/orders) and click `Billing` on the relevant order to view it.
 - **Mainland China general invoice**: Contact `daoge` for manual processing. A `6%` service fee applies.
+
+<div style="text-align: center;">
+  <img src="/images/invoice/orders-billing.png" alt="Billing button on the right side of a Stripe order in the My Orders page" />
+</div>
+
+::: tip
+Only orders paid through Stripe have a `Billing` button. Older orders paid through other channels do not show one.
+:::
 
 ## Invoice Entity
 
