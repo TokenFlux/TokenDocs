@@ -24,11 +24,17 @@ export const sidebar = {
       ],
     },
     {
-      text: "TokenFlux",
+      text: "API Key",
       items: [
         { text: "创建 API Key", link: "/docs/tokenflux/create-apikey" },
+        { text: "API 端点", link: "/docs/tokenflux/endpoints" },
         { text: "复合 Key", link: "/docs/tokenflux/composite-key" },
         { text: "Fast 模式", link: "/docs/tokenflux/fast-mode" },
+      ],
+    },
+    {
+      text: "TokenFlux",
+      items: [
         { text: "计费说明", link: "/docs/tokenflux/billing" },
         { text: "发票说明", link: "/docs/tokenflux/invoice" },
         { text: "团队", link: "/docs/tokenflux/team" },
@@ -74,11 +80,17 @@ export const enSidebar = {
       ],
     },
     {
-      text: "TokenFlux",
+      text: "API Key",
       items: [
         { text: "Create API Key", link: "/en/docs/tokenflux/create-apikey" },
+        { text: "API Endpoints", link: "/en/docs/tokenflux/endpoints" },
         { text: "Composite Key", link: "/en/docs/tokenflux/composite-key" },
         { text: "Fast Mode", link: "/en/docs/tokenflux/fast-mode" },
+      ],
+    },
+    {
+      text: "TokenFlux",
+      items: [
         { text: "Billing", link: "/en/docs/tokenflux/billing" },
         { text: "Invoices", link: "/en/docs/tokenflux/invoice" },
         { text: "Team", link: "/en/docs/tokenflux/team" },
