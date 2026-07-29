@@ -24,6 +24,7 @@ Multipliers differ between groups; see [Billing](/en/docs/tokenflux/billing) for
 
 After you get an API key, you can start integrating TokenFlux:
 
+- [API Endpoints](/en/docs/tokenflux/endpoints) - the API address to enter in your client
 - [Quickstart](/en/docs/quickstart) - choose an integration path based on your workflow
 - [Cherry Studio Guide](/en/docs/chatbot/cherry-studio) - desktop AI chat client
 - [RikkaHub Guide](/en/docs/chatbot/rikkahub) - Android AI chat client

@@ -24,6 +24,7 @@
 
 拿到 API Key 后，可以直接开始接入：
 
+- [API 端点](/docs/tokenflux/endpoints) — 客户端要填的 API 地址
 - [快速开始](/docs/quickstart) — 根据使用习惯选择接入方式
 - [Cherry Studio 使用指南](/docs/chatbot/cherry-studio) — 桌面端 AI 对话客户端
 - [RikkaHub 使用指南](/docs/chatbot/rikkahub) — Android 端 AI 对话客户端
