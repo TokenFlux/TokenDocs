@@ -41,8 +41,10 @@ describe('site config', () => {
     const enLinks = getSidebarLinks(config.locales.en.themeConfig.sidebar, '/en/docs/')
 
     expect(rootLinks).toContain('/docs/quickstart')
+    expect(rootLinks).toContain('/docs/agents/workbuddy')
     expect(rootLinks).toContain('/docs/tos/supported-countries')
     expect(enLinks).toContain('/en/docs/quickstart')
+    expect(enLinks).toContain('/en/docs/agents/workbuddy')
     expect(enLinks).toContain('/en/docs/tos/supported-countries')
     expect(enLinks.every(link => link.startsWith('/en/docs/'))).toBe(true)
   })

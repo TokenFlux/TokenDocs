@@ -50,6 +50,7 @@ export const sidebar = {
         { text: "Codex++", link: "/docs/agents/codex-plus-plus" },
         { text: "Hermes", link: "/docs/agents/hermes" },
         { text: "OpenCode", link: "/docs/agents/opencode" },
+        { text: "WorkBuddy", link: "/docs/agents/workbuddy" },
       ],
     },
     {
@@ -106,6 +107,7 @@ export const enSidebar = {
         { text: "Codex++", link: "/en/docs/agents/codex-plus-plus" },
         { text: "Hermes", link: "/en/docs/agents/hermes" },
         { text: "OpenCode", link: "/en/docs/agents/opencode" },
+        { text: "WorkBuddy", link: "/en/docs/agents/workbuddy" },
       ],
     },
     {
