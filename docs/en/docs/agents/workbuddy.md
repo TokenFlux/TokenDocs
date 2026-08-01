@@ -76,7 +76,6 @@ Then complete the form:
 | --- | --- |
 | Provider | `Custom` |
 | Endpoint | `https://tokenflux.dev/v1/chat/completions` |
-| Mainland China endpoint | `https://token.memoh.net/v1/chat/completions` |
 | API Key | Your TokenFlux API key |
 | Model Name | The exact model ID from the marketplace, such as `gpt-5.6-sol` |
 | Tool Calling | Enable it; `gpt-5.6-sol`, used in this guide, supports tool calling |

@@ -5,7 +5,7 @@ TokenFlux 是一个模型中转服务：用一个 API Key，在你熟悉的客�
 本页帮你规划路线。三步就能跑起来。
 
 ::: tip 访问提示
-本站部分内容或相关服务可能需要挂梯子后访问。中国大陆网络可以改用 [大陆优化端点](/docs/tokenflux/endpoints)。
+本站部分内容或相关服务可能需要挂梯子后访问。API 请求请使用默认的 `tokenflux.dev` 端点；原大陆优化端点已废弃。
 :::
 
 ::: details For AGENTS
@@ -67,5 +67,5 @@ TokenFlux 是一个模型中转服务：用一个 API Key，在你熟悉的客�
 ## 遇到问题
 
 - [FAQ](/docs/faq) — 连接不稳定、模型检测等常见问题
-- [API 端点](/docs/tokenflux/endpoints) — 端点选择与大陆优化线路
+- [API 端点](/docs/tokenflux/endpoints) — 端点选择与废弃线路迁移
 - [使用政策](/docs/tos/usage-policy) — 哪些用法会导致封禁

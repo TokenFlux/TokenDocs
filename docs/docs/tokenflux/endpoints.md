@@ -7,9 +7,13 @@
 | 用途 | OpenAI 格式 | Anthropic 格式 |
 | --- | --- | --- |
 | 默认 | `https://tokenflux.dev/v1` | `https://tokenflux.dev` |
-| 中国大陆优化 | `https://token.memoh.net/v1` | `https://token.memoh.net` |
+| 国内加速（已废弃） | `https://token.memoh.net/v1` | `https://token.memoh.net` |
 
-两组端点功能完全一致，用的是同一个 API Key，可以随时切换。
+新配置请使用默认的 `tokenflux.dev` 端点。`token.memoh.net` 仅列于此处，方便识别和迁移已有配置。
+
+::: tip 请求量较大时请使用默认端点
+如果您的请求量很大，建议切换到 `tokenflux.dev` 端点。国内加速端点已废弃，且在上述情况下容易出现请求堆积，导致首字延迟升高。
+:::
 
 默认端点也能在 [API 密钥页面](https://tokenflux.dev/keys) 顶部直接一键复制：
 
@@ -26,17 +30,14 @@
 
 如果客户端配置项里写的是 `ANTHROPIC_BASE_URL`，用 Anthropic 格式；写 `OPENAI_BASE_URL` 或 `Base URL` 的，一般用 OpenAI 格式。具体填法各接入教程里都有写明。
 
-## 中国大陆优化端点
+## 已废弃的国内加速端点
 
-`token.memoh.net` 针对中国大陆网络做了链路优化，延迟更低、连接更稳定。
+`token.memoh.net` 已废弃，不建议继续用于新配置。现有配置如仍在使用该地址，请改为对应格式的默认端点：
 
-- 与默认端点功能一致，同一个 API Key 通用。
-- 大陆网络下访问默认端点不稳定时，换成这组通常能改善。
-- 换端点只需改客户端里的 API 地址，其他配置不用动。
+- OpenAI 格式：`https://tokenflux.dev/v1`
+- Anthropic 格式：`https://tokenflux.dev`
 
-::: tip
-两组端点都可以随时切换，不影响已有的密钥、额度和用量统计。
-:::
+切换时只需修改客户端中的 API 地址，其他配置不用改。
 
 ## 相关入口
 

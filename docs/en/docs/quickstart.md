@@ -5,7 +5,7 @@ TokenFlux is a model gateway: one API key lets you call models from many provide
 This page maps out the route. Three steps and you are running.
 
 ::: tip Access Note
-Some content on this site or related services may require a proxy before access works reliably. On mainland China networks, try the [optimized endpoints](/en/docs/tokenflux/endpoints).
+Some content on this site or related services may require a proxy before access works reliably. Use the default `tokenflux.dev` endpoint for API requests; the former mainland acceleration endpoint is deprecated.
 :::
 
 ::: details For AGENTS
@@ -67,5 +67,5 @@ Once things work, these may be useful:
 ## Troubleshooting
 
 - [FAQ](/en/docs/faq) - connection drops, model detection, and other common questions
-- [API Endpoints](/en/docs/tokenflux/endpoints) - choosing an endpoint and the mainland China route
+- [API Endpoints](/en/docs/tokenflux/endpoints) - choosing an endpoint and migrating from deprecated routes
 - [Usage Policy](/en/docs/tos/usage-policy) - what gets accounts banned

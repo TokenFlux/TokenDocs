@@ -76,7 +76,6 @@ WorkBuddy 会在模型页面显示实际的本地配置文件路径。WorkBuddy 
 | --- | --- |
 | 提供商 | `自定义 / Custom` |
 | 接口地址 | `https://tokenflux.dev/v1/chat/completions` |
-| 中国大陆优化接口 | `https://token.memoh.net/v1/chat/completions` |
 | API Key | 你的 TokenFlux API Key |
 | 模型名称 | 模型广场显示的精确模型 ID，例如 `gpt-5.6-sol` |
 | 工具调用 | 开启；本教程使用的 `gpt-5.6-sol` 支持 Tool Calling |
