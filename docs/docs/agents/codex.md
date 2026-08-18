@@ -102,8 +102,6 @@
   disable_response_storage = true
   network_access = "enabled"
   windows_wsl_setup_acknowledged = true
-  model_context_window = 1000000
-  model_auto_compact_token_limit = 900000
 
   [model_providers.tokenflux]
   name = "OpenAI"
@@ -153,3 +151,48 @@
 - `name` 是用于触发远程压缩的显示名，保持 `OpenAI` 即可。
 - provider 标识 `tokenflux`（即 `model_provider` 和 `[model_providers.tokenflux]`）不受影响，保持不变。
 - 这个设置不会丢失已有聊天记录。
+
+## 1M 上下文窗口
+
+`ChatGPT` 分组已全面支持 100 万上下文，推荐开启。
+
+### 安装 Skill
+
+克隆到 `Codex` 的用户 Skill 目录：
+
+```bash
+git clone https://github.com/smartcmd/codex-context-window.git ~/.codex/skills/codex-context-window
+```
+
+也可以把下面这段直接发给 `Codex`，让它自己完成安装和配置：
+
+```text
+安装这个 Skill：https://github.com/smartcmd/codex-context-window
+
+然后将 gpt-5.6-luna、gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
+```
+
+### 配置模型
+
+新开一个任务让 `Codex` 发现 Skill，然后发送：
+
+```text
+将 gpt-5.6-luna、gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
+```
+
+Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和自动压缩策略，确认后才写入配置。配置完成后重启 `Codex`。
+
+::: tip 有效比例保持默认
+有效比例保持默认的 `95%` 即可。此时 1M 原始窗口对应的可用上下文是 `950000` token，状态栏显示的也是这个折算后的数字。
+:::
+
+### 确认是否生效
+
+- `Codex App`：在 **设置 → 常规 → 编辑器** 中开启 **显示上下文窗口使用情况**，新开一条消息即可看到窗口大小。
+- `Codex CLI`：输入 `/status`，在输出中查看 **Context window**。
+
+## 关于 codex-auto-review
+
+为消除歧义，`codex-auto-review` 现已默认重定向到 `gpt-5.6-sol`。
+
+模型路由功能已经上线，可以在 [API 密钥页面](https://tokenflux.dev/keys) 自助把它重定向到 `gpt-5.6-terra` 或 `gpt-5.6-luna`，以降低花费。
