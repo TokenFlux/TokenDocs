@@ -89,128 +89,27 @@ In your project directory, create an `opencode.json` file.
 
 **Step 2: Fill in the configuration**
 
-Copy the following content into `opencode.json`. The [model marketplace](https://tokenflux.dev/models) currently has four public groups. If you have multiple TokenFlux API keys, split them by group into multiple provider keys; models in the same group can stay under the same provider.
+Copy the following content into `opencode.json` and replace `YOUR_API_KEY` with your TokenFlux API key.
 
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "tokenflux-chatgpt-plus/gpt-5.4",
-  "small_model": "tokenflux-chatgpt-plus/gpt-5.4-mini",
+  "model": "openai/gpt-5.6-sol",
+  "small_model": "openai/gpt-5.4-mini",
   "provider": {
-    "tokenflux-chatgpt-pro": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "TokenFlux ChatGPT Pro",
+    "openai": {
       "options": {
         "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_CHATGPT_PRO_API_KEY"
-      },
-      "models": {
-        "codex-auto-review": {
-          "name": "codex-auto-review"
-        },
-        "gpt-5.2": {
-          "name": "GPT-5.2"
-        },
-        "gpt-5.3": {
-          "name": "gpt-5.3"
-        },
-        "gpt-5.3-spark": {
-          "name": "gpt-5.3-spark"
-        },
-        "gpt-5.4": {
-          "name": "GPT-5.4"
-        },
-        "gpt-5.4-mini": {
-          "name": "GPT-5.4 Mini"
-        },
-        "gpt-5.4-pro": {
-          "name": "gpt-5.4-pro"
-        },
-        "gpt-5.5": {
-          "name": "GPT-5.5"
-        }
-      }
-    },
-    "tokenflux-chatgpt-plus": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "TokenFlux ChatGPT Plus",
-      "options": {
-        "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_CHATGPT_PLUS_API_KEY"
-      },
-      "models": {
-        "codex-auto-review": {
-          "name": "codex-auto-review"
-        },
-        "gpt-5.2": {
-          "name": "GPT-5.2"
-        },
-        "gpt-5.3": {
-          "name": "gpt-5.3"
-        },
-        "gpt-5.3-spark": {
-          "name": "gpt-5.3-spark"
-        },
-        "gpt-5.4": {
-          "name": "GPT-5.4"
-        },
-        "gpt-5.4-mini": {
-          "name": "GPT-5.4 Mini"
-        },
-        "gpt-5.5": {
-          "name": "GPT-5.5"
-        }
-      }
-    },
-    "tokenflux-deepseek": {
-      "npm": "@ai-sdk/anthropic",
-      "name": "TokenFlux DeepSeek",
-      "options": {
-        "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_DEEPSEEK_API_KEY"
-      },
-      "models": {
-        "deepseek-v4-flash": {
-          "name": "deepseek-v4-flash"
-        },
-        "deepseek-v4-pro": {
-          "name": "deepseek-v4-pro"
-        }
-      }
-    },
-    "tokenflux-mimo": {
-      "npm": "@ai-sdk/anthropic",
-      "name": "TokenFlux MIMO",
-      "options": {
-        "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_MIMO_API_KEY"
-      },
-      "models": {
-        "mimo-v2.5": {
-          "name": "mimo-v2.5"
-        },
-        "mimo-v2.5-pro": {
-          "name": "mimo-v2.5-pro"
-        }
+        "apiKey": "YOUR_API_KEY"
       }
     }
   }
 }
 ```
 
-Replace each `YOUR_..._API_KEY` with the TokenFlux API key for the corresponding group.
+`OpenCode` automatically discovers models through its built-in `openai` provider. Configure other platforms under their matching built-in provider in the same way. To access multiple groups, enable **composite key** when creating the API key.
 
-This example is organized by the current public groups in the TokenFlux model marketplace:
-
-- `tokenflux-chatgpt-plus` maps to ChatGPT Plus.
-- `tokenflux-chatgpt-pro` maps to ChatGPT Pro and additionally includes `gpt-5.4-pro`.
-- `tokenflux-deepseek` maps to DeepSeek and belongs to the Anthropic platform group.
-- `tokenflux-mimo` maps to MIMO and belongs to the Anthropic platform group.
-- `model` and `small_model` must use the full `provider_id/model_id` form.
-- OpenAI platform groups use `@ai-sdk/openai-compatible`; Anthropic platform groups use `@ai-sdk/anthropic`.
-- If you only want to connect one group first, keep only that provider block.
-
-If you later want to add `reasoningEffort`, `textVerbosity`, or other options for a specific model, add an `options` field under that model entry.
+Once configured, run `opencode models` to confirm the models loaded correctly.
 
 **Step 3: Start OpenCode**
 

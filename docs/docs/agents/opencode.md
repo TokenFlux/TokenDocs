@@ -89,128 +89,27 @@ scoop install opencode
 
 **第二步：填写配置**
 
-将以下内容复制到 `opencode.json`。[模型广场](https://tokenflux.dev/models) 当前有 4 个公开分组；如果你有多张 TokenFlux API Key，就按分组拆成多个 provider key，同一分组里的模型放在同一个 provider 里即可。
+将以下内容复制到 `opencode.json`，把 `YOUR_API_KEY` 换成你的 TokenFlux API Key。
 
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "tokenflux-chatgpt-plus/gpt-5.4",
-  "small_model": "tokenflux-chatgpt-plus/gpt-5.4-mini",
+  "model": "openai/gpt-5.6-sol",
+  "small_model": "openai/gpt-5.4-mini",
   "provider": {
-    "tokenflux-chatgpt-pro": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "TokenFlux ChatGPT Pro",
+    "openai": {
       "options": {
         "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_CHATGPT_PRO_API_KEY"
-      },
-      "models": {
-        "codex-auto-review": {
-          "name": "codex-auto-review"
-        },
-        "gpt-5.2": {
-          "name": "GPT-5.2"
-        },
-        "gpt-5.3": {
-          "name": "gpt-5.3"
-        },
-        "gpt-5.3-spark": {
-          "name": "gpt-5.3-spark"
-        },
-        "gpt-5.4": {
-          "name": "GPT-5.4"
-        },
-        "gpt-5.4-mini": {
-          "name": "GPT-5.4 Mini"
-        },
-        "gpt-5.4-pro": {
-          "name": "gpt-5.4-pro"
-        },
-        "gpt-5.5": {
-          "name": "GPT-5.5"
-        }
-      }
-    },
-    "tokenflux-chatgpt-plus": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "TokenFlux ChatGPT Plus",
-      "options": {
-        "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_CHATGPT_PLUS_API_KEY"
-      },
-      "models": {
-        "codex-auto-review": {
-          "name": "codex-auto-review"
-        },
-        "gpt-5.2": {
-          "name": "GPT-5.2"
-        },
-        "gpt-5.3": {
-          "name": "gpt-5.3"
-        },
-        "gpt-5.3-spark": {
-          "name": "gpt-5.3-spark"
-        },
-        "gpt-5.4": {
-          "name": "GPT-5.4"
-        },
-        "gpt-5.4-mini": {
-          "name": "GPT-5.4 Mini"
-        },
-        "gpt-5.5": {
-          "name": "GPT-5.5"
-        }
-      }
-    },
-    "tokenflux-deepseek": {
-      "npm": "@ai-sdk/anthropic",
-      "name": "TokenFlux DeepSeek",
-      "options": {
-        "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_DEEPSEEK_API_KEY"
-      },
-      "models": {
-        "deepseek-v4-flash": {
-          "name": "deepseek-v4-flash"
-        },
-        "deepseek-v4-pro": {
-          "name": "deepseek-v4-pro"
-        }
-      }
-    },
-    "tokenflux-mimo": {
-      "npm": "@ai-sdk/anthropic",
-      "name": "TokenFlux MIMO",
-      "options": {
-        "baseURL": "https://tokenflux.dev/v1",
-        "apiKey": "YOUR_MIMO_API_KEY"
-      },
-      "models": {
-        "mimo-v2.5": {
-          "name": "mimo-v2.5"
-        },
-        "mimo-v2.5-pro": {
-          "name": "mimo-v2.5-pro"
-        }
+        "apiKey": "YOUR_API_KEY"
       }
     }
   }
 }
 ```
 
-将每个 `YOUR_..._API_KEY` 换成对应分组的 TokenFlux API Key。
+`OpenCode` 会通过内置的 `openai` provider 自动识别模型。其他平台也按同样方式配置到对应的内置 provider；需要访问多个分组时，可以在创建 API Key 时开启 **复合 Key**。
 
-这个示例按 TokenFlux 模型广场当前公开分组整理：
-
-- `tokenflux-chatgpt-plus` 对应 ChatGPT Plus。
-- `tokenflux-chatgpt-pro` 对应 ChatGPT Pro，额外包含 `gpt-5.4-pro`。
-- `tokenflux-deepseek` 对应 DeepSeek，属于 Anthropic 平台分组。
-- `tokenflux-mimo` 对应 MIMO，属于 Anthropic 平台分组。
-- `model` 和 `small_model` 需要写成 `provider_id/model_id` 的完整形式。
-- OpenAI 平台分组使用 `@ai-sdk/openai-compatible`；Anthropic 平台分组使用 `@ai-sdk/anthropic`。
-- 如果你只想先接一组，就只保留那个 provider 块。
-
-如果你后面还想给某个模型单独加 `reasoningEffort`、`textVerbosity` 或其他选项，直接在对应模型条目里补 `options` 就行。
+配置完成后运行 `opencode models`，确认模型已经正确加载。
 
 **第三步：启动 OpenCode**
 
