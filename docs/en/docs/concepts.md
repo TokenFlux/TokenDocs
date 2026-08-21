@@ -43,21 +43,16 @@ Account type affects which features are available. Forcing [Fast Mode](/en/docs/
 
 ## API Keys
 
-A key has two independent properties.
-
-**Scope** determines who pays and cannot be changed after creation.
+**Scope** determines who pays, cannot be changed after creation, and is switched from the top right of the [API keys page](https://tokenflux.dev/keys).
 
 | Scope | Paid by | Available groups come from |
 | --- | --- | --- |
 | Personal | You | Your own group entitlements |
 | Team | The team owner | The owner's group entitlements |
 
-**Type** determines how the group is specified.
+A regular key binds to one group at creation, and model IDs are written as-is.
 
-| Type | Groups bound | Model ID format |
-| --- | --- | --- |
-| Regular | 1 | `model-id` |
-| [Composite](/en/docs/tokenflux/composite-key) | Up to 20 | `prefix/model-id` |
+Enabling [Composite Key](/en/docs/tokenflux/composite-key) at creation binds 1 to 20 groups, each with its own prefix, and the group is selected per request via `prefix/model-id`. This suits work spanning several groups, removing the need for a separate key per group or repeated client reconfiguration.
 
 ## Cost Calculation
 
