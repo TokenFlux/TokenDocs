@@ -23,17 +23,7 @@ Different API key groups may have different multipliers. The group multiplier is
   <img src="/images/billing/model-pricing.png" alt="Group multiplier badge in the model marketplace, with per-model input and output prices that already include the multiplier" />
 </div>
 
-#### ChatGPT Pro Groups
-
-The `ChatGPT Pro` account pool backs several groups. They differ in client restrictions and multiplier:
-
-| Group | Difference |
-| --- | --- |
-| `ChatGPT Pro` | Codex only |
-| `ChatGPT Pro (不限客户端)` | No client restriction |
-| `ChatGPT Pro (负载均衡)` | Load balanced, most stable |
-
-If your client is not `Codex App` or `Codex CLI`, pick one of the unrestricted groups. Multipliers and full descriptions are whatever the [model marketplace](https://tokenflux.dev/models) currently shows.
+One account pool can back several groups whose multipliers and client restrictions differ, as with the three groups on the `ChatGPT Pro` pool. Check [Core Concepts](/en/docs/concepts#groups-that-need-attention) and the group description in the model marketplace before choosing.
 
 ::: tip Groups are not subscription plans
 This refers to **API key groups**, which are distinct from the subscription plan names below (Lite, Plus, Pro, and so on). Do not confuse the two.

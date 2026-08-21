@@ -1,46 +1,58 @@
 # API Endpoints
 
-Most clients ask for an API address (base URL) during setup. This page lists every TokenFlux endpoint.
+Most clients need an API address (base URL) during setup. TokenFlux exposes three entry points, one per protocol format.
 
-## Endpoint Overview
+## Protocol Entry Points
 
-| Purpose | OpenAI format | Anthropic format |
+| Protocol format | Base URL | Typical request path |
 | --- | --- | --- |
-| Default | `https://tokenflux.dev/v1` | `https://tokenflux.dev` |
-| Mainland acceleration (deprecated) | `https://token.memoh.net/v1` | `https://token.memoh.net` |
+| OpenAI format | `https://tokenflux.dev/v1` | `POST /chat/completions` |
+| Anthropic format | `https://tokenflux.dev` | `POST /v1/messages` |
+| Gemini format | `https://tokenflux.dev` | `POST /v1beta/models/<model-id>:generateContent` |
 
-Use the default `tokenflux.dev` endpoints for new configurations. `token.memoh.net` is listed only to help identify and migrate existing configurations.
-
-::: tip Use the default endpoint for high request volume
-If your request volume is high, switch to the `tokenflux.dev` endpoint. The mainland acceleration endpoint is deprecated and can accumulate queued requests under that load, increasing time to first token.
-:::
-
-The default endpoints can also be copied with one click from the top of the [API keys page](https://tokenflux.dev/keys):
+The OpenAI and Anthropic endpoints can be copied from the top of the [API keys page](https://tokenflux.dev/keys):
 
 <div style="text-align: center;">
-  <img src="/images/quickstart/api-endpoints.png" alt="Endpoint bar at the top of the API keys page, with one-click copy for the OpenAI-format and Anthropic-format endpoints" />
+  <img src="/images/quickstart/api-endpoints.png" alt="Endpoint section at the top of the API keys page with one-click copy for the OpenAI and Anthropic format endpoints" />
 </div>
 
 ## Which Format to Use
 
-It depends on the client, not the model.
+This depends on the client, not the model.
 
-- **OpenAI format** (ends with `/v1`): what most clients expect, including Cherry Studio, RikkaHub, OpenCode, and anything labelled "OpenAI compatible".
-- **Anthropic format** (no `/v1`): for clients that speak the Anthropic protocol natively, such as `Claude Code`.
+- **OpenAI format** (ends with `/v1`): used by most clients, including Cherry Studio, RikkaHub, OpenCode, and anything labelled "OpenAI compatible".
+- **Anthropic format** (no `/v1`): used by clients that speak the Anthropic protocol natively, such as `Claude Code`.
+- **Gemini format**: used by clients and SDKs on Google's native protocol, where the model ID goes in the request path.
 
-If the client's setting is called `ANTHROPIC_BASE_URL`, use the Anthropic format. If it is `OPENAI_BASE_URL` or just `Base URL`, use the OpenAI format. Each integration guide spells out the exact value to enter.
+If the client's setting is named `ANTHROPIC_BASE_URL`, use the Anthropic format. If it is `OPENAI_BASE_URL` or `Base URL`, use the OpenAI format. Each integration guide states the exact value.
 
-## Deprecated Mainland Acceleration Endpoints
+## Authentication
 
-`token.memoh.net` is deprecated and should not be used for new configurations. If an existing configuration still uses it, switch to the corresponding default endpoint:
+The API key is sent in a request header, which most clients handle automatically.
 
-- OpenAI format: `https://tokenflux.dev/v1`
-- Anthropic format: `https://tokenflux.dev`
+| Entry point | Accepted credentials |
+| --- | --- |
+| OpenAI format, Anthropic format | `Authorization: Bearer <key>`, `x-api-key: <key>`, `x-goog-api-key: <key>` |
+| Gemini format | All of the above, plus the query parameter `?key=<key>` |
 
-Only the API address needs to change; the rest of the client configuration stays the same.
+The OpenAI and Anthropic formats do not accept a key in the query string and return 400. On the Gemini format, `?api_key=` is deprecated; use `?key=` or a header.
 
-## Related Links
+With a [composite key](/en/docs/tokenflux/composite-key), the model ID needs a prefix; on the Gemini format the prefix goes in the path.
+
+## Deprecated Mainland Acceleration Endpoint
+
+`token.memoh.net` is deprecated and must not be used for new setups. If an existing setup still points at it, switch to the default endpoint for that format:
+
+| Protocol format | Old address | Change to |
+| --- | --- | --- |
+| OpenAI format | `https://token.memoh.net/v1` | `https://tokenflux.dev/v1` |
+| Anthropic format | `https://token.memoh.net` | `https://tokenflux.dev` |
+
+Only the API address in the client needs to change; everything else stays the same. Migration matters most at higher request volumes, where the deprecated endpoint tends to queue requests and raise time to first token.
+
+## Related Pages
 
 - [Create API Key](/en/docs/tokenflux/create-apikey) - get a key first
-- [Quickstart](/en/docs/quickstart) - choose an integration path for your client
-- [FAQ](/en/docs/faq) - connection issues and other common questions
+- [Quickstart](/en/docs/quickstart) - pick an integration path by client
+- [Troubleshooting](/en/docs/troubleshooting) - what to check when a client cannot connect
+- [Error Codes](/en/docs/errors) - the full list of authentication and request errors

@@ -17,23 +17,13 @@
 
 ### 分组倍率
 
-不同的 API Key 分组可能有不同的倍率。分组倍率是基于模型原价计算的，但模型广场显示的价格已经包含了倍率调整——那就是实际支付的价格。
+不同的 API Key 分组可能有不同的倍率。分组倍率基于模型原价计算，模型广场显示的价格已包含倍率调整，即为实际支付的价格。
 
 <div style="text-align: center;">
   <img src="/images/billing/model-pricing.png" alt="模型广场中某分组的倍率标签，以及该分组下各模型已含倍率的输入输出单价" />
 </div>
 
-#### ChatGPT Pro 系列分组
-
-`ChatGPT Pro` 号池下有多个分组，区别在于客户端限制和倍率：
-
-| 分组 | 区别 |
-| --- | --- |
-| `ChatGPT Pro` | 只限 Codex 使用 |
-| `ChatGPT Pro (不限客户端)` | 不限制客户端 |
-| `ChatGPT Pro (负载均衡)` | 负载均衡，稳定性最好 |
-
-如果你的客户端不是 `Codex App` 或 `Codex CLI`，请选择不限客户端的分组。各分组的倍率和完整说明以 [模型广场](https://tokenflux.dev/models) 为准。
+同一号池可能对应多个分组，倍率与客户端限制各不相同，例如 `ChatGPT Pro` 号池下的三个分组。选择前请查看 [核心概念](/docs/concepts#需要留意的分组) 与模型广场中的分组说明。
 
 ::: tip 分组不是套餐
 这里说的是 **API Key 分组**，与下方的订阅套餐名称（Lite / Plus / Pro 等）是两回事，不要混淆。

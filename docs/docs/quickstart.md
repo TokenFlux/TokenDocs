@@ -68,6 +68,6 @@ TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉�
 
 - [排障](/docs/troubleshooting) — 按症状定位，含反馈模板
 - [错误码](/docs/errors) — 完整错误码清单
-- [FAQ](/docs/faq) — 连接不稳定、模型检测等常见问题
+- [FAQ](/docs/faq) — 企业接入、模型检测等常见问题
 - [API 端点](/docs/tokenflux/endpoints) — 端点选择与废弃线路迁移
 - [使用政策](/docs/tos/usage-policy) — 哪些用法会导致封禁
