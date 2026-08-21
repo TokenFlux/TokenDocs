@@ -96,8 +96,8 @@
 
   ```toml
   model_provider = "tokenflux"
-  model = "gpt-5.4"
-  review_model = "gpt-5.4"
+  model = "gpt-5.6-sol"
+  review_model = "gpt-5.6-sol"
   model_reasoning_effort = "xhigh"
   disable_response_storage = true
   network_access = "enabled"

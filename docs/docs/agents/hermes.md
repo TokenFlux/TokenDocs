@@ -19,7 +19,7 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
 
    ```yaml
    model:
-     default: "gpt-5.4"
+     default: "gpt-5.6-sol"
      provider: "custom"
      base_url: "https://tokenflux.dev/v1"
    ```

@@ -78,7 +78,7 @@ AppImage 已内置所有依赖，适用于大多数主流 Linux 发行版，无�
      <img src="/images/cherry-studio/provider-config-fields.png" alt="Cherry Studio 填写 TokenFlux API Key 和 API 地址的界面" />
    </div>
 
-5. 保存后，在模型列表中添加你需要使用的模型，例如 `gpt-5.4` 或 `gpt-5.4-mini`。
+5. 保存后，在模型列表中添加你需要使用的模型，例如 `gpt-5.6-sol` 或 `gpt-5.6-luna`。
 6. 回到对话界面，选择刚才添加的模型即可开始使用。
 
 ## 验证接入

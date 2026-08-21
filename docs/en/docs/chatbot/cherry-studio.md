@@ -78,7 +78,7 @@ After installation, add TokenFlux as a custom provider in Cherry Studio.
      <img src="/images/cherry-studio/provider-config-fields.png" alt="Cherry Studio TokenFlux API key and API URL fields" />
    </div>
 
-5. Save it, then add the models you want to use in the model list, such as `gpt-5.4` or `gpt-5.4-mini`.
+5. Save it, then add the models you want to use in the model list, such as `gpt-5.6-sol` or `gpt-5.6-luna`.
 6. Return to the chat interface and select the model you just added to start using it.
 
 ## Verify the Setup
