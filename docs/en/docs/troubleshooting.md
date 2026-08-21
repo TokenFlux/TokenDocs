@@ -14,6 +14,26 @@ curl https://tokenflux.dev/health
 
 `{"status":"ok"}` means the gateway is operating normally and the problem lies in configuration or the account.
 
+## Test the Key and Endpoint on Their Own
+
+When a client has many settings, use curl first to rule the client out. Replace `$KEY` with your API key:
+
+```bash
+curl https://tokenflux.dev/v1/models -H "authorization: Bearer $KEY"
+```
+
+This request is not billed.
+
+| Response | Meaning |
+| --- | --- |
+| A model list | The key, endpoint, and group are fine; the problem is in the client configuration |
+| `401` | The key itself is the problem, see the 401 section below |
+| `403` | A group, balance, or subscription problem, see the 403 section below |
+
+For a group on the Anthropic format, use `https://tokenflux.dev/v1/messages`, switch the header to `x-api-key`, and add `anthropic-version: 2023-06-01`.
+
+To confirm a specific model works, put its ID into a `/v1/chat/completions` request. That one is billed.
+
 ## No Connection, or Nothing Happens
 
 Check in order:

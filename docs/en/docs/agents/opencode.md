@@ -137,7 +137,7 @@ opencode run -m openai/<model-id> "Reply with OK only"
 
 `opencode models` lists the loaded models; seeing your model ID there means the configuration was picked up. `opencode run` makes a real, billed call, and a reply means the setup works.
 
-If the commands fail or the model list is empty, first use the curl checks in [Verify the Setup](/en/docs/quickstart#verify-the-setup) to confirm the key and endpoint, then review `opencode.json`.
+If the commands fail or the model list is empty, first rule the client out with [Test the Key and Endpoint on Their Own](/en/docs/troubleshooting#test-the-key-and-endpoint-on-their-own), then review `opencode.json`.
 
 ## Related Pages
 

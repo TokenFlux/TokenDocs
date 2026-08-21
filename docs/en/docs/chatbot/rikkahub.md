@@ -37,7 +37,7 @@ Whether the model list refreshes in step 5 is the most direct check: models appe
 
 Then send a message in the chat interface. A reply means the setup works, and the call appears in the [usage logs](https://tokenflux.dev/usage).
 
-If the model list does not refresh, use the curl checks in [Verify the Setup](/en/docs/quickstart#verify-the-setup) to confirm the key and endpoint, then check that the base URL ends with `/v1` and does not repeat the path.
+If the model list does not refresh, rule the client out with [Test the Key and Endpoint on Their Own](/en/docs/troubleshooting#test-the-key-and-endpoint-on-their-own), then check that the base URL ends with `/v1` and does not repeat the path.
 
 ## Next Steps
 

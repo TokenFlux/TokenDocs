@@ -137,7 +137,7 @@ opencode run -m openai/<模型 ID> "只回复 OK"
 
 `opencode models` 列出已加载的模型，模型 ID 出现在列表里说明配置被读到了。`opencode run` 会真实调用并扣费，收到回复即接入成功。
 
-命令报错或模型列表为空时，先按 [验证接入](/docs/quickstart#验证接入) 用 curl 确认 Key 和端点本身没问题，再回头检查 `opencode.json`。
+命令报错或模型列表为空时，先按 [单独测试 Key 和端点](/docs/troubleshooting#单独测试-key-和端点) 排除客户端因素，再回头检查 `opencode.json`。
 
 ## 相关入口
 

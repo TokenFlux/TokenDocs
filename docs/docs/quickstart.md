@@ -55,36 +55,6 @@ TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉�
   </DocsTab>
 </DocsTabs>
 
-## 验证接入
-
-配置完客户端后，用下面两步确认 Key、端点和分组都正确。把 `$KEY` 换成你的 API Key。
-
-第一步列出模型，不产生推理费用：
-
-```bash
-curl https://tokenflux.dev/v1/models -H "authorization: Bearer $KEY"
-```
-
-| 返回 | 说明 |
-| --- | --- |
-| 模型列表 | Key 有效、分组可用、端点正确 |
-| `401` `Invalid API key` | Key 不存在，检查是否含多余的空格或引号 |
-| `401` `API key is disabled` | Key 已禁用，在 [API 密钥页面](https://tokenflux.dev/keys) 查看状态 |
-| `403` | 分组、余额或订阅问题，见 [错误码](/docs/errors#_403-拒绝访问) |
-
-第二步发一次真实请求，这一步会扣费。模型 ID 用第一步返回的任意一个：
-
-```bash
-curl https://tokenflux.dev/v1/chat/completions \
-  -H "authorization: Bearer $KEY" \
-  -H "content-type: application/json" \
-  -d '{"model":"<模型 ID>","messages":[{"role":"user","content":"只回复 OK"}],"max_tokens":16}'
-```
-
-收到回复即接入成功，调用记录可在 [使用记录](https://tokenflux.dev/usage) 中核对。
-
-Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，认证头换成 `x-api-key`，并加上 `anthropic-version: 2023-06-01`。
-
 ## 进阶用法
 
 接入完成后可按需使用：

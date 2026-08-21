@@ -14,6 +14,26 @@ curl https://tokenflux.dev/health
 
 返回 `{"status":"ok"}` 表示网关正常，问题在配置或账户一侧。
 
+## 单独测试 Key 和端点
+
+客户端配置项多时，先用 curl 把客户端因素排除掉。把 `$KEY` 换成你的 API Key：
+
+```bash
+curl https://tokenflux.dev/v1/models -H "authorization: Bearer $KEY"
+```
+
+这个请求不产生推理费用。
+
+| 返回 | 说明 |
+| --- | --- |
+| 模型列表 | Key、端点和分组都正常，问题出在客户端配置 |
+| `401` | Key 本身有问题，见下方 401 一节 |
+| `403` | 分组、余额或订阅问题，见下方 403 一节 |
+
+Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，认证头换成 `x-api-key`，并加上 `anthropic-version: 2023-06-01`。
+
+要确认某个具体模型能否调用，把模型 ID 填进 `/v1/chat/completions` 发一次真实请求，这一步会扣费。
+
 ## 连不上，或配置后没反应
 
 按顺序检查：

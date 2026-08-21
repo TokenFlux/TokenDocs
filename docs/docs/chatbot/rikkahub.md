@@ -37,7 +37,7 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
 
 再在对话界面发一条消息，收到回复即接入成功，调用记录可在 [使用记录](https://tokenflux.dev/usage) 中核对。
 
-模型列表刷不出来时，先按 [验证接入](/docs/quickstart#验证接入) 用 curl 确认 Key 和端点本身没问题，再检查 Base URL 是否以 `/v1` 结尾且没有重复拼接路径。
+模型列表刷不出来时，先按 [单独测试 Key 和端点](/docs/troubleshooting#单独测试-key-和端点) 排除客户端因素，再检查 Base URL 是否以 `/v1` 结尾且没有重复拼接路径。
 
 ## 下一步该怎么做？
 

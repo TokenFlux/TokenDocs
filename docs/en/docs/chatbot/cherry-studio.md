@@ -87,7 +87,7 @@ Fetching the model list in step 4 is the most direct check: models appearing mea
 
 Then send a message in the chat interface. A reply means the setup works, and the call appears in the [usage logs](https://tokenflux.dev/usage).
 
-If the model list does not load, use the curl checks in [Verify the Setup](/en/docs/quickstart#verify-the-setup) to confirm the key and endpoint, then check whether `/v1` is missing from or duplicated in the address.
+If the model list does not load, rule the client out with [Test the Key and Endpoint on Their Own](/en/docs/troubleshooting#test-the-key-and-endpoint-on-their-own), then check whether `/v1` is missing from or duplicated in the address.
 
 ## Next Steps
 
