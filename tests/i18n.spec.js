@@ -1,33 +1,21 @@
 import { describe, expect, it } from 'vitest'
 import { readdirSync } from 'node:fs'
-import { dirname, join, relative, resolve } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { join, relative } from 'node:path'
+import { findOutOfSync, listSourceFiles, localeRoot } from '../scripts/i18n-manifest.js'
 
-const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const docsRoot = resolve(projectRoot, 'docs')
-
-function listMarkdownFiles(directory) {
-  return listMarkdownFilesFrom(directory, directory)
-}
-
-function listMarkdownFilesFrom(rootDirectory, directory) {
-  const entries = readdirSync(directory, { withFileTypes: true })
+function listLocaleFiles(directory = localeRoot) {
   const files = []
 
-  for (const entry of entries) {
-    if (entry.name === '.vitepress' || entry.name === 'public' || entry.name === 'en') {
-      continue
-    }
-
+  for (const entry of readdirSync(directory, { withFileTypes: true })) {
     const entryPath = join(directory, entry.name)
 
     if (entry.isDirectory()) {
-      files.push(...listMarkdownFilesFrom(rootDirectory, entryPath))
+      files.push(...listLocaleFiles(entryPath))
       continue
     }
 
     if (entry.isFile() && entry.name.endsWith('.md')) {
-      files.push(relative(rootDirectory, entryPath).replace(/\\/g, '/'))
+      files.push(relative(localeRoot, entryPath).replace(/\\/g, '/'))
     }
   }
 
@@ -36,9 +24,10 @@ function listMarkdownFilesFrom(rootDirectory, directory) {
 
 describe('i18n docs coverage', () => {
   it('mirrors every root markdown page into the English locale', () => {
-    const rootFiles = listMarkdownFiles(docsRoot)
-    const enFiles = listMarkdownFiles(resolve(docsRoot, 'en')).map(file => `en/${file}`)
+    expect(listLocaleFiles()).toEqual(listSourceFiles())
+  })
 
-    expect(enFiles).toEqual(rootFiles.map(file => `en/${file}`))
+  it('keeps the English locale in sync with the Chinese source', () => {
+    expect(findOutOfSync()).toEqual([])
   })
 })
