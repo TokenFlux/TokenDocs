@@ -166,7 +166,7 @@ Model ID, group, client, API address, and the full error are all required. The s
 
 Comparisons narrow the search directly, such as "works on another group" or "plain chat works, file editing fails". Before reporting, try changing the group, model, or client.
 
-For enterprise integration or channel partnerships, join QQ group `794504445`, see [FAQ](/en/docs/faq).
+Contact details for enterprise integration and channel partnerships are in the [FAQ](/en/docs/faq).
 
 ## Related Pages
 

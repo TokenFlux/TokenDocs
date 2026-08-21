@@ -1,3 +1,5 @@
+import { CONSOLE_URL, MODELS_URL } from "./constants.js";
+
 export const siteTitle = "TokenDocs";
 export const siteDescription =
   "TokenFlux 文档站，包含 Quickstart、FAQ 与使用教程。";
@@ -9,8 +11,8 @@ export const editLinkPattern = `${repoUrl}/edit/main/docs/:path`;
 
 const copyrightYear = new Date().getFullYear();
 
-export const consoleUrl = "https://tokenflux.dev/dashboard";
-export const modelsUrl = "https://tokenflux.dev/models";
+export const consoleUrl = CONSOLE_URL;
+export const modelsUrl = MODELS_URL;
 
 export const navItems = [
   { text: "首页", link: "/" },
