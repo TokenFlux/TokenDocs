@@ -31,7 +31,7 @@ export const sidebar = {
     {
       text: "Docs",
       items: [
-        { text: "Quickstart", link: "/docs/quickstart" },
+        { text: "快速开始", link: "/docs/quickstart" },
         { text: "核心概念", link: "/docs/concepts" },
         { text: "排障", link: "/docs/troubleshooting" },
         { text: "错误码", link: "/docs/errors" },
