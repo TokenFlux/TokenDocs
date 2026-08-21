@@ -8,9 +8,14 @@
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "i18n:sync": "node scripts/i18n-manifest.js",
+    "docs:verify-status": "node scripts/verification-status.js",
+    "lint": "markdownlint-cli2 && prettier --check \"**/*.{js,json,md}\"",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
     "test": "vitest run"
   },
   "devDependencies": {
+    "markdownlint-cli2": "^0.23.2",
+    "prettier": "^3.9.6",
     "vitepress": "^1.6.4",
     "vitest": "^2.1.9",
     "vue": "^3.5.29"

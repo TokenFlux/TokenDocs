@@ -1,0 +1,25 @@
+{
+  "config": {
+    "default": true,
+
+    // 行宽由 prettier 的 proseWrap: preserve 控制，中文段落不强制换行。
+    "MD013": false,
+
+    // 同名小节在不同父标题下重复是正常的，例如各客户端页的「安装」。
+    "MD024": { "siblings_only": true },
+
+    // 文档中使用 HTML 居中容器包裹截图，以及 <time> 等语义标签。
+    "MD033": false,
+
+    // 首行是 frontmatter 时，标题不在第一行。
+    "MD041": false,
+
+    // 正文中用加粗作为小标签是刻意的，避免这些短标签进入右侧目录。
+    "MD036": false,
+
+    // 允许行尾两个空格表示换行。
+    "MD009": { "br_spaces": 2 },
+  },
+  "globs": ["docs/**/*.md"],
+  "ignores": ["**/node_modules/**", "docs/.vitepress/cache/**", "docs/.vitepress/dist/**"],
+}
