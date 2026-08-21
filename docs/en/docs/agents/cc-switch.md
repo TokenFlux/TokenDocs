@@ -99,15 +99,15 @@ The AppImage bundles all required dependencies and works on most Linux distribut
 
 4. Save the configuration. `CC-Switch` will enable this provider for all related Agent clients.
 
-## DOYO Claude Channel Environment Variables
+## Claude Max Environment Variables
 
 ::: warning
-The DOYO Claude channel temporarily cannot be used in the Claude app. It only works with the `Claude Code` CLI.
+The `Claude Max` group only accepts the `Claude Code` client and cannot be used in the Claude app.
 :::
 
 If you manage Claude Code through `CC-Switch`, you can add `ENABLE_PROMPT_CACHING_1H` to the Claude provider's JSON configuration. When you enable the provider, `CC-Switch` writes this configuration into Claude Code's `settings.json`.
 
-This variable enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context. It only applies to DOYO's Claude channel; other Claude channels do not need it.
+This variable enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context. Other Claude groups do not need it.
 
 ### App-Specific Provider
 
@@ -125,7 +125,7 @@ This variable enables a 1-hour prompt cache, which is useful for Claude Code ses
 
 ### Unified Provider
 
-The unified provider's basic form only contains `Name`, `API Key`, `API URL`, and model configuration, without a separate DOYO environment variable field. When using a unified provider:
+The unified provider's basic form only contains `Name`, `API Key`, `API URL`, and model configuration, without a separate environment variable field. When using a unified provider:
 
 1. First create and sync the unified provider with the flow above.
 2. Return to the `Claude Code` app and edit the synced Claude provider.

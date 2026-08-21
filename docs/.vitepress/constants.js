@@ -73,6 +73,9 @@ export const SINGLE_SOURCE_FACTS = [
   { name: 'Stripe 固定手续费', pattern: '2\\.7', maxFiles: 2 },
   { name: '订阅档位名称', pattern: 'Lite\\+', maxFiles: 2 },
   { name: 'ChatGPT Pro 分组差异', pattern: 'ChatGPT Pro \\(负载均衡\\)', maxFiles: 2 },
+  // Claude Max 出现在核心概念、Claude Code 与 CC-Switch 三处，中英各一份。
+  // 再多说明约束又开始散开，应改为链接到核心概念。
+  { name: 'Claude Max 分组约束', pattern: 'Claude Max', maxFiles: 6 },
   { name: '企业对接 QQ 群号', pattern: '794504445', maxFiles: 2 },
 ]
 

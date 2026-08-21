@@ -136,15 +136,15 @@ AppImage 文件集成了所有必要的依赖，适用于大多数 Linux 发行�
   </DocsTab>
 </DocsTabs>-->
 
-## DOYO Claude 渠道环境变量
+## Claude Max 环境变量
 
 ::: warning
-DOYO 的 Claude 渠道暂时无法在 Claude 应用（Claude app）中使用，只能通过 `Claude Code` CLI 使用。
+`Claude Max` 分组只接受 `Claude Code` 客户端，无法在 Claude 应用（Claude app）中使用。
 :::
 
 如果你通过 `CC-Switch` 管理 Claude Code，可以把 `ENABLE_PROMPT_CACHING_1H` 写进 Claude 供应商的 JSON 配置。`CC-Switch` 在启用供应商时会把该配置写入 Claude Code 的 `settings.json`。
 
-该变量用于开启 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。它只对 DOYO 的 Claude 渠道有效，其他 Claude 渠道无需设置。
+该变量用于开启 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。其他 Claude 分组无需设置。
 
 ### 应用专属供应商
 
@@ -162,7 +162,7 @@ DOYO 的 Claude 渠道暂时无法在 Claude 应用（Claude app）中使用，�
 
 ### 统一供应商
 
-统一供应商的基础表单只填写 `名称`、`API Key`、`API 地址` 和模型配置，没有单独的 DOYO 环境变量字段。使用统一供应商时：
+统一供应商的基础表单只填写 `名称`、`API Key`、`API 地址` 和模型配置，没有单独的环境变量字段。使用统一供应商时：
 
 1. 先按上方流程创建并同步统一供应商。
 2. 回到 `Claude Code` 应用下，编辑同步生成的 Claude 供应商。

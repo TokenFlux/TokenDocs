@@ -167,17 +167,15 @@ Replace `YOUR_TOKENFLUX_API_KEY` with your real API key.
   </DocsTab>
 </DocsTabs>
 
-## DOYO Claude Channel
+## The Claude Max Group
 
 ::: warning
-The DOYO Claude channel temporarily cannot be used in the Claude app. It only works with the `Claude Code` CLI.
+The `Claude Max` group only accepts the `Claude Code` client and cannot be used in the Claude app. Other clients receive 403 `this group only allows Claude Code clients`, see [Error Codes](/en/docs/errors#group-capabilities).
 :::
 
-If you use DOYO's Claude channel, you can additionally enable `ENABLE_PROMPT_CACHING_1H=1` after finishing the basic configuration above. This option enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context.
+On the `Claude Max` group you can additionally enable `ENABLE_PROMPT_CACHING_1H=1` after finishing the basic configuration above. This option enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context. Other Claude groups do not need it.
 
-This setting only applies to the DOYO Claude channel; other Claude channels do not need it.
-
-If you manage Claude Code through `CC-Switch`, see the [CC-Switch DOYO Claude channel environment variable notes](/en/docs/agents/cc-switch#doyo-claude-channel-environment-variables).
+If you manage Claude Code through `CC-Switch`, see the [CC-Switch Claude Max environment variable notes](/en/docs/agents/cc-switch#claude-max-environment-variables).
 
 ### Terminal Launch
 

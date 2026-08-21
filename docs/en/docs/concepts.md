@@ -37,6 +37,8 @@ One account pool can map to several groups. The `ChatGPT Pro` pool has three:
 
 The names are similar but the restrictions are not. Read the group description in the model marketplace before choosing.
 
+Some groups are tied to one client. `ChatGPT Pro` is Codex only and `Claude Max` is Claude Code only; other clients receive 403, see [Error Codes](/en/docs/errors#group-capabilities).
+
 ## Account Pools
 
 An account pool is the set of upstream accounts a group maps to. The `Pro` pool includes Pro models and may receive higher priority when the service is under load; otherwise it is no different from the `Plus` pool.
