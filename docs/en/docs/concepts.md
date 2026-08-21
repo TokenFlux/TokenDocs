@@ -1,6 +1,6 @@
 # Core Concepts
 
-Groups, account pools, and inference credits come up throughout these docs. This page explains what they are and where a request can be rejected.
+Definitions of groups, account pools, inference credits, and the stages where a request can be rejected.
 
 ## Terminology
 
@@ -35,13 +35,13 @@ One account pool can back several groups. Take the `ChatGPT Pro` pool:
 | `ChatGPT Pro (不限客户端)` | No client restriction |
 | `ChatGPT Pro (负载均衡)` | Load balanced, most stable |
 
-Read the group description in the model marketplace before picking one - the names are similar but the restrictions are not.
+The names are similar but the restrictions are not. Read the group description in the model marketplace before choosing.
 
 ## Account Pools
 
 An account pool is the set of upstream accounts behind a group. The `Pro` pool includes Pro models and may get higher priority when the service is under load. Otherwise it is no different from the `Plus` pool.
 
-Account type affects which features are available. Forcing [Fast Mode](/en/docs/tokenflux/fast-mode) on requires hitting an OpenAI or Anthropic platform account, and Anthropic accounts must use API key credentials - Bedrock, Vertex, and OAuth credentials are skipped silently.
+Account type affects which features are available. Forcing [Fast Mode](/en/docs/tokenflux/fast-mode) on requires an OpenAI or Anthropic platform account, and Anthropic accounts must use API key credentials; Bedrock, Vertex, and OAuth credentials are skipped silently.
 
 ## API Keys
 
@@ -61,7 +61,7 @@ A key has two independent properties.
 | Regular | 1 | `model-id` |
 | [Composite](/en/docs/tokenflux/composite-key) | Up to 20 | `prefix/model-id` |
 
-## How Cost Is Calculated
+## Cost Calculation
 
 A request is billed as input, output, and cache, each at the rate of the group the request actually hit. For composite keys, that is the group matched by the prefix.
 
@@ -71,7 +71,7 @@ Subscriptions are consumed before balance: the allowance expiring soonest is use
 
 ## Where a Request Can Be Rejected
 
-When a request fails, check in this order:
+When a request fails, check in the following order:
 
 | Stage | What to check |
 | --- | --- |
@@ -80,9 +80,9 @@ When a request fails, check in this order:
 | Model permission | Whether the model belongs to that group |
 | Endpoint support | Composite keys do not support WebSocket / Realtime endpoints |
 | Quota | Account balance, subscription allowance, and a team member's daily / weekly / monthly limit - any shortfall rejects the request |
-| Upstream | Only at this point is the request sent to the model provider |
+| Upstream | Only after all of the above does the request reach the model provider |
 
-TokenFlux also does not offer embedding models.
+TokenFlux does not offer embedding models.
 
 For the status code and message behind each case, see [Error Codes](/en/docs/errors).
 

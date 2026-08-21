@@ -1,12 +1,10 @@
 # Error Codes
 
-When a request fails, the two things to read are the **HTTP status code** and the `message` in the response body.
-
-If you do not know where to start, go to [Troubleshooting](/en/docs/troubleshooting) first.
+The HTTP status code and the `message` in the response body are what identify a failure. To locate a problem by symptom, see [Troubleshooting](/en/docs/troubleshooting).
 
 ## Response Format
 
-The shape of the error body depends on the entry point. Do not parse it as a fixed structure.
+The shape of the error body depends on the entry point. `code` and `error.type` are not present everywhere, so do not parse the body as a fixed structure.
 
 Authentication and billing errors use a flat shape:
 
@@ -26,11 +24,7 @@ Anthropic-format endpoints:
 { "type": "error", "error": { "type": "invalid_request_error", "message": "model is required" } }
 ```
 
-On Gemini native endpoints, `error.code` is the numeric HTTP status and the error identifier appears only inside `message`.
-
-::: warning Do not rely on the code field
-`code` and `error.type` are not present on every entry point, and the same error may use different field names depending on where it came from. **Only the HTTP status code and the `message` text are stable.**
-:::
+On Gemini native endpoints, `error.code` is the numeric HTTP status and the error identifier appears only in `message`.
 
 ## 400 Bad Request
 
@@ -41,32 +35,28 @@ On Gemini native endpoints, `error.code` is the numeric HTTP status and the erro
 | `Failed to parse request body` | The body is not valid JSON |
 | `Failed to read request body` | The body could not be read |
 | `invalid stream field type` | `stream` is not a boolean |
-| `API key in query parameter is deprecated. Please use Authorization header instead.` | The key was passed in the URL - use a header instead |
-| `Request body too large, limit is ...` | The body exceeds the size limit (returned as 413) |
+| `API key in query parameter is deprecated. Please use Authorization header instead.` | The key was passed in the URL and must be moved to a header |
+| `Request body too large, limit is ...` | The body exceeds the size limit, returned as 413 |
 
-Claude Code version gating also lands here:
+Composite key prefix errors are listed in [Composite Key](/en/docs/tokenflux/composite-key#common-errors) and all return 400.
 
-| message | What to do |
+### Claude Code Version
+
+| message | Action |
 | --- | --- |
 | `Unable to determine Claude Code version. Please update Claude Code: npm update -g @anthropic-ai/claude-code` | Update Claude Code |
 | `Your Claude Code version (...) is below the minimum required version (...)` | Update to the version named in the message |
 | `Your Claude Code version (...) exceeds the maximum allowed version (...)` | Downgrade as instructed |
-
-Composite key prefix errors are listed in [Composite Key](/en/docs/tokenflux/composite-key#common-errors) and all return 400.
 
 ## 401 Unauthenticated
 
 | code | message | Meaning |
 | --- | --- | --- |
 | `API_KEY_REQUIRED` | `API key is required in Authorization header (Bearer scheme), x-api-key header, or x-goog-api-key header` | None of the three auth headers were sent |
-| `INVALID_API_KEY` | `Invalid API key` | The key does not exist, or it is longer than 128 bytes |
+| `INVALID_API_KEY` | `Invalid API key` | The key does not exist, or exceeds 128 bytes |
 | `API_KEY_DISABLED` | `API key is disabled` | The key has been disabled |
-| `USER_NOT_FOUND` | `User associated with API key not found` | The account behind the key is missing |
+| `USER_NOT_FOUND` | `User associated with API key not found` | The account behind the key does not exist |
 | `USER_INACTIVE` | `User account is not active` | The account is deactivated |
-
-::: tip Expiry and quota are not 401
-An expired key returns **403** and an exhausted quota returns **429**. See the sections below.
-:::
 
 ## 403 Forbidden
 
@@ -76,11 +66,7 @@ An expired key returns **403** and an exhausted quota returns **429**. See the s
 | --- | --- | --- |
 | `API_KEY_EXPIRED` | `API key 已过期` | The key is past its expiry date |
 | `INSUFFICIENT_BALANCE` | `Insufficient account balance` | Not enough account balance |
-| `ACCESS_DENIED` | `Access denied. Your IP is ...` | Your IP is not allowed for this key |
-
-::: warning Insufficient balance is 403, not 402
-The only endpoint that returns 402 is the batch image API. Balance problems are always 403, and exhausted quota is 429.
-:::
+| `ACCESS_DENIED` | `Access denied. Your IP is ...` | Your IP is not permitted for this key |
 
 ### Groups
 
@@ -88,7 +74,7 @@ The only endpoint that returns 402 is the batch image API. Balance problems are 
 | --- | --- | --- |
 | `GROUP_DELETED` | `API Key 所属分组已删除` | The group was deleted |
 | `GROUP_DISABLED` | `API Key 所属分组已停用` | The group is disabled |
-| `GROUP_DISABLED_FOR_USER` | `API Key 所属公开分组已被禁用` | That group is unavailable to you |
+| `GROUP_DISABLED_FOR_USER` | `API Key 所属公开分组已被禁用` | The group is unavailable to this account |
 | `GROUP_NOT_ALLOWED` | `API Key 所属专属分组不再允许当前用户使用` | Access to a private group was revoked |
 
 In all of these cases, create a new key on a different group. See [Create API Key](/en/docs/tokenflux/create-apikey).
@@ -97,7 +83,7 @@ In all of these cases, create a new key on a different group. See [Create API Ke
 
 | message | Meaning |
 | --- | --- |
-| `The current group does not support the requested model "..."` | The model is not in that group. The message usually lists the available models |
+| `The current group does not support the requested model "..."` | The model is not in that group; available models usually follow |
 | `This group does not allow Anthropic Messages requests` | The group does not allow `/v1/messages` |
 | `This group does not allow OpenAI Chat Completions requests` | The group does not allow `/v1/chat/completions` |
 | `This group does not allow OpenAI Responses requests` | The group does not allow `/v1/responses` |
@@ -125,11 +111,11 @@ See [Team](/en/docs/tokenflux/team).
 
 | message | Meaning |
 | --- | --- |
-| `内容审计命中风险规则，请调整输入后重试` | The request was blocked by content moderation. Adjust the input and retry |
+| `内容审计命中风险规则，请调整输入后重试` | The request was blocked by content moderation |
 
 ### Subscription
 
-Subscription errors return a string containing `reason=`. **Reading `reason` is enough:**
+Subscription errors return a string containing `reason=`. The value of `reason` identifies the cause:
 
 ```
 error: code=403 reason="SUBSCRIPTION_EXPIRED" message="subscription has expired" metadata=map[]
@@ -171,7 +157,7 @@ Copy the full model ID from the [model marketplace](https://tokenflux.dev/models
 | - | `Weekly usage quota exhausted for this platform.` | The platform's weekly quota is used up |
 | - | `Monthly usage quota exhausted for this platform.` | The platform's monthly quota is used up |
 
-Subscription quota errors also return a `reason=` string, where `reason` is `DAILY_LIMIT_EXCEEDED`, `WEEKLY_LIMIT_EXCEEDED`, or `MONTHLY_LIMIT_EXCEEDED`.
+Subscription quota errors also return a string containing `reason=`, with the value `DAILY_LIMIT_EXCEEDED`, `WEEKLY_LIMIT_EXCEEDED`, or `MONTHLY_LIMIT_EXCEEDED`.
 
 ### Rate and Concurrency
 
@@ -184,33 +170,29 @@ Subscription quota errors also return a `reason=` string, where `reason` is `DAI
 | `Too many pending requests, please retry later` | The wait queue is full | No |
 | `Image generation concurrency limit exceeded, please retry later` | Image generation concurrency limit | No |
 | `Too many invalid authentication attempts; retry later` | Too many failed auth attempts from one IP | Yes |
-| `Upstream rate limit exceeded, please retry later` | The upstream provider is rate limiting | Sometimes |
+| `Upstream rate limit exceeded, please retry later` | Rate limited upstream | Sometimes |
 
-When `Retry-After` is present, wait the number of seconds it specifies. Otherwise back off exponentially - do not retry immediately.
+Wait as instructed when `Retry-After` is present, otherwise back off exponentially.
 
-## 5xx Server and Upstream
+## 5xx Server Errors
 
-**Upstream error text is not passed through.** The gateway maps the upstream status code to its own standard wording, so `message` is TokenFlux phrasing, not the model provider's.
-
-| Status | message | Trigger |
+| Status | message | Meaning |
 | --- | --- | --- |
-| 502 | `Upstream authentication failed, please contact administrator` | Upstream returned 401 |
-| 502 | `Upstream access forbidden, please contact administrator` | Upstream returned 403 |
-| 502 | `Upstream service temporarily unavailable` | Upstream returned 500 / 502 / 503 / 504 |
-| 502 | `Upstream request failed` | Upstream returned some other error |
-| 502 | `All available accounts exhausted` | Every available account was tried and failed |
-| 503 | `Upstream service overloaded, please retry later` | Upstream returned 529 |
+| 502 | `Upstream authentication failed, please contact administrator` | Account authentication failed; requires platform action |
+| 502 | `Upstream access forbidden, please contact administrator` | Account access denied; requires platform action |
+| 502 | `Upstream service temporarily unavailable` | The service is temporarily unavailable |
+| 502 | `Upstream request failed` | The request failed |
+| 502 | `All available accounts exhausted` | Every available account was retried and failed |
+| 503 | `Upstream service overloaded, please retry later` | The service is overloaded |
 | 503 | `No available accounts` | The group currently has no usable account |
 | 503 | `Service temporarily unavailable` | Accounts are temporarily unavailable |
 | 503 | `Billing service temporarily unavailable. Please retry later.` | The billing service is temporarily down |
 | 503 | `API key authentication is temporarily unavailable` | Authentication is overloaded |
 
-Most 502 and 503 responses are upstream turbulence. Wait one or two minutes and retry, or switch models. If it persists, report it as described in [Troubleshooting](/en/docs/troubleshooting#how-to-report-a-problem).
-
-The gateway never returns 529 itself - an upstream 529 is converted to 503.
+502 and 503 are usually transient. Retry after one or two minutes, or switch models. If they persist, report the issue as described in [Troubleshooting](/en/docs/troubleshooting#how-to-report-a-problem).
 
 ## Related Pages
 
-- [Troubleshooting](/en/docs/troubleshooting) - find the problem by symptom
+- [Troubleshooting](/en/docs/troubleshooting) - locate a problem by symptom
 - [Core Concepts](/en/docs/concepts) - groups, quota, and billing order
 - [Usage logs](https://tokenflux.dev/usage) - check the real status code and usage per request
