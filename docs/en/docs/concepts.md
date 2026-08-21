@@ -1,33 +1,31 @@
 # Core Concepts
 
-Definitions of groups, account pools, inference credits, and the stages where a request can be rejected.
+Definitions of groups, account pools, and inference credits, and the stages at which a request can be rejected.
 
 ## Terminology
 
 | Term | Meaning |
 | --- | --- |
-| Inference credit `🍥` | The billing unit. Account balance and subscription allowances are both measured in it |
+| Inference credit `🍥` | The billing unit; account balance and subscription allowances are both measured in it |
 | Group | A set of models with its own multiplier and capacity |
 | Multiplier | The factor a group applies to a model's base price |
-| Account pool | The upstream accounts behind a group |
-| Scope | Whether a key belongs to you or to a team, which decides who pays |
-| Composite key | One key bound to several groups, selected by prefix |
+| Account pool | The set of upstream accounts a group maps to |
+| Scope | Whether a key belongs to an individual or a team, which determines who pays |
+| Composite key | A key bound to several groups, distinguished by prefix |
 
 ## Groups
 
-A group decides three things: which models you can call, what you are charged, and which upstream accounts serve the request.
+A group determines the available models, the billing price, and the upstream accounts that serve the request.
 
-You must pick a group when creating an API key. The dropdown shows each group's multiplier and current capacity. A regular key binds to exactly one group; use a [composite key](/en/docs/tokenflux/composite-key) when you need several at once.
+An API key must be assigned to a group at creation. A regular key binds to exactly one group; use a [composite key](/en/docs/tokenflux/composite-key) to use several at once.
 
-The multiplier applies to a model's base price, but the prices shown in the [model marketplace](https://tokenflux.dev/models) already include it. That is the final billing price - do not multiply again.
+The multiplier applies to a model's base price. Prices shown in the [model marketplace](https://tokenflux.dev/models) already include it and are the final billing prices.
 
-::: tip Groups Are Not Plans
-A group is a property of an API key. A subscription plan (Lite / Plus / Pro and so on) is a property of your account. They are unrelated.
-:::
+A group is a property of an API key and is unrelated to the account's subscription plan (Lite, Plus, Pro, and so on).
 
 ### Groups That Need Attention
 
-One account pool can back several groups. Take the `ChatGPT Pro` pool:
+One account pool can map to several groups. Take the `ChatGPT Pro` pool:
 
 | Group | Difference |
 | --- | --- |
@@ -39,7 +37,7 @@ The names are similar but the restrictions are not. Read the group description i
 
 ## Account Pools
 
-An account pool is the set of upstream accounts behind a group. The `Pro` pool includes Pro models and may get higher priority when the service is under load. Otherwise it is no different from the `Plus` pool.
+An account pool is the set of upstream accounts a group maps to. The `Pro` pool includes Pro models and may receive higher priority when the service is under load; otherwise it is no different from the `Plus` pool.
 
 Account type affects which features are available. Forcing [Fast Mode](/en/docs/tokenflux/fast-mode) on requires an OpenAI or Anthropic platform account, and Anthropic accounts must use API key credentials; Bedrock, Vertex, and OAuth credentials are skipped silently.
 
@@ -47,14 +45,14 @@ Account type affects which features are available. Forcing [Fast Mode](/en/docs/
 
 A key has two independent properties.
 
-**Scope** decides who pays, and cannot be changed after creation.
+**Scope** determines who pays and cannot be changed after creation.
 
 | Scope | Paid by | Available groups come from |
 | --- | --- | --- |
 | Personal | You | Your own group entitlements |
 | Team | The team owner | The owner's group entitlements |
 
-**Type** decides how the group is selected.
+**Type** determines how the group is specified.
 
 | Type | Groups bound | Model ID format |
 | --- | --- | --- |
@@ -67,9 +65,9 @@ A request is billed as input, output, and cache, each at the rate of the group t
 
 Subscriptions are consumed before balance: the allowance expiring soonest is used first, and the account balance is charged only when no subscription is available.
 
-[Fast Mode](/en/docs/tokenflux/fast-mode) uses the upstream high-priority tier and costs roughly twice the regular rate.
+[Fast Mode](/en/docs/tokenflux/fast-mode) uses the high-priority tier and costs roughly twice the regular rate.
 
-## Where a Request Can Be Rejected
+## Where a Request Is Rejected
 
 When a request fails, check in the following order:
 
@@ -88,7 +86,7 @@ For the status code and message behind each case, see [Error Codes](/en/docs/err
 
 ## Related Pages
 
-- [Troubleshooting](/en/docs/troubleshooting) - find the problem by symptom when a request fails
+- [Troubleshooting](/en/docs/troubleshooting) - locate a problem by symptom when a request fails
 - [Create API Key](/en/docs/tokenflux/create-apikey) - pick a group and generate a key
 - [Billing](/en/docs/tokenflux/billing) - multipliers, subscriptions, and top-ups
 - [Composite Key](/en/docs/tokenflux/composite-key) - use several groups from one key

@@ -2,7 +2,7 @@
 
 For what a specific error code means, see [Error Codes](/en/docs/errors).
 
-## Check Three Things First
+## Initial Checks
 
 1. **Obtain the full error.** Client interfaces usually simplify it. You need the HTTP status code and the raw `message`.
 2. **Open the [usage logs](https://tokenflux.dev/usage).** Whether the request reached TokenFlux, which model and key it used, and the status code returned can all be verified there. If the request is absent, it was never sent or never reached the gateway.
