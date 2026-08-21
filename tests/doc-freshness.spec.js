@@ -2,7 +2,12 @@ import { describe, expect, it } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { ageInDays, listVerifiedDocuments, readVerifiedAt } from '../scripts/verification-status.js'
+import {
+  VERIFICATION_FUTURE_TOLERANCE_DAYS,
+  ageInDays,
+  listVerifiedDocuments,
+  readVerifiedAt,
+} from '../scripts/verification-status.js'
 
 const docsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'docs')
 const documents = listVerifiedDocuments()
@@ -39,7 +44,7 @@ describe('client guide verification dates', () => {
 
       if (age === null) {
         invalid.push(`${path} -> ${verifiedAt}（不是合法日期）`)
-      } else if (age < 0) {
+      } else if (age < -VERIFICATION_FUTURE_TOLERANCE_DAYS) {
         invalid.push(`${path} -> ${verifiedAt}（日期在未来）`)
       }
     }

@@ -17,6 +17,15 @@ export const VERIFIED_DIRECTORIES = ['docs/agents', 'docs/chatbot']
 /** 超过这个天数就该重新核验。 */
 export const VERIFICATION_MAX_AGE_DAYS = 30
 
+/**
+ * 允许的「未来」天数。
+ *
+ * 核验日期由人按本地日历填写，而 CI 跑在 UTC。东八区当天写下的日期，在 UTC
+ * 时钟上最多可以领先一天。全球时区跨度不超过一天，因此放宽一天即可，同时仍能
+ * 拦住把年份或月份写错这类明显错误。
+ */
+export const VERIFICATION_FUTURE_TOLERANCE_DAYS = 1
+
 /** 从 frontmatter 读取核验日期，兼容加引号与不加引号两种写法。 */
 export function readVerifiedAt(content) {
   const matched = content.match(/^---\r?\n[\s\S]*?^verifiedAt:\s*(\S+)\s*$/m)
@@ -63,7 +72,8 @@ export function ageInDays(verifiedAt, now = new Date()) {
 function main() {
   const documents = listVerifiedDocuments().map(doc => ({
     ...doc,
-    age: doc.verifiedAt ? ageInDays(doc.verifiedAt) : null,
+    // 时区差可能让当天的日期算出 -1，展示时按 0 处理。
+    age: doc.verifiedAt ? Math.max(0, ageInDays(doc.verifiedAt) ?? 0) : null,
   }))
 
   documents.sort(
