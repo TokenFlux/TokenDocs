@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # RikkaHub 使用指南
 
 `RikkaHub` 是一款 Android AI 聊天客户端，支持接入多种 OpenAI 兼容接口，适合在手机上进行日常 AI 对话。
@@ -67,6 +71,6 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
    </div>
 -->
 
-## 更多相关内容：
+## 更多相关内容
 
 - [余额与计费](/docs/tokenflux/billing)

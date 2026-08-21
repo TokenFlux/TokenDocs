@@ -4,14 +4,14 @@ Definitions of groups, account pools, and inference credits, and the stages at w
 
 ## Terminology
 
-| Term | Meaning |
-| --- | --- |
+| Term                  | Meaning                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------- |
 | Inference credit `🍥` | The billing unit; account balance and subscription allowances are both measured in it |
-| Group | A set of models with its own multiplier and capacity |
-| Multiplier | The factor a group applies to a model's base price |
-| Account pool | The set of upstream accounts a group maps to |
-| Scope | Whether a key belongs to an individual or a team, which determines who pays |
-| Composite key | A key bound to several groups, distinguished by prefix |
+| Group                 | A set of models with its own multiplier and capacity                                  |
+| Multiplier            | The factor a group applies to a model's base price                                    |
+| Account pool          | The set of upstream accounts a group maps to                                          |
+| Scope                 | Whether a key belongs to an individual or a team, which determines who pays           |
+| Composite key         | A key bound to several groups, distinguished by prefix                                |
 
 ## Groups
 
@@ -29,11 +29,11 @@ A group is a property of an API key and is unrelated to the account's subscripti
 
 One account pool can map to several groups. The `ChatGPT Pro` pool has three:
 
-| Group | Difference |
-| --- | --- |
-| `ChatGPT Pro` | Codex only |
-| `ChatGPT Pro (不限客户端)` | No client restriction |
-| `ChatGPT Pro (负载均衡)` | Load balanced, most stable |
+| Group                      | Difference                 |
+| -------------------------- | -------------------------- |
+| `ChatGPT Pro`              | Codex only                 |
+| `ChatGPT Pro (不限客户端)` | No client restriction      |
+| `ChatGPT Pro (负载均衡)`   | Load balanced, most stable |
 
 The names are similar but the restrictions are not. Read the group description in the model marketplace before choosing.
 
@@ -47,10 +47,10 @@ Account type determines whether certain features work. Forcing [Fast Mode](/en/d
 
 **Scope** determines who pays, cannot be changed after creation, and is switched from the top right of the [API keys page](https://tokenflux.dev/keys).
 
-| Scope | Paid by | Available groups come from |
-| --- | --- | --- |
-| Personal | You | Your own group entitlements |
-| Team | The team owner | The owner's group entitlements |
+| Scope    | Paid by        | Available groups come from     |
+| -------- | -------------- | ------------------------------ |
+| Personal | You            | Your own group entitlements    |
+| Team     | The team owner | The owner's group entitlements |
 
 A regular key binds to one group at creation, and model IDs are written as-is.
 
@@ -68,14 +68,14 @@ Subscriptions are consumed before balance: the allowance expiring soonest is use
 
 When a request fails, check in the following order:
 
-| Stage | What to check |
-| --- | --- |
-| Key | Exists, not disabled, not expired. Team keys also require both the member and owner accounts to be active and the team not suspended |
-| Group resolution | Composite keys need a prefix on the model ID, and the prefix must exist in the mapping, otherwise `COMPOSITE_KEY_*` is returned |
-| Model permission | Whether the model belongs to that group |
-| Endpoint support | Composite keys do not support WebSocket / Realtime endpoints |
-| Quota | Account balance, subscription allowance, and a team member's daily / weekly / monthly limit - any shortfall rejects the request |
-| Upstream | Only after all of the above does the request reach the model provider |
+| Stage            | What to check                                                                                                                        |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Key              | Exists, not disabled, not expired. Team keys also require both the member and owner accounts to be active and the team not suspended |
+| Group resolution | Composite keys need a prefix on the model ID, and the prefix must exist in the mapping, otherwise `COMPOSITE_KEY_*` is returned      |
+| Model permission | Whether the model belongs to that group                                                                                              |
+| Endpoint support | Composite keys do not support WebSocket / Realtime endpoints                                                                         |
+| Quota            | Account balance, subscription allowance, and a team member's daily / weekly / monthly limit - any shortfall rejects the request      |
+| Upstream         | Only after all of the above does the request reach the model provider                                                                |
 
 TokenFlux does not offer embedding models.
 

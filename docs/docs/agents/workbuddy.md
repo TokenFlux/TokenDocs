@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # WorkBuddy 使用指南
 
 `WorkBuddy` 是腾讯推出的桌面 AI Agent 工作台，支持本地文件处理、Skills、MCP、自动化任务和自定义模型。它可以通过 OpenAI-compatible 接口接入 `TokenFlux`。
@@ -72,16 +76,16 @@ WorkBuddy 会在模型页面显示实际的本地配置文件路径。WorkBuddy 
 
 然后填写：
 
-| 配置项 | 建议值 |
-| --- | --- |
-| 提供商 | `自定义 / Custom` |
-| 接口地址 | `https://tokenflux.dev/v1/chat/completions` |
-| API Key | 你的 TokenFlux API Key |
-| 模型名称 | 模型广场显示的精确模型 ID，例如 `gpt-5.6-sol` |
-| 工具调用 | 开启；本教程使用的 `gpt-5.6-sol` 支持 Tool Calling |
-| 图片输入 | 开启；允许 WorkBuddy 向模型发送图片 |
-| 思考模式 | 开启；使用 `gpt-5.6-sol` 的 reasoning 能力 |
-| 自定义协议 | 保持关闭，使用 OpenAI Chat Completions 兼容协议 |
+| 配置项     | 建议值                                             |
+| ---------- | -------------------------------------------------- |
+| 提供商     | `自定义 / Custom`                                  |
+| 接口地址   | `https://tokenflux.dev/v1/chat/completions`        |
+| API Key    | 你的 TokenFlux API Key                             |
+| 模型名称   | 模型广场显示的精确模型 ID，例如 `gpt-5.6-sol`      |
+| 工具调用   | 开启；本教程使用的 `gpt-5.6-sol` 支持 Tool Calling |
+| 图片输入   | 开启；允许 WorkBuddy 向模型发送图片                |
+| 思考模式   | 开启；使用 `gpt-5.6-sol` 的 reasoning 能力         |
+| 自定义协议 | 保持关闭，使用 OpenAI Chat Completions 兼容协议    |
 
 <div style="text-align: center;">
   <img src="/images/workbuddy/07-tokenflux-configuration.png" width="538" alt="WorkBuddy 中已填写 TokenFlux 接口和 gpt-5.6-sol 模型的自定义模型表单，必填项已用红框标出" />
@@ -101,27 +105,27 @@ WorkBuddy 5.3.5 实测不会在输入框失去焦点时把 `/v1` 自动补全为
 
 1. 点击 **保存**。模型会写入 WorkBuddy 模型页面显示的本地配置文件。
 
-<div style="text-align: center;">
-  <img src="/images/workbuddy/08-save-model.png" width="538" alt="WorkBuddy 自定义模型表单，保存按钮已用红框标出" />
-</div>
+   <div style="text-align: center;">
+     <img src="/images/workbuddy/08-save-model.png" width="538" alt="WorkBuddy 自定义模型表单，保存按钮已用红框标出" />
+   </div>
 
 2. 保存后，确认 `gpt-5.6-sol` 出现在 **已保存模型** 中。
 
-<div style="text-align: center;">
-  <img src="/images/workbuddy/09-saved-model.png" width="925" alt="WorkBuddy 已保存模型列表中的 gpt-5.6-sol 模型卡片，目标卡片已用红框标出" />
-</div>
+   <div style="text-align: center;">
+     <img src="/images/workbuddy/09-saved-model.png" width="925" alt="WorkBuddy 已保存模型列表中的 gpt-5.6-sol 模型卡片，目标卡片已用红框标出" />
+   </div>
 
 3. 返回新任务，打开模型选择器，在 **自定义模型** 中选择 `gpt-5.6-sol`。
 
-<div style="text-align: center;">
-  <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="WorkBuddy 模型选择器中的 gpt-5.6-sol 自定义模型，目标选项已用红框标出" />
-</div>
+   <div style="text-align: center;">
+     <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="WorkBuddy 模型选择器中的 gpt-5.6-sol 自定义模型，目标选项已用红框标出" />
+   </div>
 
 4. 发送一条最小测试消息，例如 `你好`。实测请求在 6 秒内完成，响应底部显示使用的模型为 `gpt-5.6-sol`。
 
-<div style="text-align: center;">
-  <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy 使用 gpt-5.6-sol 成功回复测试消息，响应底部的模型名称已用红框标出" />
-</div>
+   <div style="text-align: center;">
+     <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy 使用 gpt-5.6-sol 成功回复测试消息，响应底部的模型名称已用红框标出" />
+   </div>
 
 5. 基础对话验证成功后，再测试需要工具调用的任务，例如让 WorkBuddy 在一个临时目录中创建文本文件并读取回来。
 

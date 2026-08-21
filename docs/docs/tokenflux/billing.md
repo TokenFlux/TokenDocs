@@ -21,11 +21,13 @@ TokenFlux 以 `🍥`（推理积分）为计费单位。**[模型广场](https:/
 **示例**
 
 假设某模型的原价为：
+
 - 输入：`2.5🍥`
 - 输出：`15🍥`
 - 缓存：`0.25🍥`
 
 当分组倍率为 `1.3` 时，最终计费价格为：
+
 - 输入：`3.25🍥`（2.5 × 1.3）
 - 输出：`19.5🍥`（15 × 1.3）
 - 缓存：`0.325🍥`（0.25 × 1.3）
@@ -59,16 +61,17 @@ TokenFlux 以 `🍥`（推理积分）为计费单位。**[模型广场](https:/
 ::: details 曾用名与现用名
 套餐名称已统一调整，仅涉及名称，价格、额度、权益和已开通的服务都不受影响。已购买的套餐自动显示为新名称。
 
-| 原名称 | 新名称 |
-| --- | --- |
-| Basic | Lite |
-| Standard | Lite+ |
-| Pro | Plus |
-| Max | Plus+ |
-| Ultra | Pro |
-| Elite | Pro+ |
-| Enterprise | Max |
-| Ultimate | Max+ |
+| 原名称     | 新名称 |
+| ---------- | ------ |
+| Basic      | Lite   |
+| Standard   | Lite+  |
+| Pro        | Plus   |
+| Max        | Plus+  |
+| Ultra      | Pro    |
+| Elite      | Pro+   |
+| Enterprise | Max    |
+| Ultimate   | Max+   |
+
 :::
 
 ## 相关入口

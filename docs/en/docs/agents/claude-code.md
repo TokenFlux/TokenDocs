@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # Claude Code Guide
 
 `Claude Code` is an AI coding assistant from Anthropic that supports code generation, modification, and review.

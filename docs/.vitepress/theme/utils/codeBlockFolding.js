@@ -1,7 +1,10 @@
 export const CODE_BLOCK_COLLAPSE_HEIGHT = 480
 export const CODE_BLOCK_SELECTOR = '.vp-doc div[class*="language-"]'
 
-export function shouldEnableCodeBlockCollapse(scrollHeight, maxHeight = CODE_BLOCK_COLLAPSE_HEIGHT) {
+export function shouldEnableCodeBlockCollapse(
+  scrollHeight,
+  maxHeight = CODE_BLOCK_COLLAPSE_HEIGHT,
+) {
   return Number.isFinite(scrollHeight) && scrollHeight > maxHeight + 1
 }
 
@@ -47,7 +50,7 @@ export function enhanceCodeBlocks(root, maxHeight = CODE_BLOCK_COLLAPSE_HEIGHT, 
 
   const blocks = root.querySelectorAll(CODE_BLOCK_SELECTOR)
 
-  blocks.forEach((block) => {
+  blocks.forEach(block => {
     const pre = block.querySelector('pre')
     const existingButton = block.querySelector('.code-fold-toggle')
 

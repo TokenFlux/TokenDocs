@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # Codex++
 
 ::: danger Warning

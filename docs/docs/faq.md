@@ -12,18 +12,13 @@
 
 检测结果只能作为参考，不宜作为判断模型真假的唯一依据。
 
-<!--
-## 生图模型使用的是哪种账号？
+## 生图用哪个分组？
 
-生图模型背后是 `Pro` 号。
+生图模型在 `Google Image` 分组下，目前包含 `gemini-3.1-flash-image` 和 `nano-banana-pro`。创建 API Key 时选择该分组，完整列表和倍率以 [模型广场](https://tokenflux.dev/models) 为准。
+
+分组未开放生图时，请求会返回 403 `Image generation is not enabled for this group`，见 [错误码](/docs/errors#分组能力限制)。
 
 ## 想用 TokenFlux 生图，该用哪个客户端？
 
-- **桌面端**：推荐使用 [Cherry Studio](/docs/chatbot/cherry-studio)。界面简洁，配置方便，接入 TokenFlux 后在模型列表中选择支持生图的模型即可直接使用。
-- **Android 手机端**：推荐使用 [RikkaHub](/docs/chatbot/rikkahub)。接入 TokenFlux 并导入支持图像生成的模型后，将模型类型设为"图像"，再从侧边栏底部进入"生图"，选择模型即可开始生成。
-
-**快速开始：**
-
-- **Cherry Studio**：按 [Cherry Studio 使用指南](/docs/chatbot/cherry-studio) 完成安装并接入 TokenFlux，在模型列表中选择支持生图的模型（如 `gpt-image-2` 等），在对话界面发送提示词即可生成图片。
-- **RikkaHub**：按 [RikkaHub 使用指南](/docs/chatbot/rikkahub) 完成接入，参考其中的"使用生图"章节完成配置。
--->
+- **Android 手机端**：[RikkaHub](/docs/chatbot/rikkahub) 有独立的生图入口，配置步骤见该页的「使用生图」一节。
+- **桌面端**：[Cherry Studio](/docs/chatbot/cherry-studio) 接入后，在模型列表中选择生图模型，在对话界面发送提示词。

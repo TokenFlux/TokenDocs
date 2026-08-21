@@ -12,11 +12,11 @@ For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For 
 
 ## Three Steps
 
-| Step | What to do | Where |
-| --- | --- | --- |
-| 1 | Top up or subscribe to get inference credits | [Top-up/Subscription](https://tokenflux.dev/purchase) · [Billing](/en/docs/tokenflux/billing) |
-| 2 | Create an API key and pick a group | [Create API Key](/en/docs/tokenflux/create-apikey) |
-| 3 | Enter the key and endpoint in your client | See the selection below |
+| Step | What to do                                   | Where                                                                                         |
+| ---- | -------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 1    | Top up or subscribe to get inference credits | [Top-up/Subscription](https://tokenflux.dev/purchase) · [Billing](/en/docs/tokenflux/billing) |
+| 2    | Create an API key and pick a group           | [Create API Key](/en/docs/tokenflux/create-apikey)                                            |
+| 3    | Enter the key and endpoint in your client    | See the selection below                                                                       |
 
 Prices shown in the model marketplace are the final billing prices.
 
@@ -31,13 +31,13 @@ Best for terminal workflows, programming tasks, or users who want AI Agent assis
 
 Install [CC-Switch](/en/docs/agents/cc-switch) first. It manages API keys and provider settings in one place, removing the need to edit environment variables by hand. Then follow the guide for your client:
 
-| Client | Best for | Guide |
-| --- | --- | --- |
-| Claude Code | Anthropic's official CLI, terminal coding | [Guide](/en/docs/agents/claude-code) |
-| Codex | OpenAI's official CLI and desktop app | [Guide](/en/docs/agents/codex) |
-| Codex++ | Adds extra capabilities on top of Codex | [Guide](/en/docs/agents/codex-plus-plus) |
-| OpenCode | Open-source terminal agent with model switching | [Guide](/en/docs/agents/opencode) |
-| Hermes | Lightweight terminal agent | [Guide](/en/docs/agents/hermes) |
+| Client      | Best for                                        | Guide                                    |
+| ----------- | ----------------------------------------------- | ---------------------------------------- |
+| Claude Code | Anthropic's official CLI, terminal coding       | [Guide](/en/docs/agents/claude-code)     |
+| Codex       | OpenAI's official CLI and desktop app           | [Guide](/en/docs/agents/codex)           |
+| Codex++     | Adds extra capabilities on top of Codex         | [Guide](/en/docs/agents/codex-plus-plus) |
+| OpenCode    | Open-source terminal agent with model switching | [Guide](/en/docs/agents/opencode)        |
+| Hermes      | Lightweight terminal agent                      | [Guide](/en/docs/agents/hermes)          |
 
   </DocsTab>
 
@@ -45,10 +45,10 @@ Install [CC-Switch](/en/docs/agents/cc-switch) first. It manages API keys and pr
 
 Best for users who prefer graphical interfaces, mobile usage, or daily conversational workflows.
 
-| Client | Best for | Guide |
-| --- | --- | --- |
+| Client        | Best for                                                 | Guide                                   |
+| ------------- | -------------------------------------------------------- | --------------------------------------- |
 | Cherry Studio | Desktop (Windows / macOS / Linux), multi-model switching | [Guide](/en/docs/chatbot/cherry-studio) |
-| RikkaHub | Android, OpenAI compatible | [Guide](/en/docs/chatbot/rikkahub) |
+| RikkaHub      | Android, OpenAI compatible                               | [Guide](/en/docs/chatbot/rikkahub)      |
 
 Add TokenFlux as a custom provider in the client settings, enter your API key and an [API endpoint](/en/docs/tokenflux/endpoints), fetch the model list, and start chatting.
 

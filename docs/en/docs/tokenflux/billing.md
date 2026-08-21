@@ -21,11 +21,13 @@ A group is a property of an API key and is unrelated to the subscription plans b
 **Example**
 
 Suppose a model's base prices are:
+
 - Input: `2.5🍥`
 - Output: `15🍥`
 - Cache: `0.25🍥`
 
 With a group multiplier of `1.3`, the final prices are:
+
 - Input: `3.25🍥` (2.5 × 1.3)
 - Output: `19.5🍥` (15 × 1.3)
 - Cache: `0.325🍥` (0.25 × 1.3)
@@ -60,15 +62,16 @@ Each transaction carries a **fixed fee of 2.7 CNY**. The variable fee (2.2% of t
 Plan names were standardised. Only the names changed - prices, allowances, entitlements, and active services are unaffected. Existing plans display under the new names automatically.
 
 | Former name | Current name |
-| --- | --- |
-| Basic | Lite |
-| Standard | Lite+ |
-| Pro | Plus |
-| Max | Plus+ |
-| Ultra | Pro |
-| Elite | Pro+ |
-| Enterprise | Max |
-| Ultimate | Max+ |
+| ----------- | ------------ |
+| Basic       | Lite         |
+| Standard    | Lite+        |
+| Pro         | Plus         |
+| Max         | Plus+        |
+| Ultra       | Pro          |
+| Elite       | Pro+         |
+| Enterprise  | Max          |
+| Ultimate    | Max+         |
+
 :::
 
 ## Related Pages

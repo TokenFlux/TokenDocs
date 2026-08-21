@@ -38,12 +38,18 @@ describe('markdown artifacts', () => {
   })
 
   it('maps request paths back to source markdown files', () => {
-    const requestMap = buildMarkdownRequestMap(['index.md', 'docs/quickstart.md', 'docs/agents/index.md'])
+    const requestMap = buildMarkdownRequestMap([
+      'index.md',
+      'docs/quickstart.md',
+      'docs/agents/index.md',
+    ])
 
     expect(requestMap.get('/index.md')).toBe('index.md')
     expect(requestMap.get('/docs/quickstart.md')).toBe('docs/quickstart.md')
     expect(requestMap.get('/docs/agents.md')).toBe('docs/agents/index.md')
-    expect(stripBasePath('/TokenDocs/docs/quickstart.md', '/TokenDocs/')).toBe('/docs/quickstart.md')
+    expect(stripBasePath('/TokenDocs/docs/quickstart.md', '/TokenDocs/')).toBe(
+      '/docs/quickstart.md',
+    )
   })
 
   it('skips markdown artifact responses for dev module requests', () => {
@@ -57,9 +63,11 @@ describe('markdown artifacts', () => {
   it('builds base-aware page and markdown sitemap entries', () => {
     expect(withBasePath('/TokenDocs/', '/docs/quickstart.md')).toBe('/TokenDocs/docs/quickstart.md')
     expect(getPageUrl('docs/quickstart.md')).toBe('https://docs.tokenflux.dev/docs/quickstart.html')
-    expect(getMarkdownUrl('docs/quickstart.md')).toBe('https://docs.tokenflux.dev/docs/quickstart.md')
+    expect(getMarkdownUrl('docs/quickstart.md')).toBe(
+      'https://docs.tokenflux.dev/docs/quickstart.md',
+    )
     expect(buildMarkdownSitemap(['https://docs.tokenflux.dev/docs/quickstart.html'])).toContain(
-      '    <loc>https://docs.tokenflux.dev/docs/quickstart.html</loc>'
+      '    <loc>https://docs.tokenflux.dev/docs/quickstart.html</loc>',
     )
   })
 

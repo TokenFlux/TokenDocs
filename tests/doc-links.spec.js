@@ -109,7 +109,7 @@ function resolveSourceFile(pathname) {
 
 const markdownFiles = listMarkdownFiles()
 const anchorsByFile = new Map(
-  markdownFiles.map(file => [file, collectAnchors(readFileSync(resolve(docsRoot, file), 'utf8'))])
+  markdownFiles.map(file => [file, collectAnchors(readFileSync(resolve(docsRoot, file), 'utf8'))]),
 )
 
 describe('internal links', () => {
@@ -161,10 +161,9 @@ describe('internal links', () => {
   })
 
   it('points every sidebar entry at an existing page', () => {
-    const entries = [
-      ...Object.values(sidebar).flat(),
-      ...Object.values(enSidebar).flat(),
-    ].flatMap(group => group.items.map(item => item.link))
+    const entries = [...Object.values(sidebar).flat(), ...Object.values(enSidebar).flat()].flatMap(
+      group => group.items.map(item => item.link),
+    )
 
     const broken = entries.filter(link => !existsSync(resolveSourceFile(link)))
 

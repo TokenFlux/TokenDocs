@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # WorkBuddy Guide
 
 `WorkBuddy` is Tencent's desktop AI agent workspace. It supports local file workflows, Skills, MCP, automations, and custom models. Its OpenAI-compatible custom model support can connect to `TokenFlux`.
@@ -72,15 +76,15 @@ Select **Custom** at the bottom of the provider list. WorkBuddy's custom entry c
 
 Then complete the form:
 
-| Field | Recommended value |
-| --- | --- |
-| Provider | `Custom` |
-| Endpoint | `https://tokenflux.dev/v1/chat/completions` |
-| API Key | Your TokenFlux API key |
-| Model Name | The exact model ID from the marketplace, such as `gpt-5.6-sol` |
-| Tool Calling | Enable it; `gpt-5.6-sol`, used in this guide, supports tool calling |
-| Image Input | Enable it so WorkBuddy can send images to the model |
-| Reasoning | Enable it to use the reasoning capability of `gpt-5.6-sol` |
+| Field           | Recommended value                                                     |
+| --------------- | --------------------------------------------------------------------- |
+| Provider        | `Custom`                                                              |
+| Endpoint        | `https://tokenflux.dev/v1/chat/completions`                           |
+| API Key         | Your TokenFlux API key                                                |
+| Model Name      | The exact model ID from the marketplace, such as `gpt-5.6-sol`        |
+| Tool Calling    | Enable it; `gpt-5.6-sol`, used in this guide, supports tool calling   |
+| Image Input     | Enable it so WorkBuddy can send images to the model                   |
+| Reasoning       | Enable it to use the reasoning capability of `gpt-5.6-sol`            |
 | Custom Protocol | Leave disabled to use the OpenAI Chat Completions-compatible protocol |
 
 <div style="text-align: center;">
@@ -101,27 +105,27 @@ When using a [composite key](/en/docs/tokenflux/composite-key), include the grou
 
 1. Click **Save**. The model is written to the local configuration file shown on WorkBuddy's Models page.
 
-<div style="text-align: center;">
-  <img src="/images/workbuddy/08-save-model.png" width="538" alt="WorkBuddy custom model form with the Save button outlined in red" />
-</div>
+   <div style="text-align: center;">
+     <img src="/images/workbuddy/08-save-model.png" width="538" alt="WorkBuddy custom model form with the Save button outlined in red" />
+   </div>
 
 2. After saving, confirm that `gpt-5.6-sol` appears under **Saved Models**.
 
-<div style="text-align: center;">
-  <img src="/images/workbuddy/09-saved-model.png" width="925" alt="The gpt-5.6-sol card outlined in red in WorkBuddy's Saved Models list" />
-</div>
+   <div style="text-align: center;">
+     <img src="/images/workbuddy/09-saved-model.png" width="925" alt="The gpt-5.6-sol card outlined in red in WorkBuddy's Saved Models list" />
+   </div>
 
 3. Return to a new task, open the model selector, and choose `gpt-5.6-sol` under **Custom Models**.
 
-<div style="text-align: center;">
-  <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="The gpt-5.6-sol custom model outlined in red in WorkBuddy's model selector" />
-</div>
+   <div style="text-align: center;">
+     <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="The gpt-5.6-sol custom model outlined in red in WorkBuddy's model selector" />
+   </div>
 
 4. Send a minimal test message. The captured run used `你好` ("Hello"); it completed in 6 seconds, and the response footer identified `gpt-5.6-sol` as the active model.
 
-<div style="text-align: center;">
-  <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy successfully responding with gpt-5.6-sol, with the model name in the response footer outlined in red" />
-</div>
+   <div style="text-align: center;">
+     <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy successfully responding with gpt-5.6-sol, with the model name in the response footer outlined in red" />
+   </div>
 
 5. Once basic chat succeeds, test a tool-enabled task, such as asking WorkBuddy to create and read a text file in a temporary directory.
 

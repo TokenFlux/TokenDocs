@@ -50,10 +50,11 @@ export const DEPRECATED_ORIGIN_ALLOWED_IN = [
 export const SAMPLE_MODEL_IDS = [
   'claude-sonnet-4',
   'gemini-2.5-pro',
+  'gemini-3.1-flash-image',
   'gpt-5.6-luna',
   'gpt-5.6-sol',
   'gpt-5.6-terra',
-  'gpt-image-2',
+  'nano-banana-pro',
 ]
 
 /** 形似模型 ID 但并非可配置模型，跳过校验。 */

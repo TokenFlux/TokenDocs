@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # Codex++
 
 ::: danger 警告
@@ -29,7 +33,7 @@
 
 将以下项目链接交给你的 AI Agent，并告诉它 “请你按这个项目的说明帮我安装并配置 Codex++”：
 
-```
+```text
 https://github.com/BigPizzaV3/CodexPlusPlus
 ```
 
@@ -41,7 +45,7 @@ Agent 会自动拉取项目并执行安装步骤。
 
 双击项目根目录的 `setup.bat`，选择：
 
-```
+```text
 [1] Install Codex++
 ```
 

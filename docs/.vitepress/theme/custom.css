@@ -56,10 +56,25 @@
   color: var(--vp-c-text-1);
 }
 
+.doc-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+
+.doc-verified-at {
+  margin: 0;
+  color: var(--vp-c-text-3);
+  font-size: 0.85rem;
+  line-height: 1.2;
+}
+
 .markdown-link-tools {
   display: flex;
   justify-content: flex-end;
-  margin: 0 0 1rem;
+  margin: 0;
 }
 
 .markdown-link-tools__button {
@@ -93,6 +108,11 @@
 }
 
 @media (max-width: 640px) {
+  .doc-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
   .markdown-link-tools {
     flex-wrap: wrap;
   }

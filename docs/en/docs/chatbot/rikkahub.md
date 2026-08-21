@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # RikkaHub Guide
 
 `RikkaHub` is an Android AI chat client that supports multiple OpenAI-compatible interfaces, suitable for daily AI conversations on mobile devices.

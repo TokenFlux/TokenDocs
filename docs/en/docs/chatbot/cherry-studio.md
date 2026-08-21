@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # Cherry Studio Guide
 
 `Cherry Studio` is a desktop AI chat client with multi-model support. It has a clean interface, supports custom providers, and is suitable for daily conversations and multi-model comparison.
@@ -18,7 +22,7 @@ Cherry Studio provides both **Setup installers** and **Portable builds**, with x
 3. After installation, launch `Cherry Studio` from the Start menu.
 
 > **Note:** Cherry Studio does not support Windows 7.
-
+>
 > If startup reports missing runtime libraries, install the [Visual C++ Redistributable](https://aka.ms/vs/17/release/vc_redist.x64.exe) first.
 
   </DocsTab>

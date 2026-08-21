@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # OpenCode Guide
 
 `OpenCode` is an open-source AI coding assistant framework. It supports integration with multiple AI models, including code generation, modification, and review workflows.

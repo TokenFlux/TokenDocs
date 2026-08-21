@@ -24,11 +24,11 @@ curl https://tokenflux.dev/v1/models -H "authorization: Bearer $KEY"
 
 这个请求不产生推理费用。
 
-| 返回 | 说明 |
-| --- | --- |
+| 返回     | 说明                                      |
+| -------- | ----------------------------------------- |
 | 模型列表 | Key、端点和分组都正常，问题出在客户端配置 |
-| `401` | Key 本身有问题，见下方 401 一节 |
-| `403` | 分组、余额或订阅问题，见下方 403 一节 |
+| `401`    | Key 本身有问题，见下方 401 一节           |
+| `403`    | 分组、余额或订阅问题，见下方 403 一节     |
 
 Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，认证头换成 `x-api-key`，并加上 `anthropic-version: 2023-06-01`。
 
@@ -41,24 +41,25 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
 1. API 地址必须是 `https://`，不是 `http://`。
 2. 地址格式与客户端要求的协议一致：
 
-   | 客户端要求 | 填什么 |
-   | --- | --- |
+   | 客户端要求                              | 填什么                     |
+   | --------------------------------------- | -------------------------- |
    | `OPENAI_BASE_URL` 或标注「OpenAI 兼容」 | `https://tokenflux.dev/v1` |
-   | `ANTHROPIC_BASE_URL` | `https://tokenflux.dev` |
+   | `ANTHROPIC_BASE_URL`                    | `https://tokenflux.dev`    |
 
    完整说明见 [API 端点](/docs/tokenflux/endpoints)。
+
 3. 地址后不要自行拼接 `/chat/completions` 或 `/v1/messages`，客户端会自动补全。
 4. 未使用已废弃的 `token.memoh.net`。
 5. 本地代理、防火墙或 HTTPS 证书拦截。部分网络环境需要使用代理才能访问。
 
 ## 401 认证失败
 
-| message | 怎么办 |
-| --- | --- |
-| `API key is required in ...` | 请求未携带 Key，检查客户端是否读取到配置 |
-| `Invalid API key` | Key 不存在，检查是否含多余的空格、换行或引号 |
-| `API key is disabled` | Key 已禁用，在 [API 密钥页面](https://tokenflux.dev/keys) 查看状态 |
-| `User account is not active` | 账号已停用，请联系平台 |
+| message                      | 怎么办                                                             |
+| ---------------------------- | ------------------------------------------------------------------ |
+| `API key is required in ...` | 请求未携带 Key，检查客户端是否读取到配置                           |
+| `Invalid API key`            | Key 不存在，检查是否含多余的空格、换行或引号                       |
+| `API key is disabled`        | Key 已禁用，在 [API 密钥页面](https://tokenflux.dev/keys) 查看状态 |
+| `User account is not active` | 账号已停用，请联系平台                                             |
 
 修改 Key 后仍返回 401，通常是客户端仍在使用旧的环境变量。请完全退出客户端后重新启动，重载窗口不足以生效。
 
@@ -92,38 +93,38 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
 
 需充值或等待周期重置。
 
-| message | 怎么办 |
-| --- | --- |
-| `API key 额度已用完` | 该 Key 设有独立额度，在 [API 密钥页面](https://tokenflux.dev/keys) 调整 |
-| `api key 5小时限额已用完` / `日限额` / `7天限额` | Key 的滚动限额，等待窗口结束或修改 Key 配置 |
-| `团队成员日限额已用完`（周 / 月同理） | 联系团队所有者调整限额 |
-| 包含 `reason="DAILY_LIMIT_EXCEEDED"` 的文本 | 订阅的日额度用尽，周 / 月同理 |
-| `Daily usage quota exhausted for this platform.` | 该平台的日额度用尽 |
+| message                                          | 怎么办                                                                  |
+| ------------------------------------------------ | ----------------------------------------------------------------------- |
+| `API key 额度已用完`                             | 该 Key 设有独立额度，在 [API 密钥页面](https://tokenflux.dev/keys) 调整 |
+| `api key 5小时限额已用完` / `日限额` / `7天限额` | Key 的滚动限额，等待窗口结束或修改 Key 配置                             |
+| `团队成员日限额已用完`（周 / 月同理）            | 联系团队所有者调整限额                                                  |
+| 包含 `reason="DAILY_LIMIT_EXCEEDED"` 的文本      | 订阅的日额度用尽，周 / 月同理                                           |
+| `Daily usage quota exhausted for this platform.` | 该平台的日额度用尽                                                      |
 
 ### 频率超限
 
 降低请求频率后可恢复。
 
-| message | 怎么办 |
-| --- | --- |
-| `group requests-per-minute limit exceeded` | 降低请求频率，响应头含 `Retry-After` |
-| `user requests-per-minute limit exceeded` | 同上 |
-| `Concurrency limit exceeded for user, please retry later` | 降低并发数 |
-| `Too many pending requests, please retry later` | 等待队列已满，稍后重试 |
-| `Upstream rate limit exceeded, please retry later` | 服务限流中，等待或更换模型 |
-| `Too many invalid authentication attempts; retry later` | 认证失败次数过多触发保护，先修正 Key 配置 |
+| message                                                   | 怎么办                                    |
+| --------------------------------------------------------- | ----------------------------------------- |
+| `group requests-per-minute limit exceeded`                | 降低请求频率，响应头含 `Retry-After`      |
+| `user requests-per-minute limit exceeded`                 | 同上                                      |
+| `Concurrency limit exceeded for user, please retry later` | 降低并发数                                |
+| `Too many pending requests, please retry later`           | 等待队列已满，稍后重试                    |
+| `Upstream rate limit exceeded, please retry later`        | 服务限流中，等待或更换模型                |
+| `Too many invalid authentication attempts; retry later`   | 认证失败次数过多触发保护，先修正 Key 配置 |
 
 响应包含 `Retry-After` 时按其指示等待，否则采用指数退避。失败重试同样可能产生费用，不要循环重试。
 
 ## 400 请求格式错误
 
-| message | 怎么办 |
-| --- | --- |
-| `model is required` | 客户端未传模型 ID，检查是否已选择模型 |
-| `Failed to parse request body` | 请求体不是合法 JSON |
-| `API key in query parameter is deprecated...` | Key 写在 URL 中，改用请求头 |
-| `composite api key model must use prefix/model_id` | 复合 Key 的模型 ID 需带前缀，见 [复合 Key](/docs/tokenflux/composite-key) |
-| `Your Claude Code version ... is below the minimum required version ...` | 按提示升级 Claude Code |
+| message                                                                  | 怎么办                                                                    |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| `model is required`                                                      | 客户端未传模型 ID，检查是否已选择模型                                     |
+| `Failed to parse request body`                                           | 请求体不是合法 JSON                                                       |
+| `API key in query parameter is deprecated...`                            | Key 写在 URL 中，改用请求头                                               |
+| `composite api key model must use prefix/model_id`                       | 复合 Key 的模型 ID 需带前缀，见 [复合 Key](/docs/tokenflux/composite-key) |
+| `Your Claude Code version ... is below the minimum required version ...` | 按提示升级 Claude Code                                                    |
 
 ## 5xx 服务端错误
 
@@ -150,17 +151,17 @@ API 地址：
 对比：
 ```
 
-| 字段 | 填什么 |
-| --- | --- |
-| 模型 ID | 从模型广场复制的完整 ID，不要简写 |
-| 分组 | Key 绑定的分组名 |
-| 客户端 | 名称与版本，例如 `Claude Code 2.x` |
-| API 地址 | 实际填写的地址 |
-| 系统 | Windows / macOS / Linux |
-| 故障 | 具体现象，附 HTTP 状态码和 `message` 原文 |
-| 预期 | 认为正确的表现 |
-| 复现步骤 | 触发问题的最小操作 |
-| 对比 | 何种情况正常、何种情况异常 |
+| 字段     | 填什么                                    |
+| -------- | ----------------------------------------- |
+| 模型 ID  | 从模型广场复制的完整 ID，不要简写         |
+| 分组     | Key 绑定的分组名                          |
+| 客户端   | 名称与版本，例如 `Claude Code 2.x`        |
+| API 地址 | 实际填写的地址                            |
+| 系统     | Windows / macOS / Linux                   |
+| 故障     | 具体现象，附 HTTP 状态码和 `message` 原文 |
+| 预期     | 认为正确的表现                            |
+| 复现步骤 | 触发问题的最小操作                        |
+| 对比     | 何种情况正常、何种情况异常                |
 
 模型 ID、分组、客户端、API 地址和完整报错缺一不可。同一条报错在不同组合下原因可能完全不同。
 

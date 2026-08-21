@@ -22,9 +22,9 @@
 
 例如按下面的方式绑定：
 
-| 前缀 | 分组 |
-| --- | --- |
-| `GPT` | OpenAI 分组 |
+| 前缀     | 分组           |
+| -------- | -------------- |
+| `GPT`    | OpenAI 分组    |
 | `Claude` | Anthropic 分组 |
 
 ### 前缀规则
@@ -86,12 +86,12 @@ POST /v1beta/models/Gemini/gemini-2.5-pro:generateContent
 
 前缀有问题时会返回 HTTP 400，错误结构与所用入口（OpenAI / Anthropic / Google）保持一致：
 
-| 错误码 | 含义 |
-| --- | --- |
-| `COMPOSITE_KEY_MODEL_PREFIX_REQUIRED` | 模型 ID 没带前缀 |
-| `COMPOSITE_KEY_PREFIX_NOT_FOUND` | 前缀不在这个 Key 的映射里 |
-| `COMPOSITE_KEY_PREFIX_INVALID` | 前缀格式非法 |
-| `COMPOSITE_KEY_ENDPOINT_UNSUPPORTED` | 该接口不支持复合 Key |
+| 错误码                                | 含义                      |
+| ------------------------------------- | ------------------------- |
+| `COMPOSITE_KEY_MODEL_PREFIX_REQUIRED` | 模型 ID 没带前缀          |
+| `COMPOSITE_KEY_PREFIX_NOT_FOUND`      | 前缀不在这个 Key 的映射里 |
+| `COMPOSITE_KEY_PREFIX_INVALID`        | 前缀格式非法              |
+| `COMPOSITE_KEY_ENDPOINT_UNSUPPORTED`  | 该接口不支持复合 Key      |
 
 ## 注意事项
 

@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # Hermes 使用指南
 
 `Hermes` 是一款 AI Agent 工具，支持通过自定义 OpenAI-compatible 接口接入 `TokenFlux`。
@@ -19,9 +23,9 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
 
    ```yaml
    model:
-     default: "gpt-5.6-sol"
-     provider: "custom"
-     base_url: "https://tokenflux.dev/v1"
+     default: 'gpt-5.6-sol'
+     provider: 'custom'
+     base_url: 'https://tokenflux.dev/v1'
    ```
 
 3. 编辑 `~/.hermes/.env`，写入：

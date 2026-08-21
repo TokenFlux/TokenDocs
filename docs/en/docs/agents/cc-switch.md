@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # CC-Switch
 
 `CC-Switch` is a graphical tool for managing AI interface configuration. It can manage provider settings and API keys for multiple Agent clients in one place, including mainstream AI coding assistants such as `Claude Code`, `Codex`, and `OpenCode`, reducing the risk of configuration mistakes.
@@ -118,7 +122,6 @@ This variable enables a 1-hour prompt cache, which is useful for Claude Code ses
   }
 }
 ```
-
 
 ### Unified Provider
 

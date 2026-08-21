@@ -21,11 +21,11 @@ Fast mode uses the upstream priority pricing tier, so charges are about **2x** t
 
 ## The Three Options
 
-| Option | Behavior |
-| --- | --- |
+| Option                     | Behavior                                                             |
+| -------------------------- | -------------------------------------------------------------------- |
 | `Follow request` (default) | Passes through whatever the client sent, adding and removing nothing |
-| `Force Fast on` | Sends requests as Fast whether or not the client asked for it |
-| `Force Fast off` | Strips any Fast flag the client included |
+| `Force Fast on`            | Sends requests as Fast whether or not the client asked for it        |
+| `Force Fast off`           | Strips any Fast flag the client included                             |
 
 `Force Fast off` removes only the Fast flag. It leaves other priority settings such as `flex`, `auto`, `default`, and `scale` untouched.
 

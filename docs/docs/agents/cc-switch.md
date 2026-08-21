@@ -1,8 +1,13 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # CC-Switch
 
 `CC-Switch` 是一款专为管理 AI 接口配置而设计的图形化工具，可统一管理多个 Agent 客户端的供应商配置与 API Key，支持 `Claude Code`、`Codex`、`OpenCode` 等主流 AI 编程助手，降低配置错误风险。
 
 适用场景包括：
+
 - 统一管理多个 Agent 客户端（如 `Claude Code`、`Codex`、`OpenCode`）的供应商配置与 API Key。
 - 快速切换不同 AI 模型接口，无需手动修改环境变量或本地配置文件。
 - 减少重复配置，提升多客户端场景下的效率与可维护性。
@@ -17,7 +22,7 @@
   <DocsTab title="Windows" name="windows">
 
 1. 访问 [此处](https://github.com/farion1231/cc-switch/releases/latest)，进入 Releases 页面。
-    在页面中找到适用于 Windows 的安装包（推荐 `.msi` 格式），如图所示：
+   在页面中找到适用于 Windows 的安装包（推荐 `.msi` 格式），如图所示：
 
     <div style="text-align: center;">
       <img src="/images/cc-switch/windows-installer-selection.png" alt="如何在 Releases 页面选择适合 Windows 的安装包" />
@@ -75,6 +80,7 @@ AppImage 文件集成了所有必要的依赖，适用于大多数 Linux 发行�
 </DocsTabs>
 
 ## 安装后怎么开始？
+
 <!--
 安装完成后，你可以选择两种方式开始：
 
@@ -108,7 +114,6 @@ AppImage 文件集成了所有必要的依赖，适用于大多数 Linux 发行�
 
 如果需要更灵活的配置方式，`CC-Switch` 还支持手动添加供应商。以下为操作步骤：-->
 
-
 1. 按照 [创建 API Key 教程](/docs/tokenflux/create-apikey) ，获取一个新的 API Key。
 2. 打开 `CC-Switch`，点击右上角的“添加”按钮，选择“添加统一供应商”。
 3. 在弹出的配置窗口中，准确填写以下字段：
@@ -126,6 +131,7 @@ AppImage 文件集成了所有必要的依赖，适用于大多数 Linux 发行�
    </div>
 
 4. 保存配置，`CC-Switch` 会自动为所有相关的 Agent 启用该供应商。
+
 <!--
   </DocsTab>
 </DocsTabs>-->
@@ -136,7 +142,7 @@ AppImage 文件集成了所有必要的依赖，适用于大多数 Linux 发行�
 DOYO 的 Claude 渠道暂时无法在 Claude 应用（Claude app）中使用，只能通过 `Claude Code` CLI 使用。
 :::
 
-如果你通过 `CC-Switch` 管理  Claude Code，可以把 `ENABLE_PROMPT_CACHING_1H` 写进 Claude 供应商的 JSON 配置。`CC-Switch` 在启用供应商时会把该配置写入 Claude Code 的 `settings.json`。
+如果你通过 `CC-Switch` 管理 Claude Code，可以把 `ENABLE_PROMPT_CACHING_1H` 写进 Claude 供应商的 JSON 配置。`CC-Switch` 在启用供应商时会把该配置写入 Claude Code 的 `settings.json`。
 
 该变量用于开启 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。它只对 DOYO 的 Claude 渠道有效，其他 Claude 渠道无需设置。
 
@@ -153,7 +159,6 @@ DOYO 的 Claude 渠道暂时无法在 Claude 应用（Claude app）中使用，�
   }
 }
 ```
-
 
 ### 统一供应商
 

@@ -4,11 +4,11 @@
 
 ## 协议入口
 
-| 协议格式 | Base URL | 典型请求路径 |
-| --- | --- | --- |
-| OpenAI 格式 | `https://tokenflux.dev/v1` | `POST /chat/completions` |
-| Anthropic 格式 | `https://tokenflux.dev` | `POST /v1/messages` |
-| Gemini 格式 | `https://tokenflux.dev` | `POST /v1beta/models/<模型 ID>:generateContent` |
+| 协议格式       | Base URL                   | 典型请求路径                                    |
+| -------------- | -------------------------- | ----------------------------------------------- |
+| OpenAI 格式    | `https://tokenflux.dev/v1` | `POST /chat/completions`                        |
+| Anthropic 格式 | `https://tokenflux.dev`    | `POST /v1/messages`                             |
+| Gemini 格式    | `https://tokenflux.dev`    | `POST /v1beta/models/<模型 ID>:generateContent` |
 
 OpenAI 格式和 Anthropic 格式的端点可在 [API 密钥页面](https://tokenflux.dev/keys) 顶部一键复制：
 
@@ -20,11 +20,11 @@ OpenAI 格式和 Anthropic 格式的端点可在 [API 密钥页面](https://toke
 
 格式由客户端决定，分组必须支持同一格式。
 
-| 格式 | 适用客户端 |
-| --- | --- |
-| OpenAI 格式（`/v1` 结尾） | Cherry Studio、RikkaHub、OpenCode，以及标注「OpenAI 兼容」的工具 |
-| Anthropic 格式（无 `/v1`） | `Claude Code` 等原生走 Anthropic 协议的客户端 |
-| Gemini 格式 | 使用 Google 原生协议的客户端和 SDK，模型 ID 写在请求路径里 |
+| 格式                       | 适用客户端                                                       |
+| -------------------------- | ---------------------------------------------------------------- |
+| OpenAI 格式（`/v1` 结尾）  | Cherry Studio、RikkaHub、OpenCode，以及标注「OpenAI 兼容」的工具 |
+| Anthropic 格式（无 `/v1`） | `Claude Code` 等原生走 Anthropic 协议的客户端                    |
+| Gemini 格式                | 使用 Google 原生协议的客户端和 SDK，模型 ID 写在请求路径里       |
 
 客户端配置项写 `ANTHROPIC_BASE_URL` 的用 Anthropic 格式，写 `OPENAI_BASE_URL` 或 `Base URL` 的用 OpenAI 格式。具体填法各接入教程里都有写明。
 
@@ -34,10 +34,10 @@ OpenAI 格式和 Anthropic 格式的端点可在 [API 密钥页面](https://toke
 
 API Key 通过请求头传递，多数客户端会自动处理。
 
-| 入口 | 支持的认证方式 |
-| --- | --- |
+| 入口                        | 支持的认证方式                                                             |
+| --------------------------- | -------------------------------------------------------------------------- |
 | OpenAI 格式、Anthropic 格式 | `Authorization: Bearer <Key>`、`x-api-key: <Key>`、`x-goog-api-key: <Key>` |
-| Gemini 格式 | 以上三种，另支持查询参数 `?key=<Key>` |
+| Gemini 格式                 | 以上三种，另支持查询参数 `?key=<Key>`                                      |
 
 OpenAI 格式和 Anthropic 格式不接受通过查询参数传 Key，会返回 400。Gemini 格式的 `?api_key=` 同样已废弃，请使用 `?key=` 或请求头。
 
@@ -47,10 +47,10 @@ OpenAI 格式和 Anthropic 格式不接受通过查询参数传 Key，会返回 
 
 `token.memoh.net` 已废弃，不要用于新配置。现有配置如仍在使用该地址，请改为对应格式的默认端点：
 
-| 协议格式 | 旧地址 | 改为 |
-| --- | --- | --- |
-| OpenAI 格式 | `https://token.memoh.net/v1` | `https://tokenflux.dev/v1` |
-| Anthropic 格式 | `https://token.memoh.net` | `https://tokenflux.dev` |
+| 协议格式       | 旧地址                       | 改为                       |
+| -------------- | ---------------------------- | -------------------------- |
+| OpenAI 格式    | `https://token.memoh.net/v1` | `https://tokenflux.dev/v1` |
+| Anthropic 格式 | `https://token.memoh.net`    | `https://tokenflux.dev`    |
 
 切换时只需修改客户端中的 API 地址，其他配置不用改。废弃端点容易出现请求堆积、首字延迟升高，请求量大时影响更明显。
 

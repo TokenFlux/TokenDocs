@@ -8,10 +8,10 @@ A team lets multiple members create and use their own API keys while sharing the
 
 A team has only two roles:
 
-| Role | Description |
-| --- | --- |
-| Owner | The creator of the team. Every team has exactly one owner, who pays for all team spending and manages members, limits, and team keys. |
-| Member | Can create and use team keys, but only sees their own usage and limits. |
+| Role   | Description                                                                                                                           |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Owner  | The creator of the team. Every team has exactly one owner, who pays for all team spending and manages members, limits, and team keys. |
+| Member | Can create and use team keys, but only sees their own usage and limits.                                                               |
 
 An account can belong to only one team at a time. Teams are single-level; there are no sub-teams.
 
@@ -110,13 +110,13 @@ The charts include members who already left the team but had spending within the
 
 ## Member and Team Changes
 
-| Action | Who can do it | Effect |
-| --- | --- | --- |
-| Remove member | Owner | All of that member's team keys are disabled immediately; their personal keys are unaffected |
-| Leave team | Member | All of your own team keys are disabled immediately |
-| Transfer ownership | Owner | The target member must confirm within 24 hours; on acceptance the two roles swap and both members' limits reset to unlimited |
-| Pause / resume team | Owner | While paused, all team keys immediately stop authenticating; resuming makes them available again |
-| Dissolve team | Owner | The team, memberships, and all team keys are disabled immediately. **This cannot be undone** |
+| Action              | Who can do it | Effect                                                                                                                       |
+| ------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Remove member       | Owner         | All of that member's team keys are disabled immediately; their personal keys are unaffected                                  |
+| Leave team          | Member        | All of your own team keys are disabled immediately                                                                           |
+| Transfer ownership  | Owner         | The target member must confirm within 24 hours; on acceptance the two roles swap and both members' limits reset to unlimited |
+| Pause / resume team | Owner         | While paused, all team keys immediately stop authenticating; resuming makes them available again                             |
+| Dissolve team       | Owner         | The team, memberships, and all team keys are disabled immediately. **This cannot be undone**                                 |
 
 Additional notes:
 

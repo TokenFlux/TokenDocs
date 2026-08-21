@@ -130,7 +130,9 @@ describe('documented constants', () => {
       const files = documents.filter(doc => matcher.test(doc.content)).map(doc => doc.file)
 
       if (files.length > maxFiles) {
-        scattered.push(`${name} 出现在 ${files.length} 个文件（上限 ${maxFiles}）：${files.join(', ')}`)
+        scattered.push(
+          `${name} 出现在 ${files.length} 个文件（上限 ${maxFiles}）：${files.join(', ')}`,
+        )
       }
     }
 

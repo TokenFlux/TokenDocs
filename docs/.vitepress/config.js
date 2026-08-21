@@ -36,7 +36,7 @@ async function listMarkdownFiles(directory) {
     const entryPath = resolve(directory, entry.name)
 
     if (entry.isDirectory()) {
-      markdownFiles.push(...await listMarkdownFiles(entryPath))
+      markdownFiles.push(...(await listMarkdownFiles(entryPath)))
       continue
     }
 
@@ -81,7 +81,7 @@ function registerMarkdownArtifactMiddleware(server) {
 
     if (pathname === '/sitemap.xml') {
       const sitemap = buildMarkdownSitemap(
-        relativePaths.map(relativePath => getPageUrl(relativePath, requestSiteUrl))
+        relativePaths.map(relativePath => getPageUrl(relativePath, requestSiteUrl)),
       )
 
       res.statusCode = 200
@@ -93,7 +93,7 @@ function registerMarkdownArtifactMiddleware(server) {
 
     if (pathname === '/markdown-sitemap.xml') {
       const sitemap = buildMarkdownSitemap(
-        relativePaths.map(relativePath => getMarkdownUrl(relativePath, requestSiteUrl))
+        relativePaths.map(relativePath => getMarkdownUrl(relativePath, requestSiteUrl)),
       )
 
       res.statusCode = 200
@@ -113,7 +113,7 @@ function registerMarkdownArtifactMiddleware(server) {
     const markdownLinkMap = buildMarkdownLinkMap(relativePaths, requestSiteUrl)
     const fileContent = await readFile(resolve(docsRoot, relativePath), 'utf8')
     const markdownContent = addUtf8Bom(
-      rewriteAbsoluteMarkdownLinks(fileContent, requestSiteUrl, markdownLinkMap)
+      rewriteAbsoluteMarkdownLinks(fileContent, requestSiteUrl, markdownLinkMap),
     )
 
     res.statusCode = 200
@@ -176,7 +176,7 @@ export default defineConfig({
       const relativePath = relativePaths[index]
       const fileContent = await readFile(filePath, 'utf8')
       const markdownContent = addUtf8Bom(
-        rewriteAbsoluteMarkdownLinks(fileContent, siteUrl, markdownLinkMap)
+        rewriteAbsoluteMarkdownLinks(fileContent, siteUrl, markdownLinkMap),
       )
 
       for (const outputPath of getMarkdownOutputPaths(relativePath)) {

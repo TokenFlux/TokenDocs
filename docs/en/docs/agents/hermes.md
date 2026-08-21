@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # Hermes Guide
 
 `Hermes` is an AI Agent tool that supports connecting to `TokenFlux` through a custom OpenAI-compatible interface.
@@ -19,9 +23,9 @@ After installation, the default config directory is usually `~/.hermes`.
 
    ```yaml
    model:
-     default: "gpt-5.6-sol"
-     provider: "custom"
-     base_url: "https://tokenflux.dev/v1"
+     default: 'gpt-5.6-sol'
+     provider: 'custom'
+     base_url: 'https://tokenflux.dev/v1'
    ```
 
 3. Edit `~/.hermes/.env` and write:

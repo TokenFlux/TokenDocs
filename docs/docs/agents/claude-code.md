@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # Claude Code 使用指南
 
 `Claude Code` 是 Anthropic 推出的 AI 编程助手，支持代码生成、修改和审查。
@@ -30,7 +34,6 @@ curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del in
 ```
 
   </DocsTab>
-
 
   <DocsTab title="Homebrew" name="homebrew">
 
@@ -136,13 +139,13 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 **macOS / Linux 路径**
 
-```
+```text
 ~/.claude/settings.json
 ```
 
 **Windows 路径**
 
-```
+```text
 %userprofile%\.claude\settings.json
 ```
 

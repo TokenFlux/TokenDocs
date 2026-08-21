@@ -22,9 +22,9 @@ The same switch is available when editing an existing key.
 
 For example, you can bind them like this:
 
-| Prefix | Group |
-| --- | --- |
-| `GPT` | OpenAI group |
+| Prefix   | Group           |
+| -------- | --------------- |
+| `GPT`    | OpenAI group    |
 | `Claude` | Anthropic group |
 
 ### Prefix Rules
@@ -86,12 +86,12 @@ Regular API requests are all supported, including chat, image generation and edi
 
 Prefix problems return HTTP 400, using the error structure of whichever endpoint you called (OpenAI, Anthropic, or Google):
 
-| Error code | Meaning |
-| --- | --- |
-| `COMPOSITE_KEY_MODEL_PREFIX_REQUIRED` | The model ID has no prefix |
-| `COMPOSITE_KEY_PREFIX_NOT_FOUND` | The prefix is not mapped on this key |
-| `COMPOSITE_KEY_PREFIX_INVALID` | The prefix format is invalid |
-| `COMPOSITE_KEY_ENDPOINT_UNSUPPORTED` | The endpoint does not support composite keys |
+| Error code                            | Meaning                                      |
+| ------------------------------------- | -------------------------------------------- |
+| `COMPOSITE_KEY_MODEL_PREFIX_REQUIRED` | The model ID has no prefix                   |
+| `COMPOSITE_KEY_PREFIX_NOT_FOUND`      | The prefix is not mapped on this key         |
+| `COMPOSITE_KEY_PREFIX_INVALID`        | The prefix format is invalid                 |
+| `COMPOSITE_KEY_ENDPOINT_UNSUPPORTED`  | The endpoint does not support composite keys |
 
 ## Notes
 

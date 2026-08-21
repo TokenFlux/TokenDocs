@@ -54,7 +54,10 @@ export function useCodeBlockFolding() {
     document.removeEventListener('click', handleClick)
   })
 
-  watch(() => route.path, () => {
-    refreshCodeBlocks()
-  })
+  watch(
+    () => route.path,
+    () => {
+      refreshCodeBlocks()
+    },
+  )
 }

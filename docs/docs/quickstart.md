@@ -12,11 +12,11 @@ TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉�
 
 ## 三步接入
 
-| 步骤 | 做什么 | 去哪 |
-| --- | --- | --- |
-| 1 | 充值或订阅，获得推理积分 | [充值/订阅](https://tokenflux.dev/purchase) · [计费说明](/docs/tokenflux/billing) |
-| 2 | 创建一个 API Key，选好分组 | [创建 API Key](/docs/tokenflux/create-apikey) |
-| 3 | 在客户端里填入 Key 和端点 | 见下方选型 |
+| 步骤 | 做什么                     | 去哪                                                                              |
+| ---- | -------------------------- | --------------------------------------------------------------------------------- |
+| 1    | 充值或订阅，获得推理积分   | [充值/订阅](https://tokenflux.dev/purchase) · [计费说明](/docs/tokenflux/billing) |
+| 2    | 创建一个 API Key，选好分组 | [创建 API Key](/docs/tokenflux/create-apikey)                                     |
+| 3    | 在客户端里填入 Key 和端点  | 见下方选型                                                                        |
 
 模型广场显示的价格即为最终计费价格。
 
@@ -31,13 +31,13 @@ TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉�
 
 建议先安装 [CC-Switch](/docs/agents/cc-switch)，它统一管理 API Key 和供应商配置，无需手动修改环境变量。安装后按所用客户端查看对应教程：
 
-| 客户端 | 适用场景 | 指南 |
-| --- | --- | --- |
-| Claude Code | Anthropic 官方 CLI，终端编程 | [教程](/docs/agents/claude-code) |
-| Codex | OpenAI 官方 CLI 与桌面端 | [教程](/docs/agents/codex) |
-| Codex++ | 给 Codex 加装增强能力 | [教程](/docs/agents/codex-plus-plus) |
-| OpenCode | 开源终端 Agent，多模型切换 | [教程](/docs/agents/opencode) |
-| Hermes | 轻量终端 Agent | [教程](/docs/agents/hermes) |
+| 客户端      | 适用场景                     | 指南                                 |
+| ----------- | ---------------------------- | ------------------------------------ |
+| Claude Code | Anthropic 官方 CLI，终端编程 | [教程](/docs/agents/claude-code)     |
+| Codex       | OpenAI 官方 CLI 与桌面端     | [教程](/docs/agents/codex)           |
+| Codex++     | 给 Codex 加装增强能力        | [教程](/docs/agents/codex-plus-plus) |
+| OpenCode    | 开源终端 Agent，多模型切换   | [教程](/docs/agents/opencode)        |
+| Hermes      | 轻量终端 Agent               | [教程](/docs/agents/hermes)          |
 
   </DocsTab>
 
@@ -45,10 +45,10 @@ TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉�
 
 适合偏好图形界面、移动端或以日常对话为主要使用场景的用户。
 
-| 客户端 | 适用场景 | 指南 |
-| --- | --- | --- |
+| 客户端        | 适用场景                                      | 指南                                |
+| ------------- | --------------------------------------------- | ----------------------------------- |
 | Cherry Studio | 桌面端（Windows / macOS / Linux），多模型切换 | [教程](/docs/chatbot/cherry-studio) |
-| RikkaHub | Android 手机端，OpenAI 兼容 | [教程](/docs/chatbot/rikkahub) |
+| RikkaHub      | Android 手机端，OpenAI 兼容                   | [教程](/docs/chatbot/rikkahub)      |
 
 在客户端设置里添加 TokenFlux 作为自定义服务商，填入 API Key 和 [API 端点](/docs/tokenflux/endpoints)，获取模型列表后即可开始对话。
 

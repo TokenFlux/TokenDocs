@@ -38,7 +38,7 @@ describe('site config', () => {
     for (const locale of [config.locales.root, config.locales.en]) {
       expect(locale.themeConfig.lastUpdated.text).toBeTruthy()
       expect(locale.themeConfig.editLink.pattern).toBe(
-        'https://github.com/TokenFlux/TokenDocs/edit/main/docs/:path'
+        'https://github.com/TokenFlux/TokenDocs/edit/main/docs/:path',
       )
     }
   })

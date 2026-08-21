@@ -1,3 +1,7 @@
+---
+verifiedAt: '2026-08-22'
+---
+
 # Cherry Studio 使用指南
 
 `Cherry Studio` 是一款支持多模型的桌面 AI 对话客户端，界面简洁，支持自定义服务商，适合日常对话和多模型对比使用。
@@ -18,7 +22,7 @@ Cherry Studio 提供 **Setup 安装版**和 **Portable 便携版**，均支持 x
 3. 安装完成后，从开始菜单启动 `Cherry Studio`。
 
 > **注意：** Cherry Studio 不支持 Windows 7。
-
+>
 > 如果启动时提示缺少运行库，请先安装 [Visual C++ Redistributable](https://aka.ms/vs/17/release/vc_redist.x64.exe)。
 
   </DocsTab>

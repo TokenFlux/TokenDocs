@@ -87,11 +87,18 @@ export function shouldServeMarkdownArtifact(url, headers = {}) {
 
   const requestDestination = headers['sec-fetch-dest']
 
-  if (requestDestination === 'script' || requestDestination === 'style' || requestDestination === 'worker') {
+  if (
+    requestDestination === 'script' ||
+    requestDestination === 'style' ||
+    requestDestination === 'worker'
+  ) {
     return false
   }
 
-  return ['/sitemap.xml', '/markdown-sitemap.xml'].includes(parsedUrl.pathname) || parsedUrl.pathname.endsWith('.md')
+  return (
+    ['/sitemap.xml', '/markdown-sitemap.xml'].includes(parsedUrl.pathname) ||
+    parsedUrl.pathname.endsWith('.md')
+  )
 }
 
 export function withBasePath(base, path) {
@@ -143,7 +150,11 @@ function rewriteUrl(url, siteUrl, markdownLinkMap) {
   return `${normalizeSiteUrl(siteUrl)}${url}`
 }
 
-export function rewriteAbsoluteMarkdownLinks(content, siteUrl = DEFAULT_SITE_URL, markdownLinkMap = new Map()) {
+export function rewriteAbsoluteMarkdownLinks(
+  content,
+  siteUrl = DEFAULT_SITE_URL,
+  markdownLinkMap = new Map(),
+) {
   const normalizedSiteUrl = normalizeSiteUrl(siteUrl)
 
   return content
@@ -154,13 +165,16 @@ export function rewriteAbsoluteMarkdownLinks(content, siteUrl = DEFAULT_SITE_URL
 
       return `${prefix}${rewriteUrl(url, normalizedSiteUrl, markdownLinkMap)}${suffix}`
     })
-    .replace(/(<(?:a|img)\b[^>]*\b(?:href|src)=['"])([^'"]+)(['"])/g, (match, prefix, url, suffix) => {
-      if (!url.startsWith('/')) {
-        return match
-      }
+    .replace(
+      /(<(?:a|img)\b[^>]*\b(?:href|src)=['"])([^'"]+)(['"])/g,
+      (match, prefix, url, suffix) => {
+        if (!url.startsWith('/')) {
+          return match
+        }
 
-      return `${prefix}${rewriteUrl(url, normalizedSiteUrl, markdownLinkMap)}${suffix}`
-    })
+        return `${prefix}${rewriteUrl(url, normalizedSiteUrl, markdownLinkMap)}${suffix}`
+      },
+    )
 }
 
 function escapeXml(value) {
@@ -175,11 +189,7 @@ function escapeXml(value) {
 export function buildMarkdownSitemap(urls) {
   const entries = [...new Set(urls)]
     .sort()
-    .map(url => [
-      '  <url>',
-      `    <loc>${escapeXml(url)}</loc>`,
-      '  </url>',
-    ].join('\n'))
+    .map(url => ['  <url>', `    <loc>${escapeXml(url)}</loc>`, '  </url>'].join('\n'))
     .join('\n')
 
   return [

@@ -91,7 +91,9 @@ function main() {
   const manifest = buildManifest()
 
   writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`)
-  console.log(`已登记 ${Object.keys(manifest).length} 篇文档 -> ${relative(projectRoot, manifestPath)}`)
+  console.log(
+    `已登记 ${Object.keys(manifest).length} 篇文档 -> ${relative(projectRoot, manifestPath)}`,
+  )
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

@@ -22,12 +22,12 @@ The invite link is also cached in the browser for **30 days**. If your friend op
 
 ## Reward Rules
 
-| Item | Rule |
-| --- | --- |
-| Rebate rate | **20%** of your friend's top-up |
-| Payout timing | Credited as soon as the top-up completes |
-| Per-friend cap | Up to `1000🍥` **from each friend** |
-| Validity | No expiry |
+| Item           | Rule                                     |
+| -------------- | ---------------------------------------- |
+| Rebate rate    | **20%** of your friend's top-up          |
+| Payout timing  | Credited as soon as the top-up completes |
+| Per-friend cap | Up to `1000🍥` **from each friend**      |
+| Validity       | No expiry                                |
 
 About the cap: `1000🍥` is counted **separately for each friend**, not as an account-wide total. Invite 10 friends and the theoretical ceiling is `10000🍥`. Once one friend has generated `1000🍥` for you, their later top-ups stop earning rebates, but other friends are unaffected.
 
