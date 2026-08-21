@@ -97,7 +97,6 @@ Prefix problems return HTTP 400, using the error structure of whichever endpoint
 
 - In the `Group` column of the key list, a composite key shows a set of `prefix / group name` chips. Clicking it opens the edit dialog directly - you **cannot** swap groups inline the way you can with a regular key.
 - When converting a composite key back to a regular key, you must pick a group again before saving.
-- If a save **adds** a data sharing group, a data sharing notice appears with a 10-second countdown before you can confirm. Only one notice is shown per save, and groups already mapped are not prompted again.
 - Billing, multipliers, rate limits, quotas, and expiry behave exactly as they do for regular keys, based on whichever group the request lands on.
 
 ## Related Links

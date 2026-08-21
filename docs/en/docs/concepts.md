@@ -27,12 +27,15 @@ A group is a property of an API key. A subscription plan (Lite / Plus / Pro and 
 
 ### Groups That Need Attention
 
-| Group | Notes |
-| --- | --- |
-| `ChatGPT Pro` | Only works with the Codex app and Codex CLI. Do not pick it for other clients |
-| Data sharing | Trades anonymized request and response data for a lower price. See [Billing](/en/docs/tokenflux/billing) |
+One account pool can back several groups. Take the `ChatGPT Pro` pool:
 
-Groups involving data sharing are labelled in the model marketplace, on the purchase page, and in the group description. They are never enabled as a default or hidden option.
+| Group | Difference |
+| --- | --- |
+| `ChatGPT Pro` | Codex only |
+| `ChatGPT Pro (不限客户端)` | No client restriction |
+| `ChatGPT Pro (负载均衡)` | Load balanced, most stable |
+
+Read the group description in the model marketplace before picking one - the names are similar but the restrictions are not.
 
 ## Account Pools
 

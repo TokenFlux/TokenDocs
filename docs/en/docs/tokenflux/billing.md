@@ -23,19 +23,21 @@ Different API key groups may have different multipliers. The group multiplier is
   <img src="/images/billing/model-pricing.png" alt="Group multiplier badge in the model marketplace, with per-model input and output prices that already include the multiplier" />
 </div>
 
-#### ChatGPT Pro Group
+#### ChatGPT Pro Groups
 
-Groups backed by Pro accounts, such as `ChatGPT Pro`, currently apply only to `Codex App` and `Codex CLI`. If you use any other integration method, do not choose that group.
+The `ChatGPT Pro` account pool backs several groups. They differ in client restrictions and multiplier:
+
+| Group | Difference |
+| --- | --- |
+| `ChatGPT Pro` | Codex only |
+| `ChatGPT Pro (不限客户端)` | No client restriction |
+| `ChatGPT Pro (负载均衡)` | Load balanced, most stable |
+
+If your client is not `Codex App` or `Codex CLI`, pick one of the unrestricted groups. Multipliers and full descriptions are whatever the [model marketplace](https://tokenflux.dev/models) currently shows.
 
 ::: tip Groups are not subscription plans
 This refers to **API key groups**, which are distinct from the subscription plan names below (Lite, Plus, Pro, and so on). Do not confuse the two.
 :::
-
-#### Data Sharing Group
-
-The `Data Sharing` group offers lower prices in exchange for selling de-identified request, response, and related call data. By using this group, you agree that the relevant data may be submitted to partners or data buyers after de-identification for data analysis, model improvement, evaluation, or other purposes clearly stated on the product page.
-
-If a group involves data sharing or data sale, TokenFlux will clearly disclose it in the model marketplace, purchase page, API key group description, or other product descriptions. It will not be enabled through default groups, hidden options, or vague descriptions.
 
 **Example**
 
