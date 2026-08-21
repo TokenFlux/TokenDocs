@@ -2,6 +2,7 @@ node_modules/
 .DS_Store
 .playwright-mcp/
 STYLE-CHECK.md
+TODO.md
 docs/.vitepress/cache/
 docs/.vitepress/dist/
 .opencode/
