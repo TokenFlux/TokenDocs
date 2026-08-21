@@ -55,6 +55,36 @@ Add TokenFlux as a custom provider in the client settings, enter your API key an
   </DocsTab>
 </DocsTabs>
 
+## Verify the Setup
+
+Once the client is configured, these two steps confirm the key, endpoint, and group are all correct. Replace `$KEY` with your API key.
+
+The first step lists models and costs nothing:
+
+```bash
+curl https://tokenflux.dev/v1/models -H "authorization: Bearer $KEY"
+```
+
+| Response | Meaning |
+| --- | --- |
+| A model list | The key works, the group is usable, and the endpoint is correct |
+| `401` `Invalid API key` | The key does not exist; check for stray spaces or quotes |
+| `401` `API key is disabled` | The key is disabled; check its status on the [API keys page](https://tokenflux.dev/keys) |
+| `403` | A group, balance, or subscription problem, see [Error Codes](/en/docs/errors#_403-forbidden) |
+
+The second step sends a real request and is billed. Use any model ID returned by the first step:
+
+```bash
+curl https://tokenflux.dev/v1/chat/completions \
+  -H "authorization: Bearer $KEY" \
+  -H "content-type: application/json" \
+  -d '{"model":"<model-id>","messages":[{"role":"user","content":"Reply with OK only"}],"max_tokens":16}'
+```
+
+A reply means the setup works. The call appears in the [usage logs](https://tokenflux.dev/usage).
+
+For a group on the Anthropic format, use `https://tokenflux.dev/v1/messages`, switch the header to `x-api-key`, and add `anthropic-version: 2023-06-01`.
+
 ## Going Further
 
 After integration, the following may be useful:

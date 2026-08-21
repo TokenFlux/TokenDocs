@@ -109,8 +109,6 @@ scoop install opencode
 
 `OpenCode` 会通过内置的 `openai` provider 自动识别模型。其他平台也按同样方式配置到对应的内置 provider；需要访问多个分组时，可以在创建 API Key 时开启 **复合 Key**。
 
-配置完成后运行 `opencode models`，确认模型已经正确加载。
-
 **第三步：启动 OpenCode**
 
 进入项目目录后运行：
@@ -127,3 +125,22 @@ opencode
 
   </DocsTab>
 </DocsTabs>
+
+## 验证接入
+
+两种配置方式都可以用下面的命令确认：
+
+```bash
+opencode models
+opencode run -m openai/<模型 ID> "只回复 OK"
+```
+
+`opencode models` 列出已加载的模型，模型 ID 出现在列表里说明配置被读到了。`opencode run` 会真实调用并扣费，收到回复即接入成功。
+
+命令报错或模型列表为空时，先按 [验证接入](/docs/quickstart#验证接入) 用 curl 确认 Key 和端点本身没问题，再回头检查 `opencode.json`。
+
+## 相关入口
+
+- [创建 API Key](/docs/tokenflux/create-apikey) — 选择分组并生成密钥
+- [API 端点](/docs/tokenflux/endpoints) — 地址与协议格式
+- [排障](/docs/troubleshooting) — 按症状定位问题

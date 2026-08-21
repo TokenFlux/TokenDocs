@@ -109,8 +109,6 @@ Copy the following content into `opencode.json` and replace `YOUR_API_KEY` with 
 
 `OpenCode` automatically discovers models through its built-in `openai` provider. Configure other platforms under their matching built-in provider in the same way. To access multiple groups, enable **composite key** when creating the API key.
 
-Once configured, run `opencode models` to confirm the models loaded correctly.
-
 **Step 3: Start OpenCode**
 
 Run this from the project directory:
@@ -127,3 +125,22 @@ Then run:
 
   </DocsTab>
 </DocsTabs>
+
+## Verify the Setup
+
+Either configuration path can be confirmed with:
+
+```bash
+opencode models
+opencode run -m openai/<model-id> "Reply with OK only"
+```
+
+`opencode models` lists the loaded models; seeing your model ID there means the configuration was picked up. `opencode run` makes a real, billed call, and a reply means the setup works.
+
+If the commands fail or the model list is empty, first use the curl checks in [Verify the Setup](/en/docs/quickstart#verify-the-setup) to confirm the key and endpoint, then review `opencode.json`.
+
+## Related Pages
+
+- [Create API Key](/en/docs/tokenflux/create-apikey) - pick a group and generate a key
+- [API Endpoints](/en/docs/tokenflux/endpoints) - address and protocol format
+- [Troubleshooting](/en/docs/troubleshooting) - locate a problem by symptom

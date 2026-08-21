@@ -31,6 +31,14 @@ RikkaHub can connect to TokenFlux through its OpenAI-compatible provider support
 5. Save the provider, wait for the model list to refresh, then tap the icon on the **left** of Add Model and choose the models you need.
 6. Return to the home page and select the model you just added to start chatting.
 
+## Verify the Setup
+
+Whether the model list refreshes in step 5 is the most direct check: models appearing means the API key and base URL are both correct.
+
+Then send a message in the chat interface. A reply means the setup works, and the call appears in the [usage logs](https://tokenflux.dev/usage).
+
+If the model list does not refresh, use the curl checks in [Verify the Setup](/en/docs/quickstart#verify-the-setup) to confirm the key and endpoint, then check that the base URL ends with `/v1` and does not repeat the path.
+
 ## Next Steps
 
 After setup, you can chat with TokenFlux-supported models directly in `RikkaHub`.
