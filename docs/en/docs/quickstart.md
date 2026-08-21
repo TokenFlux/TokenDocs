@@ -1,8 +1,6 @@
 # Quickstart
 
-TokenFlux is a model gateway: one API key lets you call models from many providers inside the client you already use.
-
-This page maps out the route. Three steps and you are running.
+TokenFlux is a unified interface for large language models: one API key lets you call models from many providers inside the client you already use.
 
 ::: tip Access Note
 Some content on this site or related services may require a proxy before access works reliably. Use the default `tokenflux.dev` endpoint for API requests; the former mainland acceleration endpoint is deprecated.
@@ -20,9 +18,9 @@ For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For 
 | 2 | Create an API key and pick a group | [Create API Key](/en/docs/tokenflux/create-apikey) |
 | 3 | Enter the key and endpoint in your client | See the selection below |
 
-Prices shown in the model marketplace are the final billing prices; no extra conversion is needed.
+Prices shown in the model marketplace are the final billing prices.
 
-For what groups, account pools, and inference credits mean, see [Core Concepts](/en/docs/concepts).
+For groups, account pools, inference credits, and other terms, see [Core Concepts](/en/docs/concepts).
 
 ## Pick Your Client
 
@@ -31,7 +29,7 @@ For what groups, account pools, and inference credits mean, see [Core Concepts](
 
 Best for terminal workflows, programming tasks, or users who want AI Agent assistance while developing.
 
-Start with [CC-Switch](/en/docs/agents/cc-switch). It manages API keys and provider settings in one place, so you do not have to edit environment variables by hand. Then follow the guide for your client:
+Install [CC-Switch](/en/docs/agents/cc-switch) first. It manages API keys and provider settings in one place, removing the need to edit environment variables by hand. Then follow the guide for your client:
 
 | Client | Best for | Guide |
 | --- | --- | --- |
@@ -59,7 +57,7 @@ Add TokenFlux as a custom provider in the client settings, enter your API key an
 
 ## Going Further
 
-Once things work, these may be useful:
+After integration, the following may be useful:
 
 - [Composite Key](/en/docs/tokenflux/composite-key) - bind one key to several groups and switch with prefixes
 - [Fast Mode](/en/docs/tokenflux/fast-mode) - force the high-priority tier at the key level

@@ -6,7 +6,7 @@ An enterprise group is now open. For enterprise integration, API integration, or
 
 ## What should I do if connections keep dropping?
 
-If this site or related services keep disconnecting, try using a proxy first and then retry.
+If this site or related services keep disconnecting, use a proxy and retry. For other connection problems, see [Troubleshooting](/en/docs/troubleshooting#no-connection-or-nothing-happens).
 
 ## Does this site support embedding models?
 

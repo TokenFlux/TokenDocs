@@ -1,11 +1,9 @@
 # 快速开始
 
-TokenFlux 是一个模型中转服务：用一个 API Key，在你熟悉的客户端里调用各家模型。
-
-本页帮你规划路线。三步就能跑起来。
+TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉的客户端里调用各家厂商的模型。
 
 ::: tip 访问提示
-本站部分内容或相关服务可能需要挂梯子后访问。API 请求请使用默认的 `tokenflux.dev` 端点；原大陆优化端点已废弃。
+本站部分内容或相关服务可能需要使用代理才能访问。API 请求请使用默认的 `tokenflux.dev` 端点；原大陆优化端点已废弃。
 :::
 
 ::: details For AGENTS
@@ -20,9 +18,9 @@ TokenFlux 是一个模型中转服务：用一个 API Key，在你熟悉的客�
 | 2 | 创建一个 API Key，选好分组 | [创建 API Key](/docs/tokenflux/create-apikey) |
 | 3 | 在客户端里填入 Key 和端点 | 见下方选型 |
 
-模型广场显示的价格即为最终计费价格，不需要额外换算。
+模型广场显示的价格即为最终计费价格。
 
-分组、号池、推理积分这些词的含义，见 [核心概念](/docs/concepts)。
+分组、号池、推理积分等术语见 [核心概念](/docs/concepts)。
 
 ## 选择你的客户端
 
@@ -31,7 +29,7 @@ TokenFlux 是一个模型中转服务：用一个 API Key，在你熟悉的客�
 
 适合在终端工作、有编程需求或希望使用 AI Agent 辅助开发的用户。
 
-推荐先装 [CC-Switch](/docs/agents/cc-switch)，它能统一管理 API Key 和供应商配置，省去手动改环境变量。装好后再看你要用的客户端：
+建议先安装 [CC-Switch](/docs/agents/cc-switch)，它统一管理 API Key 和供应商配置，无需手动修改环境变量。安装后按所用客户端查看对应教程：
 
 | 客户端 | 适用场景 | 指南 |
 | --- | --- | --- |
@@ -59,7 +57,7 @@ TokenFlux 是一个模型中转服务：用一个 API Key，在你熟悉的客�
 
 ## 进阶用法
 
-跑通之后，这些能力可能对你有用：
+接入完成后可按需使用：
 
 - [复合 Key](/docs/tokenflux/composite-key) — 一个 Key 绑定多个分组，用前缀切换
 - [Fast 模式](/docs/tokenflux/fast-mode) — 在 Key 上强制开启高优先级通道
