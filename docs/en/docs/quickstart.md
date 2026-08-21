@@ -68,6 +68,8 @@ Once things work, these may be useful:
 
 ## Troubleshooting
 
+- [Troubleshooting](/en/docs/troubleshooting) - find the problem by symptom, with a report template
+- [Error Codes](/en/docs/errors) - the full error reference
 - [FAQ](/en/docs/faq) - connection drops, model detection, and other common questions
 - [API Endpoints](/en/docs/tokenflux/endpoints) - choosing an endpoint and migrating from deprecated routes
 - [Usage Policy](/en/docs/tos/usage-policy) - what gets accounts banned

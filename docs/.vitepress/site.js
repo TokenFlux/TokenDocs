@@ -26,6 +26,8 @@ export const sidebar = {
       items: [
         { text: "Quickstart", link: "/docs/quickstart" },
         { text: "核心概念", link: "/docs/concepts" },
+        { text: "排障", link: "/docs/troubleshooting" },
+        { text: "错误码", link: "/docs/errors" },
         { text: "FAQ", link: "/docs/faq" },
       ],
     },
@@ -84,6 +86,8 @@ export const enSidebar = {
       items: [
         { text: "Quickstart", link: "/en/docs/quickstart" },
         { text: "Core Concepts", link: "/en/docs/concepts" },
+        { text: "Troubleshooting", link: "/en/docs/troubleshooting" },
+        { text: "Error Codes", link: "/en/docs/errors" },
         { text: "FAQ", link: "/en/docs/faq" },
       ],
     },

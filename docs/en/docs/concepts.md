@@ -84,8 +84,11 @@ When a request fails, check in this order:
 
 TokenFlux also does not offer embedding models.
 
+For the status code and message behind each case, see [Error Codes](/en/docs/errors).
+
 ## Related Pages
 
+- [Troubleshooting](/en/docs/troubleshooting) - find the problem by symptom when a request fails
 - [Create API Key](/en/docs/tokenflux/create-apikey) - pick a group and generate a key
 - [Billing](/en/docs/tokenflux/billing) - multipliers, subscriptions, and top-ups
 - [Composite Key](/en/docs/tokenflux/composite-key) - use several groups from one key

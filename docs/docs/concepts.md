@@ -84,8 +84,11 @@ Key 有两个互相独立的属性。
 
 另外，TokenFlux 不提供 embedding 模型。
 
+每种情况对应的状态码和报错文案见 [错误码](/docs/errors)。
+
 ## 相关入口
 
+- [排障](/docs/troubleshooting) — 请求失败时按症状定位
 - [创建 API Key](/docs/tokenflux/create-apikey) — 选择分组并生成密钥
 - [计费说明](/docs/tokenflux/billing) — 倍率、订阅与充值
 - [复合 Key](/docs/tokenflux/composite-key) — 一个 Key 使用多个分组
