@@ -23,6 +23,9 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+              with:
+                  # lastUpdated 需要完整提交历史，浅克隆会让所有页面显示同一时间
+                  fetch-depth: 0
 
             - name: Setup pnpm
               uses: pnpm/action-setup@v4

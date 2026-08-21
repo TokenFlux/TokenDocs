@@ -22,6 +22,8 @@ For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For 
 
 Prices shown in the model marketplace are the final billing prices; no extra conversion is needed.
 
+For what groups, account pools, and inference credits mean, see [Core Concepts](/en/docs/concepts).
+
 ## Pick Your Client
 
 <DocsTabs default-tab="agent">

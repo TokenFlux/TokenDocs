@@ -128,6 +128,7 @@ export default defineConfig({
   title: siteTitle,
   description: siteDescription,
   base,
+  lastUpdated: true,
   head: [['link', { rel: 'icon', href: withBasePath(base, '/favicon.jpg') }]],
   locales,
   themeConfig: rootThemeConfig,

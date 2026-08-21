@@ -22,6 +22,8 @@ TokenFlux 是一个模型中转服务：用一个 API Key，在你熟悉的客�
 
 模型广场显示的价格即为最终计费价格，不需要额外换算。
 
+分组、号池、推理积分这些词的含义，见 [核心概念](/docs/concepts)。
+
 ## 选择你的客户端
 
 <DocsTabs default-tab="agent">

@@ -12,15 +12,35 @@ describe('site config', () => {
       'link',
       { rel: 'icon', href: `${config.base.replace(/\/$/, '')}/favicon.jpg` || '/favicon.jpg' },
     ])
-    expect(config.themeConfig.search).toEqual({ provider: 'local' })
+    expect(config.themeConfig.search.provider).toBe('local')
   })
 
   it('configures Chinese and English locales', () => {
     expect(config.locales.root.lang).toBe('zh-CN')
     expect(config.locales.en.lang).toBe('en-US')
     expect(config.locales.en.link).toBe('/en/')
-    expect(config.locales.root.themeConfig.search).toEqual({ provider: 'local' })
-    expect(config.locales.en.themeConfig.search).toEqual({ provider: 'local' })
+    expect(config.locales.root.themeConfig.search.provider).toBe('local')
+    expect(config.locales.en.themeConfig.search.provider).toBe('local')
+  })
+
+  it('localises the Chinese theme chrome', () => {
+    const { themeConfig } = config.locales.root
+
+    expect(themeConfig.search.options.translations.button.buttonText).toBe('搜索文档')
+    expect(themeConfig.docFooter).toEqual({ prev: '上一页', next: '下一页' })
+    expect(themeConfig.outline.label).toBe('本页目录')
+    expect(themeConfig.notFound.title).toBe('页面未找到')
+  })
+
+  it('enables last-updated timestamps and edit links for both locales', () => {
+    expect(config.lastUpdated).toBe(true)
+
+    for (const locale of [config.locales.root, config.locales.en]) {
+      expect(locale.themeConfig.lastUpdated.text).toBeTruthy()
+      expect(locale.themeConfig.editLink.pattern).toBe(
+        'https://github.com/TokenFlux/TokenDocs/edit/main/docs/:path'
+      )
+    }
   })
 
   it('exposes build hooks for markdown artifacts', () => {
