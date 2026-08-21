@@ -3,21 +3,31 @@ layout: home
 
 hero:
   name: TokenDocs
-  text: TokenFlux 文档站
-  tagline: 包含 Quickstart、FAQ 与使用教程
+  text: TokenFlux 文档
+  tagline: 统一的大语言模型接口。一个 API Key，在你熟悉的客户端里调用各家厂商的模型。
   actions:
     - theme: brand
-      text: Quickstart
+      text: 快速开始
       link: /docs/quickstart
     - theme: alt
-      text: FAQ
-      link: /docs/faq
+      text: 控制台
+      link: https://tokenflux.dev/dashboard
 
 features:
-  - title: 多端接入
-    details: 支持通过 Claude Code、Codex、OpenCode、Cherry Studio、RikkaHub 等客户端接入 TokenFlux。
-  - title: 统一模型入口
-    details: 使用同一套 API Key 接入多种模型与兼容客户端，减少重复配置成本。
-  - title: 按需开始
-    details: 可按 Agent 或 ChatBot 两种方式开始使用，适合终端工作流、桌面客户端和移动端场景。
+  - title: 接入客户端
+    details: Claude Code、Codex、Cherry Studio、RikkaHub 等客户端的配置步骤，按 Agent 或 ChatBot 分类。
+    link: /docs/quickstart
+    linkText: 三步接入
+  - title: 理解计费
+    details: 分组与倍率、推理积分、订阅与余额的扣费顺序。
+    link: /docs/concepts
+    linkText: 核心概念
+  - title: 排查故障
+    details: 按状态码定位问题，含完整错误码清单和反馈模板。
+    link: /docs/troubleshooting
+    linkText: 开始排查
+  - title: 多人协作
+    details: 团队共用所有者余额，成员各自建 Key 并设置日、周、月限额。
+    link: /docs/tokenflux/team
+    linkText: 团队功能
 ---

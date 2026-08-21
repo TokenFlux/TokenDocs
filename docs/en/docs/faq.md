@@ -8,11 +8,9 @@ An enterprise group is now open. For enterprise integration, API integration, or
 
 ## Why do model detection sites report a high fake rate?
 
-Many model detection sites and leaderboards are not fully reliable. Some suffer from paid rankings, sample bias, or opaque detection methods.
+Model detection sites and leaderboards are not fully reliable. Some suffer from paid rankings, sample bias, or opaque detection methods. Models called through aggregators such as OpenRouter are also frequently misclassified as "fake" by these tools.
 
-Models called through aggregators such as OpenRouter are also frequently misclassified as "fake" by these tools.
-
-Treat such results as a reference only, not as the sole basis for judging whether a model is genuine.
+Treat the results as a reference only, not as the sole basis for judging whether a model is genuine.
 
 <!--
 ## Which accounts back the image generation models?

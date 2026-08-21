@@ -15,9 +15,11 @@ Definitions of groups, account pools, and inference credits, and the stages at w
 
 ## Groups
 
-A group determines the available models, the billing price, and the upstream accounts that serve the request.
+A group determines the available models, the billing price, the protocol format it accepts, and the upstream accounts that serve the request.
 
 An API key must be assigned to a group at creation. A regular key binds to exactly one group; use a [composite key](/en/docs/tokenflux/composite-key) to use several at once.
+
+Some models are offered as separate groups per protocol format, such as `DeepSeek（OpenAI格式）` and `DeepSeek（Anthropic格式）`. The group must match the format your client uses; see [API Endpoints](/en/docs/tokenflux/endpoints#which-format-to-use).
 
 The multiplier applies to a model's base price. Prices shown in the [model marketplace](https://tokenflux.dev/models) already include it and are the final billing prices.
 
@@ -25,7 +27,7 @@ A group is a property of an API key and is unrelated to the account's subscripti
 
 ### Groups That Need Attention
 
-One account pool can map to several groups. Take the `ChatGPT Pro` pool:
+One account pool can map to several groups. The `ChatGPT Pro` pool has three:
 
 | Group | Difference |
 | --- | --- |
@@ -39,7 +41,7 @@ The names are similar but the restrictions are not. Read the group description i
 
 An account pool is the set of upstream accounts a group maps to. The `Pro` pool includes Pro models and may receive higher priority when the service is under load; otherwise it is no different from the `Plus` pool.
 
-Account type affects which features are available. Forcing [Fast Mode](/en/docs/tokenflux/fast-mode) on requires an OpenAI or Anthropic platform account, and Anthropic accounts must use API key credentials; Bedrock, Vertex, and OAuth credentials are skipped silently.
+Account type determines whether certain features work. Forcing [Fast Mode](/en/docs/tokenflux/fast-mode) on requires an OpenAI or Anthropic platform account, and Anthropic accounts must use API key credentials; Bedrock, Vertex, and OAuth credentials are skipped silently.
 
 ## API Keys
 
@@ -52,7 +54,7 @@ Account type affects which features are available. Forcing [Fast Mode](/en/docs/
 
 A regular key binds to one group at creation, and model IDs are written as-is.
 
-Enabling [Composite Key](/en/docs/tokenflux/composite-key) at creation binds 1 to 20 groups, each with its own prefix, and the group is selected per request via `prefix/model-id`. This suits work spanning several groups, removing the need for a separate key per group or repeated client reconfiguration.
+Enabling [Composite Key](/en/docs/tokenflux/composite-key) at creation binds 1 to 20 groups, each with its own prefix, and the group is selected per request via `prefix/model-id`. Working across several groups then needs no separate key per group and no repeated client reconfiguration.
 
 ## Cost Calculation
 

@@ -18,13 +18,17 @@ OpenAI 格式和 Anthropic 格式的端点可在 [API 密钥页面](https://toke
 
 ## 该选哪个格式
 
-看客户端要求，不是看模型。
+格式由客户端决定，分组必须支持同一格式。
 
-- **OpenAI 格式**（`/v1` 结尾）：绝大多数客户端用这个，例如 Cherry Studio、RikkaHub、OpenCode，以及任何标注「OpenAI 兼容」的工具。
-- **Anthropic 格式**（无 `/v1`）：`Claude Code` 这类原生走 Anthropic 协议的客户端用这个。
-- **Gemini 格式**：使用 Google 原生协议的客户端和 SDK 用这个，模型 ID 写在请求路径里。
+| 格式 | 适用客户端 |
+| --- | --- |
+| OpenAI 格式（`/v1` 结尾） | Cherry Studio、RikkaHub、OpenCode，以及标注「OpenAI 兼容」的工具 |
+| Anthropic 格式（无 `/v1`） | `Claude Code` 等原生走 Anthropic 协议的客户端 |
+| Gemini 格式 | 使用 Google 原生协议的客户端和 SDK，模型 ID 写在请求路径里 |
 
-如果客户端配置项里写的是 `ANTHROPIC_BASE_URL`，用 Anthropic 格式；写 `OPENAI_BASE_URL` 或 `Base URL` 的，一般用 OpenAI 格式。具体填法各接入教程里都有写明。
+客户端配置项写 `ANTHROPIC_BASE_URL` 的用 Anthropic 格式，写 `OPENAI_BASE_URL` 或 `Base URL` 的用 OpenAI 格式。具体填法各接入教程里都有写明。
+
+部分模型提供两个分组，分别对应 OpenAI 格式和 Anthropic 格式，例如 `DeepSeek（OpenAI格式）` 和 `DeepSeek（Anthropic格式）`。创建 API Key 时按客户端选择对应格式的分组，选错返回 403 `This group does not allow ... requests`，见 [错误码](/docs/errors#分组能力限制)。
 
 ## 认证
 
@@ -48,7 +52,7 @@ OpenAI 格式和 Anthropic 格式不接受通过查询参数传 Key，会返回 
 | OpenAI 格式 | `https://token.memoh.net/v1` | `https://tokenflux.dev/v1` |
 | Anthropic 格式 | `https://token.memoh.net` | `https://tokenflux.dev` |
 
-切换时只需修改客户端中的 API 地址，其他配置不用改。请求量较大时尤其应当迁移，废弃端点容易出现请求堆积，导致首字延迟升高。
+切换时只需修改客户端中的 API 地址，其他配置不用改。废弃端点容易出现请求堆积、首字延迟升高，请求量大时影响更明显。
 
 ## 相关入口
 

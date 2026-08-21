@@ -15,9 +15,11 @@
 
 ## 分组
 
-分组决定可用的模型、计费价格，以及承接请求的上游账号。
+分组决定可用的模型、计费价格、接受的协议格式，以及承接请求的上游账号。
 
 创建 API Key 时必须指定一个分组。普通 Key 只能绑定一个分组，需要同时使用多个分组时使用[复合 Key](/docs/tokenflux/composite-key)。
+
+部分模型按协议格式提供不同分组，例如 `DeepSeek（OpenAI格式）` 和 `DeepSeek（Anthropic格式）`，需与客户端使用的格式一致，见 [API 端点](/docs/tokenflux/endpoints#该选哪个格式)。
 
 倍率作用于模型原价，[模型广场](https://tokenflux.dev/models) 显示的价格已包含倍率，即为最终扣费价格。
 
@@ -25,7 +27,7 @@
 
 ### 需要留意的分组
 
-同一号池可能对应多个分组。以 `ChatGPT Pro` 号池为例：
+同一号池可对应多个分组，`ChatGPT Pro` 号池下有三个：
 
 | 分组 | 区别 |
 | --- | --- |
@@ -39,7 +41,7 @@
 
 号池是分组对应的上游账号集合。`Pro` 号池包含 Pro 模型，服务压力较大时访问优先级可能更高，除此之外与 `Plus` 号池无差异。
 
-账号类型会影响部分功能是否可用。[Fast 模式](/docs/tokenflux/fast-mode) 的强制开启要求命中 OpenAI 或 Anthropic 平台的账号，且 Anthropic 账号必须使用 API Key 凭据；命中 Bedrock、Vertex 或 OAuth 凭据时会静默跳过。
+账号类型决定部分功能能否使用。[Fast 模式](/docs/tokenflux/fast-mode) 的强制开启要求命中 OpenAI 或 Anthropic 平台的账号，且 Anthropic 账号必须使用 API Key 凭据；命中 Bedrock、Vertex 或 OAuth 凭据时会静默跳过。
 
 ## API Key
 
@@ -52,7 +54,7 @@
 
 普通 Key 在创建时绑定一个分组，调用时直接写模型 ID。
 
-创建时开启 [复合 Key](/docs/tokenflux/composite-key) 可绑定 1 至 20 个分组，每个分组配一个前缀，调用时以 `前缀/模型 ID` 指定分组。适用于需要跨多个分组调用的场景，无需为每个分组单独建 Key，也不必在客户端反复切换配置。
+创建时开启 [复合 Key](/docs/tokenflux/composite-key) 可绑定 1 至 20 个分组，每个分组配一个前缀，调用时以 `前缀/模型 ID` 指定分组。跨多个分组调用时无需为每个分组单独建 Key，也不必在客户端反复切换配置。
 
 ## 费用计算
 

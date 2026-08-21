@@ -142,9 +142,9 @@ Comparison:
 | Steps to reproduce | The smallest sequence that triggers it |
 | Comparison | Which cases work and which do not |
 
-Model ID, group, client, API address, and the full error are the five that matter most. The same error can have entirely different causes depending on the combination, and omitting any of them significantly increases diagnosis time.
+Model ID, group, client, API address, and the full error are all required. The same error can have entirely different causes depending on the combination.
 
-The comparison is particularly valuable. Descriptions such as "works on another group" or "plain chat works, file editing fails" narrow the search considerably. Before reporting, confirm whether the problem persists after changing group, model, or client.
+Comparisons narrow the search directly, such as "works on another group" or "plain chat works, file editing fails". Before reporting, try changing the group, model, or client.
 
 For enterprise integration or channel partnerships, join QQ group `794504445`, see [FAQ](/en/docs/faq).
 

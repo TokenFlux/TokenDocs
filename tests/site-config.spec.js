@@ -52,8 +52,27 @@ describe('site config', () => {
     const navLinks = config.themeConfig.nav.map(item => item.link)
     const enNavLinks = config.locales.en.themeConfig.nav.map(item => item.link)
 
-    expect(navLinks).toEqual(['/', '/docs/quickstart'])
-    expect(enNavLinks).toEqual(['/en/', '/en/docs/quickstart'])
+    expect(navLinks).toEqual([
+      '/',
+      '/docs/quickstart',
+      'https://tokenflux.dev/models',
+      'https://tokenflux.dev/dashboard',
+    ])
+    expect(enNavLinks).toEqual([
+      '/en/',
+      '/en/docs/quickstart',
+      'https://tokenflux.dev/models',
+      'https://tokenflux.dev/dashboard',
+    ])
+  })
+
+  it('links to the console from both locales', () => {
+    for (const themeConfig of [config.themeConfig, config.locales.en.themeConfig]) {
+      const console = themeConfig.nav.at(-1)
+
+      expect(console.link).toBe('https://tokenflux.dev/dashboard')
+      expect(console.text).toMatch(/控制台|Console/)
+    }
   })
 
   it('configures docs sidebar groups', () => {

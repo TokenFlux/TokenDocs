@@ -18,13 +18,17 @@ The OpenAI and Anthropic endpoints can be copied from the top of the [API keys p
 
 ## Which Format to Use
 
-This depends on the client, not the model.
+The client dictates the format, and the group must support that same format.
 
-- **OpenAI format** (ends with `/v1`): used by most clients, including Cherry Studio, RikkaHub, OpenCode, and anything labelled "OpenAI compatible".
-- **Anthropic format** (no `/v1`): used by clients that speak the Anthropic protocol natively, such as `Claude Code`.
-- **Gemini format**: used by clients and SDKs on Google's native protocol, where the model ID goes in the request path.
+| Format | Clients |
+| --- | --- |
+| OpenAI format (ends with `/v1`) | Cherry Studio, RikkaHub, OpenCode, and anything labelled "OpenAI compatible" |
+| Anthropic format (no `/v1`) | `Claude Code` and other clients speaking the Anthropic protocol natively |
+| Gemini format | Clients and SDKs on Google's native protocol, where the model ID goes in the request path |
 
 If the client's setting is named `ANTHROPIC_BASE_URL`, use the Anthropic format. If it is `OPENAI_BASE_URL` or `Base URL`, use the OpenAI format. Each integration guide states the exact value.
+
+Some models are offered as two groups, one per format, such as `DeepSeek（OpenAI格式）` and `DeepSeek（Anthropic格式）`. Choose the one matching your client when creating an API key; the wrong one returns 403 `This group does not allow ... requests`, see [Error Codes](/en/docs/errors#group-capabilities).
 
 ## Authentication
 
@@ -48,7 +52,7 @@ With a [composite key](/en/docs/tokenflux/composite-key), the model ID needs a p
 | OpenAI format | `https://token.memoh.net/v1` | `https://tokenflux.dev/v1` |
 | Anthropic format | `https://token.memoh.net` | `https://tokenflux.dev` |
 
-Only the API address in the client needs to change; everything else stays the same. Migration matters most at higher request volumes, where the deprecated endpoint tends to queue requests and raise time to first token.
+Only the API address in the client needs to change; everything else stays the same. The deprecated endpoint tends to queue requests and raise time to first token, which shows up more at higher request volumes.
 
 ## Related Pages
 

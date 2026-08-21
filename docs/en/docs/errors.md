@@ -4,7 +4,7 @@ The HTTP status code and the `message` in the response body are what identify a 
 
 ## Response Format
 
-The shape of the error body depends on the entry point. `code` and `error.type` are not present everywhere, so do not parse the body as a fixed structure.
+The shape of the error body depends on the entry point. Some entry points have no `code` or `error.type` field, so do not parse the body as a fixed structure.
 
 Authentication and billing errors use a flat shape:
 

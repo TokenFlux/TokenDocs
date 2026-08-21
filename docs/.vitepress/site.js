@@ -9,14 +9,21 @@ export const editLinkPattern = `${repoUrl}/edit/main/docs/:path`;
 
 const copyrightYear = new Date().getFullYear();
 
+export const consoleUrl = "https://tokenflux.dev/dashboard";
+export const modelsUrl = "https://tokenflux.dev/models";
+
 export const navItems = [
-  { text: "Home", link: "/" },
-  { text: "Docs", link: "/docs/quickstart", activeMatch: "^/docs/" },
+  { text: "首页", link: "/" },
+  { text: "文档", link: "/docs/quickstart", activeMatch: "^/docs/" },
+  { text: "模型", link: modelsUrl },
+  { text: "控制台", link: consoleUrl },
 ];
 
 export const enNavItems = [
   { text: "Home", link: "/en/" },
   { text: "Docs", link: "/en/docs/quickstart", activeMatch: "^/en/docs/" },
+  { text: "Models", link: modelsUrl },
+  { text: "Console", link: consoleUrl },
 ];
 
 export const sidebar = {
