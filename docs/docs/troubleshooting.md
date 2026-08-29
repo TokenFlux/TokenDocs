@@ -77,7 +77,8 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
 - `The current group does not support the requested model "..."` — 模型不在分组内。报错通常附有该分组的可用模型，从中选择或更换分组。
 - `This group does not allow ... requests` — 分组不支持所用的协议入口。例如只开放 Anthropic 格式的分组，使用 `/v1/chat/completions` 即返回此错误。
 - `this group only allows Claude Code clients` — 该分组只接受 Claude Code，需更换客户端或分组。
-- `ChatGPT Pro` 分组只限 Codex 使用，其他客户端请选择不限客户端的分组，见 [核心概念](/docs/concepts#需要留意的分组)。
+
+原 `ChatGPT Pro` 系列分组已合并为 `ChatGPT`，绑定旧分组的 Key 需用新分组重建，见 [核心概念](/docs/concepts#需要留意的分组)。
 
 **团队**
 

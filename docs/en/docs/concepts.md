@@ -27,17 +27,9 @@ A group is a property of an API key and is unrelated to the account's subscripti
 
 ### Groups That Need Attention
 
-One account pool can map to several groups. The `ChatGPT Pro` pool has three:
+The OpenAI series is now a single group, `ChatGPT`, with a 4.0× multiplier and no client restriction. The former `ChatGPT Pro`, `ChatGPT Pro (负载均衡)`, `ChatGPT Pro (不限客户端)`, and `ChatGPT Plus (不稳定)` groups have been merged into it.
 
-| Group                      | Difference                 |
-| -------------------------- | -------------------------- |
-| `ChatGPT Pro`              | Codex only                 |
-| `ChatGPT Pro (不限客户端)` | No client restriction      |
-| `ChatGPT Pro (负载均衡)`   | Load balanced, most stable |
-
-The names are similar but the restrictions are not. Read the group description in the model marketplace before choosing.
-
-Some groups are tied to one client. `ChatGPT Pro` is Codex only and `Claude Max` is Claude Code only; other clients receive 403, see [Error Codes](/en/docs/errors#group-capabilities).
+Some groups are still tied to one client. `Claude Max` is Claude Code only; other clients receive 403, see [Error Codes](/en/docs/errors#group-capabilities). Read the group description in the model marketplace before choosing.
 
 ## Account Pools
 

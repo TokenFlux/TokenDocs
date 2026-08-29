@@ -14,7 +14,7 @@ Different API key groups may have different multipliers. The multiplier is appli
   <img src="/images/billing/model-pricing.png" alt="Group multiplier badge in the model marketplace, with per-model input and output prices that already include the multiplier" />
 </div>
 
-One account pool can back several groups whose multipliers and client restrictions differ, as with the three groups on the `ChatGPT Pro` pool. Check [Core Concepts](/en/docs/concepts#groups-that-need-attention) and the group description in the model marketplace before choosing.
+Multipliers and client restrictions differ from group to group. Check [Core Concepts](/en/docs/concepts#groups-that-need-attention) and the group description in the model marketplace before choosing.
 
 A group is a property of an API key and is unrelated to the subscription plans below (Lite, Plus, Pro, and so on). The names are similar but the two are different things.
 

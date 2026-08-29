@@ -77,7 +77,8 @@ A 401 that persists after changing the key usually means the client is still usi
 - `The current group does not support the requested model "..."` - the model is not in that group. The message usually lists what is available; choose one of those or switch groups.
 - `This group does not allow ... requests` - the group does not accept the protocol used. A group exposing only the Anthropic format returns this for `/v1/chat/completions`.
 - `this group only allows Claude Code clients` - switch client or switch group.
-- The `ChatGPT Pro` group is Codex only. Other clients should use a group with no client restriction, see [Core Concepts](/en/docs/concepts#groups-that-need-attention).
+
+The former `ChatGPT Pro` groups have been merged into `ChatGPT`. Keys bound to an old group must be recreated on the new one, see [Core Concepts](/en/docs/concepts#groups-that-need-attention).
 
 **Team**
 

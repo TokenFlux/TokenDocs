@@ -27,17 +27,9 @@
 
 ### 需要留意的分组
 
-同一号池可对应多个分组，`ChatGPT Pro` 号池下有三个：
+OpenAI 系列现为统一分组 `ChatGPT`，倍率 4.0×，不限客户端。原 `ChatGPT Pro`、`ChatGPT Pro (负载均衡)`、`ChatGPT Pro (不限客户端)`、`ChatGPT Plus (不稳定)` 已合并至此。
 
-| 分组                       | 区别                 |
-| -------------------------- | -------------------- |
-| `ChatGPT Pro`              | 只限 Codex 使用      |
-| `ChatGPT Pro (不限客户端)` | 不限制客户端         |
-| `ChatGPT Pro (负载均衡)`   | 负载均衡，稳定性最好 |
-
-名称相近但限制不同，选择前请查看模型广场中的分组说明。
-
-部分分组限定客户端。`ChatGPT Pro` 只限 Codex，`Claude Max` 只限 Claude Code，用其他客户端会返回 403，见 [错误码](/docs/errors#分组能力限制)。
+部分分组仍限定客户端，`Claude Max` 只限 Claude Code，用其他客户端会返回 403，见 [错误码](/docs/errors#分组能力限制)。选择前请查看模型广场中的分组说明。
 
 ## 号池
 
