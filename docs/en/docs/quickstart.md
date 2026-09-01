@@ -10,15 +10,13 @@ Some content on this site or related services may require a proxy before access 
 For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For a single page, append `.md` to any documentation URL that does not end with `/`, for example `/en/docs/quickstart.md`.
 :::
 
-## Three Steps
+## Getting Started
 
 | Step | What to do                                   | Where                                                                                         |
 | ---- | -------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | 1    | Top up or subscribe to get inference credits | [Top-up/Subscription](https://tokenflux.dev/purchase) · [Billing](/en/docs/tokenflux/billing) |
 | 2    | Create an API key and pick a group           | [Create API Key](/en/docs/tokenflux/create-apikey)                                            |
 | 3    | Enter the key and endpoint in your client    | See the selection below                                                                       |
-
-Prices shown in the model marketplace are the final billing prices.
 
 For groups, account pools, inference credits, and other terms, see [Core Concepts](/en/docs/concepts).
 

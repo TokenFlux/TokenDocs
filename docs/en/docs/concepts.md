@@ -48,7 +48,7 @@ Account type determines whether certain features work. Forcing [Fast Mode](/en/d
 
 A regular key binds to one group at creation, and model IDs are written as-is.
 
-Enabling [Composite Key](/en/docs/tokenflux/composite-key) at creation binds 1 to 20 groups, each with its own prefix, and the group is selected per request via `prefix/model-id`. Working across several groups then needs no separate key per group and no repeated client reconfiguration.
+Enabling [Composite Key](/en/docs/tokenflux/composite-key) at creation binds 1 to 20 groups, each with its own prefix, and the group is selected per request via `prefix/model-id`. A single key handles requests across multiple groups.
 
 ## Cost Calculation
 

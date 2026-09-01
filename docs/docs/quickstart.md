@@ -10,15 +10,13 @@ TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉�
 批量读取 Markdown 文档时，可直接使用 [markdown-sitemap.xml](/markdown-sitemap.xml)。单页读取时，直接在不以 `/` 结尾的文档 URL 后追加 `.md` 即可，例如 `/docs/quickstart.md`。
 :::
 
-## 三步接入
+## 接入流程
 
 | 步骤 | 做什么                     | 去哪                                                                              |
 | ---- | -------------------------- | --------------------------------------------------------------------------------- |
 | 1    | 充值或订阅，获得推理积分   | [充值/订阅](https://tokenflux.dev/purchase) · [计费说明](/docs/tokenflux/billing) |
 | 2    | 创建一个 API Key，选好分组 | [创建 API Key](/docs/tokenflux/create-apikey)                                     |
 | 3    | 在客户端里填入 Key 和端点  | 见下方选型                                                                        |
-
-模型广场显示的价格即为最终计费价格。
 
 分组、号池、推理积分等术语见 [核心概念](/docs/concepts)。
 

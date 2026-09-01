@@ -101,9 +101,7 @@ Steps:
 
 **Step 1: Set environment variables**
 
-Choose the method for your operating system.
-
-If you use `Claude Code` inside VSCode or Zed, it usually follows the global `Claude Code` configuration. After configuring it with this section, restart the editor for the changes to take effect.
+The VS Code extension shares `~/.claude/settings.json` with the CLI. Environment variables set temporarily in a terminal may not be inherited by the editor; if they do not take effect, write `settings.json` as described in Step 2. Configuration behavior in Zed depends on the external Agent installed.
 
 **macOS / Linux**
 

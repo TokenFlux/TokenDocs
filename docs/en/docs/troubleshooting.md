@@ -54,7 +54,7 @@ Check in order:
 
 ## 401 Authentication Failed
 
-| message                      | What to do                                                                               |
+| message                      | Resolution                                                                               |
 | ---------------------------- | ---------------------------------------------------------------------------------------- |
 | `API key is required in ...` | No key was sent. Verify the client read your configuration                               |
 | `Invalid API key`            | The key does not exist. Check for stray spaces, newlines, or quotes                      |
@@ -94,7 +94,7 @@ The former `ChatGPT Pro` groups have been merged into `ChatGPT`. Keys bound to a
 
 Requires a top-up or the next period.
 
-| message                                              | What to do                                                                               |
+| message                                              | Resolution                                                                               |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `API key 额度已用完`                                 | This key has its own quota. Adjust it on the [API keys page](https://tokenflux.dev/keys) |
 | `api key 5小时限额已用完` / `日限额` / `7天限额`     | A rolling limit on the key. Wait for the window or change the key configuration          |
@@ -106,7 +106,7 @@ Requires a top-up or the next period.
 
 Recovers once the request rate drops.
 
-| message                                                   | What to do                                                         |
+| message                                                   | Resolution                                                         |
 | --------------------------------------------------------- | ------------------------------------------------------------------ |
 | `group requests-per-minute limit exceeded`                | Reduce the request rate; the response carries `Retry-After`        |
 | `user requests-per-minute limit exceeded`                 | As above                                                           |
@@ -119,7 +119,7 @@ Wait as instructed when `Retry-After` is present, otherwise back off exponential
 
 ## 400 Bad Request
 
-| message                                                                  | What to do                                                                                             |
+| message                                                                  | Resolution                                                                                             |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
 | `model is required`                                                      | The client sent no model ID. Verify a model is selected                                                |
 | `Failed to parse request body`                                           | The body is not valid JSON                                                                             |

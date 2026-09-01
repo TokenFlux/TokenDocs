@@ -54,7 +54,7 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
 
 ## 401 认证失败
 
-| message                      | 怎么办                                                             |
+| message                      | 处理方式                                                           |
 | ---------------------------- | ------------------------------------------------------------------ |
 | `API key is required in ...` | 请求未携带 Key，检查客户端是否读取到配置                           |
 | `Invalid API key`            | Key 不存在，检查是否含多余的空格、换行或引号                       |
@@ -94,7 +94,7 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
 
 需充值或等待周期重置。
 
-| message                                          | 怎么办                                                                  |
+| message                                          | 处理方式                                                                |
 | ------------------------------------------------ | ----------------------------------------------------------------------- |
 | `API key 额度已用完`                             | 该 Key 设有独立额度，在 [API 密钥页面](https://tokenflux.dev/keys) 调整 |
 | `api key 5小时限额已用完` / `日限额` / `7天限额` | Key 的滚动限额，等待窗口结束或修改 Key 配置                             |
@@ -106,7 +106,7 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
 
 降低请求频率后可恢复。
 
-| message                                                   | 怎么办                                    |
+| message                                                   | 处理方式                                  |
 | --------------------------------------------------------- | ----------------------------------------- |
 | `group requests-per-minute limit exceeded`                | 降低请求频率，响应头含 `Retry-After`      |
 | `user requests-per-minute limit exceeded`                 | 同上                                      |
@@ -119,7 +119,7 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
 
 ## 400 请求格式错误
 
-| message                                                                  | 怎么办                                                                    |
+| message                                                                  | 处理方式                                                                  |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
 | `model is required`                                                      | 客户端未传模型 ID，检查是否已选择模型                                     |
 | `Failed to parse request body`                                           | 请求体不是合法 JSON                                                       |

@@ -20,9 +20,7 @@ You need to create an API key before using TokenFlux.
 
 Multipliers differ between groups; see [Billing](/en/docs/tokenflux/billing) for the price differences.
 
-## What Next?
-
-After you get an API key, you can start integrating TokenFlux:
+## Next Steps
 
 - [API Endpoints](/en/docs/tokenflux/endpoints) - the API address to enter in your client
 - [Quickstart](/en/docs/quickstart) - choose an integration path based on your workflow

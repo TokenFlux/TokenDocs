@@ -17,7 +17,7 @@ features:
   - title: Connect a Client
     details: Setup steps for Claude Code, Codex, Cherry Studio, RikkaHub, and more, sorted by Agent or ChatBot.
     link: /en/docs/quickstart
-    linkText: Three steps
+    linkText: Getting started
   - title: Understand Billing
     details: Groups and multipliers, inference credits, and the order subscriptions and balance are charged.
     link: /en/docs/concepts

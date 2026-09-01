@@ -20,9 +20,7 @@
 
 不同分组的倍率不同，价格差异请见 [计费说明](/docs/tokenflux/billing)。
 
-## 创建后做什么？
-
-拿到 API Key 后，可以直接开始接入：
+## 接入客户端
 
 - [API 端点](/docs/tokenflux/endpoints) — 客户端要填的 API 地址
 - [快速开始](/docs/quickstart) — 根据使用习惯选择接入方式

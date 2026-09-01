@@ -1,8 +1,8 @@
 # Fast Mode
 
-Fast mode requests a higher-priority capacity tier upstream, which means shorter queuing and faster responses. You can now force it on directly at the API key level, with no client-side changes.
+Fast mode requests a higher-priority capacity tier upstream, which means shorter queuing and faster responses. You can force it on directly at the API key level, with no client-side changes.
 
-This is especially handy for the `Codex` desktop app: its interface has no Fast toggle, so previously the only way was a plugin that rewrote requests. Setting the key policy to force it on achieves the same thing, with **no plugin required**.
+For clients without a built-in Fast toggle (such as Codex Desktop), setting the key policy to force Fast on applies automatically.
 
 ::: warning Roughly 2x the cost
 Fast mode uses the upstream priority pricing tier, so charges are about **2x** those of regular mode. Make sure that is what you want before enabling it.
@@ -19,7 +19,7 @@ Fast mode uses the upstream priority pricing tier, so charges are about **2x** t
   <img src="/images/fast-mode/policy-select.png" alt="Fast mode policy dropdown in the TokenFlux key form, with follow request, force Fast on, and force Fast off options" />
 </div>
 
-## The Three Options
+## Policy Options
 
 | Option                     | Behavior                                                             |
 | -------------------------- | -------------------------------------------------------------------- |
@@ -31,7 +31,7 @@ Fast mode uses the upstream priority pricing tier, so charges are about **2x** t
 
 ## Scope
 
-The setting applies to **every request made with that key**, not just Codex. Regular chat completions, Responses, and Anthropic-format requests are all covered.
+The setting applies to all requests made with this key, including regular chat completions, Responses, and Anthropic format.
 
 Changes take effect **immediately**. Even on long-lived WebSocket connections, the new policy is picked up on the next turn - no reconnect or client restart needed.
 
@@ -42,11 +42,7 @@ Changes take effect **immediately**. Even on long-lived WebSocket connections, t
 - The key is not currently routed to an OpenAI or Anthropic account
 - The Anthropic account uses Bedrock, Vertex, or OAuth credentials (only API key credentials are supported)
 - The current model does not support the priority tier
-- A platform administrator has configured a global Fast filter or block policy
-
-::: tip Administrator policy wins
-The platform-wide Fast policy takes precedence over per-key settings. If an administrator configured filtering or blocking, `Force Fast on` cannot bypass it.
-:::
+- A platform administrator has configured a global Fast filter or block policy (platform policy takes precedence over per-key settings and cannot be bypassed)
 
 ## Related Links
 

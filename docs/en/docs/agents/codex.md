@@ -85,12 +85,12 @@ Steps:
 
 **Step 1: Locate the config directory**
 
-The local config directory for `Codex` is usually:
+The local config directory for `Codex` is:
 
 - Windows: `%userprofile%\.codex`
 - macOS / Linux: `~/.codex`
 
-If you use `Codex` inside VSCode or Zed, it usually follows the global `Codex` configuration. After writing the configuration in this section, restart the editor for the changes to take effect.
+Codex CLI and official IDE extensions share the `config.toml` configuration layer. When using Codex via Zed's external Agent, configuration loading depends on the installed integration version.
 
 Start `Codex` or `Codex App` once first so it can initialize the config directory automatically.
 
@@ -182,11 +182,7 @@ Start a new task so `Codex` discovers the skill, then send:
 Set the context window of gpt-5.6-luna, gpt-5.6-terra, and gpt-5.6-sol to 1M, with the auto-compaction threshold at 900k.
 ```
 
-The skill confirms the target models, raw window size, effective-window percentage, and auto-compaction policy before writing anything. Restart `Codex` once it is done.
-
-::: tip Keep the default effective percentage
-Leave the effective percentage at its default of `95%`. A 1M raw window then gives `950000` usable tokens, which is also the number the status bar reports.
-:::
+The skill confirms the target models, raw window size, effective-window percentage, and auto-compaction policy before writing anything. Leave the effective percentage at its default of `95%` (a 1M raw window gives `950000` usable tokens, matching the status bar display). Restart `Codex` once it is done.
 
 ### Verify It Took Effect
 

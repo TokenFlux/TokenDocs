@@ -17,7 +17,7 @@ features:
   - title: 接入客户端
     details: Claude Code、Codex、Cherry Studio、RikkaHub 等客户端的配置步骤，按 Agent 或 ChatBot 分类。
     link: /docs/quickstart
-    linkText: 三步接入
+    linkText: 接入流程
   - title: 理解计费
     details: 分组与倍率、推理积分、订阅与余额的扣费顺序。
     link: /docs/concepts

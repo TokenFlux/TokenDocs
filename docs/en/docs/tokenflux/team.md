@@ -31,7 +31,7 @@ The creator automatically becomes the team's only owner.
 
 ## Invite Members
 
-Only the owner can invite, and invitations are **email-targeted only** - there is no invite code and no shareable invite link.
+Only the owner can send invitations, which are strictly email-targeted. No invite codes or public links are provided.
 
 1. Find the invite section under the `Overview` tab on the team page.
 2. Enter the person's email address and click `Send invite`.

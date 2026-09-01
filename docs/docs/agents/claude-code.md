@@ -101,9 +101,7 @@ npx @anthropic-ai/claude-code
 
 **第一步：设置环境变量**
 
-根据操作系统选择对应方式设置环境变量：
-
-如果你在 VSCode 或 Zed 中使用 `Claude Code`，通常同样走 `Claude Code` 的全局配置；按本节方式配置后，重启编辑器即可生效。
+VS Code 扩展与 CLI 共享 `~/.claude/settings.json`。终端中临时设置的环境变量不一定会被编辑器继承；未生效时按第二步写入 `settings.json`。Zed 的配置行为取决于所安装的外部 Agent。
 
 **macOS / Linux**
 

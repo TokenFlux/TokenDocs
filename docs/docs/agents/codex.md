@@ -85,12 +85,12 @@ npx @openai/codex
 
 **第一步：确认配置目录**
 
-`Codex` 的本地配置目录通常是：
+`Codex` 的本地配置目录为：
 
 - Windows：`%userprofile%\.codex`
 - macOS / Linux：`~/.codex`
 
-如果你在 VSCode 或 Zed 中使用 `Codex`，通常同样走 `Codex` 的全局配置；按本节方式写入配置后，重启编辑器即可生效。
+Codex CLI 与官方 IDE 扩展共享 `config.toml` 配置层。通过 Zed 的 Codex 外部 Agent 使用时，配置读取方式取决于所安装的集成版本。
 
 建议先启动一次 `Codex` 或 `Codex App`，让程序自动初始化配置目录。
 
@@ -182,11 +182,7 @@ git clone https://github.com/smartcmd/codex-context-window.git ~/.codex/skills/c
 将 gpt-5.6-luna、gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
 ```
 
-Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和自动压缩策略，确认后才写入配置。配置完成后重启 `Codex`。
-
-::: tip 有效比例保持默认
-有效比例保持默认的 `95%` 即可。此时 1M 原始窗口对应的可用上下文是 `950000` token，状态栏显示的也是这个折算后的数字。
-:::
+Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和自动压缩策略，确认后才写入配置。有效比例保持默认的 `95%` 即可（1M 原始窗口对应可用上下文为 `950000` token，状态栏显示折算后的数值）。配置完成后重启 `Codex`。
 
 ### 确认是否生效
 
