@@ -1,6 +1,6 @@
 # 快速开始
 
-TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉的客户端里调用各家厂商的模型。
+TokenFlux 是统一的大语言模型接口：通过统一的 API Key 在各类客户端中调用主流大模型。
 
 ::: details For AGENTS
 批量读取 Markdown 文档时，可直接使用 [markdown-sitemap.xml](/markdown-sitemap.xml)。单页读取时，直接在不以 `/` 结尾的文档 URL 后追加 `.md` 即可，例如 `/docs/quickstart.md`。
@@ -16,7 +16,7 @@ TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉�
 
 分组、号池、推理积分等术语见 [核心概念](/docs/concepts)。
 
-## 选择你的客户端
+## 客户端选型
 
 <DocsTabs default-tab="agent">
   <DocsTab title="Agent" name="agent">

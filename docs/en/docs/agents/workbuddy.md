@@ -31,7 +31,7 @@ When preparation finishes, the welcome screen appears. Click **Log in** to conti
 WorkBuddy opens the Tencent CodeBuddy sign-in page in your browser.
 
 1. Read the user agreement and privacy policy.
-2. Personally select the agreement checkbox and click **Agree**.
+2. Select the agreement checkbox and click **Agree**.
 3. Authenticate with WeChat, phone, email, or SSO. Available methods can vary by region and account type.
 4. Return to WorkBuddy after the browser reports a successful sign-in.
 
@@ -80,7 +80,7 @@ Then complete the form:
 | --------------- | --------------------------------------------------------------------- |
 | Provider        | `Custom`                                                              |
 | Endpoint        | `https://tokenflux.dev/v1/chat/completions`                           |
-| API Key         | Your TokenFlux API key                                                |
+| API Key         | TokenFlux API key                                                     |
 | Model Name      | The exact model ID from the marketplace, such as `gpt-5.6-sol`        |
 | Tool Calling    | Enable it; `gpt-5.6-sol`, used in this guide, supports tool calling   |
 | Image Input     | Enable it so WorkBuddy can send images to the model                   |

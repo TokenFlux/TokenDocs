@@ -35,7 +35,7 @@ curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scri
    OPENAI_BASE_URL=https://tokenflux.dev/v1
    ```
 
-   将 `YOUR_TOKENFLUX_API_KEY` 替换为你的真实 API Key。
+   将 `YOUR_TOKENFLUX_API_KEY` 替换为实际的 API Key。
 
 ## 验证配置
 

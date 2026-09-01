@@ -5,7 +5,7 @@ Fast mode requests a higher-priority capacity tier upstream, which means shorter
 For clients without a built-in Fast toggle (such as Codex Desktop), setting the key policy to force Fast on applies automatically.
 
 ::: warning Roughly 2x the cost
-Fast mode uses the upstream priority pricing tier, so charges are about **2x** those of regular mode. Make sure that is what you want before enabling it.
+Fast mode uses the upstream priority pricing tier, so charges are about **2x** those of regular mode. Make sure it aligns with your business expectations before enabling it.
 :::
 
 ## How to Set It

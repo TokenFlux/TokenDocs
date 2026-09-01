@@ -76,7 +76,7 @@ AppImage 已内置所有依赖，适用于大多数主流 Linux 发行版，无�
      <img src="/images/cherry-studio/provider-type-selection.png" alt="Cherry Studio 选择 OpenAI-Response 提供商类型的界面" />
    </div>
 
-4. 填入刚才生成的 API Key 和 API 地址 `https://tokenflux.dev/v1`，点击获取模型列表，选择你需要的模型。
+4. 填入刚才生成的 API Key 和 API 地址 `https://tokenflux.dev/v1`，点击获取模型列表，选择目标模型。
 
    <div style="text-align: center;">
      <img src="/images/cherry-studio/provider-config-fields.png" alt="Cherry Studio 填写 TokenFlux API Key 和 API 地址的界面" />
@@ -93,9 +93,9 @@ AppImage 已内置所有依赖，适用于大多数主流 Linux 发行版，无�
 
 拉不到模型列表时，先按 [单独测试 Key 和端点](/docs/troubleshooting#单独测试-key-和端点) 排除客户端因素，再检查地址是否漏写或多写了 `/v1`。
 
-## 下一步该怎么做？
+## 后续操作
 
-接入完成后，你可以直接在 `Cherry Studio` 中与 TokenFlux 支持的模型对话。
+完成配置后，即可在 `Cherry Studio` 中直接发起模型对话。
 
 更多相关内容：
 

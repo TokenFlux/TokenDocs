@@ -31,7 +31,7 @@ verifiedAt: '2026-08-22'
 WorkBuddy 会在浏览器中打开腾讯 CodeBuddy 登录页。
 
 1. 阅读用户服务协议和隐私政策。
-2. 由你本人勾选同意选项并点击 **同意**。
+2. 勾选同意条款并点击 **同意**。
 3. 选择微信、手机号、邮箱或 SSO 完成认证；可用方式可能因地区和账号类型而异。
 4. 浏览器提示成功后返回 WorkBuddy。
 
@@ -74,13 +74,13 @@ WorkBuddy 会在模型页面显示实际的本地配置文件路径。WorkBuddy 
   <img src="/images/workbuddy/06-provider-selection.png" width="538" alt="WorkBuddy 添加模型时在提供商列表中选择自定义 Custom，目标选项已用红框标出" />
 </div>
 
-然后填写：
+填写配置项：
 
 | 配置项     | 建议值                                             |
 | ---------- | -------------------------------------------------- |
 | 提供商     | `自定义 / Custom`                                  |
 | 接口地址   | `https://tokenflux.dev/v1/chat/completions`        |
-| API Key    | 你的 TokenFlux API Key                             |
+| API Key    | TokenFlux API Key                                  |
 | 模型名称   | 模型广场显示的精确模型 ID，例如 `gpt-5.6-sol`      |
 | 工具调用   | 开启；本教程使用的 `gpt-5.6-sol` 支持 Tool Calling |
 | 图片输入   | 开启；允许 WorkBuddy 向模型发送图片                |

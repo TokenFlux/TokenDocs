@@ -27,11 +27,11 @@ verifiedAt: '2026-08-22'
 
 ## 如何配置
 
-你可以将项目地址直接交给 Agent 自动配置，也可以手动操作。
+支持通过 AI Agent 自动配置或手动配置。
 
 ### 交给 Agent
 
-将以下项目链接交给你的 AI Agent，并告诉它 “请你按这个项目的说明帮我安装并配置 Codex++”：
+可将项目链接提供给 AI Agent 并提示按文档说明完成安装配置：
 
 ```text
 https://github.com/BigPizzaV3/CodexPlusPlus

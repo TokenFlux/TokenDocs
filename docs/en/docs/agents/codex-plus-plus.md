@@ -27,11 +27,11 @@ Project repository: [https://github.com/BigPizzaV3/CodexPlusPlus](https://github
 
 ## How to Set Up
 
-You can hand the project URL to your Agent for automatic configuration, or set it up manually.
+Supports automatic configuration via AI Agent or manual configuration.
 
 ### Hand to Agent
 
-Give the following project link to your AI Agent and tell it to install and configure Codex++ according to the project's instructions:
+Provide the project link to your AI Agent and instruct it to complete installation and configuration according to documentation:
 
 ```text
 https://github.com/BigPizzaV3/CodexPlusPlus

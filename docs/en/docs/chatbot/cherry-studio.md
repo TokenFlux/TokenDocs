@@ -76,7 +76,7 @@ After installation, add TokenFlux as a custom provider in Cherry Studio.
      <img src="/images/cherry-studio/provider-type-selection.png" alt="Cherry Studio provider type selection for OpenAI-Response" />
    </div>
 
-4. Enter the generated API key and API URL `https://tokenflux.dev/v1`, fetch the model list, and select the models you need.
+4. Enter the generated API key and API URL `https://tokenflux.dev/v1`, fetch the model list, and select target models.
 
    <div style="text-align: center;">
      <img src="/images/cherry-studio/provider-config-fields.png" alt="Cherry Studio TokenFlux API key and API URL fields" />
@@ -95,7 +95,7 @@ If the model list does not load, rule the client out with [Test the Key and Endp
 
 ## Next Steps
 
-After setup, you can chat with TokenFlux-supported models directly in `Cherry Studio`.
+After completing configuration, you can start model conversations directly in `Cherry Studio`.
 
 More related content:
 

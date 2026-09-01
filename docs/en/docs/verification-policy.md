@@ -1,6 +1,6 @@
 # Client Guide Maintenance Policy
 
-Clients update on their own schedule, and their interfaces and settings change with them. This page explains how the integration guides are kept current, and how to report anything that has fallen behind.
+Client software updates continuously, and interfaces and configuration parameters may change over time. This document outlines the maintenance and verification mechanisms for integration guides, as well as feedback channels for outdated content.
 
 ## Last Verified
 

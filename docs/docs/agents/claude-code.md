@@ -113,7 +113,7 @@ export ANTHROPIC_AUTH_TOKEN="YOUR_TOKENFLUX_API_KEY"
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 ```
 
-将 `YOUR_TOKENFLUX_API_KEY` 替换为你的真实 API Key。
+将 `YOUR_TOKENFLUX_API_KEY` 替换为实际的 API Key。
 
 **Windows PowerShell**
 
@@ -160,7 +160,7 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 }
 ```
 
-将 `YOUR_TOKENFLUX_API_KEY` 替换为你的真实 API Key。
+将 `YOUR_TOKENFLUX_API_KEY` 替换为实际的 API Key。
 
   </DocsTab>
 </DocsTabs>
@@ -173,7 +173,7 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
 使用 `Claude Max` 分组时，可以在完成上方基础配置后额外开启 `ENABLE_PROMPT_CACHING_1H=1`。该选项会启用 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。其他 Claude 分组无需设置。
 
-如果你通过 `CC-Switch` 管理 Claude Code，请参考 [CC-Switch 的 Claude Max 环境变量说明](/docs/agents/cc-switch#claude-max-环境变量)。
+若通过 `CC-Switch` 管理 Claude Code，请参考 [CC-Switch 的 Claude Max 环境变量说明](/docs/agents/cc-switch#claude-max-环境变量)。
 
 ### 终端启动
 

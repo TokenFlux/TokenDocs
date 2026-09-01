@@ -113,7 +113,7 @@ export ANTHROPIC_AUTH_TOKEN="YOUR_TOKENFLUX_API_KEY"
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 ```
 
-Replace `YOUR_TOKENFLUX_API_KEY` with your real API key.
+Replace `YOUR_TOKENFLUX_API_KEY` with your actual API key.
 
 **Windows PowerShell**
 
@@ -160,7 +160,7 @@ If the Claude Code extension in VSCode does not read shell environment variables
 }
 ```
 
-Replace `YOUR_TOKENFLUX_API_KEY` with your real API key.
+Replace `YOUR_TOKENFLUX_API_KEY` with your actual API key.
 
   </DocsTab>
 </DocsTabs>

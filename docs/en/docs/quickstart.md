@@ -1,6 +1,6 @@
 # Quickstart
 
-TokenFlux is a unified interface for large language models: one API key lets you call models from many providers inside the client you already use.
+TokenFlux is a unified interface for large language models: call mainstream models across various clients through a unified API key.
 
 ::: details For AGENTS
 For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For a single page, append `.md` to any documentation URL that does not end with `/`, for example `/en/docs/quickstart.md`.
@@ -16,7 +16,7 @@ For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For 
 
 For groups, account pools, inference credits, and other terms, see [Core Concepts](/en/docs/concepts).
 
-## Pick Your Client
+## Client Options
 
 <DocsTabs default-tab="agent">
   <DocsTab title="Agent" name="agent">

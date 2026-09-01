@@ -71,7 +71,7 @@ After installation, find and run `CC-Switch` from Applications or Launchpad.
    ```text
    Provider name: tokenflux
    API URL: https://tokenflux.dev
-   API Key: your TokenFlux API key
+   API Key: TokenFlux API key
    ```
 
    <div style="text-align: center;">

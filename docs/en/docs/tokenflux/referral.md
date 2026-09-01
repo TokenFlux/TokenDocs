@@ -7,7 +7,7 @@ Invite friends to register on TokenFlux and earn inference credits based on your
 ## How to Invite
 
 1. Open the [referral page](https://tokenflux.dev/affiliate).
-2. Copy your **affiliate code** or **invite link** (in the form `https://tokenflux.dev/register?aff=YOUR_CODE`).
+2. Copy your **affiliate code** or **invite link** (in the form `https://tokenflux.dev/register?aff=INVITE_CODE`).
 3. Share it with a friend. They register through the link, or enter your code during registration.
 
 <div style="text-align: center;">

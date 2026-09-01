@@ -93,7 +93,7 @@ scoop install opencode
 
 **第二步：填写配置**
 
-将以下内容复制到 `opencode.json`，把 `YOUR_API_KEY` 换成你的 TokenFlux API Key。
+将以下内容复制到 `opencode.json`，将 `YOUR_API_KEY` 替换为 TokenFlux API Key。
 
 ```json
 {
@@ -121,7 +121,7 @@ scoop install opencode
 opencode
 ```
 
-然后执行：
+执行：
 
 ```text
 /init

@@ -124,7 +124,7 @@ Create or edit `auth.json` in the same directory:
 }
 ```
 
-Replace `YOUR_TOKENFLUX_API_KEY` with your real API key.
+Replace `YOUR_TOKENFLUX_API_KEY` with your actual API key.
 
 **WebSocket version (optional)**
 

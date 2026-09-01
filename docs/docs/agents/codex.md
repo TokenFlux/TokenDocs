@@ -124,11 +124,11 @@ requires_openai_auth = true
 }
 ```
 
-将 `YOUR_TOKENFLUX_API_KEY` 替换为你的真实 API Key。
+将 `YOUR_TOKENFLUX_API_KEY` 替换为实际的 API Key。
 
 **WebSocket 版本（可选）**
 
-如果需要 WebSocket 版本，`config.toml` 还需额外配置：
+如需使用 WebSocket 协议，`config.toml` 还需额外配置：
 
 ```toml
 supports_websockets = true

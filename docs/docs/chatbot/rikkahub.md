@@ -27,12 +27,12 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
    ```text
    提供商类型: OpenAI
    Base URL: https://tokenflux.dev/v1
-   API Key: 你的 TokenFlux API Key
+   API Key: TokenFlux API Key
    ```
 
    > **注意：** Base URL 必须以 `/v1` 结尾。RikkaHub 会在此基础上自动拼接 `/chat/completions` 等路径，请勿在末尾重复添加。
 
-5. 保存后，等待模型列表刷新，点击添加模型**左侧**的图标，选择你需要使用的模型。
+5. 保存后，等待模型列表刷新，点击添加模型**左侧**的图标，选择目标模型。
 6. 返回主页，选择刚才添加的模型即可开始对话。
 
 ## 验证接入
@@ -43,9 +43,9 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
 
 模型列表刷不出来时，先按 [单独测试 Key 和端点](/docs/troubleshooting#单独测试-key-和端点) 排除客户端因素，再检查 Base URL 是否以 `/v1` 结尾且没有重复拼接路径。
 
-## 下一步该怎么做？
+## 后续操作
 
-接入完成后，你可以直接在 `RikkaHub` 中与 TokenFlux 支持的模型对话。
+完成配置后，即可在 `RikkaHub` 中直接发起模型对话。
 
 <!--
 ## 使用生图

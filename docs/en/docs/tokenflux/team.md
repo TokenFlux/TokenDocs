@@ -60,7 +60,7 @@ Joining fails in these cases:
 
 - The signed-in account's email does not match the invited email
 - The invitation has expired or was revoked
-- You already belong to another team
+- The current account has already joined another team
 - The team is full, or the team is suspended
 
 New members automatically inherit the team's current default member limits when they join.

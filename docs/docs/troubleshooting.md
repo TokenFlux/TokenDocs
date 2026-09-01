@@ -16,7 +16,7 @@ curl https://tokenflux.dev/health
 
 ## 单独测试 Key 和端点
 
-客户端配置项多时，先用 curl 把客户端因素排除掉。把 `$KEY` 换成你的 API Key：
+客户端配置项多时，先用 curl 把客户端因素排除掉。将 `$KEY` 替换为 API Key：
 
 ```bash
 curl https://tokenflux.dev/v1/models -H "authorization: Bearer $KEY"

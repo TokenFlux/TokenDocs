@@ -35,7 +35,7 @@ After installation, the default config directory is usually `~/.hermes`.
    OPENAI_BASE_URL=https://tokenflux.dev/v1
    ```
 
-   Replace `YOUR_TOKENFLUX_API_KEY` with your real API key.
+   Replace `YOUR_TOKENFLUX_API_KEY` with your actual API key.
 
 ## Verify Configuration
 
