@@ -57,6 +57,7 @@ TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉�
 
 接入完成后可按需使用：
 
+- [创作台](https://tokenflux.dev/creative) — 无需客户端与 API 配置，网页端在线生成图片
 - [复合 Key](/docs/tokenflux/composite-key) — 一个 Key 绑定多个分组，用前缀切换
 - [Fast 模式](/docs/tokenflux/fast-mode) — 在 Key 上强制开启高优先级通道
 - [团队](/docs/tokenflux/team) — 多人共用所有者的余额，各自建 Key

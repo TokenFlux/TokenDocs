@@ -44,6 +44,8 @@ Usually cheaper, valid for 30 days. Eight tiers, from lowest to highest: `Lite`,
 
 Buying the same subscription again does not add a parallel one; it extends the duration, and the later purchase takes effect once the current one expires.
 
+Once a subscription allowance is exhausted, you can revoke it directly on the subscription page without contacting an administrator. If queued subscriptions exist, the next one takes effect automatically in sequence.
+
 Several different plans can be active at once. The allowance expiring soonest is consumed first, and the account balance is charged only when no plan is available.
 
 ### Usage-Based

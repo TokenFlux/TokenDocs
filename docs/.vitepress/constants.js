@@ -12,6 +12,7 @@ export const APP_ORIGIN = 'https://tokenflux.dev'
 export const APP_PATHS = [
   '/',
   '/affiliate',
+  '/creative',
   '/dashboard',
   '/health',
   '/keys',

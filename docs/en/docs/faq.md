@@ -18,7 +18,8 @@ Image generation models live in the `Google Image` group, currently `gemini-3.1-
 
 A group without image generation returns 403 `Image generation is not enabled for this group`, see [Error Codes](/en/docs/errors#group-capabilities).
 
-## Which client should I use for image generation?
+## How can I generate images?
 
+- **Web Creative Studio**: Visit the [TokenFlux Creative Studio](https://tokenflux.dev/creative) directly. Generate images online with no API setup or client downloads required.
 - **Android**: [RikkaHub](/en/docs/chatbot/rikkahub) has a dedicated image generation entry; see the "Image Generation" section on that page.
 - **Desktop**: [Cherry Studio](/en/docs/chatbot/cherry-studio) - after connecting, pick an image model from the model list and send a prompt in the chat window.

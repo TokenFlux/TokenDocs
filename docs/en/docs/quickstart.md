@@ -57,6 +57,7 @@ Add TokenFlux as a custom provider in the client settings, enter your API key an
 
 After integration, the following may be useful:
 
+- [Creative Studio](https://tokenflux.dev/creative) - generate images directly on the web without client or API configuration
 - [Composite Key](/en/docs/tokenflux/composite-key) - bind one key to several groups and switch with prefixes
 - [Fast Mode](/en/docs/tokenflux/fast-mode) - force the high-priority tier at the key level
 - [Team](/en/docs/tokenflux/team) - share the owner's balance while everyone keeps their own keys
