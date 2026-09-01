@@ -29,9 +29,7 @@ Referral cookie tracking is valid for **30 days**. If your friend opens the link
 | Per-friend cap | Up to `1000🍥` **from each friend**                                                                                 |
 | Validity       | No expiry                                                                                                           |
 
-About the cap: `1000🍥` is counted **separately for each friend**, not as an account-wide total. Invite 10 friends and the theoretical ceiling is `10000🍥`. Once one friend has generated `1000🍥` for you, their later top-ups stop earning rebates, but other friends are unaffected.
-
-If a rebate would exceed that friend's remaining allowance, it is truncated to what is left rather than being dropped entirely.
+The cap applies per invitee independently. Once cumulative rebates from a single invitee reach `1000🍥`, subsequent top-ups by that user no longer generate rebates, without affecting rebates from other users. If a rebate exceeds the remaining allowance for that invitee, only the remaining amount is credited.
 
 ## Claiming Rewards
 
