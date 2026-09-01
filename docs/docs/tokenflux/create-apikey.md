@@ -10,13 +10,11 @@
 2. 点击右上角的 `创建密钥` 按钮。
 3. 输入一个便于识别的名称（例如：`cherry-studio`、`cc-switch`）。
 4. 选择一个分组。下拉里会显示每个分组的倍率和当前容量。
-5. 点击创建，复制生成的密钥并妥善保存。
+5. 点击创建，复制生成的密钥并妥善保存（后续也可在密钥列表中随时查看或复制）。
 
 <div style="text-align: center;">
   <img src="/images/create-apikey/create-dialog.png" alt="TokenFlux 创建密钥弹窗，填写名称并展开分组下拉，可见各分组的倍率和容量" />
 </div>
-
-> **注意：** 密钥仅在创建时完整显示一次，请立即复制保存。
 
 不同分组的倍率不同，价格差异请见 [计费说明](/docs/tokenflux/billing)。
 
