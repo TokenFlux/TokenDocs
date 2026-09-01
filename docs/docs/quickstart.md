@@ -2,10 +2,6 @@
 
 TokenFlux 是统一的大语言模型接口：用一个 API Key，在你熟悉的客户端里调用各家厂商的模型。
 
-::: tip 访问提示
-本站部分内容或相关服务可能需要使用代理才能访问。API 请求请使用默认的 `tokenflux.dev` 端点；原大陆优化端点已废弃。
-:::
-
 ::: details For AGENTS
 批量读取 Markdown 文档时，可直接使用 [markdown-sitemap.xml](/markdown-sitemap.xml)。单页读取时，直接在不以 `/` 结尾的文档 URL 后追加 `.md` 即可，例如 `/docs/quickstart.md`。
 :::

@@ -2,10 +2,6 @@
 
 TokenFlux is a unified interface for large language models: one API key lets you call models from many providers inside the client you already use.
 
-::: tip Access Note
-Some content on this site or related services may require a proxy before access works reliably. Use the default `tokenflux.dev` endpoint for API requests; the former mainland acceleration endpoint is deprecated.
-:::
-
 ::: details For AGENTS
 For bulk Markdown reads, use [markdown-sitemap.xml](/markdown-sitemap.xml). For a single page, append `.md` to any documentation URL that does not end with `/`, for example `/en/docs/quickstart.md`.
 :::
