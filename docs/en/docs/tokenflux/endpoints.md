@@ -43,17 +43,6 @@ The OpenAI and Anthropic formats do not accept a key in the query string and ret
 
 With a [composite key](/en/docs/tokenflux/composite-key), the model ID needs a prefix; on the Gemini format the prefix goes in the path.
 
-## Deprecated Mainland Acceleration Endpoint
-
-`token.memoh.net` is deprecated and must not be used for new setups. If an existing setup still points at it, switch to the default endpoint for that format:
-
-| Protocol format  | Old address                  | Change to                  |
-| ---------------- | ---------------------------- | -------------------------- |
-| OpenAI format    | `https://token.memoh.net/v1` | `https://tokenflux.dev/v1` |
-| Anthropic format | `https://token.memoh.net`    | `https://tokenflux.dev`    |
-
-Only the API address in the client needs to change; everything else stays the same. The deprecated endpoint tends to queue requests and raise time to first token, which shows up more at higher request volumes.
-
 ## Related Pages
 
 - [Create API Key](/en/docs/tokenflux/create-apikey) - get a key first

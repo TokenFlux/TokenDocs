@@ -43,17 +43,6 @@ OpenAI 格式和 Anthropic 格式不接受通过查询参数传 Key，会返回 
 
 使用[复合 Key](/docs/tokenflux/composite-key) 时，模型 ID 需要带前缀，Gemini 格式的前缀写在路径中。
 
-## 已废弃的国内加速端点
-
-`token.memoh.net` 已废弃，不要用于新配置。现有配置如仍在使用该地址，请改为对应格式的默认端点：
-
-| 协议格式       | 旧地址                       | 改为                       |
-| -------------- | ---------------------------- | -------------------------- |
-| OpenAI 格式    | `https://token.memoh.net/v1` | `https://tokenflux.dev/v1` |
-| Anthropic 格式 | `https://token.memoh.net`    | `https://tokenflux.dev`    |
-
-切换时只需修改客户端中的 API 地址，其他配置不用改。废弃端点容易出现请求堆积、首字延迟升高，请求量大时影响更明显。
-
 ## 相关入口
 
 - [创建 API Key](/docs/tokenflux/create-apikey) — 先拿到密钥

@@ -49,8 +49,7 @@ Check in order:
    Full details in [API Endpoints](/en/docs/tokenflux/endpoints).
 
 3. Do not append `/chat/completions` or `/v1/messages` yourself; the client completes the path.
-4. The deprecated `token.memoh.net` is no longer in use.
-5. Local proxies, firewalls, or HTTPS interception. Some networks require a proxy to reach the service.
+4. Local proxies, firewalls, or HTTPS interception. Some networks require a proxy to reach the service.
 
 ## 401 Authentication Failed
 

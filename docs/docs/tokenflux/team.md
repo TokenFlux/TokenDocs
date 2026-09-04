@@ -137,3 +137,10 @@
 - [创建 API Key](/docs/tokenflux/create-apikey) — 了解密钥的创建流程
 - [计费说明](/docs/tokenflux/billing) — 了解分组倍率和购买方式
 - [使用记录](https://tokenflux.dev/usage) — 查看请求明细和消费趋势
+
+## 实现参考
+
+- 官网团队页：[https://tokenflux.dev/team](https://tokenflux.dev/team)
+- 团队服务源码：[https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/service/team.go](https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/service/team.go)
+- 团队 API 路由：[https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/server/routes/user.go](https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/server/routes/user.go)
+- 团队鉴权与限额错误：[https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/server/middleware/api_key_auth.go](https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/server/middleware/api_key_auth.go)

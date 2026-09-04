@@ -49,8 +49,7 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
    完整说明见 [API 端点](/docs/tokenflux/endpoints)。
 
 3. 地址后不要自行拼接 `/chat/completions` 或 `/v1/messages`，客户端会自动补全。
-4. 未使用已废弃的 `token.memoh.net`。
-5. 本地代理、防火墙或 HTTPS 证书拦截。部分网络环境需要使用代理才能访问。
+4. 本地代理、防火墙或 HTTPS 证书拦截。部分网络环境需要使用代理才能访问。
 
 ## 401 认证失败
 

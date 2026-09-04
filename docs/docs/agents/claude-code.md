@@ -63,7 +63,7 @@ winget install Anthropic.ClaudeCode
 npm install -g @anthropic-ai/claude-code
 ```
 
-安装完成后，直接在终端运行 `claude-code` 即可启动。
+安装完成后，可运行 `claude --version` 验证安装，在终端运行 `claude` 即可启动。
 
   </DocsTab>
 

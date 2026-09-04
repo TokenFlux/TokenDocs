@@ -1,6 +1,6 @@
 # Referral Rewards
 
-Invite friends to register on TokenFlux and earn inference credits based on your rebate rate (default is **20%**) on every top-up they make.
+Invite friends to register on TokenFlux and earn inference credits based on the actual rebate rate shown on the page on every top-up they make.
 
 **Go to the referral page: [https://tokenflux.dev/affiliate](https://tokenflux.dev/affiliate)**
 
@@ -22,12 +22,12 @@ Referral cookie tracking is valid for **30 days**. If your friend opens the link
 
 ## Reward Rules
 
-| Item           | Rule                                                                                                                |
-| -------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Rebate rate    | Default **20%** of your friend's top-up (individual accounts may be adjusted, as shown in "My Rebate Rate" on page) |
-| Payout timing  | Credited as soon as the top-up completes                                                                            |
-| Per-friend cap | Up to `1000🍥` **from each friend**                                                                                 |
-| Validity       | No expiry                                                                                                           |
+| Item           | Rule                                                      |
+| -------------- | --------------------------------------------------------- |
+| Rebate rate    | Subject to the actual rate displayed on the referral page |
+| Payout timing  | Credited as soon as the top-up completes                  |
+| Per-friend cap | Up to `1000🍥` **from each friend**                       |
+| Validity       | No expiry                                                 |
 
 The cap applies per invitee independently. Once cumulative rebates from a single invitee reach `1000🍥`, subsequent top-ups by that user no longer generate rebates, without affecting rebates from other users. If a rebate exceeds the remaining allowance for that invitee, only the remaining amount is credited.
 

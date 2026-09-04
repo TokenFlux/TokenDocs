@@ -4,8 +4,8 @@ Fast 模式向上游请求更高优先级的算力通道，排队更短、响应
 
 Codex 桌面端界面未提供 Fast 开关，将 Key 的策略设为强制开启即可生效。
 
-::: warning 费用约为常规的 2 倍
-Fast 模式走上游的高优先级定价，实际扣费约为常规模式的 **2 倍**。开启前请确认符合业务预期。
+::: warning 费用按模型展示为准
+Fast 模式走上游的高优先级定价。具体费用以[模型广场](https://tokenflux.dev/models)当前展示为准；也可通过公开 API [https://tokenflux.dev/api/v1/marketplace/models](https://tokenflux.dev/api/v1/marketplace/models) 查询各模型的 `fast_*` 价格。开启前请确认符合业务预期。
 :::
 
 ## 设置方式

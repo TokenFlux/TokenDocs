@@ -12,6 +12,7 @@ export const APP_ORIGIN = 'https://tokenflux.dev'
 export const APP_PATHS = [
   '/',
   '/affiliate',
+  '/api/v1/marketplace/models',
   '/creative',
   '/dashboard',
   '/health',
@@ -34,14 +35,9 @@ export const CONSOLE_URL = `${APP_ORIGIN}/dashboard`
 export const MODELS_URL = `${APP_ORIGIN}/models`
 
 /** 已废弃的接入地址，只允许出现在下方登记的迁移说明中。 */
-export const DEPRECATED_ORIGINS = ['https://token.memoh.net']
+export const DEPRECATED_ORIGINS = []
 
-export const DEPRECATED_ORIGIN_ALLOWED_IN = [
-  'docs/tokenflux/endpoints.md',
-  'docs/troubleshooting.md',
-  'en/docs/tokenflux/endpoints.md',
-  'en/docs/troubleshooting.md',
-]
+export const DEPRECATED_ORIGIN_ALLOWED_IN = []
 
 /**
  * 文档示例中允许出现的模型 ID。
@@ -93,7 +89,6 @@ export const ALLOWED_EXTERNAL_HOSTS = [
   'persistent.oaistatic.com',
   'raw.githubusercontent.com',
   'rikka-ai.com',
-  'token.memoh.net',
   'tokenflux.dev',
   'www.codebuddy.cn',
   'www.workbuddy.ai',

@@ -63,7 +63,7 @@ Install `Claude Code` globally:
 npm install -g @anthropic-ai/claude-code
 ```
 
-After installation, run `claude-code` in a terminal to start it.
+After installation, verify with `claude --version`, and run `claude` in a terminal to start it.
 
   </DocsTab>
 

@@ -137,3 +137,10 @@ Additional notes:
 - [Create API Key](/en/docs/tokenflux/create-apikey) - how keys are created
 - [Billing](/en/docs/tokenflux/billing) - group multipliers and purchase options
 - [Usage records](https://tokenflux.dev/usage) - request details and spending trends
+
+## Implementation References
+
+- Official team page: [https://tokenflux.dev/team](https://tokenflux.dev/team)
+- Team service source: [https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/service/team.go](https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/service/team.go)
+- Team API routes: [https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/server/routes/user.go](https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/server/routes/user.go)
+- Team authentication and limit errors: [https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/server/middleware/api_key_auth.go](https://github.com/TokenFlux/TokenRouter/blob/main/backend/internal/server/middleware/api_key_auth.go)

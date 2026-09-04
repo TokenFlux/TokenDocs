@@ -4,8 +4,8 @@ Fast mode requests a higher-priority capacity tier upstream, which means shorter
 
 For clients without a built-in Fast toggle (such as Codex Desktop), setting the key policy to force Fast on applies automatically.
 
-::: warning Roughly 2x the cost
-Fast mode uses the upstream priority pricing tier, so charges are about **2x** those of regular mode. Make sure it aligns with your business expectations before enabling it.
+::: warning Costs are subject to model display
+Fast mode uses the upstream priority pricing tier. Specific charges are subject to the current display on the [Models](https://tokenflux.dev/models) page; you can also query `fast_*` pricing for each model via the public API [https://tokenflux.dev/api/v1/marketplace/models](https://tokenflux.dev/api/v1/marketplace/models). Make sure it aligns with your business expectations before enabling it.
 :::
 
 ## How to Set It
