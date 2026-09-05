@@ -6,7 +6,7 @@ Most clients need an API address (base URL) during setup. TokenFlux exposes thre
 
 | Protocol format  | Base URL                   | Typical request path                             |
 | ---------------- | -------------------------- | ------------------------------------------------ |
-| OpenAI format    | `https://tokenflux.dev/v1` | `POST /chat/completions`                         |
+| OpenAI format    | `https://tokenflux.dev/v1` | `POST /chat/completions` or `POST /responses`    |
 | Anthropic format | `https://tokenflux.dev`    | `POST /v1/messages`                              |
 | Gemini format    | `https://tokenflux.dev`    | `POST /v1beta/models/<model-id>:generateContent` |
 
@@ -26,7 +26,9 @@ The client dictates the format, and the group must support that same format.
 | Anthropic format (no `/v1`)     | `Claude Code` and other clients speaking the Anthropic protocol natively                  |
 | Gemini format                   | Clients and SDKs on Google's native protocol, where the model ID goes in the request path |
 
-If the client's setting is named `ANTHROPIC_BASE_URL`, use the Anthropic format. If it is `OPENAI_BASE_URL` or `Base URL`, use the OpenAI format. Each integration guide states the exact value.
+If the client's setting is named `ANTHROPIC_BASE_URL`, use the Anthropic format. If it is `OPENAI_BASE_URL`, use the OpenAI format. `Base URL` is a generic field name and does not identify a protocol; check the selected provider type first. Each integration guide states the exact value.
+
+The OpenAI format includes distinct APIs such as Chat Completions and Responses; Codex uses Responses, for example. Sharing a base URL does not mean a model supports every API. Check that the group and model support the requests your client sends. Complete test requests are in [Troubleshooting](/en/docs/troubleshooting#send-a-minimal-inference-request).
 
 Some models are offered as two groups, one per format, such as `DeepSeek（OpenAI格式）` and `DeepSeek（Anthropic格式）`. Choose the one matching your client when creating an API key; the wrong one returns 403 `This group does not allow ... requests`, see [Error Codes](/en/docs/errors#group-capabilities).
 

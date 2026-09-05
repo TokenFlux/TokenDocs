@@ -5,34 +5,71 @@
 ## 初步确认
 
 1. **取得完整报错**。客户端界面上的提示通常经过简化，需要 HTTP 状态码和响应中的 `message` 原文。
-2. **查看 [使用记录](https://tokenflux.dev/usage)**。请求是否到达 TokenFlux、使用的模型和 Key、返回的状态码，都可在此核对。记录中没有该请求，说明请求未发出或未到达网关。
+2. **查看 [使用记录](https://tokenflux.dev/usage)**。请求是否到达 TokenFlux、使用的模型和 Key、返回的状态码，都可在此核对。记录中没有该请求时，先核对时间范围、账号和 Key；仍查不到时，再检查客户端是否发出请求及网络连接。
 3. **确认服务在线**：
 
 ```bash
 curl https://tokenflux.dev/health
 ```
 
-返回 `{"status":"ok"}` 表示网关正常，问题在配置或账户一侧。
+返回 `{"status":"ok"}` 只说明当前网络能访问健康检查接口，不能排除具体模型、推理接口或上游服务故障。
 
 ## 单独测试 Key 和端点
 
-客户端配置项多时，先用 curl 把客户端因素排除掉。将 `$KEY` 替换为 API Key：
+以下命令使用 Bash / Zsh，Windows 可在 WSL 或 Git Bash 中执行。先在当前终端设置 `KEY` 环境变量为你的 API Key，不要把密钥写入共享脚本或反馈记录。
+
+### 查询模型列表
 
 ```bash
-curl https://tokenflux.dev/v1/models -H "authorization: Bearer $KEY"
+curl -sS -i https://tokenflux.dev/v1/models \
+  -H "Authorization: Bearer $KEY"
 ```
 
 这个请求不产生推理费用。
 
-| 返回     | 说明                                      |
-| -------- | ----------------------------------------- |
-| 模型列表 | Key、端点和分组都正常，问题出在客户端配置 |
-| `401`    | Key 本身有问题，见下方 401 一节           |
-| `403`    | 分组、余额或订阅问题，见下方 403 一节     |
+| 返回     | 能确认什么                 | 下一步                                             |
+| -------- | -------------------------- | -------------------------------------------------- |
+| 模型列表 | 本次模型列表请求通过了认证 | 用目标模型和客户端实际使用的协议发送一次请求       |
+| `401`    | 本次请求未通过认证         | 检查 Key 和请求头，见下方 401 一节                 |
+| `403`    | 本次请求被拒绝             | 按 `message` 检查分组、权限或额度，见下方 403 一节 |
 
-Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，认证头换成 `x-api-key`，并加上 `anthropic-version: 2023-06-01`。
+模型列表成功不代表推理接口、特定模型或流式响应可用。
 
-要确认某个具体模型能否调用，把模型 ID 填进 `/v1/chat/completions` 发一次真实请求，这一步会扣费。
+### 发送最小推理请求
+
+**以下请求会产生推理费用。** 将 `MODEL_ID` 替换为所选分组支持的完整模型 ID；复合 Key 使用 `前缀/模型 ID`。按客户端实际使用的接口选一个请求，不必全部执行。限定客户端的分组可能拒绝 curl，这种情况应在允许的客户端内验证。
+
+**OpenAI Chat Completions**
+
+```bash
+curl -sS -i https://tokenflux.dev/v1/chat/completions \
+  -H "Authorization: Bearer $KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"MODEL_ID","messages":[{"role":"user","content":"Reply with OK only"}],"stream":false}'
+```
+
+**OpenAI Responses（例如 Codex）**
+
+```bash
+curl -sS -i https://tokenflux.dev/v1/responses \
+  -H "Authorization: Bearer $KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"MODEL_ID","input":"Reply with OK only","stream":false}'
+```
+
+**Anthropic Messages**
+
+```bash
+curl -sS -i https://tokenflux.dev/v1/messages \
+  -H "x-api-key: $KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"MODEL_ID","max_tokens":128,"messages":[{"role":"user","content":"Reply with OK only"}],"stream":false}'
+```
+
+HTTP 2xx 且响应包含模型生成的文本，说明这一组 Key、模型和接口的非流式调用成功。Chat Completions 的文本位于 `choices`，Responses 位于 `output`，Messages 位于 `content`。再到 [使用记录](https://tokenflux.dev/usage) 核对本次模型和扣费。
+
+若 curl 成功而客户端仍失败，对比实际端点、模型 ID、Key、代理和请求参数。上述测试没有覆盖流式响应、工具调用、图片或 WebSocket，应按原故障功能继续验证。
 
 ## 连不上，或配置后没反应
 
@@ -137,7 +174,7 @@ Anthropic 格式的分组把地址换成 `https://tokenflux.dev/v1/messages`，�
 
 ## 怎么反馈
 
-自查后仍未解决时，按下方模板提供信息。
+自查后仍未解决时，按下方模板提供信息。附上发生时间（含时区）和响应中提供的请求 ID，便于定位日志。分享前移除 API Key、Authorization / Cookie 请求头及私人对话内容；截图也需脱敏。
 
 ```text
 模型 ID：

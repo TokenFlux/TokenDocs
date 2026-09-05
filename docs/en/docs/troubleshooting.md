@@ -5,34 +5,71 @@ For what a specific error code means, see [Error Codes](/en/docs/errors).
 ## Initial Checks
 
 1. **Obtain the full error.** Client interfaces usually simplify it. You need the HTTP status code and the raw `message`.
-2. **Open the [usage logs](https://tokenflux.dev/usage).** Whether the request reached TokenFlux, which model and key it used, and the status code returned can all be verified there. If the request is absent, it was never sent or never reached the gateway.
+2. **Open the [usage logs](https://tokenflux.dev/usage).** Whether the request reached TokenFlux, which model and key it used, and the status code returned can all be verified there. If the request is absent, check the time range, account, and key first. If it is still missing, check whether the client sent it and whether the network connection works.
 3. **Confirm the service is up:**
 
 ```bash
 curl https://tokenflux.dev/health
 ```
 
-`{"status":"ok"}` means the gateway is operating normally and the problem lies in configuration or the account.
+`{"status":"ok"}` only confirms that the health endpoint is reachable from your network. It does not rule out faults with a particular model, inference endpoint, or upstream service.
 
 ## Test the Key and Endpoint on Their Own
 
-When a client has many settings, use curl first to rule the client out. Replace `$KEY` with your API key:
+These commands use Bash / Zsh; on Windows, use WSL or Git Bash. Set the `KEY` environment variable to your API key in the current terminal first. Do not put the key in shared scripts or reports.
+
+### Query the Model List
 
 ```bash
-curl https://tokenflux.dev/v1/models -H "authorization: Bearer $KEY"
+curl -sS -i https://tokenflux.dev/v1/models \
+  -H "Authorization: Bearer $KEY"
 ```
 
 This request is not billed.
 
-| Response     | Meaning                                                                           |
-| ------------ | --------------------------------------------------------------------------------- |
-| A model list | The key, endpoint, and group are fine; the problem is in the client configuration |
-| `401`        | The key itself is the problem, see the 401 section below                          |
-| `403`        | A group, balance, or subscription problem, see the 403 section below              |
+| Response     | What it confirms                                  | Next step                                                              |
+| ------------ | ------------------------------------------------- | ---------------------------------------------------------------------- |
+| A model list | Authentication passed for this model-list request | Send a request using the target model and the client's actual protocol |
+| `401`        | Authentication failed for this request            | Check the key and headers; see 401 below                               |
+| `403`        | This request was rejected                         | Use `message` to check the group, permissions, or quota; see 403 below |
 
-For a group on the Anthropic format, use `https://tokenflux.dev/v1/messages`, switch the header to `x-api-key`, and add `anthropic-version: 2023-06-01`.
+A successful model list does not prove that inference, a particular model, or streaming works.
 
-To confirm a specific model works, put its ID into a `/v1/chat/completions` request. That one is billed.
+### Send a Minimal Inference Request
+
+**The following requests incur inference charges.** Replace `MODEL_ID` with a full model ID supported by the selected group; composite keys require `prefix/model-id`. Choose the endpoint your client actually uses; you do not need to run all three requests. Client-restricted groups may reject curl; verify those in an allowed client instead.
+
+**OpenAI Chat Completions**
+
+```bash
+curl -sS -i https://tokenflux.dev/v1/chat/completions \
+  -H "Authorization: Bearer $KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"MODEL_ID","messages":[{"role":"user","content":"Reply with OK only"}],"stream":false}'
+```
+
+**OpenAI Responses (for example, Codex)**
+
+```bash
+curl -sS -i https://tokenflux.dev/v1/responses \
+  -H "Authorization: Bearer $KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"MODEL_ID","input":"Reply with OK only","stream":false}'
+```
+
+**Anthropic Messages**
+
+```bash
+curl -sS -i https://tokenflux.dev/v1/messages \
+  -H "x-api-key: $KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"MODEL_ID","max_tokens":128,"messages":[{"role":"user","content":"Reply with OK only"}],"stream":false}'
+```
+
+HTTP 2xx with model-generated text confirms a successful non-streaming call for this key, model, and endpoint. Text is under `choices` for Chat Completions, `output` for Responses, and `content` for Messages. Check the model and charge in the [usage logs](https://tokenflux.dev/usage).
+
+If curl succeeds but the client fails, compare the actual endpoint, model ID, key, proxy, and request parameters. These tests do not cover streaming, tool calls, images, or WebSocket; test the original failing feature separately.
 
 ## No Connection, or Nothing Happens
 
@@ -137,7 +174,7 @@ Wait as instructed when `Retry-After` is present, otherwise back off exponential
 
 ## How to Report a Problem
 
-If self-diagnosis does not resolve the issue, provide the following information.
+If self-diagnosis does not resolve the issue, provide the following information. Include the time and time zone, and a request ID if the response provides one. Before sharing, remove API keys, Authorization / Cookie headers, and private conversation content. Redact screenshots too.
 
 ```text
 Model ID:

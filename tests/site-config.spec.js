@@ -88,6 +88,27 @@ describe('site config', () => {
     expect(enLinks.every(link => link.startsWith('/en/docs/'))).toBe(true)
   })
 
+  it('keeps task-based navigation aligned without duplicate page entries', () => {
+    const rootGroups = config.themeConfig.sidebar['/docs/']
+    const enGroups = config.locales.en.themeConfig.sidebar['/en/docs/']
+    expect(rootGroups.map(group => group.text)).toEqual([
+      '开始使用',
+      'API 接入',
+      '账户与费用',
+      '编程客户端',
+      '对话客户端',
+      '故障处理',
+      '条款与政策',
+    ])
+    expect(enGroups.map(group => group.items.map(item => item.link.replace('/en/', '/')))).toEqual(
+      rootGroups.map(group => group.items.map(item => item.link)),
+    )
+    const links = getSidebarLinks(config.themeConfig.sidebar, '/docs/')
+    expect(new Set(links).size).toBe(links.length)
+    expect(rootGroups[0].items.map(item => item.link)).toContain('/docs/tokenflux/create-apikey')
+    expect(rootGroups[0].items.map(item => item.link)).not.toContain('/docs/verification-policy')
+  })
+
   it('promotes dynamic page titles into page data', () => {
     const pageData = {
       relativePath: 'docs/quickstart.md',

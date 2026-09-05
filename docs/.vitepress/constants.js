@@ -27,6 +27,7 @@ export const APP_PATHS = [
   '/v1/chat/completions',
   '/v1/messages',
   '/v1/models',
+  '/v1/responses',
 ]
 
 export const OPENAI_BASE_URL = `${APP_ORIGIN}/v1`

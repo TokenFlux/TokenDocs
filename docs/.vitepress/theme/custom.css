@@ -1,22 +1,22 @@
-.vp-doc div[class*="language-"].code-block-collapsible {
+.vp-doc div[class*='language-'].code-block-collapsible {
   position: relative;
 }
 
-.vp-doc div[class*="language-"].code-block-collapsible pre {
+.vp-doc div[class*='language-'].code-block-collapsible pre {
   transition: max-height 0.2s ease;
 }
 
-.vp-doc div[class*="language-"].code-block-collapsible.code-block-collapsed pre {
+.vp-doc div[class*='language-'].code-block-collapsible.code-block-collapsed pre {
   max-height: 30rem;
   overflow: hidden;
 }
 
-.vp-doc div[class*="language-"].code-block-collapsible.code-block-expanded pre {
+.vp-doc div[class*='language-'].code-block-collapsible.code-block-expanded pre {
   max-height: none;
   overflow: auto;
 }
 
-.vp-doc div[class*="language-"].code-block-collapsible.code-block-collapsed::after {
+.vp-doc div[class*='language-'].code-block-collapsible.code-block-collapsed::after {
   content: '';
   position: absolute;
   left: 0;
@@ -69,6 +69,12 @@
   color: var(--vp-c-text-3);
   font-size: 0.85rem;
   line-height: 1.2;
+}
+
+.doc-verified-at__scope {
+  margin: 0.35rem 0 0;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .markdown-link-tools {

@@ -30,27 +30,23 @@ export const enNavItems = [
 export const sidebar = {
   '/docs/': [
     {
-      text: 'Docs',
+      text: '开始使用',
       items: [
         { text: '快速开始', link: '/docs/quickstart' },
         { text: '核心概念', link: '/docs/concepts' },
-        { text: '排障', link: '/docs/troubleshooting' },
-        { text: '错误码', link: '/docs/errors' },
-        { text: 'FAQ', link: '/docs/faq' },
-        { text: '维护策略', link: '/docs/verification-policy' },
+        { text: '创建 API Key', link: '/docs/tokenflux/create-apikey' },
       ],
     },
     {
-      text: 'API Key',
+      text: 'API 接入',
       items: [
-        { text: '创建 API Key', link: '/docs/tokenflux/create-apikey' },
         { text: 'API 端点', link: '/docs/tokenflux/endpoints' },
         { text: '复合 Key', link: '/docs/tokenflux/composite-key' },
         { text: 'Fast 模式', link: '/docs/tokenflux/fast-mode' },
       ],
     },
     {
-      text: 'TokenFlux',
+      text: '账户与费用',
       items: [
         { text: '计费说明', link: '/docs/tokenflux/billing' },
         { text: '发票说明', link: '/docs/tokenflux/invoice' },
@@ -59,7 +55,7 @@ export const sidebar = {
       ],
     },
     {
-      text: 'Agents',
+      text: '编程客户端',
       items: [
         { text: 'CC-Switch', link: '/docs/agents/cc-switch' },
         { text: 'Claude Code', link: '/docs/agents/claude-code' },
@@ -72,10 +68,18 @@ export const sidebar = {
       ],
     },
     {
-      text: 'ChatBot',
+      text: '对话客户端',
       items: [
         { text: 'Cherry Studio', link: '/docs/chatbot/cherry-studio' },
         { text: 'RikkaHub', link: '/docs/chatbot/rikkahub' },
+      ],
+    },
+    {
+      text: '故障处理',
+      items: [
+        { text: '排障', link: '/docs/troubleshooting' },
+        { text: '错误码', link: '/docs/errors' },
+        { text: 'FAQ', link: '/docs/faq' },
       ],
     },
     {
@@ -92,27 +96,23 @@ export const sidebar = {
 export const enSidebar = {
   '/en/docs/': [
     {
-      text: 'Docs',
+      text: 'Getting Started',
       items: [
         { text: 'Quickstart', link: '/en/docs/quickstart' },
         { text: 'Core Concepts', link: '/en/docs/concepts' },
-        { text: 'Troubleshooting', link: '/en/docs/troubleshooting' },
-        { text: 'Error Codes', link: '/en/docs/errors' },
-        { text: 'FAQ', link: '/en/docs/faq' },
-        { text: 'Maintenance Policy', link: '/en/docs/verification-policy' },
+        { text: 'Create API Key', link: '/en/docs/tokenflux/create-apikey' },
       ],
     },
     {
-      text: 'API Key',
+      text: 'API Integration',
       items: [
-        { text: 'Create API Key', link: '/en/docs/tokenflux/create-apikey' },
         { text: 'API Endpoints', link: '/en/docs/tokenflux/endpoints' },
         { text: 'Composite Key', link: '/en/docs/tokenflux/composite-key' },
         { text: 'Fast Mode', link: '/en/docs/tokenflux/fast-mode' },
       ],
     },
     {
-      text: 'TokenFlux',
+      text: 'Account & Billing',
       items: [
         { text: 'Billing', link: '/en/docs/tokenflux/billing' },
         { text: 'Invoices', link: '/en/docs/tokenflux/invoice' },
@@ -121,7 +121,7 @@ export const enSidebar = {
       ],
     },
     {
-      text: 'Agents',
+      text: 'Coding Clients',
       items: [
         { text: 'CC-Switch', link: '/en/docs/agents/cc-switch' },
         { text: 'Claude Code', link: '/en/docs/agents/claude-code' },
@@ -134,10 +134,18 @@ export const enSidebar = {
       ],
     },
     {
-      text: 'ChatBot',
+      text: 'Chat Clients',
       items: [
         { text: 'Cherry Studio', link: '/en/docs/chatbot/cherry-studio' },
         { text: 'RikkaHub', link: '/en/docs/chatbot/rikkahub' },
+      ],
+    },
+    {
+      text: 'Troubleshooting',
+      items: [
+        { text: 'Troubleshooting', link: '/en/docs/troubleshooting' },
+        { text: 'Error Codes', link: '/en/docs/errors' },
+        { text: 'FAQ', link: '/en/docs/faq' },
       ],
     },
     {

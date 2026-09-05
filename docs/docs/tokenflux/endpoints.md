@@ -6,7 +6,7 @@
 
 | 协议格式       | Base URL                   | 典型请求路径                                    |
 | -------------- | -------------------------- | ----------------------------------------------- |
-| OpenAI 格式    | `https://tokenflux.dev/v1` | `POST /chat/completions`                        |
+| OpenAI 格式    | `https://tokenflux.dev/v1` | `POST /chat/completions` 或 `POST /responses`   |
 | Anthropic 格式 | `https://tokenflux.dev`    | `POST /v1/messages`                             |
 | Gemini 格式    | `https://tokenflux.dev`    | `POST /v1beta/models/<模型 ID>:generateContent` |
 
@@ -26,7 +26,9 @@ OpenAI 格式和 Anthropic 格式的端点可在 [API 密钥页面](https://toke
 | Anthropic 格式（无 `/v1`） | `Claude Code` 等原生走 Anthropic 协议的客户端                    |
 | Gemini 格式                | 使用 Google 原生协议的客户端和 SDK，模型 ID 写在请求路径里       |
 
-客户端配置项写 `ANTHROPIC_BASE_URL` 的用 Anthropic 格式，写 `OPENAI_BASE_URL` 或 `Base URL` 的用 OpenAI 格式。具体填法各接入教程里都有写明。
+客户端配置项写 `ANTHROPIC_BASE_URL` 的用 Anthropic 格式，写 `OPENAI_BASE_URL` 的用 OpenAI 格式。`Base URL` 是通用字段名，不能据此判断协议，应先确认所选供应商类型。具体填法各接入教程里都有写明。
+
+OpenAI 格式包含 Chat Completions 和 Responses 等不同接口；例如 Codex 使用 Responses。Base URL 相同不代表模型支持所有接口，需确认分组和模型支持客户端实际发送的请求。完整测试请求见 [排障](/docs/troubleshooting#发送最小推理请求)。
 
 部分模型提供两个分组，分别对应 OpenAI 格式和 Anthropic 格式，例如 `DeepSeek（OpenAI格式）` 和 `DeepSeek（Anthropic格式）`。创建 API Key 时按客户端选择对应格式的分组，选错返回 403 `This group does not allow ... requests`，见 [错误码](/docs/errors#分组能力限制)。
 

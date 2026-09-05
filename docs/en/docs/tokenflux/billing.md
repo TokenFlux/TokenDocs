@@ -4,7 +4,7 @@ TokenFlux uses `🍥` inference credits as the billing unit. **Prices shown in t
 
 ## How Prices Are Calculated
 
-A request is billed as input, output, and cache, each with its own unit price.
+Token-billed models charge for input, output, and cache usage. Check both the unit and the applicable context-length tier; `1M Token` in the marketplace means 1,000,000 tokens. Other billing methods, such as image pricing, follow the individual model's price description.
 
 ### Group Multiplier
 
@@ -20,19 +20,24 @@ A group is a property of an API key and is unrelated to the subscription plans b
 
 **Example**
 
-Suppose a model's base prices are:
+These hypothetical prices are not a current quote for any model. All prices are in inference credits per 1M tokens:
 
-- Input: `2.5🍥`
-- Output: `15🍥`
-- Cache: `0.25🍥`
+| Item   | Base price | Group multiplier | Final unit price |
+| ------ | ---------- | ---------------- | ---------------- |
+| Input  | 2.5        | 1.3              | 3.25             |
+| Output | 15         | 1.3              | 19.5             |
 
-With a group multiplier of `1.3`, the final prices are:
+Suppose a request has 10,000 input tokens and 2,000 output tokens, with no cache usage or Fast Mode, and all tokens fall within the price tier above:
 
-- Input: `3.25🍥` (2.5 × 1.3)
-- Output: `19.5🍥` (15 × 1.3)
-- Cache: `0.325🍥` (0.25 × 1.3)
+```text
+Input cost = 10,000 / 1,000,000 × 3.25 = 0.0325 inference credits
+Output cost = 2,000 / 1,000,000 × 19.5 = 0.039 inference credits
+Total = 0.0715 inference credits
+```
 
-These are the prices shown in the model marketplace. Check the [model marketplace](https://tokenflux.dev/models) for actual model prices and group multipliers.
+For actual calculations, use the final prices in the [model marketplace](https://tokenflux.dev/models), which already include the multiplier. For cached requests, check whether the protocol's input count includes cached tokens and which cache read/write prices apply, so overlapping counts are not added twice. Refer to the [usage logs](https://tokenflux.dev/usage) for actual charges.
+
+Inference credits are not CNY amounts. Check the amount payable and the allowance received on the [top-up/subscription page](https://tokenflux.dev/purchase); transaction fees are described below.
 
 ## Purchase Methods
 
