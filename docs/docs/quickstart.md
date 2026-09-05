@@ -31,6 +31,7 @@ TokenFlux 是统一的大语言模型接口：通过统一的 API Key 在各类�
 | Codex       | OpenAI 官方 CLI 与桌面端     | [教程](/docs/agents/codex)           |
 | Codex++     | 给 Codex 加装增强能力        | [教程](/docs/agents/codex-plus-plus) |
 | OpenCode    | 开源终端 Agent，多模型切换   | [教程](/docs/agents/opencode)        |
+| Pi          | 可扩展的终端编程 Agent       | [教程](/docs/agents/pi)              |
 | Hermes      | 轻量终端 Agent               | [教程](/docs/agents/hermes)          |
 
   </DocsTab>

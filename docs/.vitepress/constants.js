@@ -87,6 +87,7 @@ export const ALLOWED_EXTERNAL_HOSTS = [
   'github.com',
   'opencode.ai',
   'persistent.oaistatic.com',
+  'pi.dev',
   'raw.githubusercontent.com',
   'rikka-ai.com',
   'tokenflux.dev',

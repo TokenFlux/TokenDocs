@@ -31,6 +31,7 @@ Install [CC-Switch](/en/docs/agents/cc-switch) first. It manages API keys and pr
 | Codex       | OpenAI's official CLI and desktop app           | [Guide](/en/docs/agents/codex)           |
 | Codex++     | Adds extra capabilities on top of Codex         | [Guide](/en/docs/agents/codex-plus-plus) |
 | OpenCode    | Open-source terminal agent with model switching | [Guide](/en/docs/agents/opencode)        |
+| Pi          | Extensible terminal coding agent                | [Guide](/en/docs/agents/pi)              |
 | Hermes      | Lightweight terminal agent                      | [Guide](/en/docs/agents/hermes)          |
 
   </DocsTab>
