@@ -23,7 +23,7 @@ For groups, account pools, inference credits, and other terms, see [Core Concept
 
 Best for terminal workflows, programming tasks, or users who want AI Agent assistance while developing.
 
-Follow the guide for your client. [CC-Switch](/en/docs/agents/cc-switch) is an optional way to manage provider settings for clients such as Claude Code and Codex; it is not a prerequisite.
+Follow the guide for your client. To manage keys and models together, use [tf-cli](/en/docs/tokenflux/tf-cli) to launch clients through `tf` in the terminal. For graphical provider configuration, use [CC-Switch](/en/docs/agents/cc-switch). Neither tool is a prerequisite.
 
 | Client guide                               | Best for                                        |
 | ------------------------------------------ | ----------------------------------------------- |

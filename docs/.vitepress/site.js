@@ -57,6 +57,7 @@ export const sidebar = {
     {
       text: '编程客户端',
       items: [
+        { text: 'tf-cli', link: '/docs/tokenflux/tf-cli' },
         { text: 'CC-Switch', link: '/docs/agents/cc-switch' },
         { text: 'Claude Code', link: '/docs/agents/claude-code' },
         { text: 'Codex', link: '/docs/agents/codex' },
@@ -123,6 +124,7 @@ export const enSidebar = {
     {
       text: 'Coding Clients',
       items: [
+        { text: 'tf-cli', link: '/en/docs/tokenflux/tf-cli' },
         { text: 'CC-Switch', link: '/en/docs/agents/cc-switch' },
         { text: 'Claude Code', link: '/en/docs/agents/claude-code' },
         { text: 'Codex', link: '/en/docs/agents/codex' },

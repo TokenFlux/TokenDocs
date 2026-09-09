@@ -81,9 +81,11 @@ describe('site config', () => {
 
     expect(rootLinks).toContain('/docs/quickstart')
     expect(rootLinks).toContain('/docs/agents/workbuddy')
+    expect(rootLinks).toContain('/docs/tokenflux/tf-cli')
     expect(rootLinks).toContain('/docs/tos/supported-countries')
     expect(enLinks).toContain('/en/docs/quickstart')
     expect(enLinks).toContain('/en/docs/agents/workbuddy')
+    expect(enLinks).toContain('/en/docs/tokenflux/tf-cli')
     expect(enLinks).toContain('/en/docs/tos/supported-countries')
     expect(enLinks.every(link => link.startsWith('/en/docs/'))).toBe(true)
   })
