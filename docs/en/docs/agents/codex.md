@@ -194,6 +194,6 @@ The skill confirms the target models, raw window size, effective-window percenta
 
 ## About codex-auto-review
 
-To remove any ambiguity, `codex-auto-review` now redirects to `gpt-5.6-sol` by default.
+To remove any ambiguity, `codex-auto-review` now redirects to `gpt-5.6-terra` by default.
 
 Model routing is live, so you can redirect it yourself to `gpt-5.6-terra` on the [API keys page](https://tokenflux.dev/keys) to lower your costs.

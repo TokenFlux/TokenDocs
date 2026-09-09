@@ -194,6 +194,6 @@ Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和�
 
 ## 关于 codex-auto-review
 
-为消除歧义，`codex-auto-review` 现已默认重定向到 `gpt-5.6-sol`。
+为消除歧义，`codex-auto-review` 现已默认重定向到 `gpt-5.6-terra`。
 
 模型路由功能已经上线，可以在 [API 密钥页面](https://tokenflux.dev/keys) 自助把它重定向到 `gpt-5.6-terra`，以降低花费。
