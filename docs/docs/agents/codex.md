@@ -172,7 +172,7 @@ git clone https://github.com/smartcmd/codex-context-window.git ~/.codex/skills/c
 ```text
 安装这个 Skill：https://github.com/smartcmd/codex-context-window
 
-然后将 gpt-5.6-luna、gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
+然后将 gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
 ```
 
 ### 配置模型
@@ -180,7 +180,7 @@ git clone https://github.com/smartcmd/codex-context-window.git ~/.codex/skills/c
 新开一个任务让 `Codex` 发现 Skill，然后发送：
 
 ```text
-将 gpt-5.6-luna、gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
+将 gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
 ```
 
 Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和自动压缩策略，确认后才写入配置。有效比例保持默认的 `95%` 即可（1M 原始窗口对应可用上下文为 `950000` token，状态栏显示折算后的数值）。配置完成后重启 `Codex`。
@@ -196,4 +196,4 @@ Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和�
 
 为消除歧义，`codex-auto-review` 现已默认重定向到 `gpt-5.6-sol`。
 
-模型路由功能已经上线，可以在 [API 密钥页面](https://tokenflux.dev/keys) 自助把它重定向到 `gpt-5.6-terra` 或 `gpt-5.6-luna`，以降低花费。
+模型路由功能已经上线，可以在 [API 密钥页面](https://tokenflux.dev/keys) 自助把它重定向到 `gpt-5.6-terra`，以降低花费。

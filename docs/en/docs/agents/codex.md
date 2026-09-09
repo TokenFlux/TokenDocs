@@ -172,7 +172,7 @@ You can also send the following to `Codex` and let it handle installation and co
 ```text
 Install this skill: https://github.com/smartcmd/codex-context-window
 
-Then set the context window of gpt-5.6-luna, gpt-5.6-terra, and gpt-5.6-sol to 1M, with the auto-compaction threshold at 900k.
+Then set the context window of gpt-5.6-terra and gpt-5.6-sol to 1M, with the auto-compaction threshold at 900k.
 ```
 
 ### Configure the Models
@@ -180,7 +180,7 @@ Then set the context window of gpt-5.6-luna, gpt-5.6-terra, and gpt-5.6-sol to 1
 Start a new task so `Codex` discovers the skill, then send:
 
 ```text
-Set the context window of gpt-5.6-luna, gpt-5.6-terra, and gpt-5.6-sol to 1M, with the auto-compaction threshold at 900k.
+Set the context window of gpt-5.6-terra and gpt-5.6-sol to 1M, with the auto-compaction threshold at 900k.
 ```
 
 The skill confirms the target models, raw window size, effective-window percentage, and auto-compaction policy before writing anything. Leave the effective percentage at its default of `95%` (a 1M raw window gives `950000` usable tokens, matching the status bar display). Restart `Codex` once it is done.
@@ -196,4 +196,4 @@ The skill confirms the target models, raw window size, effective-window percenta
 
 To remove any ambiguity, `codex-auto-review` now redirects to `gpt-5.6-sol` by default.
 
-Model routing is live, so you can redirect it yourself to `gpt-5.6-terra` or `gpt-5.6-luna` on the [API keys page](https://tokenflux.dev/keys) to lower your costs.
+Model routing is live, so you can redirect it yourself to `gpt-5.6-terra` on the [API keys page](https://tokenflux.dev/keys) to lower your costs.

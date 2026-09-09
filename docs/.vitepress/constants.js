@@ -49,7 +49,6 @@ export const SAMPLE_MODEL_IDS = [
   'claude-sonnet-4',
   'gemini-2.5-pro',
   'gemini-3.1-flash-image',
-  'gpt-5.6-luna',
   'gpt-5.6-sol',
   'gpt-5.6-terra',
   'nano-banana-pro',
