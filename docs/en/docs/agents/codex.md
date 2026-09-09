@@ -154,6 +154,7 @@ Notes:
 - The provider id `tokenflux` (used by `model_provider` and `[model_providers.tokenflux]`) is not affected and stays unchanged.
 - This setting does not lose your existing chat history.
 
+<!--
 ## 1M Context Window
 
 The `ChatGPT` groups now fully support a one-million-token context, and enabling it is recommended.
@@ -188,6 +189,8 @@ The skill confirms the target models, raw window size, effective-window percenta
 
 - `Codex App`: enable **Show context window usage** under **Settings → General → Editor**, then start a new message to see the window size.
 - `Codex CLI`: run `/status` and check the **Context window** field.
+
+-->
 
 ## About codex-auto-review
 

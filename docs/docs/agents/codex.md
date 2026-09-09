@@ -154,6 +154,7 @@ responses_websockets_v2 = true
 - provider 标识 `tokenflux`（即 `model_provider` 和 `[model_providers.tokenflux]`）不受影响，保持不变。
 - 这个设置不会丢失已有聊天记录。
 
+<!--
 ## 1M 上下文窗口
 
 `ChatGPT` 分组已全面支持 100 万上下文，推荐开启。
@@ -188,6 +189,8 @@ Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和�
 
 - `Codex App`：在 **设置 → 常规 → 编辑器** 中开启 **显示上下文窗口使用情况**，新开一条消息即可看到窗口大小。
 - `Codex CLI`：输入 `/status`，在输出中查看 **Context window**。
+
+-->
 
 ## 关于 codex-auto-review
 
