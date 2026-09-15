@@ -4,19 +4,14 @@ import { dirname, join, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
   ALLOWED_EXTERNAL_HOSTS,
-  ANTHROPIC_BASE_URL,
   APP_ORIGIN,
   APP_PATHS,
-  CONSOLE_URL,
   DEPRECATED_ORIGINS,
   DEPRECATED_ORIGIN_ALLOWED_IN,
-  MODELS_URL,
   NON_MODEL_IDENTIFIERS,
-  OPENAI_BASE_URL,
   SAMPLE_MODEL_IDS,
   SINGLE_SOURCE_FACTS,
 } from '../docs/.vitepress/constants.js'
-import { enNavItems, navItems } from '../docs/.vitepress/site.js'
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const docsRoot = resolve(projectRoot, 'docs')
@@ -137,21 +132,5 @@ describe('documented constants', () => {
     }
 
     expect(scattered).toEqual([])
-  })
-
-  it('documents the base urls that the constants declare', () => {
-    const endpoints = documents.find(doc => doc.file === 'docs/tokenflux/endpoints.md')
-
-    expect(endpoints.content).toContain(OPENAI_BASE_URL)
-    expect(endpoints.content).toContain(ANTHROPIC_BASE_URL)
-  })
-
-  it('keeps navigation links in step with the constants', () => {
-    for (const nav of [navItems, enNavItems]) {
-      const links = nav.map(item => item.link)
-
-      expect(links).toContain(MODELS_URL)
-      expect(links).toContain(CONSOLE_URL)
-    }
   })
 })

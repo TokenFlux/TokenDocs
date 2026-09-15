@@ -30,8 +30,6 @@ export const APP_PATHS = [
   '/v1/responses',
 ]
 
-export const OPENAI_BASE_URL = `${APP_ORIGIN}/v1`
-export const ANTHROPIC_BASE_URL = APP_ORIGIN
 export const CONSOLE_URL = `${APP_ORIGIN}/dashboard`
 export const MODELS_URL = `${APP_ORIGIN}/models`
 
