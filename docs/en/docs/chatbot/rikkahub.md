@@ -47,7 +47,6 @@ If the model list does not refresh, rule the client out with [Test the Key and E
 
 After completing configuration, you can start model conversations directly in `RikkaHub`.
 
-<!--
 ## Image Generation
 
 > Prerequisite: You have completed TokenFlux setup above and imported a model that supports image generation.
@@ -69,7 +68,6 @@ After completing configuration, you can start model conversations directly in `R
    <div style="text-align: center;">
      <img src="/images/rikkahub/step-3-select-model.png" alt="RikkaHub selecting a model on the image generation page" />
    </div>
--->
 
 ## More Related Content
 
