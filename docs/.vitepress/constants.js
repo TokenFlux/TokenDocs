@@ -48,6 +48,7 @@ export const SAMPLE_MODEL_IDS = [
   'gemini-2.5-pro',
   'gemini-3.1-flash-image',
   'gpt-5.6-terra',
+  'gpt-image-2',
   'gpt-6-astra',
   'nano-banana-pro',
 ]

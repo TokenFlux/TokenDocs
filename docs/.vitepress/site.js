@@ -76,6 +76,10 @@ export const sidebar = {
       ],
     },
     {
+      text: '图像创作',
+      items: [{ text: '创作台', link: '/docs/tokenflux/creative' }],
+    },
+    {
       text: '故障处理',
       items: [
         { text: '排障', link: '/docs/troubleshooting' },
@@ -141,6 +145,10 @@ export const enSidebar = {
         { text: 'Cherry Studio', link: '/en/docs/chatbot/cherry-studio' },
         { text: 'RikkaHub', link: '/en/docs/chatbot/rikkahub' },
       ],
+    },
+    {
+      text: 'Image Creation',
+      items: [{ text: 'Creative Studio', link: '/en/docs/tokenflux/creative' }],
     },
     {
       text: 'Troubleshooting',
