@@ -46,14 +46,14 @@
 
 ```json
 {
-  "model": "GPT/gpt-5",
+  "model": "GPT/gpt-6-astra",
   "messages": [{ "role": "user", "content": "Hello" }]
 }
 ```
 
 按上面的绑定，两个分组分别这样调用：
 
-- `GPT/gpt-5` — 走 OpenAI 分组
+- `GPT/gpt-6-astra` — 走 OpenAI 分组
 - `Claude/claude-sonnet-4` — 走 Anthropic 分组
 
 ::: warning 只按第一个斜杠拆分

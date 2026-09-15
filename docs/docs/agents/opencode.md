@@ -98,7 +98,7 @@ scoop install opencode
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "openai/gpt-5.6-sol",
+  "model": "openai/gpt-6-astra",
   "provider": {
     "openai": {
       "options": {

@@ -100,8 +100,8 @@ Codex CLI 与官方 IDE 扩展共享 `config.toml` 配置层。通过 Zed 的 Co
 
 ```toml
 model_provider = "tokenflux"
-model = "gpt-5.6-sol"
-review_model = "gpt-5.6-sol"
+model = "gpt-6-astra"
+review_model = "gpt-6-astra"
 model_reasoning_effort = "xhigh"
 disable_response_storage = true
 network_access = "enabled"
@@ -172,7 +172,7 @@ git clone https://github.com/smartcmd/codex-context-window.git ~/.codex/skills/c
 ```text
 安装这个 Skill：https://github.com/smartcmd/codex-context-window
 
-然后将 gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
+然后将 gpt-5.6-terra、gpt-6-astra 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
 ```
 
 ### 配置模型
@@ -180,7 +180,7 @@ git clone https://github.com/smartcmd/codex-context-window.git ~/.codex/skills/c
 新开一个任务让 `Codex` 发现 Skill，然后发送：
 
 ```text
-将 gpt-5.6-terra、gpt-5.6-sol 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
+将 gpt-5.6-terra、gpt-6-astra 的上下文窗口调整为 1M，自动压缩阈值设置为 900k。
 ```
 
 Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和自动压缩策略，确认后才写入配置。有效比例保持默认的 `95%` 即可（1M 原始窗口对应可用上下文为 `950000` token，状态栏显示折算后的数值）。配置完成后重启 `Codex`。

@@ -23,7 +23,7 @@ After installation, the default config directory is usually `~/.hermes`.
 
    ```yaml
    model:
-     default: 'gpt-5.6-sol'
+     default: 'gpt-6-astra'
      provider: 'custom'
      base_url: 'https://tokenflux.dev/v1'
    ```

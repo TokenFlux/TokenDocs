@@ -98,7 +98,7 @@ Copy the following content into `opencode.json` and replace `YOUR_API_KEY` with 
 ```json
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "openai/gpt-5.6-sol",
+  "model": "openai/gpt-6-astra",
   "provider": {
     "openai": {
       "options": {

@@ -81,14 +81,14 @@ Then complete the form:
 | Provider        | `Custom`                                                              |
 | Endpoint        | `https://tokenflux.dev/v1/chat/completions`                           |
 | API Key         | TokenFlux API key                                                     |
-| Model Name      | The exact model ID from the marketplace, such as `gpt-5.6-sol`        |
-| Tool Calling    | Enable it; `gpt-5.6-sol`, used in this guide, supports tool calling   |
+| Model Name      | The exact model ID from the marketplace, such as `gpt-6-astra`        |
+| Tool Calling    | Enable it; `gpt-6-astra`, used in this guide, supports tool calling   |
 | Image Input     | Enable it so WorkBuddy can send images to the model                   |
-| Reasoning       | Enable it to use the reasoning capability of `gpt-5.6-sol`            |
+| Reasoning       | Enable it to use the reasoning capability of `gpt-6-astra`            |
 | Custom Protocol | Leave disabled to use the OpenAI Chat Completions-compatible protocol |
 
 <div style="text-align: center;">
-  <img src="/images/workbuddy/07-tokenflux-configuration.png" width="538" alt="WorkBuddy custom model form configured for TokenFlux and gpt-5.6-sol with required fields outlined in red" />
+  <img src="/images/workbuddy/07-tokenflux-configuration.png" width="538" alt="WorkBuddy custom model form configured for TokenFlux and gpt-6-astra with required fields outlined in red" />
 </div>
 
 ::: tip Enter the complete endpoint
@@ -99,7 +99,7 @@ In WorkBuddy 5.3.5, the field did not append the request path when it lost focus
 When enabled, WorkBuddy skips standard OpenAI Chat Completions path validation. It is intended for non-standard gateway or proxy routes and is not required for TokenFlux's standard OpenAI-compatible endpoint.
 :::
 
-When using a [composite key](/en/docs/tokenflux/composite-key), include the group prefix in the model name, for example `GPT/gpt-5`. The prefix and model ID must exactly match the composite-key mapping.
+When using a [composite key](/en/docs/tokenflux/composite-key), include the group prefix in the model name, for example `GPT/gpt-6-astra`. The prefix and model ID must exactly match the composite-key mapping.
 
 ### 4. Save and Verify
 
@@ -109,22 +109,22 @@ When using a [composite key](/en/docs/tokenflux/composite-key), include the grou
      <img src="/images/workbuddy/08-save-model.png" width="538" alt="WorkBuddy custom model form with the Save button outlined in red" />
    </div>
 
-2. After saving, confirm that `gpt-5.6-sol` appears under **Saved Models**.
+2. After saving, confirm that `gpt-6-astra` appears under **Saved Models**.
 
    <div style="text-align: center;">
-     <img src="/images/workbuddy/09-saved-model.png" width="925" alt="The gpt-5.6-sol card outlined in red in WorkBuddy's Saved Models list" />
+     <img src="/images/workbuddy/09-saved-model.png" width="925" alt="The gpt-6-astra card outlined in red in WorkBuddy's Saved Models list" />
    </div>
 
-3. Return to a new task, open the model selector, and choose `gpt-5.6-sol` under **Custom Models**.
+3. Return to a new task, open the model selector, and choose `gpt-6-astra` under **Custom Models**.
 
    <div style="text-align: center;">
-     <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="The gpt-5.6-sol custom model outlined in red in WorkBuddy's model selector" />
+     <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="The gpt-6-astra custom model outlined in red in WorkBuddy's model selector" />
    </div>
 
-4. Send a minimal test message. The captured run used `你好` ("Hello"); it completed in 6 seconds, and the response footer identified `gpt-5.6-sol` as the active model.
+4. Send a minimal test message. The captured run used `你好` ("Hello"); it completed in 6 seconds, and the response footer identified `gpt-6-astra` as the active model.
 
    <div style="text-align: center;">
-     <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy successfully responding with gpt-5.6-sol, with the model name in the response footer outlined in red" />
+     <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy successfully responding with gpt-6-astra, with the model name in the response footer outlined in red" />
    </div>
 
 5. Once basic chat succeeds, test a tool-enabled task, such as asking WorkBuddy to create and read a text file in a temporary directory.

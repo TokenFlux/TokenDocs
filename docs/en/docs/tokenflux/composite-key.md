@@ -46,14 +46,14 @@ Write the model ID as `prefix/model ID`:
 
 ```json
 {
-  "model": "GPT/gpt-5",
+  "model": "GPT/gpt-6-astra",
   "messages": [{ "role": "user", "content": "Hello" }]
 }
 ```
 
 With the bindings above, the two groups are called like this:
 
-- `GPT/gpt-5` - routed to the OpenAI group
+- `GPT/gpt-6-astra` - routed to the OpenAI group
 - `Claude/claude-sonnet-4` - routed to the Anthropic group
 
 ::: warning Only the first slash is used

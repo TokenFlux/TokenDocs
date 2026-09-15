@@ -81,14 +81,14 @@ WorkBuddy 会在模型页面显示实际的本地配置文件路径。WorkBuddy 
 | 提供商     | `自定义 / Custom`                                  |
 | 接口地址   | `https://tokenflux.dev/v1/chat/completions`        |
 | API Key    | TokenFlux API Key                                  |
-| 模型名称   | 模型广场显示的精确模型 ID，例如 `gpt-5.6-sol`      |
-| 工具调用   | 开启；本教程使用的 `gpt-5.6-sol` 支持 Tool Calling |
+| 模型名称   | 模型广场显示的精确模型 ID，例如 `gpt-6-astra`      |
+| 工具调用   | 开启；本教程使用的 `gpt-6-astra` 支持 Tool Calling |
 | 图片输入   | 开启；允许 WorkBuddy 向模型发送图片                |
-| 思考模式   | 开启；使用 `gpt-5.6-sol` 的 reasoning 能力         |
+| 思考模式   | 开启；使用 `gpt-6-astra` 的 reasoning 能力         |
 | 自定义协议 | 保持关闭，使用 OpenAI Chat Completions 兼容协议    |
 
 <div style="text-align: center;">
-  <img src="/images/workbuddy/07-tokenflux-configuration.png" width="538" alt="WorkBuddy 中已填写 TokenFlux 接口和 gpt-5.6-sol 模型的自定义模型表单，必填项已用红框标出" />
+  <img src="/images/workbuddy/07-tokenflux-configuration.png" width="538" alt="WorkBuddy 中已填写 TokenFlux 接口和 gpt-6-astra 模型的自定义模型表单，必填项已用红框标出" />
 </div>
 
 ::: tip 使用完整接口地址
@@ -99,7 +99,7 @@ WorkBuddy 5.3.5 实测不会在输入框失去焦点时把 `/v1` 自动补全为
 开启后 WorkBuddy 会跳过标准 OpenAI Chat Completions 路径校验。该选项用于非标准网关或代理路径，TokenFlux 的标准 OpenAI-compatible 接口不需要开启。
 :::
 
-如果使用 [复合 Key](/docs/tokenflux/composite-key)，模型名称还要带上分组前缀，例如 `GPT/gpt-5`。前缀和模型 ID 必须与复合 Key 映射完全一致。
+如果使用 [复合 Key](/docs/tokenflux/composite-key)，模型名称还要带上分组前缀，例如 `GPT/gpt-6-astra`。前缀和模型 ID 必须与复合 Key 映射完全一致。
 
 ### 4. 保存并验证
 
@@ -109,22 +109,22 @@ WorkBuddy 5.3.5 实测不会在输入框失去焦点时把 `/v1` 自动补全为
      <img src="/images/workbuddy/08-save-model.png" width="538" alt="WorkBuddy 自定义模型表单，保存按钮已用红框标出" />
    </div>
 
-2. 保存后，确认 `gpt-5.6-sol` 出现在 **已保存模型** 中。
+2. 保存后，确认 `gpt-6-astra` 出现在 **已保存模型** 中。
 
    <div style="text-align: center;">
-     <img src="/images/workbuddy/09-saved-model.png" width="925" alt="WorkBuddy 已保存模型列表中的 gpt-5.6-sol 模型卡片，目标卡片已用红框标出" />
+     <img src="/images/workbuddy/09-saved-model.png" width="925" alt="WorkBuddy 已保存模型列表中的 gpt-6-astra 模型卡片，目标卡片已用红框标出" />
    </div>
 
-3. 返回新任务，打开模型选择器，在 **自定义模型** 中选择 `gpt-5.6-sol`。
+3. 返回新任务，打开模型选择器，在 **自定义模型** 中选择 `gpt-6-astra`。
 
    <div style="text-align: center;">
-     <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="WorkBuddy 模型选择器中的 gpt-5.6-sol 自定义模型，目标选项已用红框标出" />
+     <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="WorkBuddy 模型选择器中的 gpt-6-astra 自定义模型，目标选项已用红框标出" />
    </div>
 
-4. 发送一条最小测试消息，例如 `你好`。实测请求在 6 秒内完成，响应底部显示使用的模型为 `gpt-5.6-sol`。
+4. 发送一条最小测试消息，例如 `你好`。实测请求在 6 秒内完成，响应底部显示使用的模型为 `gpt-6-astra`。
 
    <div style="text-align: center;">
-     <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy 使用 gpt-5.6-sol 成功回复测试消息，响应底部的模型名称已用红框标出" />
+     <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy 使用 gpt-6-astra 成功回复测试消息，响应底部的模型名称已用红框标出" />
    </div>
 
 5. 基础对话验证成功后，再测试需要工具调用的任务，例如让 WorkBuddy 在一个临时目录中创建文本文件并读取回来。

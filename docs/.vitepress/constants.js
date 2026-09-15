@@ -49,16 +49,13 @@ export const SAMPLE_MODEL_IDS = [
   'claude-sonnet-4',
   'gemini-2.5-pro',
   'gemini-3.1-flash-image',
-  'gpt-5.6-sol',
   'gpt-5.6-terra',
+  'gpt-6-astra',
   'nano-banana-pro',
 ]
 
 /** 形似模型 ID 但并非可配置模型，跳过校验。 */
-export const NON_MODEL_IDENTIFIERS = [
-  // 错误信息示例中的占位模型名，见 errors.md 的分组能力限制一节
-  'gpt-5',
-]
+export const NON_MODEL_IDENTIFIERS = []
 
 /**
  * 易变事实的收敛约束。
