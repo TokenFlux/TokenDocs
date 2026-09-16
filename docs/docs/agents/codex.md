@@ -55,11 +55,11 @@ npx @openai/codex
 
 第一次运行时，`npx` 会自动下载并执行 `Codex`。适合以下场景：
 
-- 不想污染全局环境
+- 不想改动全局环境
 - 在某台机器上按需运行一次
 - 验证 CLI 是否满足需求
 
-如果后续经常使用，建议全局安装以获得更快的启动速度。
+如果使用频率较高，建议全局安装以加快启动速度。
 
   </DocsTab>
 </DocsTabs>
@@ -96,7 +96,7 @@ Codex CLI 与官方 IDE 扩展共享 `config.toml` 配置层。通过 Zed 的 Co
 
 **第二步：写入 `config.toml`**
 
-在配置目录中创建或编辑 `config.toml`，确保以下内容位于文件前部：
+在配置目录中创建或编辑 `config.toml`，确保以下内容位于文件开头：
 
 ```toml
 model_provider = "tokenflux"
@@ -140,19 +140,19 @@ responses_websockets_v2 = true
   </DocsTab>
 </DocsTabs>
 
-## 关于远程压缩
+## 远程压缩
 
-上方配置已经把 `[model_providers.tokenflux]` 的 `name` 设为 `OpenAI`，正是为了开启 Codex 的远程压缩。
+上文将 `[model_providers.tokenflux]` 的 `name` 设置为 `OpenAI`，旨在开启 Codex 的远程压缩。
 
-`Codex` 在长对话接近上下文上限时会触发压缩。只有当上游 provider 的 `name` 严格为 `OpenAI` 时，`Codex` 才会优先走远程压缩接口（`/v1/responses/compact`）；远程压缩质量更高，超长对话也能稳定保持，不容易降智。
+`Codex` 会在长对话接近上下文上限时触发压缩。只有当上游 provider 的 `name` 严格等于 `OpenAI` 时，`Codex` 才会优先使用远程压缩接口（`/v1/responses/compact`）。远程压缩质量更高，在超长对话中也能保持稳定，避免出现明显的质量下降。
 
-如果把 `name` 改成其他值（例如 `tokenflux`），`Codex` 会强制使用本地压缩，效果较差。
+如果将 `name` 改为其他值（例如 `tokenflux`），`Codex` 将强制使用本地压缩，压缩质量较差。
 
 说明：
 
-- `name` 是用于触发远程压缩的显示名，保持 `OpenAI` 即可。
+- `name` 是触发远程压缩所需的显示名，保持 `OpenAI` 即可。
 - provider 标识 `tokenflux`（即 `model_provider` 和 `[model_providers.tokenflux]`）不受影响，保持不变。
-- 这个设置不会丢失已有聊天记录。
+- 该设置不会导致已有聊天记录丢失。
 
 <!--
 ## 1M 上下文窗口
@@ -192,7 +192,7 @@ Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和�
 
 -->
 
-## 关于 codex-auto-review
+## codex-auto-review
 
 为消除歧义，`codex-auto-review` 现已默认重定向到 `gpt-5.6-terra`。
 
