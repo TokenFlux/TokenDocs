@@ -76,7 +76,7 @@ npx @openai/codex
 操作步骤：
 
 1. 按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 生成 API Key。
-2. 按 [CC-Switch](/docs/agents/cc-switch) 完成统一供应商配置。
+2. 在密钥列表里点击该 Key 的“更多”，选择“导入到 CCS”，在 `CC-Switch` 弹窗中确认导入。详细说明见 [CC-Switch](/docs/agents/cc-switch)。
 3. 配置完成后，重启 `Codex` 或 `Codex App`。
 
   </DocsTab>

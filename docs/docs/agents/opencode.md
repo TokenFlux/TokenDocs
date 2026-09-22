@@ -80,7 +80,7 @@ scoop install opencode
 操作步骤：
 
 1. 按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 生成 API Key。
-2. 按 [CC-Switch](/docs/agents/cc-switch) 完成统一供应商配置。
+2. 在 `CC-Switch` 顶部切换到 `OpenCode`，点击“+”添加供应商，填入 `API 地址` `https://tokenflux.dev/v1`、API Key 与模型。控制台的“导入到 CCS”不覆盖 `OpenCode`，详见 [CC-Switch](/docs/agents/cc-switch)。
 3. 配置完成后，重启 `OpenCode`。
 
   </DocsTab>

@@ -80,7 +80,7 @@ Using `CC-Switch` is recommended for centralized configuration.
 Steps:
 
 1. Follow [Create API Key](/en/docs/tokenflux/create-apikey) to generate an API key.
-2. Follow [CC-Switch](/en/docs/agents/cc-switch) to configure a unified provider.
+2. In `CC-Switch`, switch to `OpenCode`, click "+" to add a provider, and fill in `API URL` `https://tokenflux.dev/v1`, the API key and a model. "Import to CCS" does not cover `OpenCode`; see [CC-Switch](/en/docs/agents/cc-switch) for details.
 3. Restart `OpenCode` after configuration is complete.
 
   </DocsTab>

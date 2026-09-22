@@ -92,7 +92,7 @@ Using `CC-Switch` is recommended for centralized configuration.
 Steps:
 
 1. Follow [Create API Key](/en/docs/tokenflux/create-apikey) to generate an API key.
-2. Follow [CC-Switch](/en/docs/agents/cc-switch) to configure a unified provider.
+2. In the key list, click "More" on that key and choose "Import to CCS", then confirm the import in the `CC-Switch` window. See [CC-Switch](/en/docs/agents/cc-switch) for details.
 3. Restart `Claude Code` after configuration is complete.
 
   </DocsTab>
