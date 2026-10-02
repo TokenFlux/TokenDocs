@@ -201,6 +201,7 @@ const enSearch = {
 }
 
 export const rootThemeConfig = {
+  logo: '/logo.svg',
   nav: navItems,
   search,
   sidebar,
@@ -233,6 +234,7 @@ export const rootThemeConfig = {
 }
 
 export const enThemeConfig = {
+  logo: '/logo.svg',
   nav: enNavItems,
   search: enSearch,
   sidebar: enSidebar,

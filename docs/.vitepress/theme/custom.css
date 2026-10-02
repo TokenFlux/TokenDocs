@@ -1,3 +1,733 @@
+/* ==========================================================================
+   TokenRouter 设计语言移植
+   来源:TokenRouter 前端(frontend/src/style.css + tailwind.config.js + layout 组件)
+   - Blue Archive 蓝白主题:品牌青蓝色阶,zinc 中性深色
+   - 小圆角层级:控件 4/6px、内容表面 8px
+   - 边框分层取代投影,浮层保留 shadow-lg
+   - Plus Jakarta Sans + Geist Mono
+   ========================================================================== */
+
+/* ============ 1. 设计令牌 ============ */
+:root {
+  /* 字体:英文 Plus Jakarta Sans,中文按系统字体回退;等宽 Geist Mono。 */
+  --vp-font-family-base:
+    'Plus Jakarta Sans Variable', system-ui, -apple-system, 'BlinkMacSystemFont',
+    'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+  --vp-font-family-mono:
+    'Geist Mono Variable', ui-monospace, 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
+    monospace;
+
+  /* 品牌色:primary 色阶,浅色主色 600/700,深色提亮到 400/500。 */
+  --vp-c-brand: #0b8fd8;
+  --vp-c-brand-1: #0b8fd8;
+  --vp-c-brand-2: #12a7e8;
+  --vp-c-brand-3: #00d2ff;
+  --vp-c-brand-soft: rgb(18 167 232 / 14%);
+
+  /* 通用悬浮 tint(原 default-soft,用于菜单项、图标按钮等)。 */
+  --vp-c-default-soft: rgb(18 167 232 / 12%);
+
+  /* 表面:冰白底 + 纯白凸起层 + zinc-50 中性内凹层,层级靠明度区分。 */
+  --vp-c-bg: #fcfcfe;
+  --vp-c-bg-alt: #fafafa;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #fafafa;
+
+  /* 文字:近黑正文 + TokenRouter 统一的次级蓝灰。 */
+  --vp-c-text-1: #18181b;
+  --vp-c-text-2: #426177;
+  --vp-c-text-3: rgb(45 79 104 / 72%);
+
+  /* 边界:primary-900 低透明度分层,对应 border-primary-900/10。 */
+  --vp-c-divider: rgb(45 79 104 / 12%);
+  --vp-c-border: rgb(45 79 104 / 16%);
+  --vp-c-gutter: rgb(45 79 104 / 8%);
+
+  /* 行内代码与代码块:行内代码冰蓝(交互色);代码块为中性内凹层。 */
+  --vp-code-bg: rgb(18 167 232 / 10%);
+  --vp-code-color: #0b8fd8;
+  --vp-code-block-bg: #fafafa;
+  --vp-code-block-divider-color: rgb(45 79 104 / 12%);
+  --vp-code-line-highlight-color: rgb(18 167 232 / 12%);
+
+  /* TokenRouter 组件 token:侧边栏/菜单的药丸悬浮与激活态。 */
+  --tr-surface: #ffffff;
+  --tr-hover: #ddf4fc;
+  --tr-active-bg: #ddf4fc;
+  --tr-active-ring: rgb(139 221 248 / 40%);
+  --tr-active-text: #0b8fd8;
+  --tr-float-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 10%),
+    0 4px 6px -4px rgb(0 0 0 / 10%);
+  --tr-card-hover-shadow: 0 12px 32px rgb(0 0 0 / 10%);
+
+  /* 布局:TokenRouter 顶栏 h-14、玻璃拟态。侧栏宽度保留文档默认值,长标题不换行。 */
+  --vp-nav-height: 56px;
+  --vp-nav-bg-color: rgb(255 255 255 / 80%);
+  --vp-sidebar-bg-color: #ffffff;
+
+  /* 品牌按钮:纯色平面,无渐变无投影,对应 .btn-primary。 */
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-bg: #12a7e8;
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-hover-bg: #0b8fd8;
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: #ffffff;
+  --vp-button-brand-active-bg: #0b8fd8;
+
+  /* 次按钮:白底描边,对应 .btn-secondary。 */
+  --vp-button-alt-border: var(--vp-c-border);
+  --vp-button-alt-text: var(--vp-c-text-1);
+  --vp-button-alt-bg: var(--vp-c-bg-elv);
+  --vp-button-alt-hover-border: rgb(0 0 0 / 20%);
+  --vp-button-alt-hover-text: var(--vp-c-brand-1);
+  --vp-button-alt-hover-bg: var(--vp-c-bg-elv);
+  --vp-button-alt-active-border: rgb(0 0 0 / 20%);
+  --vp-button-alt-active-text: var(--vp-c-brand-1);
+  --vp-button-alt-active-bg: var(--vp-c-bg-soft);
+
+  /* 首页 hero:品牌蓝渐变标题。 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #00d2ff 0%, #0b8fd8 100%);
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    rgb(0 210 255 / 40%) 50%,
+    rgb(11 143 216 / 40%) 50%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+
+  /* 徽章:圆角胶囊 + 浅色 tint,对应 TokenRouter .badge-*。 */
+  --vp-badge-info-border: transparent;
+  --vp-badge-info-text: #0b8fd8;
+  --vp-badge-info-bg: #ddf4fc;
+  --vp-badge-tip-border: transparent;
+  --vp-badge-tip-text: #047857;
+  --vp-badge-tip-bg: #d1fae5;
+  --vp-badge-warning-border: transparent;
+  --vp-badge-warning-text: #b45309;
+  --vp-badge-warning-bg: #fef3c7;
+  --vp-badge-danger-border: transparent;
+  --vp-badge-danger-text: #b91c1c;
+  --vp-badge-danger-bg: #fee2e2;
+
+  /* 自定义容器:左侧 4px 强调条 + 浅色 tint,对应 TokenRouter 的 info/success/warning/error box。 */
+  --vp-custom-block-info-border: #3b82f6;
+  --vp-custom-block-info-text: var(--vp-c-text-2);
+  --vp-custom-block-info-bg: rgb(59 130 246 / 8%);
+  --vp-custom-block-info-code-bg: rgb(59 130 246 / 12%);
+  --vp-custom-block-note-border: #3b82f6;
+  --vp-custom-block-note-text: var(--vp-c-text-2);
+  --vp-custom-block-note-bg: rgb(59 130 246 / 8%);
+  --vp-custom-block-note-code-bg: rgb(59 130 246 / 12%);
+  --vp-custom-block-tip-border: #12a7e8;
+  --vp-custom-block-tip-text: var(--vp-c-text-2);
+  --vp-custom-block-tip-bg: rgb(18 167 232 / 8%);
+  --vp-custom-block-tip-code-bg: rgb(18 167 232 / 12%);
+  --vp-custom-block-important-border: #12a7e8;
+  --vp-custom-block-important-text: var(--vp-c-text-2);
+  --vp-custom-block-important-bg: rgb(18 167 232 / 8%);
+  --vp-custom-block-important-code-bg: rgb(18 167 232 / 12%);
+  --vp-custom-block-warning-border: #f59e0b;
+  --vp-custom-block-warning-text: var(--vp-c-text-2);
+  --vp-custom-block-warning-bg: rgb(245 158 11 / 10%);
+  --vp-custom-block-warning-code-bg: rgb(245 158 11 / 14%);
+  --vp-custom-block-danger-border: #ef4444;
+  --vp-custom-block-danger-text: var(--vp-c-text-2);
+  --vp-custom-block-danger-bg: rgb(239 68 68 / 8%);
+  --vp-custom-block-danger-code-bg: rgb(239 68 68 / 12%);
+  --vp-custom-block-caution-border: #ef4444;
+  --vp-custom-block-caution-text: var(--vp-c-text-2);
+  --vp-custom-block-caution-bg: rgb(239 68 68 / 8%);
+  --vp-custom-block-caution-code-bg: rgb(239 68 68 / 12%);
+}
+
+.dark {
+  --vp-c-brand: #4dd4f6;
+  --vp-c-brand-1: #4dd4f6;
+  --vp-c-brand-2: #00d2ff;
+  --vp-c-brand-3: #12a7e8;
+  --vp-c-brand-soft: rgb(0 210 255 / 16%);
+
+  --vp-c-default-soft: rgb(255 255 255 / 8%);
+
+  /* 深色背景:zinc 中性纯黑系,品牌蓝仅作强调。 */
+  --vp-c-bg: #0a0a0c;
+  --vp-c-bg-alt: #111113;
+  --vp-c-bg-elv: #1f1f23;
+  --vp-c-bg-soft: #18181b;
+
+  --vp-c-text-1: rgb(255 255 255 / 92%);
+  --vp-c-text-2: #a6a6af;
+  --vp-c-text-3: #77777f;
+
+  --vp-c-divider: #29292e;
+  --vp-c-border: #333338;
+  --vp-c-gutter: #1f1f23;
+
+  --vp-code-bg: rgb(0 210 255 / 14%);
+  --vp-code-color: #8bddf8;
+  --vp-code-block-bg: #121215;
+  --vp-code-block-divider-color: #29292e;
+  --vp-code-line-highlight-color: rgb(0 210 255 / 12%);
+
+  --tr-surface: #121215;
+  --tr-hover: #1f1f23;
+  --tr-active-bg: #18181b;
+  --tr-active-ring: rgb(63 63 70 / 80%);
+  --tr-active-text: #ffffff;
+  --tr-float-shadow:
+    0 4px 12px rgb(0 0 0 / 40%),
+    0 12px 32px rgb(0 0 0 / 30%);
+  --tr-card-hover-shadow: 0 12px 32px rgb(0 0 0 / 40%);
+
+  --vp-nav-bg-color: rgb(18 18 21 / 92%);
+  --vp-sidebar-bg-color: #121215;
+
+  --vp-button-alt-border: var(--vp-c-border);
+  --vp-button-alt-text: var(--vp-c-text-1);
+  --vp-button-alt-bg: var(--vp-c-bg-elv);
+  --vp-button-alt-hover-border: var(--vp-c-brand-3);
+  --vp-button-alt-hover-text: var(--vp-c-brand-1);
+  --vp-button-alt-hover-bg: var(--vp-c-bg-elv);
+  --vp-button-alt-active-border: var(--vp-c-brand-3);
+  --vp-button-alt-active-text: var(--vp-c-brand-1);
+  --vp-button-alt-active-bg: var(--vp-c-bg-soft);
+
+  --vp-badge-info-text: #8bddf8;
+  --vp-badge-info-bg: rgb(0 210 255 / 16%);
+  --vp-badge-tip-text: #34d399;
+  --vp-badge-tip-bg: rgb(52 211 153 / 16%);
+  --vp-badge-warning-text: #fbbf24;
+  --vp-badge-warning-bg: rgb(251 191 36 / 16%);
+  --vp-badge-danger-text: #f87171;
+  --vp-badge-danger-bg: rgb(248 113 113 / 16%);
+
+  --vp-custom-block-info-bg: rgb(59 130 246 / 12%);
+  --vp-custom-block-info-code-bg: rgb(59 130 246 / 16%);
+  --vp-custom-block-note-bg: rgb(59 130 246 / 12%);
+  --vp-custom-block-note-code-bg: rgb(59 130 246 / 16%);
+  --vp-custom-block-tip-bg: rgb(18 167 232 / 12%);
+  --vp-custom-block-tip-code-bg: rgb(18 167 232 / 16%);
+  --vp-custom-block-important-bg: rgb(18 167 232 / 12%);
+  --vp-custom-block-important-code-bg: rgb(18 167 232 / 16%);
+  --vp-custom-block-warning-bg: rgb(245 158 11 / 14%);
+  --vp-custom-block-warning-code-bg: rgb(245 158 11 / 18%);
+  --vp-custom-block-danger-bg: rgb(239 68 68 / 12%);
+  --vp-custom-block-danger-code-bg: rgb(239 68 68 / 16%);
+  --vp-custom-block-caution-bg: rgb(239 68 68 / 12%);
+  --vp-custom-block-caution-code-bg: rgb(239 68 68 / 16%);
+}
+
+/* ============ 2. 全局基础 ============ */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(18 167 232 / 26%) transparent;
+}
+
+html.dark {
+  scrollbar-color: rgb(166 166 175 / 45%) #0a0a0c;
+}
+
+/* 深色模式保留微亮到纯黑的纵向渐变,对应 .ba-theme-shell。 */
+.dark .Layout {
+  background: linear-gradient(180deg, #111113 0%, #0a0a0c 100%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgb(0 210 255 / 20%);
+}
+
+.dark ::selection {
+  background: rgb(0 210 255 / 30%);
+  color: #ffffff;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: rgb(18 167 232 / 26%);
+  background-clip: padding-box;
+  border: 3px solid transparent;
+  transition: background-color 0.2s ease;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(18 167 232 / 46%);
+}
+
+html.dark::-webkit-scrollbar-thumb,
+html.dark body::-webkit-scrollbar-thumb {
+  background-color: rgb(166 166 175 / 45%);
+}
+
+html.dark::-webkit-scrollbar-thumb:hover,
+html.dark body::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(166 166 175 / 65%);
+}
+
+/* 内部滚动容器(侧栏、菜单、表格、代码块)默认隐藏滑块,hover/focus 才显示,
+   对应 TokenRouter 的 :where(.overflow-y-auto, ...) 策略。 */
+:where(
+  .VPSidebar,
+  .VPSidebar .nav,
+  .VPMenu,
+  .vp-doc table,
+  .vp-doc div[class*='language-'] pre
+) {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+:where(
+  .VPSidebar,
+  .VPSidebar .nav,
+  .VPMenu,
+  .vp-doc table,
+  .vp-doc div[class*='language-'] pre
+):hover,
+:where(
+  .VPSidebar,
+  .VPSidebar .nav,
+  .VPMenu,
+  .vp-doc table,
+  .vp-doc div[class*='language-'] pre
+):focus-within {
+  scrollbar-color: rgb(18 167 232 / 30%) transparent;
+}
+
+.dark :where(
+  .VPSidebar,
+  .VPSidebar .nav,
+  .VPMenu,
+  .vp-doc table,
+  .vp-doc div[class*='language-'] pre
+):hover,
+.dark :where(
+  .VPSidebar,
+  .VPSidebar .nav,
+  .VPMenu,
+  .vp-doc table,
+  .vp-doc div[class*='language-'] pre
+):focus-within {
+  scrollbar-color: rgb(166 166 175 / 30%) transparent;
+}
+
+/* ============ 3. 顶部导航 ============ */
+/* 玻璃拟态顶栏,对应 header.glass + backdrop-blur。 */
+.Layout .VPNavBar .content-body {
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+}
+
+.Layout .VPNavBarTitle .title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* 官方头像在控制台里是圆形裁切。 */
+.Layout .VPNavBarTitle img.logo {
+  border-radius: 9999px;
+}
+
+/* 导航链接:次级色 + hover 加深,对应 TokenRouter 首页顶栏。 */
+.Layout .VPNavBarMenuLink,
+.Layout .VPFlyout.VPNavBarMenu > .button {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--vp-c-text-2);
+}
+
+.Layout .VPNavBarMenuLink:hover,
+.Layout .VPFlyout.VPNavBarMenu:hover > .button {
+  color: var(--vp-c-text-1);
+}
+
+.Layout .VPNavBarMenuLink.active {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* 搜索按钮:TokenRouter 输入框形态 — 白底描边 36px。 */
+.Layout .DocSearch-Button {
+  height: 36px;
+  margin: 0;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  background-color: var(--vp-c-bg);
+  box-shadow: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.Layout .DocSearch-Button:hover,
+.Layout .DocSearch-Button:focus {
+  border-color: rgb(0 0 0 / 25%);
+  background-color: var(--vp-c-bg);
+  box-shadow: none;
+}
+
+.dark .Layout .DocSearch-Button:hover,
+.dark .Layout .DocSearch-Button:focus {
+  border-color: #52525b;
+}
+
+/* 下拉浮层:6px 圆角 + shadow-lg + scale-in,对应 .dropdown。 */
+.Layout .VPFlyout .menu {
+  transform: translateY(-4px) scale(0.98);
+  transform-origin: top right;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    transform 0.2s ease;
+}
+
+.Layout .VPFlyout:hover .menu,
+.Layout .VPFlyout .button[aria-expanded='true'] + .menu {
+  transform: translateY(0) scale(1);
+}
+
+.Layout .VPMenu {
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  box-shadow: var(--tr-float-shadow);
+}
+
+.Layout .VPMenu .link {
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.Layout .VPMenu .link:hover {
+  background-color: var(--tr-hover);
+  color: var(--vp-c-text-1);
+}
+
+.Layout .VPMenu .link.active {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* ============ 4. 侧边栏 ============ */
+/* 侧栏与正文之间加分隔线,区分两个表面层级(对应 TokenRouter 侧栏 border-r)。 */
+.Layout .VPSidebar {
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+/* 分组标题:text-xs font-semibold tracking-wider,对应 .sidebar-section-title。 */
+.Layout .VPSidebar .VPSidebarItem.level-0 > .item > .text {
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--vp-c-text-3);
+}
+
+.Layout .VPSidebar .VPSidebarItem.level-0.has-active > .item > .text {
+  color: var(--vp-c-text-3);
+}
+
+/* 链接药丸:h-9 rounded-control text-sm font-medium,对应 .sidebar-link。 */
+.Layout .VPSidebar .VPSidebarItem .link {
+  margin: 1px 0;
+  padding: 0 12px;
+  border-radius: 6px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.Layout .VPSidebar .VPSidebarItem .link .text {
+  padding: 8px 0;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.Layout .VPSidebar .VPSidebarItem.is-link > .item > .link:hover {
+  background-color: var(--tr-hover);
+}
+
+.Layout .VPSidebar .VPSidebarItem.is-link > .item > .link:hover .text {
+  color: var(--vp-c-text-1);
+}
+
+/* 激活态:冰蓝底 + 1px 内描边,对应 .sidebar-link-active。 */
+.Layout .VPSidebar .VPSidebarItem.is-active > .item > .link {
+  background-color: var(--tr-active-bg);
+  box-shadow: inset 0 0 0 1px var(--tr-active-ring);
+}
+
+.Layout .VPSidebar .VPSidebarItem.is-active > .item > .link .text {
+  color: var(--tr-active-text);
+  font-weight: 600;
+}
+
+/* ============ 5. 按钮 ============ */
+/* 对应 .btn:6px 圆角、medium 字重、active 压缩。 */
+.Layout .VPButton {
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.Layout .VPButton:active {
+  transform: scale(0.98);
+}
+
+/* hero 主按钮:rounded-lg、44px 高、semibold,对应 TokenRouter 首页 CTA。 */
+.Layout .VPHero .VPButton {
+  border-radius: 8px;
+  padding: 0 24px;
+  line-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ============ 6. 首页 ============ */
+/* 无图 hero 居中放大,对应 TokenRouter HomeView 的居中 hero。 */
+.Layout .VPHero:not(.has-image) .container {
+  text-align: center;
+}
+
+.Layout .VPHero:not(.has-image) .main {
+  width: 100%;
+}
+
+.Layout .VPHero:not(.has-image) .name,
+.Layout .VPHero:not(.has-image) .text {
+  margin: 0 auto;
+  max-width: 768px;
+  letter-spacing: -0.03em;
+}
+
+.Layout .VPHero:not(.has-image) .tagline {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 640px;
+  font-weight: 400;
+}
+
+.Layout .VPHero:not(.has-image) .actions {
+  justify-content: center;
+}
+
+@media (min-width: 960px) {
+  .Layout .VPHero:not(.has-image) .name,
+  .Layout .VPHero:not(.has-image) .text {
+    line-height: 68px;
+    font-size: 60px;
+  }
+}
+
+/* 特性卡片:白底描边 + hover 上浮投影,对应 HomeView 的 article 卡片。 */
+.Layout .VPFeature {
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-elv);
+  box-shadow: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.5s;
+}
+
+.Layout .VPFeature.link:hover {
+  border-color: rgb(0 0 0 / 20%);
+  transform: translateY(-4px);
+  box-shadow: var(--tr-card-hover-shadow);
+}
+
+.dark .Layout .VPFeature.link:hover {
+  border-color: #52525b;
+}
+
+.Layout .VPFeature .title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.Layout .VPFeature .details {
+  padding-top: 8px;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--vp-c-text-2);
+}
+
+.Layout .VPFeature .link-text {
+  padding-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ============ 7. 正文排版 ============ */
+.vp-doc {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* 标题:粗字重 + 紧字距,对应 TokenRouter 的 page-title / 卡片标题层级。 */
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4 {
+  letter-spacing: -0.02em;
+}
+
+.vp-doc h1 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.vp-doc h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.vp-doc h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* 链接:品牌蓝,默认无下划线,hover 补下划线,对应 TokenRouter 文本链接。 */
+.vp-doc a {
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.vp-doc a:hover {
+  text-decoration: underline;
+}
+
+/* 表格:水平分隔线 + 中性灰表头(zinc-50 内凹层)+ 行 hover 冰蓝(交互色),
+   取自 TokenRouter .table;文档表格宽度随内容收缩,不套用应用数据表的全宽边框容器。 */
+.vp-doc table {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.vp-doc tr,
+.vp-doc tr:nth-child(2n) {
+  background-color: transparent;
+  border-top: none;
+  transition: background-color 0.15s ease;
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: none;
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding: 10px 16px;
+}
+
+.vp-doc tr:last-child td {
+  border-bottom: none;
+}
+
+.vp-doc thead {
+  border-radius: 6px;
+}
+
+.vp-doc th {
+  background-color: #fafafa;
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.vp-doc thead th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.vp-doc thead th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.dark .vp-doc th {
+  background-color: #18181b;
+}
+
+.vp-doc tbody tr:hover {
+  background-color: rgb(18 167 232 / 6%);
+}
+
+.dark .vp-doc tbody tr:hover {
+  background-color: rgb(31 31 35 / 70%);
+}
+
+/* 自定义容器:6px 圆角 + 左侧 4px 强调条。 */
+.vp-doc .custom-block {
+  border: 1px solid var(--vp-c-divider);
+  border-left-width: 4px;
+  border-radius: 6px;
+}
+
+.vp-doc .custom-block.info,
+.vp-doc .custom-block.note,
+.vp-doc .custom-block.details {
+  border-left-color: var(--vp-custom-block-info-border);
+}
+
+.vp-doc .custom-block.tip,
+.vp-doc .custom-block.important {
+  border-left-color: var(--vp-custom-block-tip-border);
+}
+
+.vp-doc .custom-block.warning {
+  border-left-color: var(--vp-custom-block-warning-border);
+}
+
+.vp-doc .custom-block.danger,
+.vp-doc .custom-block.caution {
+  border-left-color: var(--vp-custom-block-danger-border);
+}
+
+/* 代码块:8px 圆角 + 描边,对应 TokenRouter 表面层级。 */
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+}
+
+/* 徽章:胶囊形态。 */
+.vp-doc .VPBadge {
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+/* 分页导航:hover 冰蓝。 */
+.Layout .VPDocFooter .pager-link:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* ============ 8. 站点自定义组件 ============ */
 .vp-doc div[class*='language-'].code-block-collapsible {
   position: relative;
 }
@@ -86,10 +816,10 @@
 .markdown-link-tools__button {
   display: inline-flex;
   align-items: center;
-  border: none;
+  border: 1px solid var(--vp-c-border);
   border-radius: 6px;
   padding: 0.5rem 0.75rem;
-  background: var(--vp-c-bg-soft);
+  background: var(--vp-c-bg-elv);
   color: var(--vp-c-text-2);
   font-size: 0.85rem;
   font-weight: 500;
@@ -99,8 +829,13 @@
 }
 
 .markdown-link-tools__button:hover {
-  background: var(--vp-c-default-soft);
+  border-color: rgb(0 0 0 / 20%);
+  background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
+}
+
+.dark .markdown-link-tools__button:hover {
+  border-color: #52525b;
 }
 
 .markdown-link-tools__button.is-copied {

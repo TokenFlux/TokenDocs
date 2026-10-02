@@ -129,7 +129,7 @@ export default defineConfig({
   description: siteDescription,
   base,
   lastUpdated: true,
-  head: [['link', { rel: 'icon', href: withBasePath(base, '/favicon.jpg') }]],
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: withBasePath(base, '/logo.svg') }]],
   locales,
   themeConfig: rootThemeConfig,
   vite: {

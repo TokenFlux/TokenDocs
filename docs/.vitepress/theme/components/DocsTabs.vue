@@ -121,39 +121,58 @@ onBeforeUnmount(() => {
 .docs-tabs {
   margin: 1.5rem 0;
 }
+
+/* 下划线页签:TokenRouter 令牌(品牌青蓝 + 次级文字),整条分隔线锚定,
+   激活态用亮青色 2px 下划线,一眼可辨是当前页签。 */
 .docs-tabs__nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
+  gap: 2px 24px;
   border-bottom: 1px solid var(--vp-c-divider);
 }
+
 .docs-tabs__button {
-  padding: 0.5rem 0;
+  position: relative;
+  margin-bottom: -1px;
   border: none;
   border-bottom: 2px solid transparent;
+  padding: 8px 2px;
   background: transparent;
-  color: var(--vp-c-text-2);
-  font-size: 0.95rem;
+  color: var(--vp-c-text-3);
+  font-size: 14px;
   font-weight: 500;
+  line-height: 20px;
   cursor: pointer;
   transition:
     color 0.2s ease,
     border-color 0.2s ease;
-  margin-bottom: -1px;
 }
+
 .docs-tabs__button:hover {
   color: var(--vp-c-text-1);
 }
+
 .docs-tabs__button:focus-visible {
   outline: 2px solid var(--vp-c-brand-1);
-  outline-offset: 4px;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
-.docs-tabs__button--active {
+
+.docs-tabs__button--active,
+.docs-tabs__button--active:hover {
   color: var(--vp-c-brand-1);
-  border-bottom-color: var(--vp-c-brand-1);
+  border-bottom-color: var(--vp-c-brand-2);
+  font-weight: 600;
 }
+
 .docs-tabs__content {
   padding-top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .docs-tabs__button {
+    transition: none;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .docs-tabs__button {

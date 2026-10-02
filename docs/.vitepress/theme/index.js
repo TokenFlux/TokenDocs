@@ -1,4 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
+import '@fontsource-variable/plus-jakarta-sans'
+import '@fontsource-variable/geist-mono'
 import './custom.css'
 import Layout from './Layout.vue'
 import DocsTabs from './components/DocsTabs.vue'
