@@ -13,6 +13,7 @@ verifiedAt: '2026-08-22'
    - Apple Silicon Mac：选择 `arm64`。
    - Intel Mac：选择 `x64`。
    - Windows：选择 Windows 安装程序。
+   - 统信 UOS / 银河麒麟：按官网下载页指引，从系统应用商店安装。
 3. macOS 打开下载的 DMG，将 `WorkBuddy.app` 拖入 `Applications`；Windows 按安装程序提示完成安装。
 4. 第一次启动时，WorkBuddy 会准备本地运行环境。保持网络连接并等待应用自动进入欢迎页，不要在此阶段强制退出。
 
@@ -121,7 +122,7 @@ WorkBuddy 5.3.5 实测不会在输入框失去焦点时把 `/v1` 自动补全为
      <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="WorkBuddy 模型选择器中的 gpt-6-astra 自定义模型，目标选项已用红框标出" />
    </div>
 
-4. 发送一条最小测试消息，例如 `你好`。实测请求在 6 秒内完成，响应底部显示使用的模型为 `gpt-6-astra`。
+4. 发送一条最小测试消息，例如 `你好`。本页记录的那次测试在约 6 秒内收到 `gpt-6-astra` 的回复；实际响应时间随模型、上下文和服务负载变化。
 
    <div style="text-align: center;">
      <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy 使用 gpt-6-astra 成功回复测试消息，响应底部的模型名称已用红框标出" />

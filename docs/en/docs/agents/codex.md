@@ -77,7 +77,8 @@ Steps:
 
 1. Follow [Create API Key](/en/docs/tokenflux/create-apikey) to generate an API key.
 2. In the key list, click "More" on that key and choose "Import to CCS", then confirm the import in the `CC-Switch` window. See [CC-Switch](/en/docs/agents/cc-switch) for details.
-3. Restart `Codex` or `Codex App` after configuration is complete.
+3. Enable the imported TokenFlux provider on the `Codex` page in `CC-Switch`.
+4. Restart `Codex` or `Codex App`.
 
   </DocsTab>
 
@@ -103,9 +104,6 @@ model_provider = "tokenflux"
 model = "gpt-6-astra"
 review_model = "gpt-6-astra"
 model_reasoning_effort = "xhigh"
-disable_response_storage = true
-network_access = "enabled"
-windows_wsl_setup_acknowledged = true
 
 [model_providers.tokenflux]
 name = "OpenAI"
@@ -128,31 +126,41 @@ Replace `YOUR_TOKENFLUX_API_KEY` with your actual API key.
 
 **WebSocket version (optional)**
 
-If you need the WebSocket version, add the following to `config.toml`:
+To use WebSocket, merge `supports_websockets = true` into the existing `[model_providers.tokenflux]` table and enable `responses_websockets_v2` under `[features]`. The following shows the merged provider configuration; keep only one copy of each table in the file.
 
 ```toml
+[model_providers.tokenflux]
+name = "OpenAI"
+base_url = "https://tokenflux.dev/v1"
+wire_api = "responses"
+requires_openai_auth = true
 supports_websockets = true
 
 [features]
 responses_websockets_v2 = true
 ```
 
+**Sandbox network access (optional)**
+
+If you use the `workspace-write` sandbox and need commands inside it to access the network, set the following in the `[sandbox_workspace_write]` table in `config.toml`:
+
+```toml
+[sandbox_workspace_write]
+network_access = true
+```
+
+This controls network access for sandboxed commands, not Codex's own connection to the model API. See the [official configuration reference](https://developers.openai.com/codex/config-reference) for other sandbox modes and network settings.
+
   </DocsTab>
 </DocsTabs>
 
 ## About Remote Compaction
 
-The configuration above already sets `name` in `[model_providers.tokenflux]` to `OpenAI`, which is what enables Codex remote compaction.
+`Codex` compacts conversation history when a long session approaches the context limit. The compaction method depends on the client version, provider capability settings, and server support.
 
-`Codex` triggers compaction when a long conversation approaches the context limit. `Codex` only prefers the remote compaction endpoint (`/v1/responses/compact`) when the upstream provider `name` is exactly `OpenAI`. Remote compaction has higher quality and keeps very long conversations stable, with less quality degradation.
+This guide retains `name = "OpenAI"` for compatibility with existing configurations. Some versions use that name to select default capabilities; current versions also support explicit provider capability settings, so the display name alone does not determine whether compaction is remote. The remote protocol also changes between versions: the 0.162 series includes an implementation that sends `compaction_trigger` through Responses requests.
 
-If you change `name` to any other value (such as `tokenflux`), `Codex` falls back to local compaction, which works much worse.
-
-Notes:
-
-- `name` is the display name used to trigger remote compaction; keep it as `OpenAI`.
-- The provider id `tokenflux` (used by `model_provider` and `[model_providers.tokenflux]`) is not affected and stays unchanged.
-- This setting does not lose your existing chat history.
+If compaction fails, record the Codex version, group, model, and full error, then follow [How to Report a Problem](/en/docs/troubleshooting#how-to-report-a-problem). Provider capability fields are listed in the [official configuration reference](https://developers.openai.com/codex/config-reference).
 
 <!--
 ## 1M Context Window

@@ -28,7 +28,6 @@ verifiedAt: '2026-09-16'
 Homebrew is recommended:
 
 ```bash
-brew tap farion1231/ccswitch
 brew install --cask cc-switch
 ```
 
@@ -39,22 +38,22 @@ After installation, find and run `CC-Switch` from Applications or Launchpad.
   <DocsTab title="Linux" name="linux">
 
 1. Open the [release page](https://github.com/farion1231/cc-switch/releases/latest).
-2. Choose the AppImage file for your system architecture, such as `CC-Switch-v3.13.0-Linux-x86_64.AppImage`.
+2. Choose the AppImage for your architecture: `x86_64` for Intel / AMD devices or `arm64` for ARM devices.
 
    <div style="text-align: center;">
      <img src="/images/cc-switch/linux-installer-selection.png" alt="How to choose the Linux AppImage on the Releases page" />
    </div>
 
-3. After downloading, make the file executable:
+3. In the download directory, make the file executable. Replace `CC-Switch.AppImage` below with the actual downloaded filename:
 
    ```bash
-   chmod +x CC-Switch-v3.13.0-Linux-x86_64.AppImage
+   chmod +x ./CC-Switch.AppImage
    ```
 
-4. Double-click the file, or start it from a terminal:
+4. Double-click the file, or start it from a terminal using the same actual filename:
 
    ```bash
-   ./CC-Switch-v3.13.0-Linux-x86_64.AppImage
+   ./CC-Switch.AppImage
    ```
 
    On graphical desktop environments, you can also enable executable permissions in the file properties.
@@ -84,6 +83,8 @@ The key list can push an API key straight into `CC-Switch`, so there are no fiel
      <img src="/images/cc-switch/import-to-cc-switch-dialog.png" alt="The Confirm provider import window in CC-Switch" />
    </div>
 
+4. Select the corresponding client in the sidebar, find the imported TokenFlux provider, and click "Enable". For Codex, Gemini CLI, or Grok Build, restart the client afterward.
+
 Which client you import into depends on the key's group platform:
 
 | Group platform | Imports as    |
@@ -105,10 +106,10 @@ If the browser does not launch `CC-Switch` and reports that CC-Switch is not ins
 
 "Import to CCS" does not cover `OpenCode` and similar clients. Add those by hand in `CC-Switch`:
 
-1. Switch to the target application at the top of `CC-Switch`.
-2. Click "+" in the upper-right corner and choose "Custom" on the "App-specific provider" tab.
+1. Select the target application in the `CC-Switch` sidebar.
+2. Click "+" in the upper-right corner and choose a custom provider.
 3. Fill in `Name`, `API URL` and `API Key`. Use the address for the matching protocol from [API Endpoints](/en/docs/tokenflux/endpoints).
-4. Save and enable it.
+4. After saving, click "Enable" on the provider card. `OpenCode` uses "Add" and allows multiple providers at once.
 
   </DocsTab>
 
@@ -134,7 +135,7 @@ Universal providers cover `Claude Code`, `Codex` and `Gemini` only. Other client
      <img src="/images/cc-switch/manual-provider-fields.png" alt="CC-Switch universal provider fields" />
    </div>
 
-4. Tick the applications to sync (`Claude Code` / `Codex` / `Gemini`) and save.
+4. Tick the applications to sync (`Claude Code` / `Codex` / `Gemini`) and save, then enable the synced TokenFlux provider on each application's page.
 
 Editing a universal provider syncs the change to every ticked application, and deleting it removes the matching providers from those applications too.
 
@@ -149,7 +150,7 @@ This variable enables a 1-hour prompt cache, which is useful for Claude Code ses
 
 ### App-Specific Provider
 
-1. Switch to `Claude Code` at the top of `CC-Switch`.
+1. Select `Claude Code` in the `CC-Switch` sidebar.
 2. Find the Claude provider card for TokenFlux and click "Edit".
 3. Add the following to `env` in the "Config JSON":
 

@@ -37,9 +37,7 @@ RikkaHub can connect to TokenFlux through its OpenAI-compatible provider support
 
 ## Verify the Setup
 
-Whether the model list refreshes in step 5 is the most direct check: models appearing means the API key and base URL are both correct.
-
-Then send a message in the chat interface. A reply means the setup works, and the call appears in the [usage logs](https://tokenflux.dev/usage).
+If the model list refreshes in step 5, the list endpoint is reachable. Also send a message in the chat interface; after receiving a reply, confirm the request in the [usage logs](https://tokenflux.dev/usage).
 
 If the model list does not refresh, rule the client out with [Test the Key and Endpoint on Their Own](/en/docs/troubleshooting#test-the-key-and-endpoint-on-their-own), then check that the base URL ends with `/v1` and does not repeat the path.
 
@@ -57,11 +55,7 @@ After completing configuration, you can start model conversations directly in `R
      <img src="/images/rikkahub/step-1-edit-model-type.png" alt="RikkaHub setting an image-generation model type to Image" />
    </div>
 
-2. Return to the home page, tap the left **sidebar**, find **Image Generation** at the bottom, and open it.
-
-   <div style="text-align: center;">
-     <img src="/images/rikkahub/step-2-image-settings.png" alt="RikkaHub image generation entry at the bottom of the sidebar" />
-   </div>
+2. Return to the home page, expand the left **sidebar**, open **Menu** at the bottom, then choose **Image Generation**.
 
 3. Select the configured model on the image-generation page and start generating images.
 

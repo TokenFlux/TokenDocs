@@ -93,7 +93,8 @@ npx @anthropic-ai/claude-code
 
 1. 按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 生成 API Key。
 2. 在密钥列表里点击该 Key 的“更多”，选择“导入到 CCS”，在 `CC-Switch` 弹窗中确认导入。详细说明见 [CC-Switch](/docs/agents/cc-switch)。
-3. 配置完成后，重启 `Claude Code`。
+3. 在 `CC-Switch` 的 `Claude Code` 页面启用刚导入的 TokenFlux 供应商。
+4. 配置完成后，重启 `Claude Code`。
 
   </DocsTab>
 
@@ -168,6 +169,8 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 ## Claude Max 分组
 
 使用 `Claude Max` 分组时，可以在完成上方基础配置后额外开启 `ENABLE_PROMPT_CACHING_1H=1`。该选项会启用 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。其他 Claude 分组无需设置。
+
+1 小时缓存的上游写入价高于默认的 5 分钟缓存；TokenFlux 的实际扣费以 [模型广场](https://tokenflux.dev/models) 中的缓存价格为准。缓存 TTL 的其他配置方式见 [Claude Code 官方说明](https://code.claude.com/docs/en/prompt-caching)。
 
 若通过 `CC-Switch` 管理 Claude Code，请参考 [CC-Switch 的 Claude Max 环境变量说明](/docs/agents/cc-switch#claude-max-环境变量)。
 

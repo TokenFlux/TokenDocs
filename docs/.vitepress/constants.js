@@ -83,6 +83,8 @@ export const ALLOWED_EXTERNAL_HOSTS = [
   'aka.ms',
   'cherry-ai.com',
   'claude.ai',
+  'code.claude.com',
+  'developers.openai.com',
   'get.microsoft.com',
   'git-scm.com',
   'github.com',

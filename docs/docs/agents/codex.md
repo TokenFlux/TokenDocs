@@ -77,7 +77,8 @@ npx @openai/codex
 
 1. 按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 生成 API Key。
 2. 在密钥列表里点击该 Key 的“更多”，选择“导入到 CCS”，在 `CC-Switch` 弹窗中确认导入。详细说明见 [CC-Switch](/docs/agents/cc-switch)。
-3. 配置完成后，重启 `Codex` 或 `Codex App`。
+3. 在 `CC-Switch` 的 `Codex` 页面启用刚导入的 TokenFlux 供应商。
+4. 重启 `Codex` 或 `Codex App`。
 
   </DocsTab>
 
@@ -103,9 +104,6 @@ model_provider = "tokenflux"
 model = "gpt-6-astra"
 review_model = "gpt-6-astra"
 model_reasoning_effort = "xhigh"
-disable_response_storage = true
-network_access = "enabled"
-windows_wsl_setup_acknowledged = true
 
 [model_providers.tokenflux]
 name = "OpenAI"
@@ -128,31 +126,41 @@ requires_openai_auth = true
 
 **WebSocket 版本（可选）**
 
-如需使用 WebSocket 协议，`config.toml` 还需额外配置：
+如需使用 WebSocket 协议，将 `supports_websockets = true` 合并到现有的 `[model_providers.tokenflux]` 表中，并在 `[features]` 中开启 `responses_websockets_v2`。下面展示合并后的供应商配置；同一张表在文件中只保留一份。
 
 ```toml
+[model_providers.tokenflux]
+name = "OpenAI"
+base_url = "https://tokenflux.dev/v1"
+wire_api = "responses"
+requires_openai_auth = true
 supports_websockets = true
 
 [features]
 responses_websockets_v2 = true
 ```
 
+**沙箱网络访问（可选）**
+
+使用 `workspace-write` 沙箱且需要让其中运行的命令联网时，在 `config.toml` 的 `[sandbox_workspace_write]` 表中设置：
+
+```toml
+[sandbox_workspace_write]
+network_access = true
+```
+
+该设置控制沙箱内命令的网络访问，不控制 Codex 自身连接模型 API。其他沙箱模式和网络设置见 [官方配置参考](https://developers.openai.com/codex/config-reference)。
+
   </DocsTab>
 </DocsTabs>
 
 ## 远程压缩
 
-上文将 `[model_providers.tokenflux]` 的 `name` 设置为 `OpenAI`，旨在开启 Codex 的远程压缩。
+`Codex` 会在长对话接近上下文上限时压缩历史。压缩方式取决于客户端版本、供应商能力配置和服务端支持。
 
-`Codex` 会在长对话接近上下文上限时触发压缩。只有当上游 provider 的 `name` 严格等于 `OpenAI` 时，`Codex` 才会优先使用远程压缩接口（`/v1/responses/compact`）。远程压缩质量更高，在超长对话中也能保持稳定，避免出现明显的质量下降。
+本页保留 `name = "OpenAI"` 以兼容已有配置。部分版本会据此选择默认能力；当前版本也支持显式配置供应商能力，不能仅凭显示名判断是否使用远程压缩。远程压缩协议也随版本变化，例如 0.162 系列包含通过 Responses 请求发送 `compaction_trigger` 的实现。
 
-如果将 `name` 改为其他值（例如 `tokenflux`），`Codex` 将强制使用本地压缩，压缩质量较差。
-
-说明：
-
-- `name` 是触发远程压缩所需的显示名，保持 `OpenAI` 即可。
-- provider 标识 `tokenflux`（即 `model_provider` 和 `[model_providers.tokenflux]`）不受影响，保持不变。
-- 该设置不会导致已有聊天记录丢失。
+遇到压缩失败时，请记录 Codex 版本、分组、模型和完整报错，按 [排障](/docs/troubleshooting#怎么反馈) 反馈。供应商能力字段见 [官方配置参考](https://developers.openai.com/codex/config-reference)。
 
 <!--
 ## 1M 上下文窗口

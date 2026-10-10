@@ -4,100 +4,63 @@ verifiedAt: '2026-08-22'
 
 # Codex++
 
-::: danger 警告
-请不要使用 GPT 系列模型执行以下操作。
-:::
+`Codex++` 是面向 Codex App 的外部启动器与管理工具，提供供应商切换、会话管理和界面增强。它通过 Chromium DevTools Protocol（CDP）与本地辅助服务工作，不修改官方应用的 `app.asar`。
 
-`Codex++` 是面向 Codex App 的外部增强启动器，通过 Chromium DevTools Protocol 注入增强脚本，**不修改 Codex 原始安装文件**。
+项目地址：[BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus)。以下步骤适用于当前 1.7 系列发布包。
 
-项目地址：[https://github.com/BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus)
+## 安装
 
-## 功能亮点
+先按 [Codex 使用指南](/docs/agents/codex) 安装官方 Codex App，再从 [Codex++ 发布页](https://github.com/BigPizzaV3/CodexPlusPlus/releases/latest) 下载对应安装包。
 
-- **顶部 Codex++ 菜单**：集中管理增强功能。
-- **插件入口解锁**：API Key 模式下显示并启用插件入口。
-- **特殊插件强制安装**：解除 App unavailable / 应用不可用导致的前端安装禁用。
-- **会话删除**：悬停显示删除按钮，删除前确认并支持撤销。
-- **Markdown 导出**：按本地 rollout 导出带时间戳的会话 Markdown。
-- **会话项目移动**：把会话移动到普通对话或其他本地项目。
-- **对话 Timeline**：右侧显示用户提问时间线，悬停摘要，点击跳转。
-- **Provider 同步**：切换 model_provider 或供应商时不丢历史会话。
-- **Windows 快捷方式、卸载项**，可选 watcher 自动接管。
-- **macOS /Applications/Codex++.app 生成**。
+<DocsTabs default-tab="windows">
+  <DocsTab title="Windows" name="windows">
 
-## 如何配置
+1. 下载文件名以 `windows-x64-setup.exe` 结尾的安装程序；需要便携版时选择 `windows-x64.zip`。
+2. 运行安装程序，或将便携包解压到固定目录。
+3. 打开 **Codex++ 管理工具**，检查检测到的 Codex App 路径。
 
-支持通过 AI Agent 自动配置或手动配置。
+  </DocsTab>
 
-### 交给 Agent
+  <DocsTab title="macOS" name="macos">
 
-可将项目链接提供给 AI Agent 并提示按文档说明完成安装配置：
+1. 下载文件名以 `macos-universal.dmg` 结尾的安装包，适用于 Apple Silicon 和 Intel Mac。
+2. 打开 DMG，按安装包提示完成安装。
+3. 打开 **Codex++ 管理工具**，检查检测到的 Codex App 路径。
 
-```text
-https://github.com/BigPizzaV3/CodexPlusPlus
-```
+  </DocsTab>
+</DocsTabs>
 
-Agent 会自动拉取项目并执行安装步骤。
+## 接入 TokenFlux
 
-### 手动配置
+1. 按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 获取 Key。
+2. 在 **Codex++ 管理工具**中配置供应商，选择**纯 API**模式，并填写：
 
-**Windows**
+   | 字段     | 值                                      |
+   | -------- | --------------------------------------- |
+   | Base URL | `https://tokenflux.dev/v1`              |
+   | API Key  | TokenFlux API Key                       |
+   | 协议     | Responses                               |
+   | 模型     | `gpt-6-astra`，或所选分组支持的其他模型 |
 
-双击项目根目录的 `setup.bat`，选择：
+3. 保存供应商与模型配置，按需开启增强功能。
+4. 从 **Codex++** 入口启动 Codex App，加载已保存的配置。
 
-```text
-[1] Install Codex++
-```
+已有官方登录状态且需要保留相关入口时，也可以选择**官方登录 + API**模式；该模式的模型请求仍走配置的 API。各模式的区别见 [项目说明](https://github.com/BigPizzaV3/CodexPlusPlus#供应商与模型)。
 
-安装后双击桌面 `Codex++.lnk` 启动。
+## 使用与更新
 
-命令行安装/启动：
+- **Codex++ 管理工具**：配置供应商、模型和增强功能，查看运行状态与诊断信息。
+- **Codex++**：启动官方桌面应用并加载已保存的供应商与增强配置。
+- 修改依赖注入脚本的增强设置后，保存并重启 Codex++。
+- 在管理工具的**关于**页面检查更新。
 
-```bash
-python -m pip install -e .
-python -m codex_session_delete setup
-python -m codex_session_delete launch
-```
+## 排障
 
-**macOS**
+启动后没有增强菜单时，确认使用的是 **Codex++** 启动入口，并在管理工具的**安装维护**或**关于**页面检查应用路径和日志。
 
-```bash
-python -m pip install -e .
-python -m codex_session_delete setup
-```
+切换供应商后请求失败时，可在供应商详情中运行模型测试或 **Provider Doctor**，检查协议、API 地址、Key 和模型是否匹配。模型测试会发起真实请求并可能产生费用。
 
-安装后会生成 `/Applications/Codex++.app`。
-
-## 工作方式
-
-1. 外部启动 Codex App，并附加 CDP 参数：
-   - `--remote-debugging-port=9229`
-   - `--remote-allow-origins=http://127.0.0.1:9229`
-2. 启动本地 helper 服务，用于健康检查、设置、导出、移动、删除等操作。
-3. 通过 CDP 注入 `renderer-inject.js`。
-4. 渲染端通过 CDP bridge 调用本地服务。
-5. 启动时继承现有代理环境变量；若未设置，会自动探测常见本地代理端口。
-
-这种方式**不会修改 Codex 的 app.asar**，也不需要往 Codex 安装目录写 DLL。
-
-## 常用命令
-
-```bash
-# 安装依赖
-python -m pip install -e .
-
-# 启动
-python -m codex_session_delete launch
-
-# 安装快捷方式 / app bundle
-python -m codex_session_delete setup
-
-# 卸载
-python -m codex_session_delete remove
-
-# 检查更新
-python -m codex_session_delete check-update
-```
+Codex++ 的部分增强功能依赖官方应用的界面和本地数据格式。官方应用更新后若出现兼容问题，请检查 Codex++ 的 [版本说明](https://github.com/BigPizzaV3/CodexPlusPlus/releases)。
 
 ## 相关内容
 

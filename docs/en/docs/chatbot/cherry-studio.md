@@ -42,54 +42,43 @@ Cherry Studio provides Intel and Apple Silicon versions. Choose based on your ch
 
   <DocsTab title="Linux" name="linux">
 
-The Linux version is distributed as AppImage and supports x86_64 and ARM64 architectures.
+Linux releases include AppImage, deb, and rpm packages. The following uses AppImage, available for x86_64 and ARM64.
 
 1. Open the [download page](https://cherry-ai.com/download) and choose the AppImage for your architecture:
    - Regular x86 device: choose the `x86_64` build.
    - ARM device: choose the `ARM64` build.
-2. After downloading, make it executable:
+2. In the download directory, make the file executable. Replace `Cherry-Studio.AppImage` with the actual downloaded filename:
 
    ```bash
-   chmod +x CherryStudio-*.AppImage
+   chmod +x ./Cherry-Studio.AppImage
    ```
 
-3. Double-click it, or run it from a terminal:
+3. Double-click it, or run it from a terminal using the same actual filename:
 
    ```bash
-   ./CherryStudio-*.AppImage
+   ./Cherry-Studio.AppImage
    ```
-
-The AppImage includes all dependencies and works on most mainstream Linux distributions.
 
   </DocsTab>
 </DocsTabs>
 
 ## Connect to TokenFlux
 
-After installation, add TokenFlux as a custom provider in Cherry Studio.
+After installation, add TokenFlux as a custom provider in Cherry Studio. These steps use the protocol endpoint settings in version 2.x.
 
 1. Follow [Create API Key](/en/docs/tokenflux/create-apikey) to generate an API key.
-2. Open `Cherry Studio`, go to **Settings -> Model Services**, and click to add a provider.
-3. Choose provider type: `OpenAI-Response`.
+2. Open `Cherry Studio`, go to provider management in Settings, and add a custom provider.
+3. Set the name to `TokenFlux` and enter your API key.
+4. Expand the additional endpoint settings and enter `https://tokenflux.dev/v1` in the **OpenAI Responses** URL field. The request preview should show `https://tokenflux.dev/v1/responses`.
+5. If you also configure other chat endpoints, set **OpenAI Responses** as the default chat endpoint.
+6. Save the provider, then fetch and add the models you need from its model list, such as `gpt-6-astra`.
+7. Return to the chat interface, select that model, and send a message.
 
-   <div style="text-align: center;">
-     <img src="/images/cherry-studio/provider-type-selection.png" alt="Cherry Studio provider type selection for OpenAI-Response" />
-   </div>
-
-4. Enter the generated API key and API URL `https://tokenflux.dev/v1`, fetch the model list, and select target models.
-
-   <div style="text-align: center;">
-     <img src="/images/cherry-studio/provider-config-fields.png" alt="Cherry Studio TokenFlux API key and API URL fields" />
-   </div>
-
-5. Save it, then add the models you want to use in the model list, such as `gpt-6-astra`.
-6. Return to the chat interface and select the model you just added to start using it.
+For Chat Completions, enter the same `https://tokenflux.dev/v1` URL in its endpoint field and select the matching default chat endpoint. Protocol paths are appended automatically; do not include `/responses` or `/chat/completions` in these URL fields.
 
 ## Verify the Setup
 
-Fetching the model list in step 4 is the most direct check: models appearing means the API key and address are both correct.
-
-Then send a message in the chat interface. A reply means the setup works, and the call appears in the [usage logs](https://tokenflux.dev/usage).
+Fetching models confirms that the model-list endpoint is reachable. Also send a message in the chat interface; after receiving a reply, check the request in the [usage logs](https://tokenflux.dev/usage).
 
 If the model list does not load, rule the client out with [Test the Key and Endpoint on Their Own](/en/docs/troubleshooting#test-the-key-and-endpoint-on-their-own), then check whether `/v1` is missing from or duplicated in the address.
 

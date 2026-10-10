@@ -80,8 +80,8 @@ Using `CC-Switch` is recommended for centralized configuration.
 Steps:
 
 1. Follow [Create API Key](/en/docs/tokenflux/create-apikey) to generate an API key.
-2. In `CC-Switch`, switch to `OpenCode`, click "+" to add a provider, and fill in `API URL` `https://tokenflux.dev/v1`, the API key and a model. "Import to CCS" does not cover `OpenCode`; see [CC-Switch](/en/docs/agents/cc-switch) for details.
-3. Restart `OpenCode` after configuration is complete.
+2. Select `OpenCode` in the `CC-Switch` sidebar, click "+" to add a provider, and fill in `API URL` `https://tokenflux.dev/v1`, the API key and a model. "Import to CCS" does not cover `OpenCode`; see [CC-Switch](/en/docs/agents/cc-switch) for details.
+3. After saving, click "Add" on the provider card, then restart `OpenCode`.
 
   </DocsTab>
 
@@ -110,7 +110,7 @@ Copy the following content into `opencode.json` and replace `YOUR_API_KEY` with 
 }
 ```
 
-`OpenCode` automatically discovers models through its built-in `openai` provider. Configure other platforms under their matching built-in provider in the same way. To access multiple groups, enable **composite key** when creating the API key.
+This example uses a regular key. The built-in `openai` provider uses OpenCode's model catalog; changing `baseURL` does not automatically fetch every model from TokenFlux. Models outside that catalog and prefixed composite-key models need explicit `provider.models` entries, as shown below.
 
 **Step 3: Start OpenCode**
 
@@ -129,16 +129,62 @@ Then run:
   </DocsTab>
 </DocsTabs>
 
+## Use a Composite Key
+
+A [composite key](/en/docs/tokenflux/composite-key) requires a group prefix in the requested model ID. If you have mapped the `GPT` prefix to a group that supports `gpt-6-astra`, you can use this `opencode.json`:
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "tokenflux/GPT/gpt-6-astra",
+  "provider": {
+    "tokenflux": {
+      "npm": "@ai-sdk/openai",
+      "name": "TokenFlux",
+      "options": {
+        "baseURL": "https://tokenflux.dev/v1",
+        "apiKey": "YOUR_API_KEY"
+      },
+      "models": {
+        "GPT/gpt-6-astra": {
+          "name": "GPT-6 Astra (TokenFlux)",
+          "reasoning": true,
+          "tool_call": true,
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 128000,
+            "output": 32768
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+Replace `YOUR_API_KEY` with your composite key and `GPT` with the prefix configured on that key. `tokenflux` is the provider ID within OpenCode; the model ID sent in the request is `GPT/gpt-6-astra`.
+
+The `limit` values are example client token budgets; adjust them to the capabilities of your model and group. When adding other models, also specify their tool calling, input types, and reasoning capabilities. See the [OpenCode custom provider documentation](https://opencode.ai/docs/providers/#custom-provider) for the fields.
+
 ## Verify the Setup
 
-Either configuration path can be confirmed with:
+Test the regular-key configuration above with:
 
 ```bash
 opencode models
-opencode run -m openai/<model-id> "Reply with OK only"
+opencode run -m openai/gpt-6-astra "Reply with OK only"
 ```
 
-`opencode models` lists the loaded models; seeing your model ID there means the configuration was picked up. `opencode run` makes a real, billed call, and a reply means the setup works.
+For the composite-key example, use:
+
+```bash
+opencode run -m tokenflux/GPT/gpt-6-astra "Reply with OK only"
+```
+
+`opencode models` displays the client's model catalog; it does not validate your TokenFlux API key, URL, or model permissions. `opencode run` makes a real, billed call. After receiving a reply, confirm the request in the [usage logs](https://tokenflux.dev/usage).
 
 If the commands fail or the model list is empty, first rule the client out with [Test the Key and Endpoint on Their Own](/en/docs/troubleshooting#test-the-key-and-endpoint-on-their-own), then review `opencode.json`.
 

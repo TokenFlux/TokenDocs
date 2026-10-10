@@ -37,9 +37,7 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
 
 ## 验证接入
 
-第 5 步的模型列表能否刷新出来，就是最直接的检查：能拉到模型说明 API Key 和 Base URL 都正确。
-
-再在对话界面发一条消息，收到回复即接入成功，调用记录可在 [使用记录](https://tokenflux.dev/usage) 中核对。
+第 5 步的模型列表能够刷新，说明列表接口可以访问。还需在对话界面发一条消息，收到回复后在 [使用记录](https://tokenflux.dev/usage) 中核对请求。
 
 模型列表刷不出来时，先按 [单独测试 Key 和端点](/docs/troubleshooting#单独测试-key-和端点) 排除客户端因素，再检查 Base URL 是否以 `/v1` 结尾且没有重复拼接路径。
 
@@ -57,11 +55,7 @@ RikkaHub 支持以 OpenAI 兼容方式接入 TokenFlux。
      <img src="/images/rikkahub/step-1-edit-model-type.png" alt="RikkaHub 将生图模型类型设置为图像的界面" />
    </div>
 
-2. 返回首页，点击左侧**侧边栏**，在底部找到**生图**选项并进入。
-
-   <div style="text-align: center;">
-     <img src="/images/rikkahub/step-2-image-settings.png" alt="RikkaHub 侧边栏底部的图像生成入口" />
-   </div>
+2. 返回首页，展开左侧**侧边栏**，打开底部的**菜单**，再选择**生图**。
 
 3. 在生图页面选择刚才设置好的模型，即可开始生成图像。
 

@@ -13,6 +13,7 @@ verifiedAt: '2026-08-22'
    - Apple Silicon Mac: choose `arm64`.
    - Intel Mac: choose `x64`.
    - Windows: choose the Windows installer.
+   - UnionTech UOS / Kylin: follow the official download page's instructions to install from your system's app store.
 3. On macOS, open the downloaded DMG and drag `WorkBuddy.app` into `Applications`. On Windows, follow the installer prompts.
 4. On first launch, WorkBuddy prepares its local runtime. Keep the network available and wait for the welcome screen instead of force-quitting the app.
 
@@ -121,7 +122,7 @@ When using a [composite key](/en/docs/tokenflux/composite-key), include the grou
      <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="The gpt-6-astra custom model outlined in red in WorkBuddy's model selector" />
    </div>
 
-4. Send a minimal test message. The captured run used `你好` ("Hello"); it completed in 6 seconds, and the response footer identified `gpt-6-astra` as the active model.
+4. Send a minimal test message, such as `你好` ("Hello"). The run recorded on this page received a `gpt-6-astra` reply in about 6 seconds; response time varies with the model, context, and service load.
 
    <div style="text-align: center;">
      <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy successfully responding with gpt-6-astra, with the model name in the response footer outlined in red" />

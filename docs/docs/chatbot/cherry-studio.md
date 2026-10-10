@@ -42,54 +42,43 @@ Cherry Studio 提供 Intel 和 Apple Silicon 两个版本，请按芯片类型�
 
   <DocsTab title="Linux" name="linux">
 
-Linux 版本以 AppImage 格式分发，支持 x86_64 和 ARM64 架构。
+Linux 发布包包括 AppImage、deb 和 rpm。下方以支持 x86_64 和 ARM64 的 AppImage 为例。
 
 1. 访问 [下载页面](https://cherry-ai.com/download)，根据系统架构选择对应 AppImage 文件：
    - 普通 x86 设备：选择 `x86_64` 版本
    - ARM 设备：选择 `ARM64` 版本
-2. 下载完成后，赋予文件可执行权限：
+2. 在下载目录中赋予文件可执行权限。将命令中的 `Cherry-Studio.AppImage` 替换为实际下载的文件名：
 
    ```bash
-   chmod +x CherryStudio-*.AppImage
+   chmod +x ./Cherry-Studio.AppImage
    ```
 
-3. 双击运行，或在终端中执行：
+3. 双击运行，或使用同一实际文件名在终端中执行：
 
    ```bash
-   ./CherryStudio-*.AppImage
+   ./Cherry-Studio.AppImage
    ```
-
-AppImage 已内置所有依赖，适用于大多数主流 Linux 发行版，无需额外安装。
 
   </DocsTab>
 </DocsTabs>
 
 ## 接入 TokenFlux
 
-安装完成后，在 Cherry Studio 中添加 TokenFlux 作为自定义服务商。
+安装完成后，在 Cherry Studio 中添加 TokenFlux 作为自定义服务商。以下步骤使用 2.x 的协议端点配置界面。
 
 1. 按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 生成一个 API Key。
-2. 打开 `Cherry Studio`，进入**设置 → 模型服务**，点击添加服务商。
-3. 选择提供商类型：`OpenAI-Response`。
+2. 打开 `Cherry Studio`，进入设置中的供应商管理，添加自定义供应商。
+3. 将名称设为 `TokenFlux`，填入 API Key。
+4. 展开更多端点设置，在 **OpenAI Responses** 的地址字段填写 `https://tokenflux.dev/v1`。请求预览应指向 `https://tokenflux.dev/v1/responses`。
+5. 如果同时配置了其他对话端点，将 **OpenAI Responses** 设为默认对话端点。
+6. 保存供应商，在该供应商的模型列表中获取并添加所需模型，例如 `gpt-6-astra`。
+7. 回到对话界面，选择该模型并发送消息。
 
-   <div style="text-align: center;">
-     <img src="/images/cherry-studio/provider-type-selection.png" alt="Cherry Studio 选择 OpenAI-Response 提供商类型的界面" />
-   </div>
-
-4. 填入刚才生成的 API Key 和 API 地址 `https://tokenflux.dev/v1`，点击获取模型列表，选择目标模型。
-
-   <div style="text-align: center;">
-     <img src="/images/cherry-studio/provider-config-fields.png" alt="Cherry Studio 填写 TokenFlux API Key 和 API 地址的界面" />
-   </div>
-
-5. 保存后，在模型列表中添加你需要使用的模型，例如 `gpt-6-astra`。
-6. 回到对话界面，选择刚才添加的模型即可开始使用。
+使用 Chat Completions 时，在对应端点字段中同样填写 `https://tokenflux.dev/v1`，并选择匹配的默认对话端点。协议路径会自动拼接，无需把 `/responses` 或 `/chat/completions` 写入上述地址字段。
 
 ## 验证接入
 
-第 4 步的**获取模型列表**就是最直接的检查：能拉到模型说明 API Key 和地址都正确。
-
-再在对话界面发一条消息，收到回复即接入成功，调用记录可在 [使用记录](https://tokenflux.dev/usage) 中核对。
+获取模型列表可以确认列表接口能够访问；随后还需在对话界面发一条消息，收到回复后在 [使用记录](https://tokenflux.dev/usage) 中核对请求。
 
 拉不到模型列表时，先按 [单独测试 Key 和端点](/docs/troubleshooting#单独测试-key-和端点) 排除客户端因素，再检查地址是否漏写或多写了 `/v1`。
 

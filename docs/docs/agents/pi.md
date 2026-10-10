@@ -13,7 +13,7 @@ verifiedAt: '2026-09-05'
 <DocsTabs default-tab="npm">
   <DocsTab title="npm 安装" name="npm">
 
-全局安装 `Pi`：
+需要 Node.js 22.19.0 或更高版本。确认 `node --version` 满足要求后，全局安装 `Pi`：
 
 ```bash
 npm install -g --ignore-scripts @earendil-works/pi-coding-agent
@@ -120,7 +120,7 @@ pi --provider openai --model gpt-6-astra --no-session --no-tools -p "只回复 O
 
 ### 看到模型列表不代表分组一定支持
 
-Pi 内置模型目录可能显示当前 TokenFlux 分组不支持的模型。在模型列表中看到模型只说明客户端配置已成功加载，实际能否使用必须以最小调用是否成功为准。
+Pi 内置模型目录可能显示当前 TokenFlux 分组不支持的模型。模型出现在列表中只说明客户端可以列出它；实际接入情况仍需通过最小调用确认。
 
 ### 费用与扣费核算
 
@@ -139,5 +139,5 @@ pi update --models
 - [创建 API Key](/docs/tokenflux/create-apikey) — 选择分组并生成密钥
 - [API 端点](/docs/tokenflux/endpoints) — 地址与协议格式
 - [排障](/docs/troubleshooting) — 按症状定位问题
-- [Pi 官方项目 (GitHub)](https://github.com/earendil-works/pi-mono) — 源码与官方文档
+- [Pi 官方项目 (GitHub)](https://github.com/earendil-works/pi) — 源码与官方文档
 - [Pi 官网](https://pi.dev) — 官方主页

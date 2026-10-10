@@ -28,7 +28,6 @@ verifiedAt: '2026-09-16'
 建议使用 Homebrew 进行安装：
 
 ```bash
-brew tap farion1231/ccswitch
 brew install --cask cc-switch
 ```
 
@@ -39,22 +38,22 @@ brew install --cask cc-switch
   <DocsTab title="Linux" name="linux">
 
 1. 前往 [发布页面](https://github.com/farion1231/cc-switch/releases/latest)。
-2. 找到适合操作系统架构的 AppImage 文件（例如 `CC-Switch-v3.13.0-Linux-x86_64.AppImage`）。
+2. 选择与系统架构匹配的 AppImage 文件，`x86_64` 用于普通 Intel / AMD 设备，`arm64` 用于 ARM 设备。
 
    <div style="text-align: center;">
      <img src="/images/cc-switch/linux-installer-selection.png" alt="如何在 Releases 页面选择适合 Linux 的 AppImage 文件" />
    </div>
 
-3. 下载完成后，赋予文件可执行权限：
+3. 在下载目录中赋予文件可执行权限。将下方的 `CC-Switch.AppImage` 替换为实际下载的文件名：
 
    ```bash
-   chmod +x CC-Switch-v3.13.0-Linux-x86_64.AppImage
+   chmod +x ./CC-Switch.AppImage
    ```
 
-4. 双击运行文件，或在终端中启动：
+4. 双击运行文件，或使用同一实际文件名在终端中启动：
 
    ```bash
-   ./CC-Switch-v3.13.0-Linux-x86_64.AppImage
+   ./CC-Switch.AppImage
    ```
 
    图形界面环境下也可右键点击文件，在属性中启用“作为可执行程序”权限。
@@ -84,6 +83,8 @@ brew install --cask cc-switch
      <img src="/images/cc-switch/import-to-cc-switch-dialog.png" alt="CC-Switch 的“确认导入供应商配置”窗口" />
    </div>
 
+4. 在侧栏选择对应客户端，找到刚导入的 TokenFlux 供应商并点击“启用”。使用 Codex、Gemini CLI 或 Grok Build 时，再重启对应客户端。
+
 导入到哪个客户端由该 Key 所属分组决定：
 
 | 分组平台  | 导入为        |
@@ -105,10 +106,10 @@ Antigravity 分组会先让你选择导入为 `Claude Code` 还是 `Gemini CLI`�
 
 控制台的“导入到 CCS”不覆盖 `OpenCode` 等客户端，这些客户端可以在 `CC-Switch` 中手动添加：
 
-1. 在 `CC-Switch` 顶部切换到目标应用。
-2. 点击右上角的“+”，在“应用专属供应商”标签页里选择“自定义”。
+1. 在 `CC-Switch` 侧栏选择目标应用。
+2. 点击右上角的“+”，选择自定义供应商。
 3. 填写 `名称`、`API 地址` 和 `API Key`。API 地址按 [API 端点](/docs/tokenflux/endpoints) 中对应协议的地址填写。
-4. 保存并启用。
+4. 保存后，在供应商卡片上点击“启用”；`OpenCode` 使用“添加”，允许同时配置多个供应商。
 
   </DocsTab>
 
@@ -134,7 +135,7 @@ Antigravity 分组会先让你选择导入为 `Claude Code` 还是 `Gemini CLI`�
      <img src="/images/cc-switch/manual-provider-fields.png" alt="CC-Switch 手动填写统一供应商字段示意图" />
    </div>
 
-4. 勾选要同步的应用（`Claude Code` / `Codex` / `Gemini`），保存。
+4. 勾选要同步的应用（`Claude Code` / `Codex` / `Gemini`）并保存，再到各应用页面启用同步生成的 TokenFlux 供应商。
 
 修改统一供应商会自动同步到所有勾选的应用，删除它也会一并删除这些应用下对应的供应商。
 
@@ -149,7 +150,7 @@ Antigravity 分组会先让你选择导入为 `Claude Code` 还是 `Gemini CLI`�
 
 ### 应用专属供应商
 
-1. 在 `CC-Switch` 顶部切换到 `Claude Code`。
+1. 在 `CC-Switch` 侧栏选择 `Claude Code`。
 2. 找到 TokenFlux 对应的 Claude 供应商卡片，点击“编辑”。
 3. 在“配置 JSON”里的 `env` 中追加：
 

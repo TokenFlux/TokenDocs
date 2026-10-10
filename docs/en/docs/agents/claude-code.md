@@ -93,7 +93,8 @@ Steps:
 
 1. Follow [Create API Key](/en/docs/tokenflux/create-apikey) to generate an API key.
 2. In the key list, click "More" on that key and choose "Import to CCS", then confirm the import in the `CC-Switch` window. See [CC-Switch](/en/docs/agents/cc-switch) for details.
-3. Restart `Claude Code` after configuration is complete.
+3. Enable the imported TokenFlux provider on the `Claude Code` page in `CC-Switch`.
+4. Restart `Claude Code` after configuration is complete.
 
   </DocsTab>
 
@@ -168,6 +169,8 @@ Replace `YOUR_TOKENFLUX_API_KEY` with your actual API key.
 ## The Claude Max Group
 
 On the `Claude Max` group you can additionally enable `ENABLE_PROMPT_CACHING_1H=1` after finishing the basic configuration above. This option enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context. Other Claude groups do not need it.
+
+Upstream cache writes cost more with a 1-hour TTL than with the default 5-minute TTL. TokenFlux billing follows the cache prices in the [model marketplace](https://tokenflux.dev/models). See the [official Claude Code documentation](https://code.claude.com/docs/en/prompt-caching) for other cache TTL settings.
 
 If you manage Claude Code through `CC-Switch`, see the [CC-Switch Claude Max environment variable notes](/en/docs/agents/cc-switch#claude-max-environment-variables).
 

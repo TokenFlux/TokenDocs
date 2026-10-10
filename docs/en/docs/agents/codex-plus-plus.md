@@ -4,100 +4,63 @@ verifiedAt: '2026-08-22'
 
 # Codex++
 
-::: danger Warning
-Do not use GPT-series models to perform the following operations.
-:::
+`Codex++` is an external launcher and manager for Codex App, with provider switching, session management, and interface enhancements. It uses the Chromium DevTools Protocol (CDP) and a local helper service without modifying the official app's `app.asar`.
 
-`Codex++` is an external launcher for Codex App that injects enhancement scripts through the Chromium DevTools Protocol, **without modifying Codex's original installation files**.
+Project repository: [BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus). The following steps apply to the current 1.7 release series.
 
-Project repository: [https://github.com/BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus)
+## Installation
 
-## Features
+Install the official Codex App using the [Codex Guide](/en/docs/agents/codex), then download the package for your system from the [Codex++ release page](https://github.com/BigPizzaV3/CodexPlusPlus/releases/latest).
 
-- **Codex++ top menu**: Central management for enhancement features.
-- **Plugin entry unlock**: Display and enable plugin entry in API key mode.
-- **Force install plugins**: Remove the frontend installation block caused by App unavailable.
-- **Session delete**: Hover to reveal a delete button, with confirmation and undo support.
-- **Markdown export**: Export session Markdown with timestamps from local rollout.
-- **Session move**: Move sessions to regular conversations or other local projects.
-- **Conversation Timeline**: Show user-query timeline on the right, with hover summary and click to jump.
-- **Provider sync**: Preserve historical sessions when switching model_provider or provider.
-- **Windows shortcuts, uninstall entry**, optional watcher for automatic takeover.
-- **macOS /Applications/Codex++.app generation**.
+<DocsTabs default-tab="windows">
+  <DocsTab title="Windows" name="windows">
 
-## How to Set Up
+1. Download the installer ending in `windows-x64-setup.exe`, or choose `windows-x64.zip` for the portable version.
+2. Run the installer, or extract the portable archive to a permanent directory.
+3. Open the **Codex++ Manager** and check the detected Codex App path.
 
-Supports automatic configuration via AI Agent or manual configuration.
+  </DocsTab>
 
-### Hand to Agent
+  <DocsTab title="macOS" name="macos">
 
-Provide the project link to your AI Agent and instruct it to complete installation and configuration according to documentation:
+1. Download the package ending in `macos-universal.dmg`, which supports Apple Silicon and Intel Macs.
+2. Open the DMG and follow its installation instructions.
+3. Open the **Codex++ Manager** and check the detected Codex App path.
 
-```text
-https://github.com/BigPizzaV3/CodexPlusPlus
-```
+  </DocsTab>
+</DocsTabs>
 
-The Agent will clone the project and run the installation steps automatically.
+## Connect to TokenFlux
 
-### Manual Setup
+1. Follow [Create API Key](/en/docs/tokenflux/create-apikey) to get a key.
+2. Configure a provider in the **Codex++ Manager**, select **API-only** mode, and enter:
 
-**Windows**
+   | Field    | Value                                                   |
+   | -------- | ------------------------------------------------------- |
+   | Base URL | `https://tokenflux.dev/v1`                              |
+   | API Key  | Your TokenFlux API key                                  |
+   | Protocol | Responses                                               |
+   | Model    | `gpt-6-astra`, or another model supported by your group |
 
-Double-click `setup.bat` in the project root directory and choose:
+3. Save the provider and model configuration, and enable any enhancements you want.
+4. Launch Codex App through the **Codex++** entry to load the saved configuration.
 
-```text
-[1] Install Codex++
-```
+If you already have an official login and want to retain its related entry points, you can choose **Official login + API** mode. Model requests in this mode still use the configured API. See the [project documentation](https://github.com/BigPizzaV3/CodexPlusPlus#供应商与模型) for the differences between modes.
 
-After installation, double-click the `Codex++.lnk` shortcut on your desktop to launch.
+## Usage and Updates
 
-Command-line install/launch:
+- **Codex++ Manager**: Configure providers, models, and enhancements, and view runtime status and diagnostics.
+- **Codex++**: Launch the official desktop app with the saved provider and enhancement settings.
+- After changing enhancements that depend on injected scripts, save and restart Codex++.
+- Check for updates on the manager's **About** page.
 
-```bash
-python -m pip install -e .
-python -m codex_session_delete setup
-python -m codex_session_delete launch
-```
+## Troubleshooting
 
-**macOS**
+If the enhancement menu is missing, confirm that you launched through **Codex++**, then check the app path and logs on the manager's **Installation Maintenance** or **About** page.
 
-```bash
-python -m pip install -e .
-python -m codex_session_delete setup
-```
+If requests fail after switching providers, run the model test or **Provider Doctor** in the provider details to check the protocol, API URL, key, and model. Model tests make real requests and may incur charges.
 
-After installation, `/Applications/Codex++.app` will be generated.
-
-## How It Works
-
-1. Launch Codex App externally with CDP arguments:
-   - `--remote-debugging-port=9229`
-   - `--remote-allow-origins=http://127.0.0.1:9229`
-2. Start a local helper service for health checks, settings, export, move, delete, and other operations.
-3. Inject `renderer-inject.js` through CDP.
-4. The renderer calls the local service through the CDP bridge.
-5. Inherit existing proxy environment variables at startup; if none are set, it automatically detects common local proxy ports.
-
-This approach **does not modify Codex's app.asar** and does not write DLLs into the Codex installation directory.
-
-## Common Commands
-
-```bash
-# Install dependencies
-python -m pip install -e .
-
-# Launch
-python -m codex_session_delete launch
-
-# Install shortcut / app bundle
-python -m codex_session_delete setup
-
-# Uninstall
-python -m codex_session_delete remove
-
-# Check for updates
-python -m codex_session_delete check-update
-```
+Some enhancements depend on the official app's interface and local data formats. If an official app update causes compatibility issues, check the Codex++ [release notes](https://github.com/BigPizzaV3/CodexPlusPlus/releases).
 
 ## Related Content
 

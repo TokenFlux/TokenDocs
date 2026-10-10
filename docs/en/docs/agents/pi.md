@@ -13,7 +13,7 @@ Choose an official installation method based on your setup.
 <DocsTabs default-tab="npm">
   <DocsTab title="npm Install" name="npm">
 
-Install `Pi` globally:
+Node.js 22.19.0 or later is required. Check `node --version`, then install `Pi` globally:
 
 ```bash
 npm install -g --ignore-scripts @earendil-works/pi-coding-agent
@@ -120,7 +120,7 @@ This verification command makes a real model call to TokenFlux and incurs charge
 
 ### Model Catalog vs. Group Support
 
-Pi's built-in model catalog may list models not supported by your current TokenFlux group. Seeing a model in the list only indicates that the configuration was loaded; whether it works depends on whether the minimal call succeeds.
+Pi's built-in catalog may list models your TokenFlux group does not support. A model appearing in the list only means the client can list it; confirm the connection with the minimal call.
 
 ### Cost Metadata vs. Actual Pricing
 
@@ -139,5 +139,5 @@ pi update --models
 - [Create API Key](/en/docs/tokenflux/create-apikey) - pick a group and generate a key
 - [API Endpoints](/en/docs/tokenflux/endpoints) - address and protocol format
 - [Troubleshooting](/en/docs/troubleshooting) - locate a problem by symptom
-- [Pi Repository (GitHub)](https://github.com/earendil-works/pi-mono) - source code and official documentation
+- [Pi Repository (GitHub)](https://github.com/earendil-works/pi) - source code and official documentation
 - [Pi Website](https://pi.dev) - official homepage

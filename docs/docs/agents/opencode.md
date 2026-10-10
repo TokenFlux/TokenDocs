@@ -80,8 +80,8 @@ scoop install opencode
 操作步骤：
 
 1. 按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 生成 API Key。
-2. 在 `CC-Switch` 顶部切换到 `OpenCode`，点击“+”添加供应商，填入 `API 地址` `https://tokenflux.dev/v1`、API Key 与模型。控制台的“导入到 CCS”不覆盖 `OpenCode`，详见 [CC-Switch](/docs/agents/cc-switch)。
-3. 配置完成后，重启 `OpenCode`。
+2. 在 `CC-Switch` 侧栏选择 `OpenCode`，点击“+”添加供应商，填入 `API 地址` `https://tokenflux.dev/v1`、API Key 与模型。控制台的“导入到 CCS”不覆盖 `OpenCode`，详见 [CC-Switch](/docs/agents/cc-switch)。
+3. 保存后，在供应商卡片上点击“添加”，再重启 `OpenCode`。
 
   </DocsTab>
 
@@ -110,7 +110,7 @@ scoop install opencode
 }
 ```
 
-`OpenCode` 会通过内置的 `openai` provider 自动识别模型。其他平台也按同样方式配置到对应的内置 provider；需要访问多个分组时，可以在创建 API Key 时开启 **复合 Key**。
+此示例适用于普通 Key。内置 `openai` provider 使用 OpenCode 的模型目录；更改 `baseURL` 不会自动从 TokenFlux 获取全部模型。使用目录之外的模型或带前缀的复合 Key 时，需要显式配置 `provider.models`，见下文。
 
 **第三步：启动 OpenCode**
 
@@ -129,16 +129,62 @@ opencode
   </DocsTab>
 </DocsTabs>
 
+## 使用复合 Key
+
+[复合 Key](/docs/tokenflux/composite-key) 要求请求中的模型 ID 带分组前缀。假设已将 `GPT` 前缀映射到支持 `gpt-6-astra` 的分组，可以使用下面的 `opencode.json`：
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "tokenflux/GPT/gpt-6-astra",
+  "provider": {
+    "tokenflux": {
+      "npm": "@ai-sdk/openai",
+      "name": "TokenFlux",
+      "options": {
+        "baseURL": "https://tokenflux.dev/v1",
+        "apiKey": "YOUR_API_KEY"
+      },
+      "models": {
+        "GPT/gpt-6-astra": {
+          "name": "GPT-6 Astra (TokenFlux)",
+          "reasoning": true,
+          "tool_call": true,
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "limit": {
+            "context": 128000,
+            "output": 32768
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+将 `YOUR_API_KEY` 替换为复合 Key，`GPT` 替换为该 Key 上实际配置的前缀。`tokenflux` 是 OpenCode 中的供应商标识，请求发送的模型 ID 是 `GPT/gpt-6-astra`。
+
+`limit` 是示例设置的客户端 Token 预算，可按模型与分组的实际能力调整。添加其他模型时，还需填写相应的工具调用、输入类型和思考能力，字段见 [OpenCode 自定义供应商文档](https://opencode.ai/docs/providers/#custom-provider)。
+
 ## 验证接入
 
-两种配置方式都可以用下面的命令确认：
+普通 Key 的上述配置可以用下面的命令确认：
 
 ```bash
 opencode models
-opencode run -m openai/<模型 ID> "只回复 OK"
+opencode run -m openai/gpt-6-astra "只回复 OK"
 ```
 
-`opencode models` 列出已加载的模型，模型 ID 出现在列表里说明配置被读到了。`opencode run` 会真实调用并扣费，收到回复即接入成功。
+使用上面的复合 Key 示例时，测试命令为：
+
+```bash
+opencode run -m tokenflux/GPT/gpt-6-astra "只回复 OK"
+```
+
+`opencode models` 展示客户端模型目录，不会验证 TokenFlux 的 API Key、地址或模型权限。`opencode run` 会真实调用并扣费，收到回复后可在 [使用记录](https://tokenflux.dev/usage) 中确认请求。
 
 命令报错或模型列表为空时，先按 [单独测试 Key 和端点](/docs/troubleshooting#单独测试-key-和端点) 排除客户端因素，再回头检查 `opencode.json`。
 
