@@ -44,10 +44,10 @@ Seeing the version number confirms the installation succeeded.
 
 ### 1. Create an API Key
 
-Follow [Create API Key](/en/docs/tokenflux/create-apikey) to generate an API key, selecting a group that supports the OpenAI format.
+Follow [Create API Key](/en/docs/tokenflux/create-apikey) to generate an API key, selecting the `ChatGPT` group.
 
 ::: tip Model Availability
-This guide uses `gpt-5.6-terra` as an example. For the full list of available models, refer to [Models](https://tokenflux.dev/models) and the models supported by your selected key group.
+This guide uses `gpt-6-astra` as an example. For the full list of available models, refer to [Models](https://tokenflux.dev/models) and the models supported by your selected key group.
 :::
 
 ### 2. Configure models.json
@@ -91,7 +91,7 @@ Pi saves credentials in `~/.pi/agent/auth.json` (or `%USERPROFILE%\.pi\agent\aut
 Run the following command to check matching models in Pi:
 
 ```bash
-pi --list-models gpt-5.6-terra
+pi --list-models gpt-6-astra
 ```
 
 ### Interactive Session
@@ -99,7 +99,7 @@ pi --list-models gpt-5.6-terra
 Launch an interactive session by specifying the provider and model:
 
 ```bash
-pi --provider openai --model gpt-5.6-terra
+pi --provider openai --model gpt-6-astra
 ```
 
 Once Pi is running, you can also switch models inside the session using the `/model` command or the `Ctrl+L` shortcut.
@@ -109,7 +109,7 @@ Once Pi is running, you can also switch models inside the session using the `/mo
 Run the following minimal command to verify the setup:
 
 ```bash
-pi --provider openai --model gpt-5.6-terra --no-session --no-tools -p "Reply with OK only"
+pi --provider openai --model gpt-6-astra --no-session --no-tools -p "Reply with OK only"
 ```
 
 ::: warning Real Calls and Billing Notice

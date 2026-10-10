@@ -17,11 +17,7 @@ The invoice title provided by this site is: `深圳市萌凛科技有限责任�
 
 ## Application Process
 
-If you need a mainland China general invoice, contact `daoge` and provide the following information:
-
-1. Required invoice type: mainland China general invoice.
-2. The order or top-up record that needs an invoice.
-3. Invoice title, tax ID, and other required details.
+If you need a mainland China general invoice, contact `daoge` before paying. Provide the invoice title, tax ID, and other required details, then follow their payment instructions.
 
 ## Related Content
 

@@ -194,6 +194,6 @@ Skill 会依次确认目标模型、原始窗口大小、有效窗口比例和�
 
 ## codex-auto-review
 
-为消除歧义，`codex-auto-review` 现已默认重定向到 `gpt-5.6-terra`。
+`ChatGPT`、`ChatGPT (Azure)` 和 `ChatGPT (不稳定)` 分组当前默认将 `codex-auto-review` 重定向到 `gpt-6.1-sol`。
 
-模型路由功能已经上线，可以在 [API 密钥页面](https://tokenflux.dev/keys) 自助把它重定向到 `gpt-5.6-terra`，以降低花费。
+如需使用其他模型，可以在 [API 密钥页面](https://tokenflux.dev/keys) 设置该 Key 的模型重定向。目标模型须在所选分组中可用，价格可在 [模型广场](https://tokenflux.dev/models) 查看。

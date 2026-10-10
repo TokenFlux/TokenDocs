@@ -19,17 +19,9 @@ A group determines the available models, the billing price, the protocol format 
 
 An API key must be assigned to a group at creation. A regular key binds to exactly one group; use a [composite key](/en/docs/tokenflux/composite-key) to use several at once.
 
-Some models are offered as separate groups per protocol format, such as `DeepSeek（OpenAI格式）` and `DeepSeek（Anthropic格式）`. The group must match the format your client uses; see [API Endpoints](/en/docs/tokenflux/endpoints#which-format-to-use).
-
 The multiplier applies to a model's base price. Prices shown in the [model marketplace](https://tokenflux.dev/models) already include it and are the final billing prices.
 
 A group is a property of an API key and is unrelated to the account's subscription plan (Lite, Plus, Pro, and so on).
-
-### Groups That Need Attention
-
-The OpenAI series is now a single group, `ChatGPT`, with a 4.0× multiplier and no client restriction. The former `ChatGPT Pro`, `ChatGPT Pro (负载均衡)`, `ChatGPT Pro (不限客户端)`, and `ChatGPT Plus (不稳定)` groups have been merged into it.
-
-Some groups are still tied to one client. `Claude Max` is Claude Code only; other clients receive 403, see [Error Codes](/en/docs/errors#group-capabilities). Read the group description in the model marketplace before choosing.
 
 ## Account Pools
 

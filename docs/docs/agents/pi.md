@@ -44,10 +44,10 @@ pi --version
 
 ### 1. 创建 API Key
 
-按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 创建一张 API Key，选择支持 OpenAI 格式的分组。
+按 [创建 API Key 教程](/docs/tokenflux/create-apikey) 创建一张 API Key，选择 `ChatGPT` 分组。
 
 ::: tip 模型可用性
-本教程以 `gpt-5.6-terra` 为例。完整可用模型列表请以 [模型广场](https://tokenflux.dev/models) 和所选 Key 分组实际支持的模型为准。
+本教程以 `gpt-6-astra` 为例。完整可用模型列表请以 [模型广场](https://tokenflux.dev/models) 和所选 Key 分组实际支持的模型为准。
 :::
 
 ### 2. 配置 models.json
@@ -91,7 +91,7 @@ Pi 会把凭据保存至 `~/.pi/agent/auth.json`（Windows 为 `%USERPROFILE%\.p
 运行以下命令检查 Pi 中匹配的模型：
 
 ```bash
-pi --list-models gpt-5.6-terra
+pi --list-models gpt-6-astra
 ```
 
 ### 交互启动
@@ -99,7 +99,7 @@ pi --list-models gpt-5.6-terra
 指定 provider 和模型启动交互会话：
 
 ```bash
-pi --provider openai --model gpt-5.6-terra
+pi --provider openai --model gpt-6-astra
 ```
 
 启动 Pi 之后，也可以在交互界面中通过 `/model` 命令或快捷键 `Ctrl+L` 切换模型。
@@ -109,7 +109,7 @@ pi --provider openai --model gpt-5.6-terra
 使用以下最小命令验证调用：
 
 ```bash
-pi --provider openai --model gpt-5.6-terra --no-session --no-tools -p "只回复 OK"
+pi --provider openai --model gpt-6-astra --no-session --no-tools -p "只回复 OK"
 ```
 
 ::: warning 真实调用与扣费说明

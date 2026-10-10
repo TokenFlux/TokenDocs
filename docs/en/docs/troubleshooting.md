@@ -114,8 +114,6 @@ A 401 that persists after changing the key usually means the client is still usi
 - `This group does not allow ... requests` - the group does not accept the protocol used. A group exposing only the Anthropic format returns this for `/v1/chat/completions`.
 - `this group only allows Claude Code clients` - switch client or switch group.
 
-The former `ChatGPT Pro` groups have been merged into `ChatGPT`. Keys bound to an old group must be recreated on the new one, see [Core Concepts](/en/docs/concepts#groups-that-need-attention).
-
 **Team**
 
 `团队已暂停`, `团队成员关系已失效`, and `团队付款所有者已停用` require action from the team owner. See [Team](/en/docs/tokenflux/team).

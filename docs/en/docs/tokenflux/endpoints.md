@@ -30,8 +30,6 @@ If the client's setting is named `ANTHROPIC_BASE_URL`, use the Anthropic format.
 
 The OpenAI format includes distinct APIs such as Chat Completions and Responses; Codex uses Responses, for example. Sharing a base URL does not mean a model supports every API. Check that the group and model support the requests your client sends. Complete test requests are in [Troubleshooting](/en/docs/troubleshooting#send-a-minimal-inference-request).
 
-Some models are offered as two groups, one per format, such as `DeepSeek（OpenAI格式）` and `DeepSeek（Anthropic格式）`. Choose the one matching your client when creating an API key; the wrong one returns 403 `This group does not allow ... requests`, see [Error Codes](/en/docs/errors#group-capabilities).
-
 ## Authentication
 
 The API key is sent in a request header, which most clients handle automatically.

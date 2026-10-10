@@ -14,7 +14,7 @@ Different API key groups may have different multipliers. The multiplier is appli
   <img src="/images/billing/model-pricing.png" alt="Group multiplier badge in the model marketplace, with per-model input and output prices that already include the multiplier" />
 </div>
 
-Multipliers and client restrictions differ from group to group. Check [Core Concepts](/en/docs/concepts#groups-that-need-attention) and the group description in the model marketplace before choosing.
+Multipliers and client restrictions differ from group to group. Check [Core Concepts](/en/docs/concepts#groups) and the group description in the model marketplace before choosing.
 
 A group is a property of an API key and is unrelated to the subscription plans below (Lite, Plus, Pro, and so on). The names are similar but the two are different things.
 
@@ -45,11 +45,11 @@ Both are bought on the [top-up/subscription page](https://tokenflux.dev/purchase
 
 ### Subscription
 
-Usually cheaper, valid for 30 days. Eight tiers, from lowest to highest: `Lite`, `Lite+`, `Plus`, `Plus+`, `Pro`, `Pro+`, `Max`, `Max+`. Daily limits, monthly limits, and prices are listed on the purchase page.
+Usually cheaper, valid for 30 days. Eight tiers are currently on sale, from lowest to highest: `Lite`, `Lite+`, `Plus`, `Plus+`, `Pro`, `Pro+`, `Max`, `Max+`. All have a monthly allowance with no daily or weekly limit. Check monthly allowances and prices on the [top-up/subscription page](https://tokenflux.dev/purchase). For older plans, refer to the allowances and limits shown in [My Subscriptions](https://tokenflux.dev/subscriptions).
 
 Buying the same subscription again does not add a parallel one; it extends the duration, and the later purchase takes effect once the current one expires.
 
-Once a subscription allowance is exhausted, you can revoke it directly on the subscription page without contacting an administrator. If queued subscriptions exist, the next one takes effect automatically in sequence.
+If your allowance runs out before the plan expires, revoke the exhausted plan in [My Subscriptions](https://tokenflux.dev/subscriptions), then buy a new one on the [top-up/subscription page](https://tokenflux.dev/purchase). If you have already bought another period of the same plan and it is queued, revoking the exhausted plan activates the next period automatically.
 
 Several different plans can be active at once. The allowance expiring soonest is consumed first, and the account balance is charged only when no plan is available.
 

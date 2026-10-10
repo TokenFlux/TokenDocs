@@ -167,10 +167,6 @@ Replace `YOUR_TOKENFLUX_API_KEY` with your actual API key.
 
 ## The Claude Max Group
 
-::: warning
-The `Claude Max` group only accepts the `Claude Code` client and cannot be used in the Claude app. Other clients receive 403 `this group only allows Claude Code clients`, see [Error Codes](/en/docs/errors#group-capabilities).
-:::
-
 On the `Claude Max` group you can additionally enable `ENABLE_PROMPT_CACHING_1H=1` after finishing the basic configuration above. This option enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context. Other Claude groups do not need it.
 
 If you manage Claude Code through `CC-Switch`, see the [CC-Switch Claude Max environment variable notes](/en/docs/agents/cc-switch#claude-max-environment-variables).

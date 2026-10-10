@@ -143,10 +143,6 @@ Antigravity 分组会先让你选择导入为 `Claude Code` 还是 `Gemini CLI`�
 
 ## Claude Max 环境变量
 
-::: warning
-`Claude Max` 分组只接受 `Claude Code` 客户端，无法在 Claude 应用（Claude app）中使用。
-:::
-
 若通过 `CC-Switch` 管理 Claude Code，可以把 `ENABLE_PROMPT_CACHING_1H` 写进 Claude 供应商的 JSON 配置。`CC-Switch` 在启用供应商时会把该配置写入 Claude Code 的 `settings.json`。
 
 该变量用于开启 1 小时 prompt cache，适合重复携带较长上下文的 Claude Code 会话。其他 Claude 分组无需设置。

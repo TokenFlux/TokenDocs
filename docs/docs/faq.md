@@ -14,7 +14,15 @@
 
 ## 生图用哪个分组？
 
-生图模型在 `Google Image` 分组下，目前包含 `gemini-3.1-flash-image` 和 `nano-banana-pro`。创建 API Key 时选择该分组，完整列表和倍率以 [模型广场](https://tokenflux.dev/models) 为准。
+通过 API 生图时，按所需模型选择分组：
+
+| 分组            | 模型示例                                                       |
+| --------------- | -------------------------------------------------------------- |
+| `ChatGPT Image` | `gpt-image-2`、`gpt-image-2.5-flare`、`gpt-image-2.5-sunburst` |
+| `Google Image`  | `gemini-3.1-flash-image`、`nano-banana-pro`                    |
+| `Grok Image`    | `grok-imagine-image-2.0`                                       |
+
+创建 API Key 时选择对应分组，完整模型列表和倍率以 [模型广场](https://tokenflux.dev/models) 为准。使用网页 [创作台](/docs/tokenflux/creative) 时，直接选择模型即可，无需创建 API Key。
 
 分组未开放生图时，请求会返回 403 `Image generation is not enabled for this group`，见 [错误码](/docs/errors#分组能力限制)。
 

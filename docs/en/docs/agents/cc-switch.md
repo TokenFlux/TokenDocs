@@ -143,10 +143,6 @@ Editing a universal provider syncs the change to every ticked application, and d
 
 ## Claude Max Environment Variables
 
-::: warning
-The `Claude Max` group only accepts the `Claude Code` client and cannot be used in the Claude app.
-:::
-
 If you manage Claude Code through `CC-Switch`, you can add `ENABLE_PROMPT_CACHING_1H` to the Claude provider's JSON configuration. When you enable the provider, `CC-Switch` writes this configuration into Claude Code's `settings.json`.
 
 This variable enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context. Other Claude groups do not need it.

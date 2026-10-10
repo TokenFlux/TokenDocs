@@ -19,17 +19,9 @@
 
 创建 API Key 时必须指定一个分组。普通 Key 只能绑定一个分组，需要同时使用多个分组时使用[复合 Key](/docs/tokenflux/composite-key)。
 
-部分模型按协议格式提供不同分组，例如 `DeepSeek（OpenAI格式）` 和 `DeepSeek（Anthropic格式）`，需与客户端使用的格式一致，见 [API 端点](/docs/tokenflux/endpoints#该选哪个格式)。
-
 倍率作用于模型原价，[模型广场](https://tokenflux.dev/models) 显示的价格已包含倍率，即为最终扣费价格。
 
 分组是 API Key 的属性，与账户的订阅套餐（Lite / Plus / Pro 等）无关。
-
-### 需要留意的分组
-
-OpenAI 系列现为统一分组 `ChatGPT`，倍率 4.0×，不限客户端。原 `ChatGPT Pro`、`ChatGPT Pro (负载均衡)`、`ChatGPT Pro (不限客户端)`、`ChatGPT Plus (不稳定)` 已合并至此。
-
-部分分组仍限定客户端，`Claude Max` 只限 Claude Code，用其他客户端会返回 403，见 [错误码](/docs/errors#分组能力限制)。选择前请查看模型广场中的分组说明。
 
 ## 号池
 

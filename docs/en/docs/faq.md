@@ -14,7 +14,15 @@ Treat the results as a reference only, not as the sole basis for judging whether
 
 ## Which group covers image generation?
 
-Image generation models live in the `Google Image` group, currently `gemini-3.1-flash-image` and `nano-banana-pro`. Select that group when creating an API key. The full list and multiplier are whatever the [model marketplace](https://tokenflux.dev/models) shows.
+For image generation through the API, choose a group based on the model you need:
+
+| Group           | Example models                                                 |
+| --------------- | -------------------------------------------------------------- |
+| `ChatGPT Image` | `gpt-image-2`, `gpt-image-2.5-flare`, `gpt-image-2.5-sunburst` |
+| `Google Image`  | `gemini-3.1-flash-image`, `nano-banana-pro`                    |
+| `Grok Image`    | `grok-imagine-image-2.0`                                       |
+
+Select the corresponding group when creating an API key. Check the [model marketplace](https://tokenflux.dev/models) for the full model list and current multipliers. In the web [Creative Studio](/en/docs/tokenflux/creative), select a model directly; no API key is needed.
 
 A group without image generation returns 403 `Image generation is not enabled for this group`, see [Error Codes](/en/docs/errors#group-capabilities).
 

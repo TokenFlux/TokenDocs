@@ -21,6 +21,7 @@ export const APP_PATHS = [
   '/orders',
   '/purchase',
   '/register',
+  '/subscriptions',
   '/team',
   '/usage',
   '/v1',
@@ -49,7 +50,11 @@ export const SAMPLE_MODEL_IDS = [
   'gemini-3.1-flash-image',
   'gpt-5.6-terra',
   'gpt-image-2',
+  'gpt-image-2.5-flare',
+  'gpt-image-2.5-sunburst',
   'gpt-6-astra',
+  'gpt-6.1-sol',
+  'grok-imagine-image-2.0',
   'nano-banana-pro',
 ]
 

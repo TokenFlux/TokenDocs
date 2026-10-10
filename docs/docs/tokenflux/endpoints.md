@@ -30,8 +30,6 @@ OpenAI 格式和 Anthropic 格式的端点可在 [API 密钥页面](https://toke
 
 OpenAI 格式包含 Chat Completions 和 Responses 等不同接口；例如 Codex 使用 Responses。Base URL 相同不代表模型支持所有接口，需确认分组和模型支持客户端实际发送的请求。完整测试请求见 [排障](/docs/troubleshooting#发送最小推理请求)。
 
-部分模型提供两个分组，分别对应 OpenAI 格式和 Anthropic 格式，例如 `DeepSeek（OpenAI格式）` 和 `DeepSeek（Anthropic格式）`。创建 API Key 时按客户端选择对应格式的分组，选错返回 403 `This group does not allow ... requests`，见 [错误码](/docs/errors#分组能力限制)。
-
 ## 认证
 
 API Key 通过请求头传递，多数客户端会自动处理。

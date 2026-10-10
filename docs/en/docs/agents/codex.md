@@ -194,6 +194,6 @@ The skill confirms the target models, raw window size, effective-window percenta
 
 ## About codex-auto-review
 
-To remove any ambiguity, `codex-auto-review` now redirects to `gpt-5.6-terra` by default.
+The `ChatGPT`, `ChatGPT (Azure)`, and `ChatGPT (不稳定)` groups currently redirect `codex-auto-review` to `gpt-6.1-sol` by default.
 
-Model routing is live, so you can redirect it yourself to `gpt-5.6-terra` on the [API keys page](https://tokenflux.dev/keys) to lower your costs.
+To use another model, configure a model redirect for your key on the [API keys page](https://tokenflux.dev/keys). The target model must be available in the selected group; check its price in the [model marketplace](https://tokenflux.dev/models).

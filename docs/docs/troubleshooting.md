@@ -114,8 +114,6 @@ HTTP 2xx 且响应包含模型生成的文本，说明这一组 Key、模型和�
 - `This group does not allow ... requests` — 分组不支持所用的协议入口。例如只开放 Anthropic 格式的分组，使用 `/v1/chat/completions` 即返回此错误。
 - `this group only allows Claude Code clients` — 该分组只接受 Claude Code，需更换客户端或分组。
 
-原 `ChatGPT Pro` 系列分组已合并为 `ChatGPT`，绑定旧分组的 Key 需用新分组重建，见 [核心概念](/docs/concepts#需要留意的分组)。
-
 **团队**
 
 `团队已暂停`、`团队成员关系已失效`、`团队付款所有者已停用` 需由团队所有者处理，见 [团队](/docs/tokenflux/team)。
