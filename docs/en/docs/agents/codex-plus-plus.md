@@ -6,7 +6,7 @@ verifiedAt: '2026-08-22'
 
 `Codex++` is an external launcher and manager for Codex App, with provider switching, session management, and interface enhancements. It uses the Chromium DevTools Protocol (CDP) and a local helper service without modifying the official app's `app.asar`.
 
-Project repository: [BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus). The following steps apply to the current 1.7 release series.
+Project repository: [BigPizzaV3/CodexPlusPlus](https://github.com/BigPizzaV3/CodexPlusPlus). The installation and launch steps below follow the v1.7.6 release.
 
 ## Installation
 
@@ -17,15 +17,15 @@ Install the official Codex App using the [Codex Guide](/en/docs/agents/codex), t
 
 1. Download the installer ending in `windows-x64-setup.exe`, or choose `windows-x64.zip` for the portable version.
 2. Run the installer, or extract the portable archive to a permanent directory.
-3. Open the **Codex++ Manager** and check the detected Codex App path.
+3. Open **Codex++** and check the detected Codex App path.
 
   </DocsTab>
 
   <DocsTab title="macOS" name="macos">
 
 1. Download the package ending in `macos-universal.dmg`, which supports Apple Silicon and Intel Macs.
-2. Open the DMG and follow its installation instructions.
-3. Open the **Codex++ Manager** and check the detected Codex App path.
+2. Open the DMG and drag `Codex++.app` into Applications.
+3. Open **Codex++** and check the detected Codex App path.
 
   </DocsTab>
 </DocsTabs>
@@ -33,7 +33,7 @@ Install the official Codex App using the [Codex Guide](/en/docs/agents/codex), t
 ## Connect to TokenFlux
 
 1. Follow [Create API Key](/en/docs/tokenflux/create-apikey) to get a key.
-2. Configure a provider in the **Codex++ Manager**, select **API-only** mode, and enter:
+2. Configure a provider in **Codex++**, select **API-only** mode, and enter:
 
    | Field    | Value                                                   |
    | -------- | ------------------------------------------------------- |
@@ -43,20 +43,19 @@ Install the official Codex App using the [Codex Guide](/en/docs/agents/codex), t
    | Model    | `gpt-6-astra`, or another model supported by your group |
 
 3. Save the provider and model configuration, and enable any enhancements you want.
-4. Launch Codex App through the **Codex++** entry to load the saved configuration.
+4. Click **Launch** in the **Codex++** interface to load the saved configuration and open the official Codex App.
 
 If you already have an official login and want to retain its related entry points, you can choose **Official login + API** mode. Model requests in this mode still use the configured API. See the [project documentation](https://github.com/BigPizzaV3/CodexPlusPlus#供应商与模型) for the differences between modes.
 
 ## Usage and Updates
 
-- **Codex++ Manager**: Configure providers, models, and enhancements, and view runtime status and diagnostics.
-- **Codex++**: Launch the official desktop app with the saved provider and enhancement settings.
-- After changing enhancements that depend on injected scripts, save and restart Codex++.
-- Check for updates on the manager's **About** page.
+Installation provides a single **Codex++** entry. Double-click it to open the configuration and management interface. Check the app path, select and save a provider, then click **Launch** to open the official app.
+
+After changing enhancements that depend on injected scripts, save and restart Codex from the interface. Check for updates on the **About** page.
 
 ## Troubleshooting
 
-If the enhancement menu is missing, confirm that you launched through **Codex++**, then check the app path and logs on the manager's **Installation Maintenance** or **About** page.
+If the enhancement menu is missing, confirm that you clicked **Launch** in **Codex++** to open the official app, then check the app path and logs on the **Installation Maintenance** or **About** page.
 
 If requests fail after switching providers, run the model test or **Provider Doctor** in the provider details to check the protocol, API URL, key, and model. Model tests make real requests and may incur charges.
 

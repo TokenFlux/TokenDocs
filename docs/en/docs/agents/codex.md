@@ -1,10 +1,13 @@
 ---
-verifiedAt: '2026-08-22'
+verifiedAt: '2026-10-11'
+verifiedWith: 'macOS 27.0.1 (arm64); Codex CLI 0.162.1; manual provider configuration with a temporary CODEX_API_KEY credential; gpt-6-astra in the ChatGPT group returned OK through Responses, confirmed in usage logs.'
 ---
 
 # Codex Guide
 
 `Codex` is an AI Agent tool designed for code generation, modification, and review.
+
+This test covered only the CLI request with a regular key described above. Codex App, CC-Switch import, `auth.json` authentication, WebSocket, and remote compaction were not tested in this run.
 
 ## Installation
 

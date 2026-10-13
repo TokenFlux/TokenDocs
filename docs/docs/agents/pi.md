@@ -1,10 +1,13 @@
 ---
-verifiedAt: '2026-09-05'
+verifiedAt: '2026-10-11'
+verifiedWith: 'macOS 27.0.1（arm64）；Pi 1.0.4；隔离配置目录中以 models.json 覆盖 openai，auth.json 保存 API Key；gpt-6-astra 无工具最小请求返回 OK，已核对使用记录。'
 ---
 
 # Pi 使用指南
 
 `Pi` 是一款可扩展的终端编程 Agent。它支持通过覆盖内置 provider 的方式接入 `TokenFlux` 的 OpenAI 兼容接口。
+
+本次实测覆盖上述 macOS CLI 配置与模型调用。交互式 `/login` 保存凭据、模型选择界面及 Windows / Linux 安装流程未在本次实测。
 
 ## 安装
 

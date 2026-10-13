@@ -1,10 +1,13 @@
 ---
-verifiedAt: '2026-08-22'
+verifiedAt: '2026-10-11'
+verifiedWith: 'macOS 27.0.1 (arm64); OpenCode 1.18.30; manual opencode.json configuration with a regular key; gpt-6-astra in the ChatGPT group returned OK, confirmed in usage logs.'
 ---
 
 # OpenCode Guide
 
 `OpenCode` is an open-source AI coding assistant framework. It supports integration with multiple AI models, including code generation, modification, and review workflows.
+
+This test covered only manual configuration and regular-key requests in the macOS CLI. Composite keys, CC-Switch configuration, and installation on other operating systems were not tested in this run.
 
 ## Installation
 

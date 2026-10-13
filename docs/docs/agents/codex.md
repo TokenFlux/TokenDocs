@@ -1,10 +1,13 @@
 ---
-verifiedAt: '2026-08-22'
+verifiedAt: '2026-10-11'
+verifiedWith: 'macOS 27.0.1（arm64）；Codex CLI 0.162.1；手动供应商配置，CODEX_API_KEY 临时认证；ChatGPT 分组的 gpt-6-astra 经 Responses 返回 OK，已核对使用记录。'
 ---
 
 # Codex 使用指南
 
 `Codex` 是一款专为代码生成、修改和审查设计的 AI Agent 工具。
+
+本次实测仅覆盖上述 CLI 普通 Key 请求。Codex App、CC-Switch 导入、`auth.json` 认证、WebSocket 和远程压缩未在本次实测。
 
 ## 安装
 

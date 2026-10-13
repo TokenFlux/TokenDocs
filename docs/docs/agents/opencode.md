@@ -1,10 +1,13 @@
 ---
-verifiedAt: '2026-08-22'
+verifiedAt: '2026-10-11'
+verifiedWith: 'macOS 27.0.1（arm64）；OpenCode 1.18.30；手动 opencode.json 配置、普通 Key；ChatGPT 分组的 gpt-6-astra 返回 OK，已核对使用记录。'
 ---
 
 # OpenCode 使用指南
 
 `OpenCode` 是一款开源的 AI 编程助手框架，支持多种 AI 模型集成，包括代码生成、修改和审查功能。
+
+本次实测仅覆盖 macOS CLI 的手动配置与普通 Key 请求。复合 Key、CC-Switch 配置及其他系统的安装流程未在本次实测。
 
 ## 安装
 

@@ -1,10 +1,13 @@
 ---
-verifiedAt: '2026-09-05'
+verifiedAt: '2026-10-11'
+verifiedWith: 'macOS 27.0.1 (arm64); Pi 1.0.4; isolated configuration directory with an openai override in models.json and an API key in auth.json; gpt-6-astra returned OK with tools disabled, confirmed in usage logs.'
 ---
 
 # Pi Guide
 
 `Pi` is an extensible terminal coding agent. It supports connecting to `TokenFlux` through its OpenAI-compatible endpoint by overriding built-in providers.
+
+This test covered the macOS CLI configuration and model call described above. Saving credentials through interactive `/login`, the model picker, and Windows / Linux installation were not tested in this run.
 
 ## Installation
 
