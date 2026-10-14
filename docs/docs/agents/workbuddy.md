@@ -77,23 +77,23 @@ WorkBuddy 会在模型页面显示实际的本地配置文件路径。WorkBuddy 
 
 填写配置项：
 
-| 配置项     | 建议值                                             |
-| ---------- | -------------------------------------------------- |
-| 提供商     | `自定义 / Custom`                                  |
-| 接口地址   | `https://tokenflux.dev/v1/chat/completions`        |
-| API Key    | TokenFlux API Key                                  |
-| 模型名称   | 模型广场显示的精确模型 ID，例如 `gpt-6-astra`      |
-| 工具调用   | 开启；本教程使用的 `gpt-6-astra` 支持 Tool Calling |
-| 图片输入   | 开启；允许 WorkBuddy 向模型发送图片                |
-| 思考模式   | 开启；使用 `gpt-6-astra` 的 reasoning 能力         |
-| 自定义协议 | 保持关闭，使用 OpenAI Chat Completions 兼容协议    |
+| 配置项     | 建议值                                          |
+| ---------- | ----------------------------------------------- |
+| 提供商     | `自定义 / Custom`                               |
+| 接口地址   | `https://tokenflux.dev/v1/chat/completions`     |
+| API Key    | TokenFlux API Key                               |
+| 模型名称   | 模型广场显示的精确模型 ID，例如 `gpt-6-astra`   |
+| 工具调用   | 开启；`gpt-6-astra` 支持 Tool Calling           |
+| 图片输入   | 开启；允许 WorkBuddy 向模型发送图片             |
+| 思考模式   | 开启；使用 `gpt-6-astra` 的 reasoning 能力      |
+| 自定义协议 | 保持关闭，使用 OpenAI Chat Completions 兼容协议 |
 
 <div style="text-align: center;">
   <img src="/images/workbuddy/07-tokenflux-configuration.png" width="538" alt="WorkBuddy 中已填写 TokenFlux 接口和 gpt-6-astra 模型的自定义模型表单，必填项已用红框标出" />
 </div>
 
 ::: tip 使用完整接口地址
-WorkBuddy 5.3.5 实测不会在输入框失去焦点时把 `/v1` 自动补全为请求路径。为避免版本差异，直接填写上表中以 `/chat/completions` 结尾的完整地址。
+直接填写以 `/chat/completions` 结尾的完整地址。WorkBuddy 5.3.5 不会自动为 `/v1` 补全请求路径。
 :::
 
 ::: warning 不要为 TokenFlux 开启自定义协议
@@ -122,7 +122,7 @@ WorkBuddy 5.3.5 实测不会在输入框失去焦点时把 `/v1` 自动补全为
      <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="WorkBuddy 模型选择器中的 gpt-6-astra 自定义模型，目标选项已用红框标出" />
    </div>
 
-4. 发送一条最小测试消息，例如 `你好`。本页记录的那次测试在约 6 秒内收到 `gpt-6-astra` 的回复；实际响应时间随模型、上下文和服务负载变化。
+4. 发送一条消息，例如 `你好`，确认所选模型能够回复。
 
    <div style="text-align: center;">
      <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy 使用 gpt-6-astra 成功回复测试消息，响应底部的模型名称已用红框标出" />
@@ -135,14 +135,6 @@ WorkBuddy 5.3.5 实测不会在输入框失去焦点时把 `/v1` 自动补全为
 ### 保存后找不到模型
 
 重新打开模型选择器或新建任务。如果使用企业账号，管理员可能禁止成员添加个人自定义模型，需要联系企业管理员确认策略。
-
-### 返回 401 或认证失败
-
-检查 API Key 是否复制完整、是否含空格或换行，以及 Key 是否已失效。不要把 Key 填到模型名称或接口地址字段。
-
-### 返回 model not found
-
-模型名称必须与 [模型广场](https://tokenflux.dev/models) 中当前分组支持的模型 ID 完全一致。复合 Key 还需要正确的前缀。
 
 ### Agent 不会调用工具
 

@@ -45,10 +45,11 @@ export const DEPRECATED_ORIGIN_ALLOWED_IN = []
  * 模型改名后先更新此表，CI 会列出所有仍在使用旧 ID 的文件。
  */
 export const SAMPLE_MODEL_IDS = [
-  'claude-sonnet-4',
+  'claude-opus-5-5',
+  'claude-sonnet-4-6',
+  'claude-sonnet-5-5',
   'gemini-2.5-pro',
   'gemini-3.1-flash-image',
-  'gpt-5.6-terra',
   'gpt-image-2',
   'gpt-image-2.5-flare',
   'gpt-image-2.5-sunburst',

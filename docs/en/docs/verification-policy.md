@@ -27,7 +27,7 @@ Major client releases should trigger an extra verification pass without waiting 
 
 After testing a real client, update `verifiedAt` in the page frontmatter and use `verifiedWith` to record the full client version, operating system and version, setup method, and successfully tested features. `verifiedWith` is a string displayed below the verification date. Chinese and English pages should record the same facts.
 
-Verification must include a real model reply; a successful installation or model-list request is not proof of inference working. If only some branches pass, record only that scope and mark the remaining branches as unverified in the body. Wording edits, documentation builds, and translation updates must not refresh the verification date.
+Verification must include a real model reply; a successful installation or model-list request is not proof of inference working. If only some branches pass, list only those branches in the verification scope. Keep the body focused on usage instructions and compatibility limits; omit test logs. Wording edits, documentation builds, and translation updates must not refresh the verification date.
 
 ## Scope
 

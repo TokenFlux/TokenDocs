@@ -1,5 +1,6 @@
 ---
-verifiedAt: '2026-08-22'
+verifiedAt: '2026-10-13'
+verifiedWith: 'macOS 27.0.1 (arm64); Hermes v0.21.6, Python 3.14.7; source installation, config.yaml and .env configuration, gpt-6-astra chat.'
 ---
 
 # Hermes Guide
@@ -68,6 +69,8 @@ hermes chat -Q -q 'Only reply OK' --max-turns 3
 ```
 
 `hermes config check` checks the local configuration. `hermes chat` makes a real, billed model request. After receiving a reply, confirm the request in the [usage logs](https://tokenflux.dev/usage).
+
+If the client says the API key was rejected, read the server message after `Provider said`. Billing errors, such as an unavailable subscription bound to the key, can appear under that heading too. See [Error Codes](/en/docs/errors) and [Balance and Billing](/en/docs/tokenflux/billing) for the corresponding action.
 
 ## More Related Content
 

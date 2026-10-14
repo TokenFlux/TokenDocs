@@ -1,10 +1,11 @@
 ---
-verifiedAt: '2026-09-16'
+verifiedAt: '2026-10-14'
+verifiedWith: 'macOS 27.0.1 (arm64); CC-Switch 4.0.8, Codex CLI 0.162.1; console import, provider switching, balance queries, gpt-6-astra chat.'
 ---
 
 # CC-Switch
 
-`CC-Switch` is a graphical tool for managing AI interface configuration. It can manage provider settings and API keys for multiple Agent clients in one place, including mainstream AI coding assistants such as `Claude Code`, `Codex`, and `OpenCode`.
+`CC-Switch` manages provider settings and API keys for clients such as `Claude Code`, `Codex`, and `OpenCode`.
 
 ## Installation
 
@@ -77,24 +78,10 @@ The key list can push an API key straight into `CC-Switch`, so there are no fiel
      <img src="/images/cc-switch/import-to-cc-switch.png" alt="Choosing Import to CCS from the More menu in the key list" />
    </div>
 
-3. `CC-Switch` opens a "Confirm provider import" window. Check the provider name, API endpoint and API key, then click "Import".
-
-   <div style="text-align: center;">
-     <img src="/images/cc-switch/import-to-cc-switch-dialog.png" alt="The Confirm provider import window in CC-Switch" />
-   </div>
-
-4. Select the corresponding client in the sidebar, find the imported TokenFlux provider, and click "Enable". For Codex, Gemini CLI, or Grok Build, restart the client afterward.
-
-Which client you import into depends on the key's group platform:
-
-| Group platform | Imports as    |
-| -------------- | ------------- |
-| Anthropic      | `Claude Code` |
-| OpenAI         | `Codex`       |
-| Gemini         | `Gemini`      |
-| Grok           | `Grok Build`  |
-
-For an Antigravity group you first choose between `Claude Code` and `Gemini CLI`. The import also writes a usage-query script, and `CC-Switch` polls the balance at a fixed interval.
+3. In the "Select client" dialog, choose the client and model, then click "Confirm".
+4. After the browser opens `CC-Switch`, check the provider name, API endpoint, and API key in the "Confirm provider import" window, then click "Import".
+5. Select the client in the sidebar, find the imported TokenFlux provider, and click "Switch".
+6. Send a message to the selected model and confirm the request in [Usage Records](https://tokenflux.dev/usage).
 
 ::: tip
 If the browser does not launch `CC-Switch` and reports that CC-Switch is not installed or the protocol handler is not registered, install `CC-Switch` using the steps above and click again.
@@ -104,12 +91,12 @@ If the browser does not launch `CC-Switch` and reports that CC-Switch is not ins
 
   <DocsTab title="Manual setup" name="manual">
 
-"Import to CCS" does not cover `OpenCode` and similar clients. Add those by hand in `CC-Switch`:
+If the console's client list does not include your target client, or you need to enter the configuration yourself, add a provider manually in `CC-Switch`:
 
 1. Select the target application in the `CC-Switch` sidebar.
 2. Click "+" in the upper-right corner and choose a custom provider.
 3. Fill in `Name`, `API URL` and `API Key`. Use the address for the matching protocol from [API Endpoints](/en/docs/tokenflux/endpoints).
-4. After saving, click "Enable" on the provider card. `OpenCode` uses "Add" and allows multiple providers at once.
+4. After saving, enable or add the configuration from the provider card. The button label varies by client.
 
   </DocsTab>
 

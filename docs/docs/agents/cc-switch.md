@@ -1,10 +1,11 @@
 ---
-verifiedAt: '2026-09-16'
+verifiedAt: '2026-10-14'
+verifiedWith: 'macOS 27.0.1（arm64）；CC-Switch 4.0.8、Codex CLI 0.162.1；控制台导入、供应商切换、余额查询、gpt-6-astra 对话。'
 ---
 
 # CC-Switch
 
-`CC-Switch` 是一款专为管理 AI 接口配置而设计的图形化工具，可统一管理多个 Agent 客户端的供应商配置与 API Key，支持 `Claude Code`、`Codex`、`OpenCode` 等主流 AI 编程助手。
+`CC-Switch` 用于管理 `Claude Code`、`Codex`、`OpenCode` 等客户端的供应商配置和 API Key。
 
 ## 安装说明
 
@@ -77,24 +78,10 @@ brew install --cask cc-switch
      <img src="/images/cc-switch/import-to-cc-switch.png" alt="在密钥列表中点击“更多”并选择“导入到 CCS”" />
    </div>
 
-3. `CC-Switch` 会弹出“确认导入供应商配置”窗口，核对供应商名称、API 端点和 API 密钥后点击“导入”。
-
-   <div style="text-align: center;">
-     <img src="/images/cc-switch/import-to-cc-switch-dialog.png" alt="CC-Switch 的“确认导入供应商配置”窗口" />
-   </div>
-
-4. 在侧栏选择对应客户端，找到刚导入的 TokenFlux 供应商并点击“启用”。使用 Codex、Gemini CLI 或 Grok Build 时，再重启对应客户端。
-
-导入到哪个客户端由该 Key 所属分组决定：
-
-| 分组平台  | 导入为        |
-| --------- | ------------- |
-| Anthropic | `Claude Code` |
-| OpenAI    | `Codex`       |
-| Gemini    | `Gemini`      |
-| Grok      | `Grok Build`  |
-
-Antigravity 分组会先让你选择导入为 `Claude Code` 还是 `Gemini CLI`。导入时会一并写入用量查询脚本，`CC-Switch` 会按固定间隔查询余额。
+3. 在“选择客户端”窗口中选择目标客户端和模型，点击“确认”。
+4. 浏览器打开 `CC-Switch` 后，在“确认导入供应商配置”窗口核对供应商名称、API 端点和 API 密钥，点击“导入”。
+5. 在侧栏选择对应客户端，找到刚导入的 TokenFlux 供应商并点击“切换”。
+6. 向所选模型发送一条消息，并在 [使用记录](https://tokenflux.dev/usage) 中确认请求。
 
 ::: tip
 点击后浏览器没有拉起 `CC-Switch`，并提示“CC-Switch 未安装或协议处理程序未注册”时，先按上方安装说明装好 `CC-Switch`，再重新点击。
@@ -104,12 +91,12 @@ Antigravity 分组会先让你选择导入为 `Claude Code` 还是 `Gemini CLI`�
 
   <DocsTab title="手动添加" name="manual">
 
-控制台的“导入到 CCS”不覆盖 `OpenCode` 等客户端，这些客户端可以在 `CC-Switch` 中手动添加：
+如果控制台的客户端列表中没有目标客户端，或需要自行填写配置，可以在 `CC-Switch` 中手动添加：
 
 1. 在 `CC-Switch` 侧栏选择目标应用。
 2. 点击右上角的“+”，选择自定义供应商。
 3. 填写 `名称`、`API 地址` 和 `API Key`。API 地址按 [API 端点](/docs/tokenflux/endpoints) 中对应协议的地址填写。
-4. 保存后，在供应商卡片上点击“启用”；`OpenCode` 使用“添加”，允许同时配置多个供应商。
+4. 保存后，在供应商卡片上启用或添加该配置，按钮名称以客户端界面为准。
 
   </DocsTab>
 

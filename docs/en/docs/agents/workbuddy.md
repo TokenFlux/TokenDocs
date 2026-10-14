@@ -83,7 +83,7 @@ Then complete the form:
 | Endpoint        | `https://tokenflux.dev/v1/chat/completions`                           |
 | API Key         | TokenFlux API key                                                     |
 | Model Name      | The exact model ID from the marketplace, such as `gpt-6-astra`        |
-| Tool Calling    | Enable it; `gpt-6-astra`, used in this guide, supports tool calling   |
+| Tool Calling    | Enable it; `gpt-6-astra` supports tool calling                        |
 | Image Input     | Enable it so WorkBuddy can send images to the model                   |
 | Reasoning       | Enable it to use the reasoning capability of `gpt-6-astra`            |
 | Custom Protocol | Leave disabled to use the OpenAI Chat Completions-compatible protocol |
@@ -93,7 +93,7 @@ Then complete the form:
 </div>
 
 ::: tip Enter the complete endpoint
-In WorkBuddy 5.3.5, the field did not append the request path when it lost focus. To avoid version-specific behavior, enter the complete endpoint ending in `/chat/completions` as shown above.
+Enter the complete endpoint ending in `/chat/completions`. WorkBuddy 5.3.5 does not automatically append the request path to `/v1`.
 :::
 
 ::: warning Leave Custom Protocol disabled for TokenFlux
@@ -122,7 +122,7 @@ When using a [composite key](/en/docs/tokenflux/composite-key), include the grou
      <img src="/images/workbuddy/10-select-custom-model.png" width="268" alt="The gpt-6-astra custom model outlined in red in WorkBuddy's model selector" />
    </div>
 
-4. Send a minimal test message, such as `你好` ("Hello"). The run recorded on this page received a `gpt-6-astra` reply in about 6 seconds; response time varies with the model, context, and service load.
+4. Send a message, such as `你好` ("Hello"), and confirm that the selected model responds.
 
    <div style="text-align: center;">
      <img src="/images/workbuddy/11-validation-result.png" width="704" alt="WorkBuddy successfully responding with gpt-6-astra, with the model name in the response footer outlined in red" />
@@ -135,14 +135,6 @@ When using a [composite key](/en/docs/tokenflux/composite-key), include the grou
 ### The saved model does not appear
 
 Reopen the model selector or create a new task. Enterprise administrators can disable personal custom models, so enterprise users may need an administrator to enable the policy.
-
-### A request returns 401 or authentication failed
-
-Check that the API key is complete, active, and contains no spaces or line breaks. Do not place the key in the Model Name or Endpoint field.
-
-### A request returns model not found
-
-The Model Name must exactly match an ID available to the key's group in the [model marketplace](https://tokenflux.dev/models). Composite keys also require the correct prefix.
 
 ### The agent does not call tools
 

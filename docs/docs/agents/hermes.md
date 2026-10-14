@@ -1,5 +1,6 @@
 ---
-verifiedAt: '2026-08-22'
+verifiedAt: '2026-10-13'
+verifiedWith: 'macOS 27.0.1（arm64）；Hermes v0.21.6、Python 3.14.7；源码安装、config.yaml 与 .env 配置、gpt-6-astra 对话。'
 ---
 
 # Hermes 使用指南
@@ -68,6 +69,8 @@ hermes chat -Q -q '只回复 OK' --max-turns 3
 ```
 
 `hermes config check` 检查本地配置；`hermes chat` 会发起真实模型请求并产生计费。收到模型回复后，可在 [使用记录](https://tokenflux.dev/usage) 中核对请求。
+
+如果客户端提示 API Key 被拒绝，请继续查看 `Provider said` 后的服务端消息。订阅绑定失效等计费错误也可能显示在这一提示下，具体处理见 [错误码](/docs/errors) 和 [余额与计费](/docs/tokenflux/billing)。
 
 ## 更多相关内容
 

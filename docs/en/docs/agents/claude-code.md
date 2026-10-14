@@ -1,5 +1,6 @@
 ---
-verifiedAt: '2026-08-22'
+verifiedAt: '2026-10-13'
+verifiedWith: 'macOS 27.0.1 (arm64); Claude Code 2.1.289; manual settings.json configuration, ANTHROPIC_AUTH_TOKEN authentication, claude-sonnet-4-6 chat.'
 ---
 
 # Claude Code Guide
@@ -165,6 +166,19 @@ Replace `YOUR_TOKENFLUX_API_KEY` with your actual API key.
 
   </DocsTab>
 </DocsTabs>
+
+## Verify the Setup
+
+After configuration, run a request:
+
+```bash
+claude --version
+claude -p "Reply with OK only" --model claude-sonnet-5-5 --tools "" --no-session-persistence
+```
+
+Your key must support the example model. You can also set `--model` to `claude-opus-5-5` if your group supports it. This command makes a real, billed request; after receiving a reply, confirm it in the [usage logs](https://tokenflux.dev/usage).
+
+If the client reports an authentication error, read the server message that follows. For example, insufficient balance can appear under `Failed to authenticate`. Check the balance, subscription, or key according to the specific error; see [Error Codes](/en/docs/errors).
 
 ## The Claude Max Group
 

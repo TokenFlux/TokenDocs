@@ -54,7 +54,7 @@
 按上面的绑定，两个分组分别这样调用：
 
 - `GPT/gpt-6-astra` — 走 OpenAI 分组
-- `Claude/claude-sonnet-4` — 走 Anthropic 分组
+- `Claude/claude-sonnet-5-5` — 走 Anthropic 分组
 
 ::: warning 只按第一个斜杠拆分
 如果模型 ID 本身带斜杠，只有**第一个**斜杠会被当作前缀分隔符。例如 `GPT/vendor/model` 的前缀是 `GPT`，实际模型 ID 是 `vendor/model`。

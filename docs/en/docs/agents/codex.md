@@ -100,6 +100,8 @@ Start `Codex` or `Codex App` once first so it can initialize the config director
 
 **Step 2: Write `config.toml`**
 
+Use `gpt-6-astra` or `gpt-6.1-sol`, depending on the models supported by your key’s group. The example below uses `gpt-6-astra`.
+
 Create or edit `config.toml` in the config directory, and make sure the following content is near the top of the file:
 
 ```toml
@@ -183,7 +185,7 @@ You can also send the following to `Codex` and let it handle installation and co
 ```text
 Install this skill: https://github.com/smartcmd/codex-context-window
 
-Then set the context window of gpt-5.6-terra and gpt-6-astra to 1M, with the auto-compaction threshold at 900k.
+Then set the context window of gpt-6-astra to 1M, with the auto-compaction threshold at 900k.
 ```
 
 ### Configure the Models
@@ -191,7 +193,7 @@ Then set the context window of gpt-5.6-terra and gpt-6-astra to 1M, with the aut
 Start a new task so `Codex` discovers the skill, then send:
 
 ```text
-Set the context window of gpt-5.6-terra and gpt-6-astra to 1M, with the auto-compaction threshold at 900k.
+Set the context window of gpt-6-astra to 1M, with the auto-compaction threshold at 900k.
 ```
 
 The skill confirms the target models, raw window size, effective-window percentage, and auto-compaction policy before writing anything. Leave the effective percentage at its default of `95%` (a 1M raw window gives `950000` usable tokens, matching the status bar display). Restart `Codex` once it is done.

@@ -54,7 +54,7 @@ Write the model ID as `prefix/model ID`:
 With the bindings above, the two groups are called like this:
 
 - `GPT/gpt-6-astra` - routed to the OpenAI group
-- `Claude/claude-sonnet-4` - routed to the Anthropic group
+- `Claude/claude-sonnet-5-5` - routed to the Anthropic group
 
 ::: warning Only the first slash is used
 If the model ID itself contains slashes, only the **first** slash separates the prefix. In `GPT/vendor/model` the prefix is `GPT` and the actual model ID is `vendor/model`.

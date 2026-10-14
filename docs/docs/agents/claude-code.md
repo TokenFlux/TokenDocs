@@ -1,5 +1,6 @@
 ---
-verifiedAt: '2026-08-22'
+verifiedAt: '2026-10-13'
+verifiedWith: 'macOS 27.0.1（arm64）；Claude Code 2.1.289；settings.json 手动配置、ANTHROPIC_AUTH_TOKEN 认证、claude-sonnet-4-6 对话。'
 ---
 
 # Claude Code 使用指南
@@ -165,6 +166,19 @@ set CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 
   </DocsTab>
 </DocsTabs>
+
+## 验证接入
+
+完成配置后，运行请求：
+
+```bash
+claude --version
+claude -p "只回复 OK" --model claude-sonnet-5-5 --tools "" --no-session-persistence
+```
+
+所选 Key 需要支持示例中的模型；如果分组支持 `claude-opus-5-5`，也可以将 `--model` 的值替换为它。该命令会发起真实请求并计费；收到回复后，在 [使用记录](https://tokenflux.dev/usage) 中确认请求。
+
+客户端出现认证错误时，查看后面的服务端消息。例如，余额不足也可能显示为 `Failed to authenticate`；应按具体错误检查余额、订阅或 Key，见 [错误码](/docs/errors)。
 
 ## Claude Max 分组
 
