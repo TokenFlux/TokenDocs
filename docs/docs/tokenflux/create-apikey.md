@@ -8,7 +8,7 @@
 
 1. 登录后进入 [API 密钥页面](https://tokenflux.dev/keys)。
 2. 点击右上角的 `创建密钥` 按钮。
-3. 输入一个便于识别的名称（例如：`cherry-studio`、`cc-switch`）。
+3. 输入一个便于识别的名称（例如：`deepseek-harness`、`cc-switch`）。
 4. 按下方 [分组选择](#分组选择) 确认模型、协议和客户端限制，再选择分组。下拉里会显示每个分组的倍率和当前容量。
 5. 点击创建，复制生成的密钥并妥善保存（后续也可在密钥列表中随时查看或复制）。
 
@@ -37,6 +37,5 @@
 
 - [API 端点](/docs/tokenflux/endpoints) — 客户端要填的 API 地址
 - [快速开始](/docs/quickstart) — 根据使用习惯选择接入方式
-- [Cherry Studio 使用指南](/docs/chatbot/cherry-studio) — 桌面端 AI 对话客户端
-- [RikkaHub 使用指南](/docs/chatbot/rikkahub) — Android 端 AI 对话客户端
 - [CC-Switch 使用指南](/docs/agents/cc-switch) — 管理 Claude Code / Codex 的配置工具
+- [DeepSeek Harness 使用指南](/docs/agents/deepseek-harness) — 配置自定义模型接口

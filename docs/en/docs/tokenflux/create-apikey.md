@@ -8,7 +8,7 @@ You need to create an API key before using TokenFlux.
 
 1. Sign in and open the [API keys page](https://tokenflux.dev/keys).
 2. Click the `Create Key` button in the upper-right corner.
-3. Enter a recognizable name, such as `cherry-studio` or `cc-switch`.
+3. Enter a recognizable name, such as `deepseek-harness` or `cc-switch`.
 4. Check the model, protocol, and client restrictions under [Choosing a Group](#choosing-a-group), then pick a group. The dropdown shows each group's multiplier and current capacity.
 5. Create the key, copy the generated value, and store it safely (you can also view or copy it later in the key list).
 
@@ -37,6 +37,5 @@ Create separate keys for different clients so you can identify and disable them 
 
 - [API Endpoints](/en/docs/tokenflux/endpoints) - the API address to enter in your client
 - [Quickstart](/en/docs/quickstart) - choose an integration path based on your workflow
-- [Cherry Studio Guide](/en/docs/chatbot/cherry-studio) - desktop AI chat client
-- [RikkaHub Guide](/en/docs/chatbot/rikkahub) - Android AI chat client
 - [CC-Switch Guide](/en/docs/agents/cc-switch) - configuration manager for Claude Code and Codex
+- [DeepSeek Harness Guide](/en/docs/agents/deepseek-harness) - configure a custom model API

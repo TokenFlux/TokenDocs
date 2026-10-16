@@ -7,6 +7,7 @@ import {
   ageInDays,
   listVerifiedDocuments,
   readVerifiedAt,
+  readVerificationStatus,
 } from '../scripts/verification-status.js'
 
 const docsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'docs')
@@ -21,10 +22,27 @@ describe('client guide verification dates', () => {
     expect(documents.length).toBeGreaterThan(0)
   })
 
-  it('records a verification date on every client guide', () => {
-    const missing = documents.filter(doc => doc.verifiedAt === null).map(doc => doc.path)
+  it('records a verification date or an explicit unverified status on every client guide', () => {
+    const missing = documents
+      .filter(doc => doc.verifiedAt === null && doc.verificationStatus !== 'unverified')
+      .map(doc => doc.path)
 
     expect(missing).toEqual([])
+  })
+
+  // 未完成真实调用时允许发布教程，但不得同时显示核验日期或成功范围。
+  it('keeps unverified guides free of verification claims in both locales', () => {
+    for (const doc of documents) {
+      const source = readFileSync(resolve(docsRoot, doc.path), 'utf8')
+      const english = readFileSync(resolve(docsRoot, `en/${doc.path}`), 'utf8')
+      expect(readVerificationStatus(english)).toBe(doc.verificationStatus)
+      if (doc.verificationStatus === 'unverified') {
+        for (const content of [source, english]) {
+          expect(readVerifiedAt(content)).toBeNull()
+          expect(content).not.toMatch(/^verifiedWith:/m)
+        }
+      }
+    }
   })
 
   it('uses ISO dates that are not in the future', () => {

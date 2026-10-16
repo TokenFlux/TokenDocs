@@ -15,7 +15,7 @@ hero:
 
 features:
   - title: 接入客户端
-    details: Claude Code、Codex、Cherry Studio、RikkaHub 等客户端的配置步骤，按 Agent 或 ChatBot 分类。
+    details: Claude Code、Codex、DeepSeek Harness 等编程客户端的安装与配置步骤。
     link: /docs/quickstart
     linkText: 接入流程
   - title: 理解计费

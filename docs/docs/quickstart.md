@@ -18,37 +18,19 @@ TokenFlux 是统一的大语言模型接口：通过统一的 API Key 在各类�
 
 ## 客户端选型
 
-<DocsTabs default-tab="agent">
-  <DocsTab title="Agent" name="agent">
-
 适合在终端工作、有编程需求或希望使用 AI Agent 辅助开发的用户。
 
 按所用客户端查看对应教程。需要统一管理 Key 和模型时，可选用 [tf-cli](/docs/tokenflux/tf-cli)，在终端通过 `tf` 启动客户端；偏好图形界面管理供应商配置时，可选用 [CC-Switch](/docs/agents/cc-switch)。两者都不是接入的前置条件。
 
-| 客户端教程                              | 适用场景                     |
-| --------------------------------------- | ---------------------------- |
-| [Claude Code](/docs/agents/claude-code) | Anthropic 官方 CLI，终端编程 |
-| [Codex](/docs/agents/codex)             | OpenAI 官方 CLI 与桌面端     |
-| [Codex++](/docs/agents/codex-plus-plus) | 给 Codex 加装增强能力        |
-| [OpenCode](/docs/agents/opencode)       | 开源终端 Agent，多模型切换   |
-| [Pi](/docs/agents/pi)                   | 可扩展的终端编程 Agent       |
-| [Hermes](/docs/agents/hermes)           | 轻量终端 Agent               |
-
-  </DocsTab>
-
-  <DocsTab title="ChatBot" name="chatbot">
-
-适合偏好图形界面、移动端或以日常对话为主要使用场景的用户。
-
-| 客户端教程                                   | 适用场景                                      |
-| -------------------------------------------- | --------------------------------------------- |
-| [Cherry Studio](/docs/chatbot/cherry-studio) | 桌面端（Windows / macOS / Linux），多模型切换 |
-| [RikkaHub](/docs/chatbot/rikkahub)           | Android 手机端，OpenAI 兼容                   |
-
-在客户端设置里添加 TokenFlux 作为自定义服务商，填入 API Key 和 [API 端点](/docs/tokenflux/endpoints)，获取模型列表后即可开始对话。
-
-  </DocsTab>
-</DocsTabs>
+| 客户端教程                                        | 适用场景                            |
+| ------------------------------------------------- | ----------------------------------- |
+| [Claude Code](/docs/agents/claude-code)           | Anthropic 官方 CLI，终端编程        |
+| [Codex](/docs/agents/codex)                       | OpenAI 官方 CLI 与桌面端            |
+| [Codex++](/docs/agents/codex-plus-plus)           | 给 Codex 加装增强能力               |
+| [OpenCode](/docs/agents/opencode)                 | 开源终端 Agent，多模型切换          |
+| [Pi](/docs/agents/pi)                             | 可扩展的终端编程 Agent              |
+| [DeepSeek Harness](/docs/agents/deepseek-harness) | 支持自定义模型接口的桌面端与 Web UI |
+| [Hermes](/docs/agents/hermes)                     | 轻量终端 Agent                      |
 
 ## 确认接入成功
 

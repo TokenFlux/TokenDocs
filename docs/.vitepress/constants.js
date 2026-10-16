@@ -96,6 +96,7 @@ export const ALLOWED_EXTERNAL_HOSTS = [
   'rikka-ai.com',
   'tokenflux.dev',
   'www.codebuddy.cn',
+  'www.deepseek.com',
   'www.workbuddy.ai',
   'www.workbuddy.cn',
 ]

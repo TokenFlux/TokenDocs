@@ -20,11 +20,11 @@ OpenAI 格式和 Anthropic 格式的端点可在 [API 密钥页面](https://toke
 
 格式由客户端决定，分组必须支持同一格式。
 
-| 格式                       | 适用客户端                                                       |
-| -------------------------- | ---------------------------------------------------------------- |
-| OpenAI 格式（`/v1` 结尾）  | Cherry Studio、RikkaHub、OpenCode，以及标注「OpenAI 兼容」的工具 |
-| Anthropic 格式（无 `/v1`） | `Claude Code` 等原生走 Anthropic 协议的客户端                    |
-| Gemini 格式                | 使用 Google 原生协议的客户端和 SDK，模型 ID 写在请求路径里       |
+| 格式                       | 适用客户端                                                                      |
+| -------------------------- | ------------------------------------------------------------------------------- |
+| OpenAI 格式（`/v1` 结尾）  | OpenCode、DeepSeek Harness（选择 OpenAI 协议时），以及标注「OpenAI 兼容」的工具 |
+| Anthropic 格式（无 `/v1`） | `Claude Code` 等原生走 Anthropic 协议的客户端                                   |
+| Gemini 格式                | 使用 Google 原生协议的客户端和 SDK，模型 ID 写在请求路径里                      |
 
 客户端配置项写 `ANTHROPIC_BASE_URL` 的用 Anthropic 格式，写 `OPENAI_BASE_URL` 的用 OpenAI 格式。`Base URL` 是通用字段名，不能据此判断协议，应先确认所选供应商类型。具体填法各接入教程里都有写明。
 

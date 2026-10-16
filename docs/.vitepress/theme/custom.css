@@ -433,6 +433,13 @@ html.dark body::-webkit-scrollbar-thumb:hover {
   border-right: 1px solid var(--vp-c-divider);
 }
 
+/* 遮挡层随顶栏高度变化，避免侧栏滚动后文字露在站点标题下方。 */
+@media (min-width: 960px) {
+  .Layout .VPSidebar .curtain {
+    top: calc(var(--vp-nav-height) * -1);
+  }
+}
+
 /* 分组标题:text-xs font-semibold tracking-wider,对应 .sidebar-section-title。 */
 .Layout .VPSidebar .VPSidebarItem.level-0 > .item > .text {
   padding: 4px 12px;

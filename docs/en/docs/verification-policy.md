@@ -4,11 +4,13 @@ Client software updates continuously, and interfaces and configuration parameter
 
 ## Last Verified
 
-Every client integration guide carries a "Last verified" date recording the most recent check against a real client. The date alone does not identify the systems, versions, or setup paths tested; read the verification scope below it too.
+Client integration guides that have passed a real model call carry a "Last verified" date recording the most recent check against a real client. The date alone does not identify the systems, versions, or setup paths tested; read the verification scope below it too.
 
 Historical pages with only a date display "Verification scope not recorded". This does not mean every branch was tested. App / CLI variants, systems, and optional features not listed in the scope require separate compatibility checks.
 
 The "Last updated" line in the footer is a different thing: it comes from the Git commit time, so fixing a typo refreshes it. To judge whether the content keeps up with the client, read "Last verified".
+
+Guides awaiting a real model call set `verificationStatus: unverified`. The page displays "Not yet verified with a real client" and omits `verifiedAt` and `verifiedWith`. After verification, remove this status and record the date and scope.
 
 ## Verification Cycle
 
@@ -31,7 +33,7 @@ Verification must include a real model reply; a successful installation or model
 
 ## Scope
 
-This policy covers the [Agents](/en/docs/agents/claude-code) and [ChatBot](/en/docs/chatbot/cherry-studio) integration guides.
+This policy covers the [coding client](/en/docs/quickstart#client-options) integration guides.
 
 Billing, error codes, and API endpoint pages carry no verification date. They track changes to TokenFlux itself and are updated alongside them.
 

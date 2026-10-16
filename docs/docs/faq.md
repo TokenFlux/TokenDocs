@@ -29,5 +29,3 @@
 ## 生图有哪些方式？
 
 - **网页端创作台**：直接访问 [TokenFlux 创作台](https://tokenflux.dev/creative)，无需配置 API 或下载客户端，输入提示词即可在线生成图片。
-- **Android 手机端**：[RikkaHub](/docs/chatbot/rikkahub) 有独立的生图入口，配置步骤见该页的「使用生图」一节。
-- **桌面端**：[Cherry Studio](/docs/chatbot/cherry-studio) 接入后，在模型列表中选择生图模型，在对话界面发送提示词。

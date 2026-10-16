@@ -113,8 +113,11 @@ async page => {
                 ),
               'Quickstart tables must fit the viewport',
             )
-            await page.getByRole('tab', { name: 'ChatBot', exact: true }).click()
-            check(await page.locator('#tab-agent-chatbot').isVisible(), 'Chat tab should render')
+            // 下架对话客户端后，快速开始直接展示编程客户端表格。
+            check(
+              await page.locator('.vp-doc a[href*="/agents/deepseek-harness"]').isVisible(),
+              'Quickstart must link to the DeepSeek Harness guide',
+            )
             await page.screenshot({
               path: `/tmp/tokendocs-quickstart-${locale ? 'en' : 'zh'}-${width}.png`,
             })

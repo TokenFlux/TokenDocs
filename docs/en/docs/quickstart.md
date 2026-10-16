@@ -18,37 +18,19 @@ For groups, account pools, inference credits, and other terms, see [Core Concept
 
 ## Client Options
 
-<DocsTabs default-tab="agent">
-  <DocsTab title="Agent" name="agent">
-
 Best for terminal workflows, programming tasks, or users who want AI Agent assistance while developing.
 
 Follow the guide for your client. To manage keys and models together, use [tf-cli](/en/docs/tokenflux/tf-cli) to launch clients through `tf` in the terminal. For graphical provider configuration, use [CC-Switch](/en/docs/agents/cc-switch). Neither tool is a prerequisite.
 
-| Client guide                               | Best for                                        |
-| ------------------------------------------ | ----------------------------------------------- |
-| [Claude Code](/en/docs/agents/claude-code) | Anthropic's official CLI, terminal coding       |
-| [Codex](/en/docs/agents/codex)             | OpenAI's official CLI and desktop app           |
-| [Codex++](/en/docs/agents/codex-plus-plus) | Adds extra capabilities on top of Codex         |
-| [OpenCode](/en/docs/agents/opencode)       | Open-source terminal agent with model switching |
-| [Pi](/en/docs/agents/pi)                   | Extensible terminal coding agent                |
-| [Hermes](/en/docs/agents/hermes)           | Lightweight terminal agent                      |
-
-  </DocsTab>
-
-  <DocsTab title="ChatBot" name="chatbot">
-
-Best for users who prefer graphical interfaces, mobile usage, or daily conversational workflows.
-
-| Client guide                                    | Best for                                                 |
-| ----------------------------------------------- | -------------------------------------------------------- |
-| [Cherry Studio](/en/docs/chatbot/cherry-studio) | Desktop (Windows / macOS / Linux), multi-model switching |
-| [RikkaHub](/en/docs/chatbot/rikkahub)           | Android, OpenAI compatible                               |
-
-Add TokenFlux as a custom provider in the client settings, enter your API key and an [API endpoint](/en/docs/tokenflux/endpoints), fetch the model list, and start chatting.
-
-  </DocsTab>
-</DocsTabs>
+| Client guide                                         | Best for                                        |
+| ---------------------------------------------------- | ----------------------------------------------- |
+| [Claude Code](/en/docs/agents/claude-code)           | Anthropic's official CLI, terminal coding       |
+| [Codex](/en/docs/agents/codex)                       | OpenAI's official CLI and desktop app           |
+| [Codex++](/en/docs/agents/codex-plus-plus)           | Adds extra capabilities on top of Codex         |
+| [OpenCode](/en/docs/agents/opencode)                 | Open-source terminal agent with model switching |
+| [Pi](/en/docs/agents/pi)                             | Extensible terminal coding agent                |
+| [DeepSeek Harness](/en/docs/agents/deepseek-harness) | Desktop and Web UI with custom model APIs       |
+| [Hermes](/en/docs/agents/hermes)                     | Lightweight terminal agent                      |
 
 ## Confirm the Integration
 

@@ -12,7 +12,7 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const docsRoot = resolve(projectRoot, 'docs')
 
 /** 需要定期对着真实客户端核验的目录。 */
-export const VERIFIED_DIRECTORIES = ['docs/agents', 'docs/chatbot']
+export const VERIFIED_DIRECTORIES = ['docs/agents']
 
 /** 超过这个天数就该重新核验。 */
 export const VERIFICATION_MAX_AGE_DAYS = 30
@@ -33,6 +33,13 @@ export function readVerifiedAt(content) {
   return matched ? matched[1].replace(/^["']|["']$/g, '') : null
 }
 
+/** 显式区分尚未实机核验的教程，避免用发布日期冒充核验日期。 */
+export function readVerificationStatus(content) {
+  const frontmatter = content.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  const matched = frontmatter?.[1].match(/^verificationStatus:\s*['"]?(unverified)['"]?\s*$/m)
+  return matched ? matched[1] : null
+}
+
 export function listVerifiedDocuments() {
   const files = []
 
@@ -46,7 +53,11 @@ export function listVerifiedDocuments() {
 
       const path = relative(docsRoot, join(absolute, entry.name)).replace(/\\/g, '/')
       const content = readFileSync(resolve(docsRoot, path), 'utf8')
-      files.push({ path, verifiedAt: readVerifiedAt(content) })
+      files.push({
+        path,
+        verifiedAt: readVerifiedAt(content),
+        verificationStatus: readVerificationStatus(content),
+      })
     }
   }
 
@@ -80,13 +91,15 @@ function main() {
     (a, b) => (b.age ?? Number.POSITIVE_INFINITY) - (a.age ?? Number.POSITIVE_INFINITY),
   )
 
-  for (const { path, verifiedAt, age } of documents) {
+  for (const { path, verifiedAt, verificationStatus, age } of documents) {
     const status =
-      verifiedAt === null
-        ? '未登记'
-        : age > VERIFICATION_MAX_AGE_DAYS
-          ? `超期 ${age - VERIFICATION_MAX_AGE_DAYS} 天`
-          : `剩余 ${VERIFICATION_MAX_AGE_DAYS - age} 天`
+      verificationStatus === 'unverified'
+        ? '尚未实机核验'
+        : verifiedAt === null
+          ? '未登记'
+          : age > VERIFICATION_MAX_AGE_DAYS
+            ? `超期 ${age - VERIFICATION_MAX_AGE_DAYS} 天`
+            : `剩余 ${VERIFICATION_MAX_AGE_DAYS - age} 天`
 
     console.log(`${(verifiedAt ?? '—').padEnd(12)} ${status.padEnd(14)} ${path}`)
   }

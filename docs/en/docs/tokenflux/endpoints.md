@@ -20,11 +20,11 @@ The OpenAI and Anthropic endpoints can be copied from the top of the [API keys p
 
 The client dictates the format, and the group must support that same format.
 
-| Format                          | Clients                                                                                   |
-| ------------------------------- | ----------------------------------------------------------------------------------------- |
-| OpenAI format (ends with `/v1`) | Cherry Studio, RikkaHub, OpenCode, and anything labelled "OpenAI compatible"              |
-| Anthropic format (no `/v1`)     | `Claude Code` and other clients speaking the Anthropic protocol natively                  |
-| Gemini format                   | Clients and SDKs on Google's native protocol, where the model ID goes in the request path |
+| Format                          | Clients                                                                                       |
+| ------------------------------- | --------------------------------------------------------------------------------------------- |
+| OpenAI format (ends with `/v1`) | OpenCode, DeepSeek Harness with an OpenAI protocol, and anything labelled "OpenAI compatible" |
+| Anthropic format (no `/v1`)     | `Claude Code` and other clients speaking the Anthropic protocol natively                      |
+| Gemini format                   | Clients and SDKs on Google's native protocol, where the model ID goes in the request path     |
 
 If the client's setting is named `ANTHROPIC_BASE_URL`, use the Anthropic format. If it is `OPENAI_BASE_URL`, use the OpenAI format. `Base URL` is a generic field name and does not identify a protocol; check the selected provider type first. Each integration guide states the exact value.
 

@@ -15,7 +15,7 @@ hero:
 
 features:
   - title: Connect a Client
-    details: Setup steps for Claude Code, Codex, Cherry Studio, RikkaHub, and more, sorted by Agent or ChatBot.
+    details: Installation and setup for coding clients including Claude Code, Codex, and DeepSeek Harness.
     link: /en/docs/quickstart
     linkText: Getting started
   - title: Understand Billing

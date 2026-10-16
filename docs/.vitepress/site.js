@@ -62,17 +62,11 @@ export const sidebar = {
         { text: 'Claude Code', link: '/docs/agents/claude-code' },
         { text: 'Codex', link: '/docs/agents/codex' },
         { text: 'Codex++', link: '/docs/agents/codex-plus-plus' },
+        { text: 'DeepSeek Harness', link: '/docs/agents/deepseek-harness' },
         { text: 'Hermes', link: '/docs/agents/hermes' },
         { text: 'OpenCode', link: '/docs/agents/opencode' },
         { text: 'Pi', link: '/docs/agents/pi' },
         { text: 'WorkBuddy', link: '/docs/agents/workbuddy' },
-      ],
-    },
-    {
-      text: '对话客户端',
-      items: [
-        { text: 'Cherry Studio', link: '/docs/chatbot/cherry-studio' },
-        { text: 'RikkaHub', link: '/docs/chatbot/rikkahub' },
       ],
     },
     {
@@ -133,17 +127,11 @@ export const enSidebar = {
         { text: 'Claude Code', link: '/en/docs/agents/claude-code' },
         { text: 'Codex', link: '/en/docs/agents/codex' },
         { text: 'Codex++', link: '/en/docs/agents/codex-plus-plus' },
+        { text: 'DeepSeek Harness', link: '/en/docs/agents/deepseek-harness' },
         { text: 'Hermes', link: '/en/docs/agents/hermes' },
         { text: 'OpenCode', link: '/en/docs/agents/opencode' },
         { text: 'Pi', link: '/en/docs/agents/pi' },
         { text: 'WorkBuddy', link: '/en/docs/agents/workbuddy' },
-      ],
-    },
-    {
-      text: 'Chat Clients',
-      items: [
-        { text: 'Cherry Studio', link: '/en/docs/chatbot/cherry-studio' },
-        { text: 'RikkaHub', link: '/en/docs/chatbot/rikkahub' },
       ],
     },
     {

@@ -5,6 +5,8 @@ import { useData, withBase } from 'vitepress'
 const { frontmatter, page } = useData()
 
 const isEnglishPage = computed(() => page.value.relativePath.startsWith('en/'))
+// 尚未实机核验的教程显示独立状态，不生成核验日期。
+const isUnverified = computed(() => frontmatter.value.verificationStatus === 'unverified')
 const label = computed(() => (isEnglishPage.value ? 'Last verified: ' : '最近核验：'))
 const policyUrl = computed(() =>
   withBase(`${isEnglishPage.value ? '/en' : ''}/docs/verification-policy`),
@@ -32,7 +34,10 @@ const verifiedAt = computed(() => {
 </script>
 
 <template>
-  <div v-if="verifiedAt" class="doc-verified-at">
+  <div v-if="isUnverified" class="doc-verified-at">
+    <a :href="policyUrl">{{ isEnglishPage ? 'Not yet verified with a real client' : '尚未实机核验' }}</a>
+  </div>
+  <div v-else-if="verifiedAt" class="doc-verified-at">
     <a :href="policyUrl"
       >{{ label }}<time :datetime="verifiedAt">{{ verifiedAt }}</time></a
     >
