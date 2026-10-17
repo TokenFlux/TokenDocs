@@ -29,3 +29,7 @@ A group without image generation returns 403 `Image generation is not enabled fo
 ## How can I generate images?
 
 - **Web Creative Studio**: Visit the [TokenFlux Creative Studio](https://tokenflux.dev/creative) directly. Generate images online with no API setup or client downloads required.
+
+## Image requests time out during a long wait
+
+Use the [current API address](/en/docs/tokenflux/endpoints), then try [Streaming Images](/en/docs/tokenflux/image-streaming). The client must support SSE and confirm success from the final image event.

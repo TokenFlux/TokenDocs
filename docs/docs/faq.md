@@ -29,3 +29,7 @@
 ## 生图有哪些方式？
 
 - **网页端创作台**：直接访问 [TokenFlux 创作台](https://tokenflux.dev/creative)，无需配置 API 或下载客户端，输入提示词即可在线生成图片。
+
+## 生图等待较久后超时
+
+确认使用 [当前 API 地址](/docs/tokenflux/endpoints)，再尝试 [流式生图](/docs/tokenflux/image-streaming)。客户端需支持 SSE，并以最终图片事件判断成功。

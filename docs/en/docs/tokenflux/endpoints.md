@@ -30,6 +30,8 @@ If the client's setting is named `ANTHROPIC_BASE_URL`, use the Anthropic format.
 
 The OpenAI format includes distinct APIs such as Chat Completions and Responses; Codex uses Responses, for example. Sharing a base URL does not mean a model supports every API. Check that the group and model support the requests your client sends. Complete test requests are in [Troubleshooting](/en/docs/troubleshooting#send-a-minimal-inference-request).
 
+For image request timeouts, try [Streaming Images](/en/docs/tokenflux/image-streaming).
+
 ## Authentication
 
 The API key is sent in a request header, which most clients handle automatically.

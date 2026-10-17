@@ -23,6 +23,8 @@
 
 分组是 API Key 的属性，与账户的订阅套餐（Lite / Plus / Pro 等）无关。
 
+`Claude Max` 分组仅接受 `Claude Code` 客户端，其他客户端会返回 403 `this group only allows Claude Code clients`。选择分组前请查看模型广场中的客户端限制，见 [Claude Max 分组](/docs/agents/claude-code#claude-max-分组)。
+
 ## 号池
 
 号池是分组对应的上游账号集合。`Pro` 号池包含 Pro 模型，服务压力较大时访问优先级可能更高，除此之外与 `Plus` 号池无差异。

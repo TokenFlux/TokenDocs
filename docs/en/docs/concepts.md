@@ -23,6 +23,8 @@ The multiplier applies to a model's base price. Prices shown in the [model marke
 
 A group is a property of an API key and is unrelated to the account's subscription plan (Lite, Plus, Pro, and so on).
 
+The `Claude Max` group accepts only `Claude Code` clients. Other clients receive 403 `this group only allows Claude Code clients`. Check client restrictions in the model marketplace before choosing a group; see [The Claude Max Group](/en/docs/agents/claude-code#the-claude-max-group).
+
 ## Account Pools
 
 An account pool is the set of upstream accounts a group maps to. The `Pro` pool includes Pro models and may receive higher priority when the service is under load; otherwise it is no different from the `Plus` pool.

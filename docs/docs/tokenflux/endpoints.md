@@ -30,6 +30,8 @@ OpenAI 格式和 Anthropic 格式的端点可在 [API 密钥页面](https://toke
 
 OpenAI 格式包含 Chat Completions 和 Responses 等不同接口；例如 Codex 使用 Responses。Base URL 相同不代表模型支持所有接口，需确认分组和模型支持客户端实际发送的请求。完整测试请求见 [排障](/docs/troubleshooting#发送最小推理请求)。
 
+生图超时可尝试 [流式生图](/docs/tokenflux/image-streaming)。
+
 ## 认证
 
 API Key 通过请求头传递，多数客户端会自动处理。

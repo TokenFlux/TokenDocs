@@ -26,6 +26,9 @@ export const APP_PATHS = [
   '/usage',
   '/v1',
   '/v1/chat/completions',
+  // Images API 文档示例使用的生成与编辑入口。
+  '/v1/images/edits',
+  '/v1/images/generations',
   '/v1/messages',
   '/v1/models',
   '/v1/responses',
@@ -89,6 +92,7 @@ export const ALLOWED_EXTERNAL_HOSTS = [
   'get.microsoft.com',
   'git-scm.com',
   'github.com',
+  'html.spec.whatwg.org',
   'opencode.ai',
   'persistent.oaistatic.com',
   'pi.dev',

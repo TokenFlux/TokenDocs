@@ -41,6 +41,7 @@ export const sidebar = {
       text: 'API 接入',
       items: [
         { text: 'API 端点', link: '/docs/tokenflux/endpoints' },
+        { text: '流式生图', link: '/docs/tokenflux/image-streaming' },
         { text: '复合 Key', link: '/docs/tokenflux/composite-key' },
         { text: 'Fast 模式', link: '/docs/tokenflux/fast-mode' },
       ],
@@ -106,6 +107,7 @@ export const enSidebar = {
       text: 'API Integration',
       items: [
         { text: 'API Endpoints', link: '/en/docs/tokenflux/endpoints' },
+        { text: 'Streaming Images', link: '/en/docs/tokenflux/image-streaming' },
         { text: 'Composite Key', link: '/en/docs/tokenflux/composite-key' },
         { text: 'Fast Mode', link: '/en/docs/tokenflux/fast-mode' },
       ],

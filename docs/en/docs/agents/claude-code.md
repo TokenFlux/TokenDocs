@@ -182,6 +182,8 @@ If the client reports an authentication error, read the server message that foll
 
 ## The Claude Max Group
 
+The `Claude Max` group accepts only `Claude Code` clients and cannot be used in the Claude app. Other clients receive 403 `this group only allows Claude Code clients`; see [Error Codes](/en/docs/errors#group-capabilities).
+
 On the `Claude Max` group you can additionally enable `ENABLE_PROMPT_CACHING_1H=1` after finishing the basic configuration above. This option enables a 1-hour prompt cache, which is useful for Claude Code sessions that repeatedly carry long context. Other Claude groups do not need it.
 
 Upstream cache writes cost more with a 1-hour TTL than with the default 5-minute TTL. TokenFlux billing follows the cache prices in the [model marketplace](https://tokenflux.dev/models). See the [official Claude Code documentation](https://code.claude.com/docs/en/prompt-caching) for other cache TTL settings.
