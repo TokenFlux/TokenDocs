@@ -7,7 +7,6 @@
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "i18n:sync": "node scripts/i18n-manifest.js",
     "docs:verify-status": "node scripts/verification-status.js",
     "lint": "markdownlint-cli2 && prettier --check \"**/*.{js,json,md}\"",
     "format": "prettier --write \"**/*.{js,json,md}\"",

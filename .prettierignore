@@ -2,4 +2,3 @@ docs/.vitepress/cache/
 docs/.vitepress/dist/
 node_modules/
 pnpm-lock.yaml
-i18n-manifest.json
