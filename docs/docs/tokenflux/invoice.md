@@ -5,7 +5,7 @@ TokenFlux 目前支持 `invoice` 和大陆普通发票。
 ## 支持类型
 
 - **Invoice**：使用 Stripe 支付会自动生成。在 [我的订单](https://tokenflux.dev/orders) 中点击对应订单的 `账单` 即可查看（仅限 Stripe 支付订单）。
-- **大陆普通发票**：请联系 `daoge` 人工处理，收取 `6%` 服务费。
+- **大陆普通发票**：请联系 `hsn` 人工处理，收取 `6%` 服务费。
 
 <div style="text-align: center;">
   <img src="/images/invoice/orders-billing.png" alt="我的订单页面中，Stripe 订单右侧的账单按钮" />
@@ -17,7 +17,7 @@ TokenFlux 目前支持 `invoice` 和大陆普通发票。
 
 ## 申请流程
 
-如需开具大陆普通发票，请在付款前联系 `daoge`，提供发票抬头、税号等必要信息，并按其指引完成付款。
+如需开具大陆普通发票，开票前请勿付款。请先联系 `hsn`，提供发票抬头、税号等必要信息，开票后再按其指引完成付款。
 
 ## 相关内容
 
