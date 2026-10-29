@@ -62,12 +62,12 @@ describe('markdown artifacts', () => {
 
   it('builds base-aware page and markdown sitemap entries', () => {
     expect(withBasePath('/TokenDocs/', '/docs/quickstart.md')).toBe('/TokenDocs/docs/quickstart.md')
-    expect(getPageUrl('docs/quickstart.md')).toBe('https://docs.tokenflux.dev/docs/quickstart.html')
+    expect(getPageUrl('docs/quickstart.md')).toBe('https://docs.tokenflux.com/docs/quickstart.html')
     expect(getMarkdownUrl('docs/quickstart.md')).toBe(
-      'https://docs.tokenflux.dev/docs/quickstart.md',
+      'https://docs.tokenflux.com/docs/quickstart.md',
     )
-    expect(buildMarkdownSitemap(['https://docs.tokenflux.dev/docs/quickstart.html'])).toContain(
-      '    <loc>https://docs.tokenflux.dev/docs/quickstart.html</loc>',
+    expect(buildMarkdownSitemap(['https://docs.tokenflux.com/docs/quickstart.html'])).toContain(
+      '    <loc>https://docs.tokenflux.com/docs/quickstart.html</loc>',
     )
   })
 
@@ -76,8 +76,8 @@ describe('markdown artifacts', () => {
     const markdownLinkMap = buildMarkdownLinkMap(['docs/quickstart.md'])
     const rewritten = rewriteAbsoluteMarkdownLinks(content, undefined, markdownLinkMap)
 
-    expect(rewritten).toContain('(https://docs.tokenflux.dev/docs/quickstart.md)')
-    expect(rewritten).toContain('src="https://docs.tokenflux.dev/images/example.png"')
+    expect(rewritten).toContain('(https://docs.tokenflux.com/docs/quickstart.md)')
+    expect(rewritten).toContain('src="https://docs.tokenflux.com/images/example.png"')
   })
 
   it('adds a utf-8 bom for exported markdown files', () => {
